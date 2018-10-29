@@ -6,7 +6,7 @@ Versión 0.3.0
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
 """
 
-from bottle import request, route, run, response
+from bottle import request, route, run, response, static_file
 from bottledaemon import daemon_run
 import JanetServProcessor
 
@@ -26,13 +26,18 @@ class janetService():
         
     @route('/',method='GET')
     def do_test():
-        return '<h1> No deberias estar aqui! </h1> <p> Esta direccion es de prueba, conectate con un cliente.'
+        HTML = '''<img src="static/icon.png" alt="Logo" width="500" height="500"> <br> <h1> No deberias estar aqui! </h1> <p> Esta direccion es de prueba, conectate con un cliente.</p>'''
+        return HTML
+
+    @route('/static/<filepath:path>')
+    def server_static(filepath):
+        return static_file(filepath, root='./')
         
+#DESHABILITADO PARA FUNCIONAR CON WSGI
+#if __name__ == "__main__":
+    #from sys import argv
     
-if __name__ == "__main__":
-    from sys import argv
-    
-    if len(argv) == 2:
-        run(host='localhost', port=80, debug=True)
-    else:
-        run(host='0.0.0.0', port=80)
+    #if len(argv) == 2:
+        #run(host='localhost', port=80, debug=True)
+    #else:
+        #run(host='0.0.0.0', port=80)
