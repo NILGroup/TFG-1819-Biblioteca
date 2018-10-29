@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+"""
+Servidor de TFG - Proyecto Janet
+Versión 0.3.0
+
+@author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
+"""
+
+from bottle import request, route, run, response
+from bottledaemon import daemon_run
+import JanetServProcessor
+
+class janetService():
+    
+    @route('/mobilenative',method='POST')
+    def do_Mobile():
+        response.content_type = 'application/json'
+        response.status = 200
+        print("Usuario conectado por POST")
+        
+        post_data = {}
+        post_data["content"] = request.POST.get('content')
+        procesador = JanetServProcessor.JanetServProcessor()
+        respuesta = procesador.procesarDatos_POST(post_data)
+        return respuesta
+        
+    @route('/',method='GET')
+    def do_test():
+        return '<h1> No deberias estar aqui! </h1> <p> Esta direccion es de prueba, conectate con un cliente.'
+        
+    
+if __name__ == "__main__":
+    from sys import argv
+    
+    if len(argv) == 2:
+        run(host='localhost', port=80, debug=True)
+    else:
+        run(host='0.0.0.0', port=80)
