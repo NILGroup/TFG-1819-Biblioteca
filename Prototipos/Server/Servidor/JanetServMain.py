@@ -7,7 +7,6 @@ Versión 0.3.0
 """
 
 from bottle import request, route, run, response, static_file
-from bottledaemon import daemon_run
 import JanetServProcessor
 
 class janetService():
