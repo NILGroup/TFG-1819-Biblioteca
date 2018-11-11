@@ -16,6 +16,8 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var alturaBurbuja: NSLayoutConstraint!
     @IBOutlet weak var anchuraBurbuja: NSLayoutConstraint!
     
+    private var altoContraste: Bool! = false
+    
     //private var labelOriginal: UILabel? = nil
     
     internal func setMessage(info: Globos) {
@@ -62,6 +64,10 @@ class CollectionViewCell: UICollectionViewCell {
         return self.text.bounds.size.height
     }
     
+    func setAltoContraste(contraste: Bool) {
+        self.altoContraste = contraste
+    }
+    
     internal func updateAltura(ancho: CGFloat) {
         //self.text.numberOfLines = 0
         //self.text.lineBreakMode = .byWordWrapping
@@ -79,40 +85,37 @@ class CollectionViewCell: UICollectionViewCell {
                             resizingMode: .stretch)
             .withRenderingMode(.alwaysTemplate)
         
-        if (info == .User) {
-            //guard let imagen = UIImage(named: "Bubble_User")?.imageFlippedForRightToLeftLayoutDirection() else { return }
-            /*guard let imagen = UIImage(named: "Bubble_Janet") else { return }
+        
             
-            burbuja.image = imagen
-                .resizableImage(withCapInsets:
-                    UIEdgeInsets(top: 17, left: 21, bottom: 17, right: 21),
-                                resizingMode: .stretch)
-                .withRenderingMode(.alwaysTemplate)*/
-            
-            self.alturaBurbuja.constant = self.text.bounds.size.height + 15//+ 15
-            self.anchuraBurbuja.constant = self.text.bounds.size.width + 30
-            
+        self.alturaBurbuja.constant = self.text.bounds.size.height + 15
+        self.anchuraBurbuja.constant = self.text.bounds.size.width + 30
+        if (!altoContraste) {
+            burbuja.tintColor = UIColor.black
+            burbuja.alpha = 0.6
         } else {
-            /*guard let imagen = UIImage(named: "Bubble_Janet") else { return }
-            
-            burbuja.image = imagen
-                .resizableImage(withCapInsets:
-                    UIEdgeInsets(top: 17, left: 21, bottom: 17, right: 21),
-                                resizingMode: .stretch)
-                .withRenderingMode(.alwaysTemplate)*/
-            
-            self.alturaBurbuja.constant = self.text.bounds.size.height + 15
-            self.anchuraBurbuja.constant = self.text.bounds.size.width + 30
+            //burbuja.image = imagen.imageWithBorder(width: 2, color: UIColor.white)
+            burbuja.layer.borderWidth = 2
+            burbuja.layer.borderColor = UIColor.white.cgColor
+            burbuja.tintColor = UIColor.black
+            burbuja.alpha = 1.0
         }
-        burbuja.tintColor = UIColor.black
-        burbuja.alpha = 0.6
     }
     
 }
 
-private extension UILabel {
-    func crearCopia() -> UILabel {
-        let archivedData = NSKeyedArchiver.archivedData(withRootObject: self)
-        return NSKeyedUnarchiver.unarchiveObject(with: archivedData) as! UILabel
+private extension UIImage {
+    func imageWithBorder(width: CGFloat, color: UIColor) -> UIImage? {
+        let square = CGSize(width: min(size.width, size.height) + width * 2, height: min(size.width, size.height) + width * 2)
+        let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
+        imageView.contentMode = .center
+        imageView.image = self
+        imageView.layer.borderWidth = width
+        imageView.layer.borderColor = color.cgColor
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result
     }
 }

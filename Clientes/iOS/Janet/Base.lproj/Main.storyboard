@@ -150,6 +150,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="capaDegradado" destination="LUD-QN-LLe" id="mtg-Vw-Ajw"/>
                         <outlet property="collectionView" destination="l0I-1C-p4N" id="plY-s7-DzD"/>
                         <outlet property="startButton" destination="j7n-Uj-Qrr" id="qt6-QK-Wf8"/>
                     </connections>

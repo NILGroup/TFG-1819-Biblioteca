@@ -29,6 +29,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         }
         //}
         
+        if (self.getAltoContrasteActivo()) {
+            cell.setAltoContraste(contraste: true)
+        }
+        
         if (mensajes.count == 1) {
             
             let numberOfCellsPerRow: CGFloat = 1

@@ -14,6 +14,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var capaDegradado: UIView!
     
     //var userText: String = ""
     internal var mensajes: [Globos] = []
@@ -27,16 +28,28 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     private var player: AVAudioPlayer?
     private var timer: Timer!
     private var botText: String = ""
-    private let utteranceRate: Float = 0.5
+    private var utteranceRate: Float = 0.5
+    private var trascribir: Bool = true
+    private var contraste: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         
+        //registerSettingsBundle()
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        defaultsChanged()
+        
+        if (contraste) {
+            self.altoContraste()
+        }
+        
        mensajes.append(Globos(texto: "Hola! Soy Janet. ¿En qué te puedo ayudar?", emisor: .Bot))
         //mensajes.append(Globos(texto: " ¡Que levante la mano aquel que no se ponga nervioso ante un examen! Lo que nos jugamos ante un test puede determinar parte de nuestro futuro, por eso la ansiedad se apodera de nosotros. Algunas personas se plantean hasta abandonar su sueño porque no encuentran fuerzas para continuar hasta el final. La motivación es muy importante para no echar al traste en el último momento todo el esfuerzo de semanas, meses o años, por eso leer una poderosa frase antes de un examen nos puede animar a continuar", emisor: .Bot))
-        let utterance = AVSpeechUtterance(string: mensajes[0].getRespuesta())
-        inicializarVoz()
+        if (trascribir) {
+            inicializarVoz()
+        }
+        self.leerFrase(texto: mensajes[0].getRespuesta())
         // Do any additional setup after loading the view, typically from a nib.
         
         /*self.collectionView?.performBatchUpdates({
@@ -47,13 +60,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             let lastItemIndex = IndexPath(item: self.mensajes.count, section: 0)
             self.collectionView?.scrollToItem(at: lastItemIndex as IndexPath, at: UICollectionView.ScrollPosition.bottom, animated: true)
         })*/
-        
-        utterance.voice = voice
-        utterance.rate = utteranceRate
-        
         startButton.transform = CGAffineTransform(scaleX: 1, y: 1)
-        
-        synthesizer.speak(utterance)
         comprobarPermisosReconocimientoVoz()
     }
     
@@ -91,12 +98,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                         })
                         
                         //let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 0) - 1
-                        
-                        let utterance = AVSpeechUtterance(string: self.botText)
-                        utterance.voice = self.voice
-                        utterance.rate = self.utteranceRate
-                        
-                        self.synthesizer.speak(utterance)
+                        self.leerFrase(texto: self.botText)
                     }
                 }
             }
@@ -149,6 +151,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         return result
         
     }*/
+    private func leerFrase(texto: String) {
+        if (self.trascribir) {
+            let utterance = AVSpeechUtterance(string: texto)
+            utterance.voice = self.voice
+            utterance.rate = self.utteranceRate
+            
+            self.synthesizer.speak(utterance)
+        }
+    }
     
     private func procesarFrase() {
         
@@ -191,11 +202,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             //let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 0) - 1
             
         }
-        let utterance = AVSpeechUtterance(string: self.botText)
-        utterance.voice = self.voice
-        utterance.rate = utteranceRate
-        
-        self.synthesizer.speak(utterance)
+        self.leerFrase(texto: self.botText)
         //}
         
     }
@@ -404,6 +411,31 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func getAltoContrasteActivo() -> Bool {
+        return self.contraste
+    }
+    
+    private func altoContraste() {
+        let icon = UIImage(named: "Micro_High_Contrast") as UIImage?
+        self.capaDegradado.backgroundColor = UIColor.black
+        self.capaDegradado.alpha = 1
+        self.startButton.setImage(icon, for: .normal)
+    }
+    
+    /*func registerSettingsBundle(){
+        let appDefaults = [String:AnyObject]()
+        UserDefaults.standard.register(defaults: appDefaults)
+    }*/
+    
+    @objc func defaultsChanged() {
+        let ud = UserDefaults.standard
+        ud.synchronize()
+        
+        self.trascribir = UserDefaults.standard.bool(forKey: "transcription_text")
+        self.utteranceRate = UserDefaults.standard.float(forKey: "slider_speed")
+        self.contraste = UserDefaults.standard.bool(forKey: "high_contrast")
     }
 }
 

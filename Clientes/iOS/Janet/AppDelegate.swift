@@ -16,8 +16,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //UIApplication.shared.statusBarStyle = .lightContent
+        
+        loadDefaults()
+        
         return true
+    }
+    
+    private func loadDefaults() {
+        let userDefaults = UserDefaults.standard
+        
+        let pathStr = Bundle.main.bundlePath
+        let settingsBundlePath = (pathStr as NSString).appendingPathComponent("Settings.bundle")
+        let finalPath = (settingsBundlePath as NSString).appendingPathComponent("Root.plist")
+        let settingsDict = NSDictionary(contentsOfFile: finalPath)
+        guard let prefSpecifierArray = settingsDict?.object(forKey: "PreferenceSpecifiers") as? [[String: Any]] else {
+            return
+        }
+        
+        var defaults = [String: Any]()
+        
+        for prefItem in prefSpecifierArray {
+            guard let key = prefItem["Key"] as? String else {
+                continue
+            }
+            defaults[key] = prefItem["DefaultValue"]
+        }
+        userDefaults.register(defaults: defaults)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -36,6 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        SettingsBundleHelper.setVersionAndBuildNumber()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
