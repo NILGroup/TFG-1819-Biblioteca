@@ -33,7 +33,7 @@
                                             <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="udf-I0-z2B"/>
                                         </connections>
                                     </button>
-                                    <collectionView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l0I-1C-p4N">
+                                    <collectionView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0I-1C-p4N">
                                         <rect key="frame" x="0.0" y="28" width="320" height="418"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,17 +51,27 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="275" height="74"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ama-CE-bbZ" userLabel="Text">
-                                                            <rect key="frame" x="9" y="10" width="258" height="56"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0g1-RD-N6f" userLabel="Burbuja">
+                                                            <rect key="frame" x="0.0" y="0.0" width="275" height="74"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="74" id="L1q-OJ-B6I"/>
+                                                                <constraint firstAttribute="width" constant="275" id="ka2-sT-wTX"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ama-CE-bbZ" userLabel="Text">
+                                                            <rect key="frame" x="15" y="8" width="249" height="58"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                     </subviews>
                                                 </view>
-                                                <color key="backgroundColor" white="0.0" alpha="0.54738334759999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
+                                                    <outlet property="alturaBurbuja" destination="L1q-OJ-B6I" id="hAr-fh-fSD"/>
+                                                    <outlet property="anchuraBurbuja" destination="ka2-sT-wTX" id="QF0-yQ-yjx"/>
+                                                    <outlet property="burbuja" destination="0g1-RD-N6f" id="w3B-WZ-5c1"/>
                                                     <outlet property="text" destination="ama-CE-bbZ" id="29j-ZI-I0g"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -139,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="132.04225352112675"/>
+            <point key="canvasLocation" x="134.375" y="131.8359375"/>
         </scene>
     </scenes>
     <resources>

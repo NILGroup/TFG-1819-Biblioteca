@@ -10,7 +10,7 @@ import UIKit
 import Speech
 import AVFoundation
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, SFSpeechRecognizerDelegate, SFSpeechRecognitionTaskDelegate {
+class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechRecognitionTaskDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var startButton: UIButton!
@@ -33,10 +33,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         collectionView.delegate = self
         
-        mensajes.append(Globos(texto: "Hola! Soy Janet. ¿En qué te puedo ayudar?", emisor: .Bot))
+       //mensajes.append(Globos(texto: "Hola! Soy Janet. ¿En qué te puedo ayudar?", emisor: .Bot))
+        mensajes.append(Globos(texto: " ¡Que levante la mano aquel que no se ponga nervioso ante un examen! Lo que nos jugamos ante un test puede determinar parte de nuestro futuro, por eso la ansiedad se apodera de nosotros. Algunas personas se plantean hasta abandonar su sueño porque no encuentran fuerzas para continuar hasta el final. La motivación es muy importante para no echar al traste en el último momento todo el esfuerzo de semanas, meses o años, por eso leer una poderosa frase antes de un examen nos puede animar a continuar", emisor: .Bot))
         let utterance = AVSpeechUtterance(string: mensajes[0].getRespuesta())
         inicializarVoz()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        /*self.collectionView?.performBatchUpdates({
+            let indexPath = IndexPath(item: self.mensajes.count - 1, section: 0)
+            //self.mensajes.append(Globos(texto: self.userText, emisor: .User))
+            self.collectionView?.insertItems(at: [indexPath])
+        }, completion: {(success) in
+            let lastItemIndex = IndexPath(item: self.mensajes.count, section: 0)
+            self.collectionView?.scrollToItem(at: lastItemIndex as IndexPath, at: UICollectionView.ScrollPosition.bottom, animated: true)
+        })*/
         
         utterance.voice = voice
         utterance.rate = utteranceRate
@@ -116,26 +126,29 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mensajes.count;
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
-        cell.layer.cornerRadius = 10
-        cell.setText(info: mensajes[indexPath.row])
         
-        let numberOfCellsPerRow: CGFloat = 1
+        cell.setMessage(info: mensajes[indexPath.row])
         
-        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            let horizontalSpacing = flowLayout.scrollDirection == .vertical ? flowLayout.minimumInteritemSpacing : flowLayout.minimumLineSpacing
-            let cellWidth = ((view.frame.width - max(0, numberOfCellsPerRow - 1)*horizontalSpacing)/numberOfCellsPerRow)-10
-            flowLayout.itemSize = CGSize(width: cellWidth, height: 74)
+        var result: CGSize = CGSize(width: 100, height: 100)
+        
+        if let bubble = self.collectionView?.cellForItem(at: indexPath) as? CollectionViewCell {
+            
+            let numberOfCellsPerRow: CGFloat = 1
+            
+            let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+            print(bubble.getText())
+            let horizontalSpacing = (flowLayout?.scrollDirection == .vertical) ? flowLayout?.minimumInteritemSpacing : flowLayout?.minimumLineSpacing
+            let cellWidth = ((view.frame.width - max(0, numberOfCellsPerRow - 1)*horizontalSpacing!)/numberOfCellsPerRow)
+            result = CGSize(width: cellWidth, height: cell.getAltura() + 15)
         }
         
-        return cell
-    }
+        return result
+        
+    }*/
     
     func procesarFrase() {
         
@@ -185,15 +198,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
-    internal func lastIndexPath() -> IndexPath? {
-        for sectionIndex in (0..<collectionView.numberOfSections).reversed() {
-            if collectionView.numberOfItems(inSection: sectionIndex) > 0 {
-                return IndexPath.init(item: collectionView.numberOfItems(inSection: sectionIndex)-1, section: sectionIndex)
-            }
-        }
-        
-        return nil
-    }
     
     func ponerTextoEnBot(texto: String) {
         self.botText = texto;
@@ -212,19 +216,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             print("Speech recognizer is not available for this locale!");
             return
         }
-        
-        // Check the availability. It currently only works on the device
-        /*if (speechRecognizer.isAvailable == false) {
-            print("El reconocimiento de voz no está disponible, active los permisos en ajustes.");
-            
-            ponerTextoEnBot(texto: "El reconocimiento de voz no está disponible, active los permisos en ajustes.");
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.procesarFrase()
-            }
-            return
-        }*/
-        
-        
         
         func playSound(soundName: String, ext: String) {
             guard let url = Bundle.main.url(forResource: soundName, withExtension: ext) else { return }
