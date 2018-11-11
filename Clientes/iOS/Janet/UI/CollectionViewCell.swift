@@ -16,18 +16,28 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var alturaBurbuja: NSLayoutConstraint!
     @IBOutlet weak var anchuraBurbuja: NSLayoutConstraint!
     
+    //private var labelOriginal: UILabel? = nil
     
-    func setMessage(info: Globos) {
+    internal func setMessage(info: Globos) {
+        /*if (labelOriginal == nil) {
+            labelOriginal = text.crearCopia()
+        }*/
+        
         if (info.getEmisor() == .User) {
             
             //self.text.sizeToFit()
             //self.text.numberOfLines = 0
             //self.text.lineBreakMode = .byWordWrapping
             //self.text.numberOfLines = 0
+            //self.text = labelOriginal!.crearCopia()
             self.text.text = "Tu: " + info.getRespuesta();
-            //self.text.sizeToFit()
             self.text.textAlignment = .right;
+            self.text.sizeToFit()
             self.text.transform = CGAffineTransform(scaleX: -1,y: 1)
+            //self.text.text = "Tu: " + info.getRespuesta();
+            //self.text.sizeToFit()
+            //self.text.textAlignment = .right;
+            //self.text.sizeToFit()
             self.cambiarBurbuja(info: .User);
         }
         else {
@@ -35,29 +45,31 @@ class CollectionViewCell: UICollectionViewCell {
             //self.text.sizeToFit()
             //self.text.numberOfLines = 0
             //self.text.lineBreakMode = .byWordWrapping
-            self.text.transform = CGAffineTransform(scaleX: 1,y: 1);
+            //self.text = labelOriginal!.crearCopia()
             self.text.text = "Janet: " + info.getRespuesta();
             self.text.textAlignment = .left;
             self.text.sizeToFit()
+            self.text.transform = CGAffineTransform.identity;
             self.cambiarBurbuja(info: .Bot);
         }
     }
     
-    func getText() -> String{
+    internal func getText() -> String{
         return self.text.text!
     }
     
-    func getAltura() -> CGFloat {
+    internal func getAltura() -> CGFloat {
         return self.text.bounds.size.height
     }
     
-    func updateAltura() {
+    internal func updateAltura(ancho: CGFloat) {
         //self.text.numberOfLines = 0
         //self.text.lineBreakMode = .byWordWrapping
-        self.text.sizeToFit()
+        self.text.bounds.size.width = ancho
+        //self.text.sizeToFit()
     }
     
-    internal func cambiarBurbuja(info: Globos.TiposEmisor) {
+    private func cambiarBurbuja(info: Globos.TiposEmisor) {
         
         guard let imagen = UIImage(named: "Bubble") else { return }
         
@@ -77,7 +89,7 @@ class CollectionViewCell: UICollectionViewCell {
                                 resizingMode: .stretch)
                 .withRenderingMode(.alwaysTemplate)*/
             
-            self.alturaBurbuja.constant = self.text.bounds.size.height + 15
+            self.alturaBurbuja.constant = self.text.bounds.size.height + 15//+ 15
             self.anchuraBurbuja.constant = self.text.bounds.size.width + 30
             
         } else {
@@ -96,4 +108,11 @@ class CollectionViewCell: UICollectionViewCell {
         burbuja.alpha = 0.6
     }
     
+}
+
+private extension UILabel {
+    func crearCopia() -> UILabel {
+        let archivedData = NSKeyedArchiver.archivedData(withRootObject: self)
+        return NSKeyedUnarchiver.unarchiveObject(with: archivedData) as! UILabel
+    }
 }

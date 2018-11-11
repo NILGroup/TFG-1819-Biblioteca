@@ -10,7 +10,6 @@ import UIKit
 
 extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mensajes.count;
     }
@@ -20,20 +19,28 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
         //cell.layer.cornerRadius = 10
         
+        //if (cell.getText() == "Label") {
         cell.setMessage(info: mensajes[indexPath.row])
         
-        //if (mensajes.count == 1) {
+        if (mensajes[indexPath.row].getEmisor() == .User) {
+            cell.contentView.transform = CGAffineTransform(scaleX: -1,y: 1)
+        } else {
+            cell.contentView.transform = CGAffineTransform.identity
+        }
+        //}
+        
+        if (mensajes.count == 1) {
+            
+            let numberOfCellsPerRow: CGFloat = 1
+            
+            cell.setMessage(info: mensajes[indexPath.row])
             
             if (mensajes[indexPath.row].getEmisor() == .User) {
                 cell.contentView.transform = CGAffineTransform(scaleX: -1,y: 1);
             } else {
                 cell.contentView.transform = CGAffineTransform(scaleX: 1,y: 1);
             }
-        
-        
-        let numberOfCellsPerRow: CGFloat = 1
-        
-        if (mensajes.count == 0) {
+            
             if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 let horizontalSpacing = flowLayout.scrollDirection == .vertical ? flowLayout.minimumInteritemSpacing : flowLayout.minimumLineSpacing
                 let cellWidth = ((view.frame.width - max(0, numberOfCellsPerRow - 1)*horizontalSpacing)/numberOfCellsPerRow)
@@ -67,6 +74,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
             
             if let bubble = self.collectionView?.cellForItem(at: indexPath) as? CollectionViewCell {
                 
+                //bubble.setMessage(info: mensajes[indexPath.item])
+                /*if (bubble.getText() == "") {
+                    bubble.setMessage(info: mensajes[indexPath.item])
+                }*/
+                
                 if (mensajes[indexPath.row].getEmisor() == .User) {
                     bubble.contentView.transform = CGAffineTransform(scaleX: -1,y: 1);
                 } else {
@@ -80,7 +92,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
                 let horizontalSpacing = (flowLayout?.scrollDirection == .vertical) ? flowLayout?.minimumInteritemSpacing : flowLayout?.minimumLineSpacing
                 let cellWidth = ((view.frame.width - max(0, numberOfCellsPerRow - 1)*horizontalSpacing!)/numberOfCellsPerRow)
                 result = CGSize(width: cellWidth, height: bubble.getAltura() + 15)
-                
             }
             return result
         }

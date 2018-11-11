@@ -16,25 +16,25 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     @IBOutlet weak var startButton: UIButton!
     
     //var userText: String = ""
-    var mensajes: [Globos] = []
-    let audioEngine = AVAudioEngine()
-    let synthesizer = AVSpeechSynthesizer()
-    let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
-    var request: SFSpeechAudioBufferRecognitionRequest?
-    var recognitionTask: SFSpeechRecognitionTask?
-    var isRecording = false
-    var voice: AVSpeechSynthesisVoice!
-    var player: AVAudioPlayer?
-    var timer: Timer!
-    var botText: String = ""
-    let utteranceRate: Float = 0.5
+    internal var mensajes: [Globos] = []
+    private let audioEngine = AVAudioEngine()
+    private let synthesizer = AVSpeechSynthesizer()
+    private let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
+    private var request: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
+    private var isRecording = false
+    private var voice: AVSpeechSynthesisVoice!
+    private var player: AVAudioPlayer?
+    private var timer: Timer!
+    private var botText: String = ""
+    private let utteranceRate: Float = 0.5
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         
-       //mensajes.append(Globos(texto: "Hola! Soy Janet. ¿En qué te puedo ayudar?", emisor: .Bot))
-        mensajes.append(Globos(texto: " ¡Que levante la mano aquel que no se ponga nervioso ante un examen! Lo que nos jugamos ante un test puede determinar parte de nuestro futuro, por eso la ansiedad se apodera de nosotros. Algunas personas se plantean hasta abandonar su sueño porque no encuentran fuerzas para continuar hasta el final. La motivación es muy importante para no echar al traste en el último momento todo el esfuerzo de semanas, meses o años, por eso leer una poderosa frase antes de un examen nos puede animar a continuar", emisor: .Bot))
+       mensajes.append(Globos(texto: "Hola! Soy Janet. ¿En qué te puedo ayudar?", emisor: .Bot))
+        //mensajes.append(Globos(texto: " ¡Que levante la mano aquel que no se ponga nervioso ante un examen! Lo que nos jugamos ante un test puede determinar parte de nuestro futuro, por eso la ansiedad se apodera de nosotros. Algunas personas se plantean hasta abandonar su sueño porque no encuentran fuerzas para continuar hasta el final. La motivación es muy importante para no echar al traste en el último momento todo el esfuerzo de semanas, meses o años, por eso leer una poderosa frase antes de un examen nos puede animar a continuar", emisor: .Bot))
         let utterance = AVSpeechUtterance(string: mensajes[0].getRespuesta())
         inicializarVoz()
         // Do any additional setup after loading the view, typically from a nib.
@@ -57,7 +57,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         comprobarPermisosReconocimientoVoz()
     }
     
-    internal func comprobarPermisosReconocimientoVoz() {
+    private func comprobarPermisosReconocimientoVoz() {
         if (SFSpeechRecognizer.authorizationStatus() != .authorized) {
             
             SFSpeechRecognizer.requestAuthorization { authStatus in
@@ -108,7 +108,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         // Dispose of any resources that can be recreated.
     }
 
-    func inicializarVoz() {
+    private func inicializarVoz() {
         for availableVoice in AVSpeechSynthesisVoice.speechVoices(){
         //if ((availableVoice.language == AVSpeechSynthesisVoice.currentLanguageCode()) &&
             //print(AVSpeechSynthesisVoice.currentLanguageCode())
@@ -150,7 +150,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         
     }*/
     
-    func procesarFrase() {
+    private func procesarFrase() {
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
@@ -175,11 +175,13 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             print("audioSession properties weren't set because of an error.")
         }
         
+        
+        self.mensajes.append(Globos(texto: self.botText, emisor: .Bot))
+        
         //DispatchQueue.main.asyncAfter(deadline: .now() + 1) { //Eliminar esto cuando haya un servidor
         DispatchQueue.main.async {
             self.collectionView?.performBatchUpdates({
-                let indexPath = IndexPath(row: self.mensajes.count, section: 0)
-                self.mensajes.append(Globos(texto: self.botText, emisor: .Bot))
+                let indexPath = IndexPath(row: self.mensajes.count - 1, section: 0)
                 self.collectionView?.insertItems(at: [indexPath])
             }, completion: { (success) in
                 let lastItemIndex = IndexPath(item: self.mensajes.count - 1, section: 0)
@@ -199,7 +201,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     }
     
     
-    func ponerTextoEnBot(texto: String) {
+    private func ponerTextoEnBot(texto: String) {
         self.botText = texto;
     }
 
@@ -371,7 +373,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             //DispatchQueue.main.async {
                 //self.userText = ""
             //}
-            mensajes[mensajes.count - 1].setRespuesta(text: "")
+            //mensajes.append(Globos(texto: "", emisor: .User));
+            //mensajes[mensajes.count - 1].setRespuesta(text: "")
             self.request = SFSpeechAudioBufferRecognitionRequest()
             
             //var item = self.collectionView(self.collectionView!, numberOfItemsInSection: 0) - 1

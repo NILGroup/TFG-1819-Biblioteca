@@ -58,9 +58,12 @@
                                                                 <constraint firstAttribute="width" constant="275" id="ka2-sT-wTX"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ama-CE-bbZ" userLabel="Text">
-                                                            <rect key="frame" x="15" y="8" width="249" height="58"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ama-CE-bbZ" userLabel="Text">
+                                                            <rect key="frame" x="15" y="7" width="249" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" priority="500" constant="58" id="1Eg-Qq-cr9"/>
+                                                                <constraint firstAttribute="width" constant="249" id="miZ-ds-hoq"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,6 +71,10 @@
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="ama-CE-bbZ" firstAttribute="leading" secondItem="KZF-IF-efg" secondAttribute="leading" constant="15" id="XTq-zD-3c2"/>
+                                                    <constraint firstItem="ama-CE-bbZ" firstAttribute="top" secondItem="KZF-IF-efg" secondAttribute="top" constant="7" id="gwr-FK-wkV"/>
+                                                </constraints>
                                                 <connections>
                                                     <outlet property="alturaBurbuja" destination="L1q-OJ-B6I" id="hAr-fh-fSD"/>
                                                     <outlet property="anchuraBurbuja" destination="ka2-sT-wTX" id="QF0-yQ-yjx"/>
