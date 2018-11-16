@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 Servidor de TFG - Proyecto Janet
-Versión 0.3.0
+Versión 0.3.0 - Supplemental Update
 
 Módulo de conexión con IBM Watson Assistant
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
+© 2018 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
 """
 import json
 from watson_developer_cloud import NaturalLanguageUnderstandingV1
