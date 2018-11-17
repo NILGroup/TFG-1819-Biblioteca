@@ -12,11 +12,10 @@ import AVFoundation
 
 class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechRecognitionTaskDelegate {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var capaDegradado: UIView!
     
-    //var userText: String = ""
     internal var mensajes: [Globos] = []
     private let audioEngine = AVAudioEngine()
     private let synthesizer = AVSpeechSynthesizer()
@@ -34,7 +33,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.estimatedRowHeight = 170.0
+        tableView.rowHeight = UITableView.automaticDimension
         
         //registerSettingsBundle()
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
@@ -52,14 +55,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         self.leerFrase(texto: mensajes[0].getRespuesta())
         // Do any additional setup after loading the view, typically from a nib.
         
-        /*self.collectionView?.performBatchUpdates({
-            let indexPath = IndexPath(item: self.mensajes.count - 1, section: 0)
-            //self.mensajes.append(Globos(texto: self.userText, emisor: .User))
-            self.collectionView?.insertItems(at: [indexPath])
-        }, completion: {(success) in
-            let lastItemIndex = IndexPath(item: self.mensajes.count, section: 0)
-            self.collectionView?.scrollToItem(at: lastItemIndex as IndexPath, at: UICollectionView.ScrollPosition.bottom, animated: true)
-        })*/
+        self.tableView.beginUpdates()
+        self.tableView.insertRows(at: [IndexPath(row: self.mensajes.count-1, section: 0)], with: .automatic)
+        self.tableView.endUpdates()
+        
         startButton.transform = CGAffineTransform(scaleX: 1, y: 1)
         comprobarPermisosReconocimientoVoz()
     }
@@ -77,27 +76,19 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                         case .denied:
                             self.startButton.isEnabled = false
                             self.mensajes.append(Globos(texto: "Hay un problema. Has denegado el reconocimiento de voz.", emisor: .Bot))
-                            //self.userText = "Hay un problema. Has denegado el reconocimiento de voz."
                         case .restricted:
                             self.startButton.isEnabled = false
                             self.mensajes.append(Globos(texto: "Hay un problema. Reconocimiento de voz no disponible en este dispositivo.", emisor: .Bot))
-                            //self.userText = "Hay un problema. Reconocimiento de voz no disponible en este dispositivo."
                         case .notDetermined:
                             self.startButton.isEnabled = false
                             self.mensajes.append(Globos(texto: "Hay un problema. Aún no ha autorizado el reconocimiento de voz.", emisor: .Bot))
-                            //self.userText = "Hay un problema. Aún no ha autorizado el reconocimiento de voz."
                     }
                     if (error) {
-                        self.collectionView?.performBatchUpdates({
-                            let indexPath = IndexPath(item: self.mensajes.count - 1, section: 0)
-                            //self.mensajes.append(Globos(texto: self.userText, emisor: .User))
-                            self.collectionView?.insertItems(at: [indexPath])
-                        }, completion: {(success) in
-                            let lastItemIndex = IndexPath(item: self.mensajes.count - 1, section: 0)
-                            self.collectionView?.scrollToItem(at: lastItemIndex as IndexPath, at: UICollectionView.ScrollPosition.bottom, animated: true)
-                        })
+                        self.tableView.beginUpdates()
+                        self.tableView.insertRows(at: [IndexPath(row: self.mensajes.count-1, section: 0)], with: .automatic)
+                        self.tableView.endUpdates()
+                        self.tableView.scrollToRow(at: IndexPath(row: self.mensajes.count-1, section: 0) , at: UITableView.ScrollPosition.bottom, animated: true)
                         
-                        //let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 0) - 1
                         self.leerFrase(texto: self.botText)
                     }
                 }
@@ -128,29 +119,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         }
     }
     
-    /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
-        
-        cell.setMessage(info: mensajes[indexPath.row])
-        
-        var result: CGSize = CGSize(width: 100, height: 100)
-        
-        if let bubble = self.collectionView?.cellForItem(at: indexPath) as? CollectionViewCell {
-            
-            let numberOfCellsPerRow: CGFloat = 1
-            
-            let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
-            print(bubble.getText())
-            let horizontalSpacing = (flowLayout?.scrollDirection == .vertical) ? flowLayout?.minimumInteritemSpacing : flowLayout?.minimumLineSpacing
-            let cellWidth = ((view.frame.width - max(0, numberOfCellsPerRow - 1)*horizontalSpacing!)/numberOfCellsPerRow)
-            result = CGSize(width: cellWidth, height: cell.getAltura() + 15)
-        }
-        
-        return result
-        
-    }*/
     private func leerFrase(texto: String) {
         if (self.trascribir) {
             let utterance = AVSpeechUtterance(string: texto)
@@ -162,8 +130,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     }
     
     private func procesarFrase() {
-        
         let audioSession = AVAudioSession.sharedInstance()
+        
         do {
             if (convertFromAVAudioSessionCategory(audioSession.category) != "AVAudioSessionCategoryPlayAndRecord") {
                 try! audioSession.setCategory(.playAndRecord, mode: .spokenAudio)
@@ -186,30 +154,36 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             print("audioSession properties weren't set because of an error.")
         }
         
-        
-        self.mensajes.append(Globos(texto: self.botText, emisor: .Bot))
-        
-        //DispatchQueue.main.asyncAfter(deadline: .now() + 1) { //Eliminar esto cuando haya un servidor
         DispatchQueue.main.async {
-            self.collectionView?.performBatchUpdates({
-                let indexPath = IndexPath(row: self.mensajes.count - 1, section: 0)
-                self.collectionView?.insertItems(at: [indexPath])
-            }, completion: { (success) in
-                let lastItemIndex = IndexPath(item: self.mensajes.count - 1, section: 0)
-                self.collectionView?.scrollToItem(at: lastItemIndex as IndexPath, at: UICollectionView.ScrollPosition.bottom, animated: true)
-            })
-            
-            //let item = self.collectionView(self.collectionView!, numberOfItemsInSection: 0) - 1
-            
+            self.tableView.beginUpdates()
+            self.tableView.insertRows(at: [IndexPath(row: self.mensajes.count-1, section: 0)], with: .left)
+            self.tableView.endUpdates()
+            self.tableView.scrollToRow(at: IndexPath(row: self.mensajes.count-1, section: 0) , at: UITableView.ScrollPosition.bottom, animated: true)
         }
         self.leerFrase(texto: self.botText)
-        //}
         
     }
     
     
     private func ponerTextoEnBot(texto: String) {
         self.botText = texto;
+        self.mensajes.append(Globos(texto: self.botText, emisor: .Bot))
+    }
+    
+    private func ponerDatosEnBot(datos: NSDictionary) {
+        if (datos.value(forKey: "content-type") as! String == "text") {
+            self.botText = datos.value(forKey: "response") as! String;
+            self.mensajes.append(Globos(texto: self.botText, emisor: .Bot))
+        } else {
+            self.botText = datos.value(forKey: "response") as! String;
+            let temp = Globos(texto: self.botText, foto: datos.value(forKey: "cover-art") as! String, emisor: .Bot,
+                   tipo: Globos.TiposMensaje.singlebook)
+            temp.setTitle(text: datos.value(forKey: "title") as! String)
+            temp.setAuthor(text: datos.value(forKey: "author") as! String)
+            temp.setLibrarys(text: datos.value(forKey: "library") as! String)
+            temp.setAvailable(available: datos.value(forKey: "available") as! Bool)
+            self.mensajes.append(temp)
+        }
     }
 
     @IBAction func startButtonTapped(_ sender: UIButton) {
@@ -289,12 +263,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                     
                     var isFinal = false
                     if let result = result {
-                        //self.userText = result.bestTranscription.formattedString
                         self.mensajes[self.mensajes.count - 1].setRespuesta(text: result.bestTranscription.formattedString)
-                        self.collectionView.performBatchUpdates({
-                            let indexPath = IndexPath(row: self.mensajes.count - 1, section: 0)
-                            self.collectionView.reloadItems(at: [indexPath])
-                        })
+                        let indexPath = IndexPath(row: self.mensajes.count - 1, section: 0)
+                        self.tableView.reloadRows(at: [indexPath], with: .none)
+                        
                         isFinal = result.isFinal
                     }
                     if isFinal {
@@ -342,15 +314,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                     
                     //Si el servidor ha fallado
                     if (respuesta.value(forKey: "errorno") as! NSNumber == 404) {
-                        self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String);
+                        self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
                     }
                         //Si la conexión se ha realizado correctamente
                     else {
                         //Si los datos no son correctos
                         if (respuesta.value(forKey: "errorno") as! NSNumber != 0) {
-                            self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String);
+                            self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
                         } else if (respuesta.value(forKey: "errorno") as! NSNumber == 0){
-                            self.ponerTextoEnBot(texto: respuesta.value(forKey: "response") as! String);
+                            self.ponerDatosEnBot(datos: respuesta)
                         }
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -360,13 +332,13 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                 
             } else {
                 playSound(soundName: "Micro Stopped", ext: "wav")
+                self.mensajes.remove(at: self.mensajes.count - 1)
                 
                 DispatchQueue.main.async {
-                    self.collectionView?.performBatchUpdates({
-                        let indexPath = IndexPath(item: self.mensajes.count - 1, section: 0)
-                        self.collectionView?.deleteItems(at: [indexPath])
-                        self.mensajes.remove(at: indexPath.item)
-                    }, completion: nil)
+                    self.tableView.beginUpdates()
+                    self.tableView.deleteRows(at: [IndexPath(row: self.mensajes.count, section: 0)], with: .right)
+                    self.tableView.endUpdates()
+                    self.tableView.scrollToRow(at: IndexPath(row: self.mensajes.count-1, section: 0) , at: UITableView.ScrollPosition.bottom, animated: true)
                 }
             }
         }
@@ -377,29 +349,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             self.synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
             playSound(soundName: "Micro Start", ext: "wav")
             self.isRecording = true
-            //DispatchQueue.main.async {
-                //self.userText = ""
-            //}
-            //mensajes.append(Globos(texto: "", emisor: .User));
-            //mensajes[mensajes.count - 1].setRespuesta(text: "")
+            
+            mensajes.append(Globos(texto: "", emisor: .User));
             self.request = SFSpeechAudioBufferRecognitionRequest()
             
-            //var item = self.collectionView(self.collectionView!, numberOfItemsInSection: 0) - 1
-            /*var lastItemIndex = IndexPath(item: mensajes.count - 1, section: 0)
             DispatchQueue.main.async {
-                self.collectionView?.scrollToItem(at: lastItemIndex as IndexPath, at: UICollectionView.ScrollPosition.bottom, animated: true)
-            }*/
-            DispatchQueue.main.async {
-                self.collectionView?.performBatchUpdates({
-                    let indexPath = IndexPath(row: self.mensajes.count, section: 0)
-                    self.mensajes.append(Globos(texto: "", emisor: .User))
-                    self.collectionView?.insertItems(at: [indexPath])
-                }, completion: { (success) in
-                    var lastItemIndex = IndexPath(item: self.mensajes.count - 1, section: 0)
-                    self.collectionView?.scrollToItem(at: lastItemIndex as IndexPath, at: UICollectionView.ScrollPosition.bottom, animated: true)
-                })
-                /*var lastItemIndex = IndexPath(item: mensajes.count - 1, section: 0)
-                self.collectionView?.scrollToItem(at: lastItemIndex as IndexPath, at: UICollectionView.ScrollPosition.bottom, animated: true)*/
+                self.tableView.beginUpdates()
+                self.tableView.insertRows(at: [IndexPath(row: self.mensajes.count-1, section: 0)], with: .right)
+                self.tableView.endUpdates()
+                self.tableView.scrollToRow(at: IndexPath(row: self.mensajes.count-1, section: 0) , at: UITableView.ScrollPosition.bottom, animated: true)
             }
             
             recordAndRecognizeSpeech()
