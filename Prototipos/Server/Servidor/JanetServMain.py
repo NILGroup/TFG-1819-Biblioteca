@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 Servidor de TFG - Proyecto Janet
-Versión 0.3.0
+Versión 0.3.0 - Supplemental Update
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
+© 2018 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
 """
 
 from bottle import request, route, run, response, static_file
