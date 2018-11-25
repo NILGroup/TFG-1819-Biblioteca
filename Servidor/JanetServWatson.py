@@ -26,7 +26,7 @@ class JanetServWatson():
         service.set_http_config({'timeout': 100})
         response = service.message(workspace_id=data["workspace_id"], input={'text': client_request["content"]}).get_result()
         respuesta['errorno'] = 0
-        print (response)
+        #print (response)
         if not response['intents']:
             respuesta['content-type'] = 'text'
             respuesta['has-extra-data'] = False
@@ -42,9 +42,9 @@ class JanetServWatson():
     def prepararConsultaWMS(self, datosWatson):
         datos = {}
         if (datosWatson['intents'][0]['intent'] == 'consulta'):
-            if(datosWatson['entities'][1]['entity'] == 'titulo'):
+            if(datosWatson['entities'][0]['entity'] == 'titulo'):
                 datos['title'] = datosWatson['context']['resultado']
-            elif(datosWatson['entities'][1]['entity'] == 'autores'):
+            elif(datosWatson['entities'][0]['entity'] == 'autores'):
                 datos['author'] = datosWatson['context']['resultado']
             else:
                 datos['generic'] = datosWatson['context']['resultado']

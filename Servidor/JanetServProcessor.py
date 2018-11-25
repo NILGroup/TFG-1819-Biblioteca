@@ -33,9 +33,12 @@ class JanetServProcessor():
                 del respuesta['has-extra-data']
             else:
                 wms = JanetServWMS.JanetServWMS()
-                wms.buscar(respuesta['extra-data'][0])
+                oclcCodes = wms.buscar(respuesta['extra-data'][0])
+                respuesta.update(wms.cargarInformacion(oclcCodes))
+                respuesta['content-type'] = 'single-book'
                 del respuesta['has-extra-data']
                 del respuesta['extra-data']
+                print(respuesta)
             #Para debuggear
             #print(json.dumps(response, indent=2))
                 
