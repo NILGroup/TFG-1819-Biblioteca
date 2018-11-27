@@ -68,11 +68,4 @@ class janetService():
             'errorMessage': 'Ha habido un problema imprevisto.',
         })
         
-#DESHABILITADO PARA FUNCIONAR CON WSGI
-if __name__ == "__main__":
-    from sys import argv
-    
-    if len(argv) == 2:
-        run(host='localhost', port=80, debug=True)
-    else:
-        run(host='0.0.0.0', port=80)
+run(host='0.0.0.0', port=8080, reloader=True)
