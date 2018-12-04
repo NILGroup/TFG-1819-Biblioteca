@@ -12,6 +12,7 @@ import requests
 import json
 import lxml.etree as ET
 import io
+from authliboclc import wskey
 
 class JanetServWMS():
     
@@ -64,27 +65,23 @@ class JanetServWMS():
         content = r.json()
         #print (content)
         
-        contenidoGoogle = {}
+        respuesta = {}
         
-        if content['ISBN']:
+        if 'ISBN' in content:
             urlGoogleBooks = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + content['ISBN'][0]
             rGoogle = requests.get(url = urlGoogleBooks)
-            contenidoGoogle = rGoogle.json()
-        
+            #contenidoGoogle = rGoogle.json()
+            if (rGoogle.json()['totalItems'] == 0):
+                respuesta['cover-art'] = 'null'
+            else: #contenidoGoogle['items']:
+                respuesta['cover-art'] = rGoogle.json()['items'][0]['volumeInfo']['imageLinks']['thumbnail']
             #print (contenidoGoogle)
-        
-        respuesta = {}
         
         respuesta['title'] = content['title']
         respuesta['author'] = content['author']
-        respuesta['available'] = True
+        respuesta['available'] = self.comprobarDisponibilidad(codigosOCLC)
         respuesta['library'] = content['library'][0]['institutionName']
-        if (contenidoGoogle['totalItems'] == 0):
-            respuesta['cover-art'] = 'null'
-        else: #contenidoGoogle['items']:
-            respuesta['cover-art'] = contenidoGoogle['items'][0]['volumeInfo']['imageLinks']['thumbnail']
-        #else:
-            #respuesta['cover-art'] = 'null'
+        
         
         return respuesta
     
@@ -92,6 +89,40 @@ class JanetServWMS():
         with open('wskey.conf') as f:
             wskeydata = json.load(f)
             
-        URL = "http://www.worldcat.org/webservices/catalog/search/opensearch?"
+        URL = "https://www.worldcat.org/circ/availability/sru/service?"
+        URL = URL + "query=no%3Aocm" + codigosOCLC[0] + "&x-registryId=" + wskeydata['registry_id']
         
+        APIkey = wskeydata['key']
+        secret = wskeydata['secret']
         
+        my_wskey = wskey.Wskey(key=APIkey, secret=secret, options=None)
+        
+        authorization_header = my_wskey.get_hmac_signature(
+                method='GET',
+                request_url=URL,
+                options=None)
+        
+        r = urllib.request.Request(url = URL, headers={
+                'Authorization': authorization_header})
+        response = urllib.request.urlopen(r)
+        
+        content = response.read()
+        #print (content)
+        
+        xmlns = {'sRR': 'http://www.loc.gov/zing/srw/'}
+                         #'oclcterms': 'http://purl.org/oclc/terms/'}
+        tree = ET.parse(io.BytesIO(content))
+        
+        root = tree.getroot()
+        
+        #print(root)
+        
+        for holdings in root.findall('.//sRR:records/sRR:record/sRR:recordData/opacRecord/holdings', xmlns):
+            for items in holdings.findall('.//holding/circulations'):
+                for item in items.findall('.//circulation'):
+                    #print (item.find('availableNow').get('value'))
+                    #print (item.get('availableNow'))
+                    if (int(item.find('availableNow').get('value')) > 0): return True
+                    
+            #codsOCLC.append(item.find("oclcterms:recordIdentifier", xmlnamespaces).text)
+        return False
