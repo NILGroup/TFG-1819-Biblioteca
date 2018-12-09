@@ -26,8 +26,9 @@ class JanetServWatson():
         service.set_http_config({'timeout': 100})
         response = service.message(workspace_id=data["workspace_id"], input={'text': client_request["content"]}).get_result()
         respuesta['errorno'] = 0
+    
         #print (response)
-        if not response['intents']:
+        if not response['entities']:
             respuesta['content-type'] = 'text'
             respuesta['has-extra-data'] = False
         else:

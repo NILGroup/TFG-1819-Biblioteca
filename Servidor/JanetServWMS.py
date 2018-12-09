@@ -12,25 +12,27 @@ import requests
 import json
 import lxml.etree as ET
 import io
+from bs4 import BeautifulSoup
 from authliboclc import wskey
 
 class JanetServWMS():
     
-    def buscar(self, datos_consulta):
+    def buscarLibros(self, datos_consulta):
         
         with open('wskey.conf') as f:
             wskeydata = json.load(f)
             
         URL = "http://www.worldcat.org/webservices/catalog/search/opensearch?"
         
-        consulta = {"wskey": wskeydata["key"]}
+        consulta = {"wskey": wskeydata["key"], "count": 3}
         if 'title' in datos_consulta:
             consulta['q'] = 'srw.ti all "' + datos_consulta['title'] + '"'
         elif 'author' in datos_consulta:
             consulta['q'] = 'srw.au all "' + datos_consulta['author'] + '"'
         else:
             consulta['q'] = 'srw.kw all "' + datos_consulta['generic'] + '"'
-        consulta['q'] = consulta['q'] + 'and srw.li all "' + wskeydata["oclc_symbol"] + '" and srw.la all "spa"'
+        consulta['q'] = consulta['q'] + 'and srw.li all "' + wskeydata["oclc_symbol"]
+        consulta['q'] = consulta['q'] + '" and srw.la all "spa"' 
         URL = URL + urllib.parse.urlencode(consulta)
         uh = urllib.request.urlopen(URL)
         content = uh.read()
@@ -41,21 +43,38 @@ class JanetServWMS():
         
         root = tree.getroot()
         
-        codsOCLC = []
+        respuesta = []
         for item in root.findall('Atom:entry', xmlnamespaces):
-            codsOCLC.append(item.find("oclcterms:recordIdentifier", xmlnamespaces).text)
+            temp = {"title": item.find("Atom:title", xmlnamespaces).text, 
+                    "author": item.find("Atom:author/Atom:name", xmlnamespaces).text, 
+                    #"url": item.find("Atom:link", xmlnamespaces).get("href"),
+                    "oclc": item.find("oclcterms:recordIdentifier", xmlnamespaces).text}
+            temp["cover-art"] = self.buscarCoverArts(item.find("Atom:link", xmlnamespaces).get("href"))
+            respuesta.append(temp)
         
-        #print (codsOCLC)
+        #for item in respuesta:
+            #item["cover-art"] = self.buscarCoverArts(item["url"])
+            #del item["url"]
+        #self.buscarCoverArts('http://www.worldcat.org/title/harry-potter-y-el-prisionero-de-azkaban/oclc/912488850')
+        #print (repuesta)
         
-        return codsOCLC
+        return respuesta
+    
+    def buscarCoverArts(self, url):
+        r = requests.get(url)
+        soup = BeautifulSoup(r.content, "lxml")
         
-    def cargarInformacion(self, codigosOCLC):
+        #print(soup.find('img', {'class': 'cover'})['src'])
+        
+        return "https:" + soup.find('img', {'class': 'cover'})['src']
+        
+    def cargarInformacionLibro(self, codigoOCLC):
         
         with open('wskey.conf') as f:
             wskeydata = json.load(f)
             
         URL = "http://www.worldcat.org/webservices/catalog/content/libraries/"
-        URL = URL + codigosOCLC[0] + '?'
+        URL = URL + codigoOCLC + '?'
         
         consulta = {"wskey": wskeydata["key"], "format": "json", 
                     "oclcsymbol": wskeydata["oclc_symbol"], "location": "Spain"}
@@ -63,25 +82,14 @@ class JanetServWMS():
         
         r = requests.get(url = URL)
         content = r.json()
-        #print (content)
         
         respuesta = {}
         
-        if 'ISBN' in content:
-            urlGoogleBooks = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + content['ISBN'][0]
-            rGoogle = requests.get(url = urlGoogleBooks)
-            #contenidoGoogle = rGoogle.json()
-            if (rGoogle.json()['totalItems'] == 0):
-                respuesta['cover-art'] = 'null'
-            else: #contenidoGoogle['items']:
-                respuesta['cover-art'] = rGoogle.json()['items'][0]['volumeInfo']['imageLinks']['thumbnail']
-            #print (contenidoGoogle)
-        
         respuesta['title'] = content['title']
         respuesta['author'] = content['author']
-        respuesta['available'] = self.comprobarDisponibilidad(codigosOCLC)
+        respuesta['available'] = self.comprobarDisponibilidad(codigoOCLC)
         respuesta['library'] = content['library'][0]['institutionName']
-        
+        respuesta['url'] = content['library'][0]['opacUrl']
         
         return respuesta
     

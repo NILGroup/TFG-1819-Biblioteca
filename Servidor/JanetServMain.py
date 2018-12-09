@@ -20,6 +20,7 @@ class janetService():
         print("Usuario conectado por POST")
         
         post_data = {}
+        post_data["type"] = request.POST.get('type')
         post_data["content"] = request.POST.get('content')
         procesador = JanetServProcessor.JanetServProcessor()
         respuesta = procesador.procesarDatos_POST(post_data)
