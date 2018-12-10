@@ -11,6 +11,7 @@ import urllib
 import requests
 import json
 import lxml.etree as ET
+from lxml import html
 import io
 from bs4 import BeautifulSoup
 from authliboclc import wskey
@@ -49,7 +50,7 @@ class JanetServWMS():
                     "author": item.find("Atom:author/Atom:name", xmlnamespaces).text, 
                     #"url": item.find("Atom:link", xmlnamespaces).get("href"),
                     "oclc": item.find("oclcterms:recordIdentifier", xmlnamespaces).text}
-            temp["cover-art"] = self.buscarCoverArts(item.find("Atom:link", xmlnamespaces).get("href"))
+            temp["cover-art"] = self.buscarCoverArts("https://ucm.on.worldcat.org/oclc/"+ temp["oclc"])
             respuesta.append(temp)
         
         #for item in respuesta:
@@ -61,12 +62,14 @@ class JanetServWMS():
         return respuesta
     
     def buscarCoverArts(self, url):
-        r = requests.get(url)
-        soup = BeautifulSoup(r.content, "lxml")
+        r = requests.get(url, timeout=5)
+        web = html.fromstring(r.content)
+        #soup = BeautifulSoup(r.text, "lxml")
         
-        #print(soup.find('img', {'class': 'cover'})['src'])
+        #print(web.xpath('//div[@class="coverart"]'))
+        img = (web.xpath('//div[@class="coverart"]/img/@ng-src')[0])
         
-        return "https:" + soup.find('img', {'class': 'cover'})['src']
+        return "https:" + img
         
     def cargarInformacionLibro(self, codigoOCLC):
         
