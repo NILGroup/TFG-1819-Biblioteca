@@ -88,11 +88,13 @@ class JanetServWMS():
         
         respuesta = {}
         
+        respuesta['response'] = "Aquí tienes el libro que me pediste"
         respuesta['title'] = content['title']
         respuesta['author'] = content['author']
         respuesta['available'] = self.comprobarDisponibilidad(codigoOCLC)
         respuesta['library'] = content['library'][0]['institutionName']
         respuesta['url'] = content['library'][0]['opacUrl']
+        respuesta['cover-art'] = self.buscarCoverArts("https://ucm.on.worldcat.org/oclc/" + codigoOCLC)
         
         return respuesta
     

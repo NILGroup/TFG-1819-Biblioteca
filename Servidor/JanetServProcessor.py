@@ -35,6 +35,8 @@ class JanetServProcessor():
             wms = JanetServWMS.JanetServWMS()
             respuesta.update(wms.cargarInformacionLibro(client_request['content']))
             respuesta['content-type'] = 'single-book'
-                
+        
+        respuesta["errorno"] = 0
+
         json_response = json.dumps(respuesta, ensure_ascii=False).encode('utf8')
         return json_response
