@@ -19,20 +19,57 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "tableViewCell") as! TableViewCell
-        self.automaticallyAdjustsScrollViewInsets = false
-        cell.setDatos(info: mensajes[indexPath.row])
         
-        if (mensajes[indexPath.item].getEmisor() == .User) {
-            cell.contentView.transform = CGAffineTransform(scaleX: -1,y: 1)
+        //self.automaticallyAdjustsScrollViewInsets = false
+        
+         if (mensajes[indexPath.row].getTipo() == .text) {
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageViewCell
+            cell.setDatos(info: mensajes[indexPath.row])
+            
+            if (mensajes[indexPath.item].getEmisor() == .User) {
+                cell.contentView.transform = CGAffineTransform(scaleX: -1,y: 1)
+            } else {
+                cell.contentView.transform = CGAffineTransform.identity
+            }
+            
+            if (self.getAltoContrasteActivo()) {
+                cell.setAltoContraste(contraste: true)
+            }
+            
+            return cell
+            
+        } else if (mensajes[indexPath.row].getTipo() == .singlebook){
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "singleBookViewCell", for: indexPath) as! SingleBookViewCell
+            cell.setDatos(info: mensajes[indexPath.row])
+            
+            if (mensajes[indexPath.item].getEmisor() == .User) {
+                cell.contentView.transform = CGAffineTransform(scaleX: -1,y: 1)
+            } else {
+                cell.contentView.transform = CGAffineTransform.identity
+            }
+            
+            if (self.getAltoContrasteActivo()) {
+                cell.setAltoContraste(contraste: true)
+            }
+            
+            return cell
+            
         } else {
-            cell.contentView.transform = CGAffineTransform.identity
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "listBooksViewCell", for: indexPath) as! ListBooksViewCell
+            cell.setDatos(info: mensajes[indexPath.row])
+            
+            if (mensajes[indexPath.item].getEmisor() == .User) {
+                cell.contentView.transform = CGAffineTransform(scaleX: -1,y: 1)
+            } else {
+                cell.contentView.transform = CGAffineTransform.identity
+            }
+            
+            if (self.getAltoContrasteActivo()) {
+                cell.setAltoContraste(contraste: true)
+            }
+            
+            return cell
         }
         
-        if (self.getAltoContrasteActivo()) {
-            cell.setAltoContraste(contraste: true)
-        }
-        
-        return cell
     }
 }

@@ -12,17 +12,19 @@ import Foundation
 class Globos {
     
     enum TiposEmisor{ case Bot, User }
-    enum TiposMensaje { case text, singlebook }
+    enum TiposMensaje { case text, singlebook, listbooks }
     
     private let emisor: TiposEmisor
     private var respuesta: String
     private var url: String
-    private var imagenURL: String
+    private var imagenURL: String?
     private let type: TiposMensaje
     private var title: String?
     private var author: String?
     private var available: Bool
     private var librarys: String?
+    private var codOCLC: Int?
+    private var list: [Globos]?
     
     init() {
         self.emisor = TiposEmisor.Bot
@@ -34,6 +36,8 @@ class Globos {
         self.author = nil
         self.available = true
         self.librarys = nil
+        self.codOCLC = nil
+        self.list = nil
     }
     
     init(texto: String, emisor: TiposEmisor) {
@@ -46,6 +50,22 @@ class Globos {
         self.author = nil
         self.available = true
         self.librarys = nil
+        self.codOCLC = nil
+        self.list = nil
+    }
+    
+    init(texto: String, emisor: TiposEmisor, tipo: TiposMensaje) {
+        self.emisor = emisor
+        self.respuesta = texto
+        self.url = ""
+        self.imagenURL = nil
+        self.type = tipo
+        self.title = nil
+        self.author = nil
+        self.available = true
+        self.librarys = nil
+        self.codOCLC = nil
+        self.list = nil
     }
     
     init(texto: String, foto: String, emisor: TiposEmisor, tipo: TiposMensaje) {
@@ -58,6 +78,8 @@ class Globos {
         self.author = nil
         self.available = true
         self.librarys = nil
+        self.codOCLC = nil
+        self.list = nil
     }
     
     func getEmisor() -> TiposEmisor {
@@ -77,7 +99,7 @@ class Globos {
     }
     
     func getImagen() -> String {
-        return self.imagenURL
+        return self.imagenURL!
     }
     
     func getTitle() -> String {
@@ -103,6 +125,20 @@ class Globos {
             return ""
         }
         return self.librarys!
+    }
+    
+    func getCodOCLC() -> Int {
+        if (self.codOCLC == nil) {
+            return -1
+        }
+        return self.codOCLC!
+    }
+    
+    func getlist() -> [Globos] {
+        if (self.list == nil) {
+            return []
+        }
+        return self.list!
     }
     
     func setRespuesta(text: String) {
@@ -131,6 +167,14 @@ class Globos {
     
     func setImagen(foto: String) {
         self.imagenURL = foto
+    }
+    
+    func setCodOCLC(code: Int) {
+        self.codOCLC = code
+    }
+    
+    func setList(list: [Globos]) {
+        self.list = list
     }
     
 }

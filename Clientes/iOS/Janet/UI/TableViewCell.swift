@@ -12,7 +12,7 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var burbuja: UIImageView!
-    @IBOutlet weak var vistaLibros: UIView!
+    /*@IBOutlet weak var vistaLibros: UIView!
     
     @IBOutlet weak var bottomMes: NSLayoutConstraint!
     
@@ -20,83 +20,64 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var available: UILabel!
-    @IBOutlet weak var library: UILabel!
+    @IBOutlet weak var library: UILabel!*/
     
     private var altoContraste: Bool! = false
     
     internal func setDatos(info: Globos) {
         
-        if (info.getEmisor() == .User) {
-            self.message.text = "Tu: " + info.getRespuesta();
-            self.message.textAlignment = .right;
-            self.message.transform = CGAffineTransform(scaleX: -1,y: 1)
-            self.message.sizeToFit()
-            coverart.image = nil
-            bottomMes.priority = UILayoutPriority(rawValue: 999)
-            bottomMes.isActive = true
-            self.cambiarBurbuja(info: .User)
-        }
-        else {
-            self.message.text = "Janet: " + info.getRespuesta()
-            self.message.textAlignment = .left
-            self.message.sizeToFit()
-            self.message.transform = CGAffineTransform.identity
-            if (info.getTipo() == Globos.TiposMensaje.singlebook) {
-                bottomMes.priority = UILayoutPriority(rawValue: 499)
-                self.generarInterfaz(datos: info)
-            } else {
-                coverart.image = nil
-                bottomMes.priority = UILayoutPriority(rawValue: 999)
-                bottomMes.isActive = true
-                self.cambiarBurbuja(info: .Bot)
-            }
-        }
     }
     
     internal func getText() -> String{
         return self.message.text!
     }
     
-    internal func getAltura() -> CGFloat {
+    /*internal func getAltura() -> CGFloat {
         if (self.vistaLibros.isHidden) {
             return self.message.frame.size.height + 15
         }
         
         return self.message.frame.size.height + self.vistaLibros.frame.size.height
-    }
+    }*/
     
     func setAltoContraste(contraste: Bool) {
         self.altoContraste = contraste
     }
     
-    internal func updateAltura(ancho: CGFloat) {
+    /*internal func updateAltura(ancho: CGFloat) {
         self.message.bounds.size.width = ancho
-    }
+    }*/
     
-    internal func vistaLibrosHidden() -> Bool{
+    /*internal func vistaLibrosHidden() -> Bool{
         print (self.message.text!)
         return self.vistaLibros.isHidden
-    }
+    }*/
     
-    private func generarInterfaz(datos: Globos) {
+    /*private func generarInterfaz(datos: Globos) {
         
         var image: UIImage?
         
-        let url = NSURL(string: datos.getImagen())! as URL
-        if let imageData: NSData = NSData(contentsOf: url) {
-            image = UIImage(data: imageData as Data)
+        if (coverart.image == nil) {
+            let url = NSURL(string: datos.getImagen())! as URL
+            if let imageData: NSData = NSData(contentsOf: url) {
+                image = UIImage(data: imageData as Data)
+                if (image?.size.width == 1) {
+                    image = nil
+                }
+            }
+            coverart.image = image
         }
         
-        coverart.image = image
         title.text = datos.getTitle(); title.font = UIFont.boldSystemFont(ofSize: 17.0); title.textColor = UIColor.white
         author.text = datos.getAuthor(); author.textColor = UIColor.white
         available.text = "Disponible: " + String(datos.getAvailable()); available.textColor = UIColor.white
         library.text = "Biblioteca: " + datos.getLibrarys(); library.textColor = UIColor.white
         library.adjustsFontSizeToFitWidth = true
+        coverart.isHidden = false; title.isHidden = false; author.isHidden = false; available.isHidden = false; library.isHidden = false
         vistaLibros.isHidden = false
-    }
+    }*/
     
-    private func cambiarBurbuja(info: Globos.TiposEmisor) {
+    internal func cambiarBurbuja(info: Globos.TiposEmisor) {
         
         guard let imagen = UIImage(named: "Bubble") else { return }
         
@@ -119,7 +100,7 @@ class TableViewCell: UITableViewCell {
     
 }
 
-private extension UIImage {
+/*private extension UIImage {
     func imageWithBorder(width: CGFloat, color: UIColor) -> UIImage? {
         let square = CGSize(width: min(size.width, size.height) + width * 2, height: min(size.width, size.height) + width * 2)
         let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
@@ -134,4 +115,4 @@ private extension UIImage {
         UIGraphicsEndImageContext()
         return result
     }
-}
+}*/
