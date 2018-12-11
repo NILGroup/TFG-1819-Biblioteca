@@ -15,6 +15,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var capaDegradado: UIView!
+    @IBOutlet weak var spinnerView: UIView!
+    @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
     internal var mensajes: [Globos] = []
     private let audioEngine = AVAudioEngine()
@@ -53,6 +55,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             self.altoContraste()
         }
         
+        self.prepararSpinner()
+        
         mensajes.append(Globos(texto: "Hola! Soy Janet. ¿En qué te puedo ayudar?", emisor: .Bot))
         //mensajes.append(Globos(texto: " ¡Que levante la mano aquel que no se ponga nervioso ante un examen! Lo que nos jugamos ante un test puede determinar parte de nuestro futuro, por eso la ansiedad se apodera de nosotros. Algunas personas se plantean hasta abandonar su sueño porque no encuentran fuerzas para continuar hasta el final. La motivación es muy importante para no echar al traste en el último momento todo el esfuerzo de semanas, meses o años, por eso leer una poderosa frase antes de un examen nos puede animar a continuar", emisor: .Bot))
         if (trascribir) {
@@ -75,38 +79,58 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         }
     }
     
+    private func prepararSpinner() {
+        
+        spinnerView.layer.cornerRadius = 5;
+        spinnerView.layer.masksToBounds = true;
+        
+        //activitySpinner.style = UIActivityIndicatorView.Style.whiteLarge
+        
+        activitySpinner.accessibilityLabel = "Cargando, espere."
+        activitySpinner.center = CGPoint(x: 67.0, y: 55.0)
+        activitySpinner.color = UIColor.white
+    }
+    
     internal func enviarSolicitud(tipo: String, peticion: String) {
         let dao = DAO();
         
-        UIView.transition(with: view, duration: 0.6, options: .transitionCrossDissolve, animations: {
-            self.startButton.isHidden = true
+        UIView.transition(with: self.view, duration: 0.6, options: .transitionCrossDissolve, animations: {
+                self.startButton.isHidden = true
+                self.spinnerView.isHidden = false
+        }, completion:{
+            finished in
+            self.activitySpinner.startAnimating()
         })
         
         self.startButton.isEnabled = false
         
-        dao.tratarDatos(tipo: tipo, peticion: peticion) {
-            respuesta in
-            
-            //Si el servidor ha fallado
-            if (respuesta.value(forKey: "errorno") as! NSNumber == 404) {
-                self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
-            }
-                //Si la conexión se ha realizado correctamente
-            else {
-                //Si los datos no son correctos
-                if (respuesta.value(forKey: "errorno") as! NSNumber != 0) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            dao.tratarDatos(tipo: tipo, peticion: peticion) {
+                respuesta in
+                
+                //Si el servidor ha fallado
+                if (respuesta.value(forKey: "errorno") as! NSNumber == 404) {
                     self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
-                } else if (respuesta.value(forKey: "errorno") as! NSNumber == 0){
-                    self.ponerDatosEnBot(datos: respuesta)
                 }
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                UIView.transition(with: self.view, duration: 0.6, options: .transitionCrossDissolve, animations: {
-                    self.startButton.isHidden = false
-                })
-                self.startButton.isEnabled = true
-                self.procesarFrase()
+                    //Si la conexión se ha realizado correctamente
+                else {
+                    //Si los datos no son correctos
+                    if (respuesta.value(forKey: "errorno") as! NSNumber != 0) {
+                        self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
+                    } else if (respuesta.value(forKey: "errorno") as! NSNumber == 0){
+                        self.ponerDatosEnBot(datos: respuesta)
+                    }
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.activitySpinner.stopAnimating()
+                    UIView.transition(with: self.view, duration: 0.6, options: .transitionCrossDissolve, animations: {
+                        self.startButton.isHidden = false
+                        self.spinnerView.isHidden = true
+                    })
+                    self.startButton.isEnabled = true
+                    self.procesarFrase()
+                }
             }
         }
     }
