@@ -103,7 +103,7 @@ class JanetServWMS():
             wskeydata = json.load(f)
             
         URL = "https://www.worldcat.org/circ/availability/sru/service?"
-        URL = URL + "query=no%3Aocm" + codigosOCLC[0] + "&x-registryId=" + wskeydata['registry_id']
+        URL = URL + "query=no%3Aocm" + codigosOCLC + "&x-registryId=" + wskeydata['registry_id']
         
         APIkey = wskeydata['key']
         secret = wskeydata['secret']
@@ -120,21 +120,16 @@ class JanetServWMS():
         response = urllib.request.urlopen(r)
         
         content = response.read()
-        #print (content)
         
         xmlns = {'sRR': 'http://www.loc.gov/zing/srw/'}
-                         #'oclcterms': 'http://purl.org/oclc/terms/'}
+        
         tree = ET.parse(io.BytesIO(content))
         
         root = tree.getroot()
         
-        #print(root)
-        
         for holdings in root.findall('.//sRR:records/sRR:record/sRR:recordData/opacRecord/holdings', xmlns):
-            for items in holdings.findall('.//holding/circulations'):
+            for items in holdings.iterdescendants('holding'):
                 for item in items.findall('.//circulation'):
-                    #print (item.find('availableNow').get('value'))
-                    #print (item.get('availableNow'))
                     if (int(item.find('availableNow').get('value')) > 0): return True
                     
             #codsOCLC.append(item.find("oclcterms:recordIdentifier", xmlnamespaces).text)
