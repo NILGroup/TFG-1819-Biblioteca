@@ -81,7 +81,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     
     private func prepararSpinner() {
         
-        spinnerView.layer.cornerRadius = 5;
+        spinnerView.layer.cornerRadius = 10;
         spinnerView.layer.masksToBounds = true;
         
         //activitySpinner.style = UIActivityIndicatorView.Style.whiteLarge

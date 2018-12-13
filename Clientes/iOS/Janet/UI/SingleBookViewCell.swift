@@ -37,7 +37,7 @@ class SingleBookViewCell: TableViewCell {
             if let imageData: NSData = NSData(contentsOf: url) {
                 image = UIImage(data: imageData as Data)
                 if (image?.size.width == 1) {
-                    image = nil
+                    image = UIImage(named: "Empty_Book")
                 }
             }
             coverart.image = image
