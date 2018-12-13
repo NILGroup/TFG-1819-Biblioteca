@@ -26,7 +26,6 @@ class JanetServWatson():
         service.set_http_config({'timeout': 100})
         response = service.message(workspace_id=data["workspace_id"], input={'text': client_request["content"]}).get_result()
         
-        #print (response)
         if not response['entities']:
             respuesta['content-type'] = 'text'
             respuesta['has-extra-data'] = False
@@ -35,7 +34,6 @@ class JanetServWatson():
             respuesta['has-extra-data'] = True
             respuesta.setdefault('extra-data', []).append(datosConsulta)
                 
-        #respuesta['autor'] = 
         respuesta['response'] = response["output"]["text"][0]
         return respuesta
     
@@ -48,7 +46,7 @@ class JanetServWatson():
                 datos['author'] = datosWatson['context']['resultado']
             else:
                 datos['generic'] = datosWatson['context']['resultado']
-            #print (datos)
+                
         return datos
             
             

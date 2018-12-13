@@ -13,7 +13,6 @@ import json
 import lxml.etree as ET
 from lxml import html
 import io
-from bs4 import BeautifulSoup
 from authliboclc import wskey
 
 class JanetServWMS():
@@ -48,28 +47,17 @@ class JanetServWMS():
         for item in root.findall('Atom:entry', xmlnamespaces):
             temp = {"title": item.find("Atom:title", xmlnamespaces).text, 
                     "author": item.find("Atom:author/Atom:name", xmlnamespaces).text, 
-                    #"url": item.find("Atom:link", xmlnamespaces).get("href"),
                     "oclc": item.find("oclcterms:recordIdentifier", xmlnamespaces).text}
             temp["cover-art"] = self.buscarCoverArts("https://ucm.on.worldcat.org/oclc/"+ temp["oclc"])
             respuesta.append(temp)
-        
-        #for item in respuesta:
-            #item["cover-art"] = self.buscarCoverArts(item["url"])
-            #del item["url"]
-        #self.buscarCoverArts('http://www.worldcat.org/title/harry-potter-y-el-prisionero-de-azkaban/oclc/912488850')
-        #print (repuesta)
         
         return respuesta
     
     def buscarCoverArts(self, url):
         r = requests.get(url, timeout=5)
         web = html.fromstring(r.content)
-        #soup = BeautifulSoup(r.text, "lxml")
         
-        #print(web.xpath('//div[@class="coverart"]'))
-        img = (web.xpath('//div[@class="coverart"]/img/@ng-src')[0])
-        
-        return "https:" + img
+        return "https:" + web.xpath('//div[@class="coverart"]/img/@ng-src')[0]
         
     def cargarInformacionLibro(self, codigoOCLC):
         

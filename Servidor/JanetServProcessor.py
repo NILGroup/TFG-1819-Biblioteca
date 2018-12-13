@@ -19,18 +19,20 @@ class JanetServProcessor():
         if (client_request["type"] == "query"):
             watson = JanetServWatson.JanetServWatson()
             respuesta = watson.consultar(client_request)
-            if (respuesta['has-extra-data'] == False):
-                del respuesta['has-extra-data']
-            else:
+            if (respuesta['has-extra-data']):
                 wms = JanetServWMS.JanetServWMS()
-                libros = wms.buscarLibros(respuesta['extra-data'][0])
-                respuesta['books'] = libros
-                respuesta['content-type'] = 'list-books'
-                del respuesta['has-extra-data']
+                respuesta['books'] = wms.buscarLibros(respuesta['extra-data'][0])
+                
+                if not respuesta['books']:
+                    del respuesta['books']
+                    respuesta['content-type'] = 'text'
+                    respuesta['response'] = 'Vaya, parece que no hay libros relacionados con esta consulta'
+                else:
+                    respuesta['content-type'] = 'list-books'
                 del respuesta['extra-data']
-                #print(respuesta)
-            #Para debuggear
-            #print(json.dumps(response, indent=2))
+                
+            del respuesta['has-extra-data']
+            
         elif (client_request["type"] == "oclc"):
             wms = JanetServWMS.JanetServWMS()
             respuesta.update(wms.cargarInformacionLibro(client_request['content']))
@@ -38,5 +40,4 @@ class JanetServProcessor():
         
         respuesta["errorno"] = 0
 
-        json_response = json.dumps(respuesta, ensure_ascii=False).encode('utf8')
-        return json_response
+        return json.dumps(respuesta, ensure_ascii=False).encode('utf8')
