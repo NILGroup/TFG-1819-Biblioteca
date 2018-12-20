@@ -15,6 +15,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var capaDegradado: UIView!
+    @IBOutlet weak var spinnerView: UIView!
+    @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
     internal var mensajes: [Globos] = []
     private let audioEngine = AVAudioEngine()
@@ -40,14 +42,22 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         tableView.rowHeight = UITableView.automaticDimension
         
         //registerSettingsBundle()
+        //Para sincronizar los ajustes de la app "Ajustes"
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
         defaultsChanged()
+        
+        //Para cuando un usuario pulsa en un libro de la lista de libros.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.prepararConsulta(_:)), name: NSNotification.Name(rawValue: "view1Tapped"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.prepararConsulta(_:)), name: NSNotification.Name(rawValue: "view2Tapped"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.prepararConsulta(_:)), name: NSNotification.Name(rawValue: "view3Tapped"), object: nil)
         
         if (contraste) {
             self.altoContraste()
         }
         
-       mensajes.append(Globos(texto: "Hola! Soy Janet. ¿En qué te puedo ayudar?", emisor: .Bot))
+        self.prepararSpinner()
+        
+        mensajes.append(Globos(texto: "Hola! Soy Janet. ¿En qué te puedo ayudar?", emisor: .Bot))
         //mensajes.append(Globos(texto: " ¡Que levante la mano aquel que no se ponga nervioso ante un examen! Lo que nos jugamos ante un test puede determinar parte de nuestro futuro, por eso la ansiedad se apodera de nosotros. Algunas personas se plantean hasta abandonar su sueño porque no encuentran fuerzas para continuar hasta el final. La motivación es muy importante para no echar al traste en el último momento todo el esfuerzo de semanas, meses o años, por eso leer una poderosa frase antes de un examen nos puede animar a continuar", emisor: .Bot))
         if (trascribir) {
             inicializarVoz()
@@ -61,6 +71,68 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         
         startButton.transform = CGAffineTransform(scaleX: 1, y: 1)
         comprobarPermisosReconocimientoVoz()
+    }
+    
+    @objc private func prepararConsulta(_ notification: NSNotification) {
+        if let dict = notification.userInfo as! [String : Any]? {
+            enviarSolicitud(tipo: dict["tipo"] as! String, peticion: String(dict["peticion"] as! Int))
+        }
+    }
+    
+    private func prepararSpinner() {
+        
+        spinnerView.layer.cornerRadius = 10;
+        spinnerView.layer.masksToBounds = true;
+        
+        //activitySpinner.style = UIActivityIndicatorView.Style.whiteLarge
+        
+        activitySpinner.accessibilityLabel = "Cargando, espere."
+        activitySpinner.center = CGPoint(x: 67.0, y: 55.0)
+        activitySpinner.color = UIColor.white
+    }
+    
+    internal func enviarSolicitud(tipo: String, peticion: String) {
+        let dao = DAO();
+        
+        UIView.transition(with: self.view, duration: 0.6, options: .transitionCrossDissolve, animations: {
+                self.startButton.isHidden = true
+                self.spinnerView.isHidden = false
+        }, completion:{
+            finished in
+            self.activitySpinner.startAnimating()
+        })
+        
+        self.startButton.isEnabled = false
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            dao.tratarDatos(tipo: tipo, peticion: peticion) {
+                respuesta in
+                
+                //Si el servidor ha fallado
+                if (respuesta.value(forKey: "errorno") as! NSNumber == 404) {
+                    self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
+                }
+                    //Si la conexión se ha realizado correctamente
+                else {
+                    //Si los datos no son correctos
+                    if (respuesta.value(forKey: "errorno") as! NSNumber != 0) {
+                        self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
+                    } else if (respuesta.value(forKey: "errorno") as! NSNumber == 0){
+                        self.ponerDatosEnBot(datos: respuesta)
+                    }
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.activitySpinner.stopAnimating()
+                    UIView.transition(with: self.view, duration: 0.6, options: .transitionCrossDissolve, animations: {
+                        self.startButton.isHidden = false
+                        self.spinnerView.isHidden = true
+                    })
+                    self.startButton.isEnabled = true
+                    self.procesarFrase()
+                }
+            }
+        }
     }
     
     private func comprobarPermisosReconocimientoVoz() {
@@ -171,10 +243,22 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     }
     
     private func ponerDatosEnBot(datos: NSDictionary) {
-        if (datos.value(forKey: "content-type") as! String == "text") {
+        if (datos.value(forKey: "content-type") as! String == "list-books") {
             self.botText = datos.value(forKey: "response") as! String;
-            self.mensajes.append(Globos(texto: self.botText, emisor: .Bot))
-        } else {
+            let aux = datos.value(forKey: "books") as! [[String : Any]]
+            var books : [Globos] = []
+            for item in aux {
+                let temp = Globos(texto: "", foto: item["cover-art"] as! String, emisor: .Bot,
+                                  tipo: Globos.TiposMensaje.listbooks)
+                temp.setTitle(text: item["title"] as! String)
+                temp.setAuthor(text: item["author"] as! String)
+                temp.setCodOCLC(code: Int(item["oclc"] as! String)!)
+                books.append(temp)
+            }
+            let temp = Globos(texto: self.botText, emisor: .Bot, tipo: Globos.TiposMensaje.listbooks)
+            temp.setList(list: books)
+            self.mensajes.append(temp)
+        } else if (datos.value(forKey: "content-type") as! String == "single-book"){
             self.botText = datos.value(forKey: "response") as! String;
             let temp = Globos(texto: self.botText, foto: datos.value(forKey: "cover-art") as! String, emisor: .Bot,
                    tipo: Globos.TiposMensaje.singlebook)
@@ -182,7 +266,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             temp.setAuthor(text: datos.value(forKey: "author") as! String)
             temp.setLibrarys(text: datos.value(forKey: "library") as! String)
             temp.setAvailable(available: datos.value(forKey: "available") as! Bool)
+            temp.setURL(url: datos.value(forKey: "url") as! String)
             self.mensajes.append(temp)
+        } else { //Content-type = Text
+            self.botText = datos.value(forKey: "response") as! String;
+            self.mensajes.append(Globos(texto: self.botText, emisor: .Bot))
         }
     }
 
@@ -307,28 +395,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             
             if (mensajes[mensajes.count - 1].getRespuesta() != "") {
                 playSound(soundName: "Recognized voice", ext: "wav")
-                let dao = DAO();
-                
-                dao.tratarDatos(peticion: mensajes[mensajes.count - 1].getRespuesta()) {
-                    respuesta in
-                    
-                    //Si el servidor ha fallado
-                    if (respuesta.value(forKey: "errorno") as! NSNumber == 404) {
-                        self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
-                    }
-                        //Si la conexión se ha realizado correctamente
-                    else {
-                        //Si los datos no son correctos
-                        if (respuesta.value(forKey: "errorno") as! NSNumber != 0) {
-                            self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
-                        } else if (respuesta.value(forKey: "errorno") as! NSNumber == 0){
-                            self.ponerDatosEnBot(datos: respuesta)
-                        }
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self.procesarFrase()
-                    }
-                }
+                self.enviarSolicitud(tipo: "query", peticion: mensajes[mensajes.count - 1].getRespuesta())
                 
             } else {
                 playSound(soundName: "Micro Stopped", ext: "wav")
