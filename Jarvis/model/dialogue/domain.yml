@@ -1,0 +1,121 @@
+%YAML 1.1
+---
+actions:
+- utter_saludo
+- utter_saludo_nombre
+- utter_quien_soy
+- utter_consulta_catalogo_libros
+- utter_despedida
+- utter_no_te_entiendo
+- action_busca_libro
+- utter_consulta_telefono
+- utter_consulta_localizacion
+- utter_consulta_horario_abierto
+- utter_consulta_horario_cerrado
+config:
+  store_entities_as_slots: true
+entities:
+- persona
+- PER
+- libro
+- libro_titulo
+- juego
+- musica
+- musica_titulo
+- pelicula_titulo
+- pelicula
+- localizacion
+forms: []
+intents:
+- saludos:
+    use_entities: true
+- como_estas:
+    use_entities: true
+- quien_soy:
+    use_entities: false
+- me_llamo:
+    use_entities: true
+- gracias:
+    use_entities: false
+- despedidas:
+    use_entities: true
+- consulta_catalogo_articulos:
+    use_entities: true
+- consulta_catalogo_juegos:
+    use_entities: true
+- consulta_catalogo_libros:
+    use_entities: true
+- consulta_catalogo_musica:
+    use_entities: true
+- consulta_catalogo_peliculas:
+    use_entities: true
+- consulta_horario_close:
+    use_entities: true
+- consulta_horario_general:
+    use_entities: true
+- consulta_horario_open:
+    use_entities: true
+- consulta_localizacion:
+    use_entities: true
+- consulta_telefono:
+    use_entities: true
+slots:
+  autores:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  libro:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  localizacion:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  persona:
+    auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_consulta_catalogo_libros:
+  - text: Aquí tienes los libros que me pediste.
+  utter_consulta_horario_abierto:
+  - text: La {localizacion} está abierta ahora.
+  - text: Si, ahora mismo está abierta.
+  - text: Esta biblioteca está abierta.
+  utter_consulta_horario_cerrado:
+  - text: La {localizacion} está cerrada ahora.
+  - text: Si, ahora mismo está cerrada.
+  - text: Esta biblioteca está cerrada.
+  utter_consulta_localizacion:
+  - text: Aquí está la localización que me pediste.
+  - text: Aquí está la {localizacion}
+  utter_consulta_telefono:
+  - text: Aquí está el teléfono que me pediste.
+  - text: Aquí está el teléfono de la {localizacion}
+  utter_despedida:
+  - text: Te veo luego.
+  - text: Adiós.
+  - text: Me ha gustado hablar contigo.
+  - text: Hasta luego.
+  - text: Bye bye.
+  - text: Chao.
+  utter_no_te_entiendo:
+  - text: No te he entendido.
+  - text: No entiendo que quieres decir.
+  - text: No te entiendo. Intenta reformular tu consulta.
+  - text: Mis creadores no me han enseñado a responder tu consulta.
+  utter_quien_soy:
+  - text: Soy Janet.
+  - text: Soy Janet, pero mis amigos me llaman... Janet
+  - text: ¿Estás de broma? Soy Janet.
+  utter_saludo:
+  - text: Hola. ¿Cómo puedo ayudarle?
+  - text: Salutaciones terrícola.
+  - text: Hola.
+  - text: ¡Hola holita!
+  - text: ¡Buenas!
+  - text: Hola. Me alegra verte de vuelta.
+  utter_saludo_nombre:
+  - text: Hola {persona}.
+  - text: Hola {persona}. ¿Qué tal estás hoy?

@@ -1,0 +1,1140 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "saludos",
+        "text": "Hola"
+      },
+      {
+        "intent": "saludos",
+        "text": "Buenas"
+      },
+      {
+        "intent": "saludos",
+        "text": "Buenos días"
+      },
+      {
+        "intent": "saludos",
+        "text": "Buenas tardes"
+      },
+      {
+        "intent": "saludos",
+        "text": "Buenas noches"
+      },
+      {
+        "intent": "saludos",
+        "text": "Saludos"
+      },
+      {
+        "intent": "como_estas",
+        "text": "Qué tal"
+      },
+      {
+        "intent": "como_estas",
+        "text": "Cómo estás"
+      },
+      {
+        "intent": "como_estas",
+        "text": "Qué te pasa"
+      },
+      {
+        "intent": "quien_soy",
+        "text": "Cómo te llamas"
+      },
+      {
+        "intent": "quien_soy",
+        "text": "Cuál es tu nombre"
+      },
+      {
+        "intent": "quien_soy",
+        "text": "Quién eres"
+      },
+      {
+        "intent": "quien_soy",
+        "text": "Te conozco"
+      },
+      {
+        "intent": "me_llamo",
+        "text": "Soy yo"
+      },
+      {
+        "intent": "me_llamo",
+        "entities": [
+          {
+            "start": 4,
+            "end": 10,
+            "value": "Martin",
+            "entity": "persona"
+          }
+        ],
+        "text": "Soy Martin"
+      },
+      {
+        "intent": "me_llamo",
+        "entities": [
+          {
+            "start": 9,
+            "end": 24,
+            "value": "Mauricio Abbati",
+            "entity": "persona"
+          }
+        ],
+        "text": "Me llamo Mauricio Abbati"
+      },
+      {
+        "intent": "me_llamo",
+        "entities": [
+          {
+            "start": 13,
+            "end": 19,
+            "value": "Susana",
+            "entity": "persona"
+          }
+        ],
+        "text": "Mi nombre es Susana"
+      },
+      {
+        "intent": "gracias",
+        "text": "Gracias"
+      },
+      {
+        "intent": "gracias",
+        "text": "Te lo agradezco"
+      },
+      {
+        "intent": "gracias",
+        "text": "Muchas gracias"
+      },
+      {
+        "intent": "gracias",
+        "text": "Me has ayudado mucho"
+      },
+      {
+        "intent": "despedidas",
+        "text": "Adiós"
+      },
+      {
+        "intent": "despedidas",
+        "text": "Adios"
+      },
+      {
+        "intent": "despedidas",
+        "text": "Hasta luego"
+      },
+      {
+        "intent": "despedidas",
+        "text": "Chao"
+      },
+      {
+        "intent": "despedidas",
+        "text": "Ciao"
+      },
+      {
+        "intent": "despedidas",
+        "text": "Hasta nunca"
+      },
+      {
+        "intent": "despedidas",
+        "text": "Hasta pronto"
+      },
+      {
+        "intent": "despedidas",
+        "text": "Nos vemos"
+      },
+      {
+        "intent": "consulta_catalogo_articulos",
+        "entities": [
+          {
+            "start": 19,
+            "end": 27,
+            "value": "biología",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca artículos de biología"
+      },
+      {
+        "intent": "consulta_catalogo_articulos",
+        "entities": [
+          {
+            "start": 20,
+            "end": 26,
+            "value": "música",
+            "entity": "libro"
+          }
+        ],
+        "text": "Quiero artículos de música"
+      },
+      {
+        "intent": "consulta_catalogo_articulos",
+        "entities": [
+          {
+            "start": 22,
+            "end": 30,
+            "value": "medicina",
+            "entity": "libro"
+          }
+        ],
+        "text": "Necesito artículos de medicina"
+      },
+      {
+        "intent": "consulta_catalogo_juegos",
+        "entities": [
+          {
+            "start": 22,
+            "end": 29,
+            "value": "Far Cry",
+            "entity": "juego"
+          }
+        ],
+        "text": "Busca juegos llamados Far Cry"
+      },
+      {
+        "intent": "consulta_catalogo_juegos",
+        "entities": [
+          {
+            "start": 16,
+            "end": 26,
+            "value": "God of War",
+            "entity": "juego"
+          }
+        ],
+        "text": "Busca juegos de God of War"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 16,
+            "end": 30,
+            "value": "Fuego y Sangre",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca libros de Fuego y Sangre"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 23,
+            "end": 33,
+            "value": "El Quijote",
+            "entity": "libro_titulo"
+          },
+          {
+            "start": 44,
+            "end": 63,
+            "value": "Miguel de Cervantes",
+            "entity": "persona"
+          }
+        ],
+        "text": "Quiero libros llamados El Quijote del autor Miguel de Cervantes"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 23,
+            "end": 32,
+            "value": "Yo, Julia",
+            "entity": "libro_titulo"
+          },
+          {
+            "start": 46,
+            "end": 66,
+            "value": "Santiago Posteguillo",
+            "entity": "persona"
+          }
+        ],
+        "text": "Quiero libros llamados Yo, Julia escritos por Santiago Posteguillo"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 18,
+            "end": 37,
+            "value": "Matemática Discreta",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busco un libro de Matemática Discreta"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 23,
+            "end": 29,
+            "value": "Narnia",
+            "entity": "libro_titulo"
+          }
+        ],
+        "text": "Busco un libro llamado Narnia"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 19,
+            "end": 31,
+            "value": "Harry Potter",
+            "entity": "libro"
+          }
+        ],
+        "text": "Quiero un libro de Harry Potter"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 25,
+            "end": 34,
+            "value": "Yo, Julia",
+            "entity": "libro_titulo"
+          }
+        ],
+        "text": "Quiero un libro titulado Yo, Julia"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 28,
+            "end": 34,
+            "value": "Orwell",
+            "entity": "persona"
+          }
+        ],
+        "text": "Quiero un libro escrito por Orwell"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 16,
+            "end": 33,
+            "value": "Historia del arte",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca libros de Historia del arte"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 23,
+            "end": 29,
+            "value": "Orwell",
+            "entity": "persona"
+          }
+        ],
+        "text": "Busca libros del autor Orwell"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 26,
+            "end": 37,
+            "value": "J K Rowling",
+            "entity": "persona"
+          }
+        ],
+        "text": "Busca libros de la autora J K Rowling"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 26,
+            "end": 46,
+            "value": "Francisco de Quevedo",
+            "entity": "persona"
+          }
+        ],
+        "text": "Busca libros escritos por Francisco de Quevedo"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 23,
+            "end": 62,
+            "value": "Narnia la travesía del viajero del alba",
+            "entity": "libro_titulo"
+          }
+        ],
+        "text": "Quiero libros llamados Narnia la travesía del viajero del alba"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 23,
+            "end": 29,
+            "value": "Narnia",
+            "entity": "libro_titulo"
+          },
+          {
+            "start": 43,
+            "end": 63,
+            "value": "Francisco de Quevedo",
+            "entity": "persona"
+          }
+        ],
+        "text": "Quiero libros llamados Narnia escritos por Francisco de Quevedo"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 24,
+            "end": 36,
+            "value": "Pablo Neruda",
+            "entity": "persona"
+          }
+        ],
+        "text": "Quiero libros del autor Pablo Neruda"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 27,
+            "end": 43,
+            "value": "Ana María Matute",
+            "entity": "persona"
+          }
+        ],
+        "text": "Quiero libros de la autora Ana María Matute"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 15,
+            "end": 22,
+            "value": "recetas",
+            "entity": "libro"
+          }
+        ],
+        "text": "Dame libros de recetas"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 32,
+            "end": 40,
+            "value": "economía",
+            "entity": "libro"
+          }
+        ],
+        "text": "Me podrías decir algún libro de economía"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 37,
+            "end": 53,
+            "value": "Luces de bohemia",
+            "entity": "libro_titulo"
+          },
+          {
+            "start": 66,
+            "end": 87,
+            "value": "Ramón de Valle-Inclán",
+            "entity": "persona"
+          }
+        ],
+        "text": "Me podrías decir algún libro llamado Luces de bohemia escrito por Ramón de Valle-Inclán"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 39,
+            "end": 61,
+            "value": "Gabriel García Márquez",
+            "entity": "persona"
+          }
+        ],
+        "text": "Me podrías decir algún libro del autor Gabriel García Márquez"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 42,
+            "end": 56,
+            "value": "Isabel Allende",
+            "entity": "persona"
+          }
+        ],
+        "text": "Me podrías decir algún libro de la autora Isabel Allende"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 41,
+            "end": 53,
+            "value": "Isaac Asimov",
+            "entity": "persona"
+          }
+        ],
+        "text": "Me podrías decir algún libro escrito por Isaac Asimov"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 15,
+            "end": 27,
+            "value": "Henry Miller",
+            "entity": "libro"
+          }
+        ],
+        "text": "Dime libros de Henry Miller"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 22,
+            "end": 41,
+            "value": "Mortadelo y Filemón",
+            "entity": "libro_titulo"
+          }
+        ],
+        "text": "Dime libros titulados Mortadelo y Filemón"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 19,
+            "end": 33,
+            "value": "Carlos Fuentes",
+            "entity": "libro"
+          }
+        ],
+        "text": "Necesito libros de Carlos Fuentes"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 39,
+            "end": 64,
+            "value": "Lo que el viento se llevó",
+            "entity": "libro_titulo"
+          }
+        ],
+        "text": "Me buscarías obras literarias llamadas Lo que el viento se llevó"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 35,
+            "end": 60,
+            "value": "Lo que el viento se llevó",
+            "entity": "libro_titulo"
+          }
+        ],
+        "text": "Necesito obras literarias llamadas Lo que el viento se llevó"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 36,
+            "end": 51,
+            "value": "Alberto Verdejo",
+            "entity": "persona"
+          }
+        ],
+        "text": "Necesito obras literarias del autor Alberto Verdejo"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 36,
+            "end": 52,
+            "value": "Rafael Caballero",
+            "entity": "persona"
+          }
+        ],
+        "text": "Busca obras literarias escritas por Rafael Caballero"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 26,
+            "end": 32,
+            "value": "Orwell",
+            "entity": "persona"
+          }
+        ],
+        "text": "Necesito libros del autor Orwell"
+      },
+      {
+        "intent": "consulta_catalogo_libros",
+        "entities": [
+          {
+            "start": 27,
+            "end": 50,
+            "value": "Preludio a la fundación",
+            "entity": "libro_titulo"
+          }
+        ],
+        "text": "Necesito un libro titulado Preludio a la fundación"
+      },
+      {
+        "intent": "consulta_catalogo_musica",
+        "entities": [
+          {
+            "start": 21,
+            "end": 44,
+            "value": "Bajo el yugo del tiempo",
+            "entity": "musica_titulo"
+          }
+        ],
+        "text": "Quiero un cd llamado Bajo el yugo del tiempo"
+      },
+      {
+        "intent": "consulta_catalogo_musica",
+        "entities": [
+          {
+            "start": 21,
+            "end": 33,
+            "value": "Ray of light",
+            "entity": "musica_titulo"
+          }
+        ],
+        "text": "Quiero un cd llamado Ray of light"
+      },
+      {
+        "intent": "consulta_catalogo_musica",
+        "entities": [
+          {
+            "start": 16,
+            "end": 40,
+            "value": "Florence And The Machine",
+            "entity": "musica"
+          }
+        ],
+        "text": "Quiero un cd de Florence And The Machine"
+      },
+      {
+        "intent": "consulta_catalogo_musica",
+        "entities": [
+          {
+            "start": 16,
+            "end": 23,
+            "value": "Rosendo",
+            "entity": "musica"
+          }
+        ],
+        "text": "Quiero un cd de Rosendo"
+      },
+      {
+        "intent": "consulta_catalogo_musica",
+        "entities": [
+          {
+            "start": 23,
+            "end": 27,
+            "value": "Bach",
+            "entity": "persona"
+          }
+        ],
+        "text": "Necesito partituras de Bach"
+      },
+      {
+        "intent": "consulta_catalogo_musica",
+        "entities": [
+          {
+            "start": 29,
+            "end": 53,
+            "value": "Concierto para clarinete",
+            "entity": "musica_titulo"
+          }
+        ],
+        "text": "Necesito partituras llamadas Concierto para clarinete"
+      },
+      {
+        "intent": "consulta_catalogo_musica",
+        "entities": [
+          {
+            "start": 29,
+            "end": 53,
+            "value": "Concierto para clarinete",
+            "entity": "musica_titulo"
+          }
+        ],
+        "text": "Necesito partituras llamadas Concierto para clarinete del compositor"
+      },
+      {
+        "intent": "consulta_catalogo_peliculas",
+        "entities": [
+          {
+            "start": 21,
+            "end": 38,
+            "value": "Bohemian Rhapsody",
+            "entity": "pelicula_titulo"
+          }
+        ],
+        "text": "Busco un DVD llamado Bohemian Rhapsody"
+      },
+      {
+        "intent": "consulta_catalogo_peliculas",
+        "entities": [
+          {
+            "start": 16,
+            "end": 28,
+            "value": "Infinity War",
+            "entity": "pelicula"
+          }
+        ],
+        "text": "Busco un DVD de Infinity War"
+      },
+      {
+        "intent": "consulta_catalogo_peliculas",
+        "entities": [
+          {
+            "start": 20,
+            "end": 33,
+            "value": "El resplandor",
+            "entity": "pelicula"
+          }
+        ],
+        "text": "Quiero un Bluray de El resplandor"
+      },
+      {
+        "intent": "consulta_catalogo_peliculas",
+        "entities": [
+          {
+            "start": 25,
+            "end": 34,
+            "value": "Star Wars",
+            "entity": "pelicula_titulo"
+          }
+        ],
+        "text": "Quiero un Bluray llamado Star Wars"
+      },
+      {
+        "intent": "consulta_catalogo_peliculas",
+        "entities": [
+          {
+            "start": 34,
+            "end": 44,
+            "value": "Tim Burton",
+            "entity": "persona"
+          }
+        ],
+        "text": "Necesito una película del directorTim Burton"
+      },
+      {
+        "intent": "consulta_catalogo_peliculas",
+        "entities": [
+          {
+            "start": 44,
+            "end": 52,
+            "value": "Fantasía",
+            "entity": "pelicula_titulo"
+          },
+          {
+            "start": 56,
+            "end": 67,
+            "value": "Walt Disney",
+            "entity": "persona"
+          }
+        ],
+        "text": "Busca una grabación cinematográfica llamada Fantasía de Walt Disney"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 21,
+            "end": 29,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "A qué hora cierra la Zambrano"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 17,
+            "end": 25,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Cuándo cierra la Zambrano"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 16,
+            "end": 24,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Está cerrada la Zambrano"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 13,
+            "end": 21,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Cierre de la Zambrano"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 22,
+            "end": 30,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Cuál es el horario de Zambrano"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 14,
+            "end": 22,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Horario de la Zambrano"
+      },
+      {
+        "intent": "consulta_horario_open",
+        "entities": [
+          {
+            "start": 16,
+            "end": 38,
+            "value": "Biblioteca de medicina",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Está abierta la Biblioteca de medicina"
+      },
+      {
+        "intent": "consulta_horario_open",
+        "entities": [
+          {
+            "start": 19,
+            "end": 44,
+            "value": "Biblioteca de informática",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "A qué hora abre la Biblioteca de informática"
+      },
+      {
+        "intent": "consulta_horario_open",
+        "entities": [
+          {
+            "start": 15,
+            "end": 35,
+            "value": "Facultad de geología",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Cuándo abre la Facultad de geología"
+      },
+      {
+        "intent": "consulta_horario_open",
+        "entities": [
+          {
+            "start": 15,
+            "end": 23,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Apertura de la Zambrano"
+      },
+      {
+        "intent": "consulta_horario_open",
+        "entities": [
+          {
+            "start": 23,
+            "end": 31,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Cuándo está abierta la Zambrano"
+      },
+      {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 25,
+            "end": 50,
+            "value": "Biblioteca de odontología",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Busca la ubicación de la Biblioteca de odontología"
+      },
+      {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 17,
+            "end": 38,
+            "value": "Biblioteca de derecho",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Necesito ir a la Biblioteca de derecho"
+      },
+      {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 26,
+            "end": 58,
+            "value": "Biblioteca de ciencias políticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Necesito desplazarme a la Biblioteca de ciencias políticas"
+      },
+      {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 24,
+            "end": 48,
+            "value": "Biblioteca de enfermería",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Necesito dirigirme a la Biblioteca de enfermería"
+      },
+      {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 24,
+            "end": 46,
+            "value": "Biblioteca de geología",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Busca la posición de la Biblioteca de geología"
+      },
+      {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 14,
+            "end": 37,
+            "value": "Facultad de informática",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Dónde está la Facultad de informática"
+      },
+      {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 22,
+            "end": 45,
+            "value": "Facultad de informática",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Dónde se encuentra la Facultad de informática"
+      },
+      {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 16,
+            "end": 24,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Ubicación de la Zambrano"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 11,
+            "end": 34,
+            "value": "Facultad de matemáticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Llama a la Facultad de matemáticas"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 8,
+            "end": 31,
+            "value": "Biblioteca de geografía",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Llama a Biblioteca de geografía"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 24,
+            "end": 32,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Busca el teléfono de la Zambrano"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 25,
+            "end": 48,
+            "value": "Facultad de informática",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Necesito el número de la Facultad de informática"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 37,
+            "end": 57,
+            "value": "Facultad de medicina",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Necesito el número de teléfono de la Facultad de medicina"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 24,
+            "end": 32,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Necesito el teléfono la Zambrano"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 24,
+            "end": 47,
+            "value": "Facultad de informática",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Busca el teléfono de la Facultad de informática"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 22,
+            "end": 42,
+            "value": "Facultad de medicina",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Busca el número de la Facultad de medicina"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 34,
+            "end": 42,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Busca el número de teléfono de la Zambrano"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 24,
+            "end": 47,
+            "value": "Facultad de informática",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Cuál es el número de la Facultad de informática"
+      }
+    ],
+    "regex_features": [],
+    "lookup_tables": [
+      {
+        "name": "persona",
+        "elements": "data/names/hombres.csv"
+      },
+      {
+        "name": "persona",
+        "elements": "data/names/mujeres.csv"
+      },
+      {
+        "name": "persona",
+        "elements": "data/names/apellidos.csv"
+      },
+      {
+        "name": "persona",
+        "elements": "data/names/apellidos2.csv"
+      },
+      {
+        "name": "localizacion",
+        "elements": "data/libraries.csv"
+      },
+      {
+        "name": "libro_titulo",
+        "elements": "data/names/booksnames.csv"
+      }
+    ],
+    "entity_synonyms": []
+  }
+}
