@@ -1,58 +1,71 @@
 %YAML 1.1
 ---
 actions:
-- utter_saludo_nombre
-- utter_especifica_articulo
-- utter_libro_titulo_autor
-- utter_despedida
-- utter_libros_titulo_autor
-- action_busca_libro
-- utter_no_te_entiendo
-- utter_quien_soy
-- utter_libro_kw_autor
-- utter_especifica_pelicula
-- utter_libro_titulo
-- utter_pelicula_kw
-- utter_consulta_localizacion
-- utter_articulos_kw
-- utter_juegos_kw
-- utter_especifica_libro
 - utter_libros_titulo
-- utter_consulta_telefono
-- utter_saludo
-- utter_libros_kw
-- utter_libro_autor
-- utter_libros_kw_autor
-- utter_articulo_kw
-- utter_musica_kw
-- utter_juego_kw
-- utter_consulta_horario_abierto
-- utter_libros_autor
 - utter_especifica_musica
 - utter_especifica_juego
-- utter_libro_kw
+- utter_libros_titulo_autor
+- utter_libros_autor
+- action_busca_libro
 - utter_peliculas_kw
+- utter_juego_kw
+- utter_saludo_nombre
+- utter_libro_kw_autor
+- utter_libro_autor
+- utter_libro_titulo_autor
+- utter_gracias
+- utter_info_primero
+- utter_articulos_kw
+- utter_consulta_telefono
+- utter_pelicula_kw
+- utter_despedida
+- utter_libro_kw
+- utter_libro_titulo
+- utter_info_segundo
+- utter_info_tercero
 - utter_consulta_horario_cerrado
+- utter_consulta_horario_abierto
+- action_busca_mas
+- utter_libros_kw_autor
+- utter_no_te_entiendo
+- utter_articulo_kw
+- utter_especifica_articulo
+- utter_musica_kw
+- utter_juegos_kw
+- utter_quien_soy
+- utter_especifica_pelicula
+- utter_especifica_libro
+- utter_consulta_localizacion
+- utter_libros_kw
+- utter_saludo
 entities:
-- libro
-- libro_titulo
 - persona
-- PER
-- juego
-- pelicula
-- musica
-- localizacion
+- MISC
 - autor
+- libro
+- juego
+- musica
+- libro_titulo
+- localizacion
+- autores
+- PER
+- pelicula
 intents:
-- quien_soy:
-    use_entities: false
+- busca_mas
+- consulta_libros_kw
+- consulta_localizacion
+- mas_info_primero
 - despedidas
+- consulta_libros_autor
 - saludos:
+    use_entities: false
+- consulta_libro_titulo_autor
+- gracias:
+    use_entities: false
+- quien_soy:
     use_entities: false
 - me_llamo
 - como_estas
-- gracias:
-    use_entities: false
 - consulta_articulos:
     use_entities: false
 - consulta_articulo:
@@ -70,13 +83,10 @@ intents:
 - consulta_libro:
     use_entities: false
 - consulta_libro_kw
-- consulta_libros_kw
 - consulta_libros_titulo
 - consulta_libro_titulo
-- consulta_libros_autor
 - consulta_libro_autor
 - consulta_libros_titulo_autor
-- consulta_libro_titulo_autor
 - consulta_libros_kw_autor
 - consulta_libro_kw_autor
 - consulta_musicas:
@@ -94,23 +104,22 @@ intents:
 - consulta_horario_close
 - consulta_horario_general
 - consulta_horario_open
-- consulta_localizacion
 - consulta_telefono
 slots:
   articulos:
-    type: list
+    type: text
   autores:
-    type: list
+    type: text
   juego:
-    type: list
+    type: text
   libro:
-    type: list
+    type: text
   localizacion:
     type: text
   musica:
-    type: list
+    type: text
   pelicula:
-    type: list
+    type: text
   persona:
     type: text
 templates:
@@ -161,6 +170,10 @@ templates:
   - text: Necesito más información sobre la película que quieres buscar. Podrías decirmelo?
   - text: Qué película quieres buscar?
   - text: Qué película?
+  utter_gracias:
+  - text: No hay de que.
+  - text: Para eso estamos.
+  - text: De nada.
   utter_juego_kw:
   - text: Aquí tienes los juegos que me pediste.
   - text: Aquí tienes el juego {juego}.
@@ -207,6 +220,8 @@ templates:
   - text: Aquí tienes libros llamados {libro} de {autores}.
   - text: Mira, he encontrado estos libros.
   - text: Aquí tiene varios ejemplares.
+  utter_muestra_mas:
+  - text: Aquí tienes más ejemplares.
   utter_musica_kw:
   - text: Aquí tienes lo que me pediste.
   - text: Aquí tienes {musica}.
@@ -221,6 +236,10 @@ templates:
   utter_peliculas_kw:
   - text: Aquí tienes las películas que me pediste.
   - text: Aquí tienes las películas de {pelicula}.
+  utter_primero_list:
+  - text: Aquí tienes el primer ejemplar.
+  - text: Aquí tienes.
+  - text: Mira, aquí tienes el primero de la lista.
   utter_quien_soy:
   - text: Soy Janet.
   - text: Soy Janet, pero mis amigos me llaman... Janet
@@ -235,3 +254,11 @@ templates:
   utter_saludo_nombre:
   - text: Hola {persona}.
   - text: Hola {persona}. ¿Qué tal estás hoy?
+  utter_segundo_list:
+  - text: Aquí tienes el segundo ejemplar.
+  - text: Aquí tienes.
+  - text: Mira, aquí tienes el segundo de la lista.
+    utter_tercero_list: null
+  - text: Aquí tienes el tercero ejemplar.
+  - text: Aquí tienes.
+  - text: Mira, aquí tienes el tercero de la lista.

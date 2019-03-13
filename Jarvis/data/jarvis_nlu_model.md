@@ -1,3 +1,9 @@
+## intent:busca_mas
+- Quiero más
+- Busca más
+- Muestrame más
+- Enseñame más ejemplares
+
 ## intent:como_estas
 - Qué tal
 - Cómo estás
@@ -117,21 +123,21 @@
 - Quiero un libro
 
 ## intent:consulta_libro_autor
-- Quiero un libro escrito por [Orwell](autor)
-- Busca un libro del autor [Orwell](autor)
-- Busca un libro de la autora [J K Rowling](autor)
-- Busca un libro escrito por [Francisco de Quevedo](autor)
-- Quiero un libro del autor [Pablo Neruda](autor)
-- Quiero un libro de la autora [Ana María Matute](autor)
-- Me podrías decir un libro del autor [Gabriel García Márquez](autor)
-- Me podrías decir un libro de la autora [Isabel Allende](autor)
-- Me podrías decir un libro escrito por [Isaac Asimov](autor)
-- Necesito una obra literaria del autor [Alberto Verdejo](autor)
-- Busca una obra literaria escrita por [Rafael Caballero](autor)
-- Necesito un libro del autor [Orwell](autor)
-- Libro escrito por [George R Martin](autor)
-- Libro del autor [George R Martin](autor)
-- Libro de la autora [George R Martin](autor)
+- Quiero un libro escrito por [Orwell](autores)
+- Busca un libro del autores [Orwell](autores)
+- Busca un libro de la autoresa [J K Rowling](autores)
+- Busca un libro escrito por [Francisco de Quevedo](autores)
+- Quiero un libro del autores [Pablo Neruda](autores)
+- Quiero un libro de la autoresa [Ana María Matute](autores)
+- Me podrías decir un libro del autores [Gabriel García Márquez](autores)
+- Me podrías decir un libro de la autoresa [Isabel Allende](autores)
+- Me podrías decir un libro escrito por [Isaac Asimov](autores)
+- Necesito una obra literaria del autores [Alberto Verdejo](autores)
+- Busca una obra literaria escrita por [Rafael Caballero](autores)
+- Necesito un libro del autores [Orwell](autores)
+- Libro escrito por [George R Martin](autores)
+- Libro del autores [George R Martin](autores)
+- Libro de la autoresa [George R Martin](autores)
 
 ## intent:consulta_libro_kw
 - Busca un libro de [Fuego y Sangre](libro)
@@ -148,15 +154,15 @@
 - [Harry Potter](libro)
 
 ## intent:consulta_libro_kw_autor
-- Quiero un libro de [El Quijote](libro_titulo) del autor [Miguel de Cervantes](autor)
-- Quiero un libro de [Yo, Julia](libro_titulo) escrito por [Santiago Posteguillo](autor)
-- Me podrías decir un libro de [Luces de bohemia](libro_titulo) escrito por [Ramón de Valle-Inclán](autor)
-- Me podrías decir un libro de [Luces de bohemia](libro_titulo) del autor [Ramón de Valle-Inclán](autor)
-- Me podrías decir un libro de [Luces de bohemia](libro_titulo) de la autora [Ramón de Valle-Inclán](autor)
-- Necesito una obra literaria de [Harry Potter y la cámara secreta](libro_titulo) de la autora [J K Rowling](autor)
-- Necesito una obra literaria de [Harry Potter y la cámara secreta](libro_titulo) del autor [J K Rowling](autor)
-- Necesito una obra literaria de [Harry Potter y la cámara secreta](libro_titulo)  escrita por [J K Rowling](autor)
-- Libro de [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autor)
+- Quiero un libro de [El Quijote](libro_titulo) del autores [Miguel de Cervantes](autores)
+- Quiero un libro de [Yo, Julia](libro_titulo) escrito por [Santiago Posteguillo](autores)
+- Me podrías decir un libro de [Luces de bohemia](libro_titulo) escrito por [Ramón de Valle-Inclán](autores)
+- Me podrías decir un libro de [Luces de bohemia](libro_titulo) del autores [Ramón de Valle-Inclán](autores)
+- Me podrías decir un libro de [Luces de bohemia](libro_titulo) de la autoresa [Ramón de Valle-Inclán](autores)
+- Necesito una obra literaria de [Harry Potter y la cámara secreta](libro_titulo) de la autoresa [J K Rowling](autores)
+- Necesito una obra literaria de [Harry Potter y la cámara secreta](libro_titulo) del autores [J K Rowling](autores)
+- Necesito una obra literaria de [Harry Potter y la cámara secreta](libro_titulo)  escrita por [J K Rowling](autores)
+- Libro de [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autores)
 
 ## intent:consulta_libro_titulo
 - Quiero un libro llamado [El Quijote](libro_titulo)
@@ -174,15 +180,16 @@
 - Libro titulado [Juego de Tronos](libro_titulo)
 
 ## intent:consulta_libro_titulo_autor
-- Quiero un libro llamado [El Quijote](libro_titulo) del autor [Miguel de Cervantes](autor)
-- Quiero un libro llamado [Yo, Julia](libro_titulo) escrito por [Santiago Posteguillo](autor)
-- Me podrías decir un libro llamado [Luces de bohemia](libro_titulo) escrito por [Ramón de Valle-Inclán](autor)
-- Me podrías decir un libro llamado [Luces de bohemia](libro_titulo) del autor [Ramón de Valle-Inclán](autor)
-- Me podrías decir un libro llamado [Luces de bohemia](libro_titulo) de la autora [Ramón de Valle-Inclán](autor)
-- Necesito una obra literaria llamada [Harry Potter y la cámara secreta](libro_titulo) de la autora [J K Rowling](autor)
-- Necesito una obra literaria llamada [Harry Potter y la cámara secreta](libro_titulo) del autor [J K Rowling](autor)
-- Necesito una obra literaria llamada [Harry Potter y la cámara secreta](libro_titulo)  escrita por [J K Rowling](autor)
-- Libros llamado [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autor)
+- Quiero un libro llamado [El Quijote](libro_titulo) del autores [Miguel de Cervantes](autores)
+- Quiero un libro llamado [Yo, Julia](libro_titulo) escrito por [Santiago Posteguillo](autores)
+- Me podrías decir un libro llamado [Luces de bohemia](libro_titulo) escrito por [Ramón de Valle-Inclán](autores)
+- Me podrías decir un libro llamado [Luces de bohemia](libro_titulo) del autores [Ramón de Valle-Inclán](autores)
+- Me podrías decir un libro llamado [Luces de bohemia](libro_titulo) de la autoresa [Ramón de Valle-Inclán](autores)
+- Necesito una obra literaria llamada [Harry Potter y la cámara secreta](libro_titulo) de la autoresa [J K Rowling](autores)
+- Necesito una obra literaria llamada [Harry Potter y la cámara secreta](libro_titulo) del autores [J K Rowling](autores)
+- Necesito una obra literaria llamada [Harry Potter y la cámara secreta](libro_titulo)  escrita por [J K Rowling](autores)
+- Libros llamado [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autores)
+- Serías tan amable de buscarme un único libro llamado [Los Pilares de la Tierra](libro_titulo)[](libro:Los Pilares de la Tierra) del autor [Ken Follet](PER)[](autores:Ken Follet)
 
 ## intent:consulta_libros
 - Busca libros
@@ -197,21 +204,22 @@
 - Libros
 
 ## intent:consulta_libros_autor
-- Quiero libros escritos por [Orwell](autor)
-- Busca libros del autor [Orwell](autor)
-- Busca libros de la autora [J K Rowling](autor)
-- Busca libros escritos por [Francisco de Quevedo](autor)
-- Quiero libros del autor [Pablo Neruda](autor)
-- Quiero libros de la autora [Ana María Matute](autor)
-- Me podrías decir algún libro del autor [Gabriel García Márquez](autor)
-- Me podrías decir algún libro de la autora [Isabel Allende](autor)
-- Me podrías decir algún libro escrito por [Isaac Asimov](autor)
-- Necesito obras literarias del autor [Alberto Verdejo](autor)
-- Busca obras literarias escritas por [Rafael Caballero](autor)
-- Necesito libros del autor [Orwell](autor)
-- Libros escritos por [George R Martin](autor)
-- Libros del autor [George R Martin](autor)
-- Libros de la autora [George R Martin](autor)
+- Quiero libros escritos por [Orwell](autores)
+- Busca libros del autores [Orwell](autores)
+- Busca libros de la autoresa [J K Rowling](autores)
+- Busca libros escritos por [Francisco de Quevedo](autores)
+- Quiero libros del autores [Pablo Neruda](autores)
+- Quiero libros de la autoresa [Ana María Matute](autores)
+- Me podrías decir algún libro del autores [Gabriel García Márquez](autores)
+- Me podrías decir algún libro de la autoresa [Isabel Allende](autores)
+- Me podrías decir algún libro escrito por [Isaac Asimov](autores)
+- Necesito obras literarias del autores [Alberto Verdejo](autores)
+- Busca obras literarias escritas por [Rafael Caballero](autores)
+- Necesito libros del autores [Orwell](autores)
+- Libros escritos por [George R Martin](autores)
+- Libros del autores [George R Martin](autores)
+- Libros de la autoresa [George R Martin](autores)
+- Ahora quiero libros del autor [Cervantes](autores)
 
 ## intent:consulta_libros_kw
 - Busca libros de [Fuego y Sangre](libro)
@@ -225,18 +233,20 @@
 - Busca obras literarias de [medicina](libro)
 - Necesito obras literarias de [Lo que el viento se llevó](libro)
 - Libro de [Juego de Tronos](libro)
+- Quiero libros de [matemática discreta](libro)
+- Quiero libros de [Venancio Tomeo](PER)[Venancio Tomeo](libro:venancio tomeo)
 
 ## intent:consulta_libros_kw_autor
-- Quiero libros de [El Quijote](libro_titulo) del autor [Miguel de Cervantes](autor)
-- Quiero libros de [Yo, Julia](libro_titulo) escritos por [Santiago Posteguillo](autor)
-- Quiero libros de [Narnia](libro_titulo) escritos por [Francisco de Quevedo](autor)
-- Me podrías decir algún libro de [Luces de bohemia](libro_titulo) escrito por [Ramón de Valle-Inclán](autor)
-- Me podrías decir algún libro de [Luces de bohemia](libro_titulo) del autor [Ramón de Valle-Inclán](autor)
-- Me podrías decir algún libro de [Luces de bohemia](libro_titulo) de la autora [Ramón de Valle-Inclán](autor)
-- Necesito obras literarias de [Harry Potter y la cámara secreta](libro_titulo) de la autora [J K Rowling](autor)
-- Necesito obras literarias de [Harry Potter y la cámara secreta](libro_titulo) del autor [J K Rowling](autor)
-- Necesito obras literarias de [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autor)
-- Libros de [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autor)
+- Quiero libros de [El Quijote](libro_titulo) del autores [Miguel de Cervantes](autores)
+- Quiero libros de [Yo, Julia](libro_titulo) escritos por [Santiago Posteguillo](autores)
+- Quiero libros de [Narnia](libro_titulo) escritos por [Francisco de Quevedo](autores)
+- Me podrías decir algún libro de [Luces de bohemia](libro_titulo) escrito por [Ramón de Valle-Inclán](autores)
+- Me podrías decir algún libro de [Luces de bohemia](libro_titulo) del autores [Ramón de Valle-Inclán](autores)
+- Me podrías decir algún libro de [Luces de bohemia](libro_titulo) de la autoresa [Ramón de Valle-Inclán](autores)
+- Necesito obras literarias de [Harry Potter y la cámara secreta](libro_titulo) de la autoresa [J K Rowling](autores)
+- Necesito obras literarias de [Harry Potter y la cámara secreta](libro_titulo) del autores [J K Rowling](autores)
+- Necesito obras literarias de [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autores)
+- Libros de [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autores)
 
 ## intent:consulta_libros_titulo
 - Quiero libros llamados [El Quijote](libro_titulo)
@@ -254,16 +264,16 @@
 - Libros titulados [Juego de Tronos](libro_titulo)
 
 ## intent:consulta_libros_titulo_autor
-- Quiero libros llamados [El Quijote](libro_titulo) del autor [Miguel de Cervantes](autor)
-- Quiero libros llamados [Yo, Julia](libro_titulo) escritos por [Santiago Posteguillo](autor)
-- Quiero libros llamados [Narnia](libro_titulo) escritos por [Francisco de Quevedo](autor)
-- Me podrías decir algún libro llamado [Luces de bohemia](libro_titulo) escrito por [Ramón de Valle-Inclán](autor)
-- Me podrías decir algún libro llamado [Luces de bohemia](libro_titulo) del autor [Ramón de Valle-Inclán](autor)
-- Me podrías decir algún libro llamado [Luces de bohemia](libro_titulo) de la autora [Ramón de Valle-Inclán](autor)
-- Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro_titulo) de la autora [J K Rowling](autor)
-- Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro_titulo) del autor [J K Rowling](autor)
-- Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autor)
-- Libros llamados [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autor)
+- Quiero libros llamados [El Quijote](libro_titulo) del autores [Miguel de Cervantes](autores)
+- Quiero libros llamados [Yo, Julia](libro_titulo) escritos por [Santiago Posteguillo](autores)
+- Quiero libros llamados [Narnia](libro_titulo) escritos por [Francisco de Quevedo](autores)
+- Me podrías decir algún libro llamado [Luces de bohemia](libro_titulo) escrito por [Ramón de Valle-Inclán](autores)
+- Me podrías decir algún libro llamado [Luces de bohemia](libro_titulo) del autores [Ramón de Valle-Inclán](autores)
+- Me podrías decir algún libro llamado [Luces de bohemia](libro_titulo) de la autoresa [Ramón de Valle-Inclán](autores)
+- Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro_titulo) de la autoresa [J K Rowling](autores)
+- Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro_titulo) del autores [J K Rowling](autores)
+- Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autores)
+- Libros llamados [Harry Potter y la cámara secreta](libro_titulo)  escritas por [J K Rowling](autores)
 
 ## intent:consulta_localizacion
 - Busca la ubicación de la [Biblioteca de odontología](localizacion)
@@ -274,6 +284,7 @@
 - Dónde está la [Facultad de informática](localizacion)
 - Dónde se encuentra la [Facultad de informática](localizacion)
 - Ubicación de la [Zambrano](localizacion)
+- Donde está la [biblioteca de ciencias políticas](localizacion)
 
 ## intent:consulta_musica
 - Busca un CD
@@ -288,7 +299,7 @@
 - Quiero un cd llamado [Ray of light](musica)
 - Quiero un CD de [Florence And The Machine](musica)
 - Quiero un cd de [Rosendo](musica)
-- Necesito una partitura de [Bach](autor)
+- Necesito una partitura de [Bach](autores)
 - Necesito una partitura llamada [Concierto para clarinete](musica)
 - Necesito una partitura llamada [Concierto para clarinete](musica) del compositor
 - Necesito una partitura llamada [Concierto para clarinete](musica) de la compositora
@@ -307,7 +318,7 @@
 - Quiero varios CD's de [Florence And The Machine](musica)
 - Quiero varios cd de [Rosendo](musica)
 - Necesito CD's de [Eminem](musica)
-- Necesito partituras de [Bach](autor)
+- Necesito partituras de [Bach](autores)
 - Necesito partituras llamadas [Concierto para clarinete](musica)
 - Necesito partituras llamadas [Concierto para clarinete](musica) del compositor
 - Necesito partituras llamadas [Concierto para clarinete](musica) de la compositora
@@ -319,8 +330,8 @@
 - Busca una película llamada [Bohemian Rhapsody](pelicula)
 - Quiero un Bluray de [El resplandor](pelicula)
 - Quiero un Bluray llamado [Star Wars](pelicula)
-- Necesito una película del director[Tim Burton](autor)
-- Busca una grabación cinematográfica llamada [Fantasía](pelicula) de [Walt Disney](autor)
+- Necesito una película del director[Tim Burton](autores)
+- Busca una grabación cinematográfica llamada [Fantasía](pelicula) de [Walt Disney](autores)
 - Película de [miedo](pelicula)
 
 ## intent:consulta_peliculas
@@ -345,8 +356,8 @@
 - Busca películas llamadas [Bohemian Rhapsody](pelicula)
 - Quiero varios Bluray de [El resplandor](pelicula)
 - Quiero Bluray's llamado [Star Wars](pelicula)
-- Necesito películas del director [Tim Burton](autor)
-- Busca grabaciones cinematográfica llamadas [Fantasía](pelicula) de [Walt Disney](autor)
+- Necesito películas del director [Tim Burton](autores)
+- Busca grabaciones cinematográfica llamadas [Fantasía](pelicula) de [Walt Disney](autores)
 - Películas de [miedo](pelicula)
 
 ## intent:consulta_telefono
@@ -376,6 +387,8 @@
 - Bye bye
 - adios
 - Adiós
+- Hasta pronto
+- Adiós
 
 ## intent:gracias
 - Gracias
@@ -383,6 +396,25 @@
 - Muchas gracias
 - Me has ayudado mucho
 - Mil gracias
+- Gracias
+
+## intent:mas_info_primero
+- Muestrame más información del primero
+- Enseñame el primero
+- Quiero ver el 1
+- Quiero ver el primero
+
+## intent:mas_info_segundo
+- Muestrame más información del segundo
+- Enseñame el segundo
+- Quiero ver el 2
+- Quiero ver el segundo
+
+## intent:mas_info_tercero
+- Muestrame más información del tercero
+- Enseñame el tercero
+- Quiero ver el 3
+- Quiero ver el tercero
 
 ## intent:me_llamo
 - Soy [Martin](persona)
@@ -412,6 +444,8 @@
 - Hello
 - Holis
 - Hola
+- Buenas tardes
+- Buenos días
 
 ## lookup:persona
   data/names/hombres.csv
