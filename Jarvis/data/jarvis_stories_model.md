@@ -11,65 +11,32 @@
     - utter_saludo
 * me_llamo{"persona":"Susana"}
     -utter_saludo_nombre
-    
-## Conversacion estandar catálogo libros
+
+## Generated Story 3005191058733942635
+* consulta_libro
+    - utter_especifica_libro
+* consulta_libro_kw{"libro": "Harry Potter"}
+    - slot{"libro": ["Harry Potter"]}
+    - utter_libro_kw
+* despedidas
+    - utter_despedida
+
+## Generated Story 3005191058733942636
+* consulta_libro_kw{"libro": "Harry Potter"}
+    - slot{"libro": ["Harry Potter"]}
+    - utter_libro_kw
+
+## Generated Story 3005191058733942637
+* consulta_libros_kw{"libro": "Harry Potter"}
+    - slot{"libro": ["Harry Potter"]}
+    - utter_libros_kw## Generated Story -3161024289020967059
 * saludos
     - utter_saludo
-* me_llamo{"persona":"Susana"}
-    -utter_saludo_nombre
+* me_llamo{"persona": "Mauri"}
+    - slot{"persona": "Mauri"}
+    - utter_saludo_nombre
 * quien_soy
     - utter_quien_soy
-* consulta_catalogo_libros
-    - utter_consulta_catalogo_libros
-* despedidas
-    - utter_despedida
-* busca_libro
-    - action_busca_libro
-    ##- slot{"libros":[{"titulo":"asadasdasd"}]}
-    
-## Conversacion estandar localización
-* saludos
-    - utter_saludo
-* me_llamo{"persona":"Susana"}
-    -utter_saludo_nombre
-* quien_soy
-    - utter_quien_soy
-* consulta_localizacion
-    ##- slot{"localizacion":[{"lugar":"Zambrano"}]}
-    - utter_consulta_localizacion
 * despedidas
     - utter_despedida
 
-## Conversacion estandar teléfono
-* saludos
-    - utter_saludo
-* me_llamo{"persona":"Susana"}
-    -utter_saludo_nombre
-* consulta_telefono
-    - slot{"localizacion":"Zambrano"}
-    - utter_consulta_telefono
-* despedidas
-    - utter_despedida
-
-
-## Conversacion estandar horarios abiertas
-* saludos
-    - utter_saludo
-* me_llamo{"persona":"Susana"}
-    -utter_saludo_nombre
-* consulta_horario_open
-    - slot{"localizacion":"Zambrano"}
-    - utter_consulta_horario_abierto
-* despedidas
-    - utter_despedida
-
-## Conversacion estandar horarios cerradas
-* saludos
-    - utter_saludo
-* me_llamo{"persona":"Susana"}
-    -utter_saludo_nombre
-* consulta_horario_close
-    - slot{"localizacion":"Zambrano"}
-    - utter_consulta_horario_cerrado
-* despedidas
-    - utter_despedida

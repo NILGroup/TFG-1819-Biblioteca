@@ -1,105 +1,237 @@
+%YAML 1.1
+---
+actions:
+- utter_saludo_nombre
+- utter_especifica_articulo
+- utter_libro_titulo_autor
+- utter_despedida
+- utter_libros_titulo_autor
+- action_busca_libro
+- utter_no_te_entiendo
+- utter_quien_soy
+- utter_libro_kw_autor
+- utter_especifica_pelicula
+- utter_libro_titulo
+- utter_pelicula_kw
+- utter_consulta_localizacion
+- utter_articulos_kw
+- utter_juegos_kw
+- utter_especifica_libro
+- utter_libros_titulo
+- utter_consulta_telefono
+- utter_saludo
+- utter_libros_kw
+- utter_libro_autor
+- utter_libros_kw_autor
+- utter_articulo_kw
+- utter_musica_kw
+- utter_juego_kw
+- utter_consulta_horario_abierto
+- utter_libros_autor
+- utter_especifica_musica
+- utter_especifica_juego
+- utter_libro_kw
+- utter_peliculas_kw
+- utter_consulta_horario_cerrado
+entities:
+- libro
+- libro_titulo
+- persona
+- PER
+- juego
+- pelicula
+- musica
+- localizacion
+- autor
 intents:
-- saludos
-- como_estas
-- quien_soy: {use_entities: false}
-- me_llamo
-- gracias: {use_entities: false}
+- quien_soy:
+    use_entities: false
 - despedidas
-- consulta_catalogo_articulos
-- consulta_catalogo_juegos
-- consulta_catalogo_libros
-- consulta_catalogo_musica
-- consulta_catalogo_peliculas
+- saludos:
+    use_entities: false
+- me_llamo
+- como_estas
+- gracias:
+    use_entities: false
+- consulta_articulos:
+    use_entities: false
+- consulta_articulo:
+    use_entities: false
+- consulta_articulos_kw
+- consulta_articulo_kw
+- consulta_juegos:
+    use_entities: false
+- consulta_juego:
+    use_entities: false
+- consulta_juegos_kw
+- consulta_juego_kw
+- consulta_libros:
+    use_entities: false
+- consulta_libro:
+    use_entities: false
+- consulta_libro_kw
+- consulta_libros_kw
+- consulta_libros_titulo
+- consulta_libro_titulo
+- consulta_libros_autor
+- consulta_libro_autor
+- consulta_libros_titulo_autor
+- consulta_libro_titulo_autor
+- consulta_libros_kw_autor
+- consulta_libro_kw_autor
+- consulta_musicas:
+    use_entities: false
+- consulta_musica:
+    use_entities: false
+- consulta_musicas_kw
+- consulta_musica_kw
+- consulta_peliculas:
+    use_entities: false
+- consulta_pelicula:
+    use_entities: false
+- consulta_peliculas_kw
+- consulta_pelicula_kw
 - consulta_horario_close
 - consulta_horario_general
 - consulta_horario_open
 - consulta_localizacion
 - consulta_telefono
-
 slots:
-  persona:
-    type: text
+  articulos:
+    type: list
   autores:
+    type: list
+  juego:
     type: list
   libro:
     type: list
   localizacion:
     type: text
-
-entities:
-- persona
-- PER
-- libro
-- libro_titulo
-- juego
-- musica
-- musica_titulo
-- pelicula_titulo
-- pelicula
-- localizacion
-
+  musica:
+    type: list
+  pelicula:
+    type: list
+  persona:
+    type: text
 templates:
-  utter_saludo_nombre:
-  - text: "Hola {persona}."
-  - text: "Hola {persona}. ¿Qué tal estás hoy?"
-  
-  utter_saludo:
-  - text: "Hola. ¿Cómo puedo ayudarle?"
-  - text: "Salutaciones terrícola."
-  - text: "Hola."
-  - text: "¡Hola holita!"
-  - text: "¡Buenas!"
-  - text: "Hola. Me alegra verte de vuelta."
-
-  utter_quien_soy:
-  - text: "Soy Janet."
-  - text: "Soy Janet, pero mis amigos me llaman... Janet"
-  - text: "¿Estás de broma? Soy Janet."
-
-  utter_consulta_catalogo_libros:
-  - text: "Aquí tienes los libros que me pediste."
-
-  utter_consulta_localizacion:
-  - text: "Aquí está la localización que me pediste."
-  - text: "Aquí está la {localizacion}"
-
+  utter_articulo_kw:
+  - text: Aquí tienes el artículo que me pediste.
+  - text: Aquí tienes el articulo de {articulos}.
+  utter_articulos_kw:
+  - text: Aquí tienes los artículos que me pediste.
+  - text: Aquí tienes articulos de {articulos}.
   utter_consulta_horario_abierto:
-  - text: "La {localizacion} está abierta ahora."
-  - text: "Si, ahora mismo está abierta."
-  - text: "Esta biblioteca está abierta."
-
+  - text: La {localizacion} está abierta ahora.
+  - text: Si, ahora mismo está abierta.
+  - text: Esta biblioteca está abierta.
   utter_consulta_horario_cerrado:
-  - text: "La {localizacion} está cerrada ahora."
-  - text: "Si, ahora mismo está cerrada."
-  - text: "Esta biblioteca está cerrada."
-
+  - text: La {localizacion} está cerrada ahora.
+  - text: Si, ahora mismo está cerrada.
+  - text: Esta biblioteca está cerrada.
+  utter_consulta_localizacion:
+  - text: Aquí está la localización que me pediste.
+  - text: Aquí está la {localizacion}
   utter_consulta_telefono:
-  - text: "Aquí está el teléfono que me pediste."
-  - text: "Aquí está el teléfono de la {localizacion}"
-
+  - text: Aquí está el teléfono que me pediste.
+  - text: Aquí está el teléfono de la {localizacion}
   utter_despedida:
-  - text: "Te veo luego."
-  - text: "Adiós."
-  - text: "Me ha gustado hablar contigo."
-  - text: "Hasta luego."
-  - text: "Bye bye."
-  - text: "Chao."
-
+  - text: Te veo luego.
+  - text: Adiós.
+  - text: Me ha gustado hablar contigo.
+  - text: Hasta luego.
+  - text: Bye bye.
+  - text: Chao.
+  utter_especifica_articulo:
+  - text: Necesito más información sobre el artículo que quieres buscar. Podrías decirmelo?
+  - text: Qué artículo quieres buscar?
+  - text: Qué artículo?
+  utter_especifica_juego:
+  - text: Necesito más información sobre el juego que quieres buscar. Podrías decirmelo?
+  - text: Qué juego quieres buscar?
+  - text: Qué juego?
+  utter_especifica_libro:
+  - text: Necesito más información sobre el libro que quieres buscar. Podrías decirmelo?
+  - text: Qué libro quieres buscar?
+  - text: Qué libro?
+  utter_especifica_musica:
+  - text: Necesito más información sobre la música que quieres buscar. Podrías decirmelo?
+  - text: Qué disco o partitura quieres buscar?
+  - text: Qué disco?
+  utter_especifica_pelicula:
+  - text: Necesito más información sobre la película que quieres buscar. Podrías decirmelo?
+  - text: Qué película quieres buscar?
+  - text: Qué película?
+  utter_juego_kw:
+  - text: Aquí tienes los juegos que me pediste.
+  - text: Aquí tienes el juego {juego}.
+  utter_juegos_kw:
+  - text: Aquí tienes los juegos que me pediste.
+  - text: Aquí tienes los juegos {juego}.
+  utter_libro_autor:
+  - text: Aquí tienes un libro de {autores}.
+  - text: Mira, he encontrado este libro.
+  - text: Aquí tiene un ejemplar del escritor {autores}.
+  utter_libro_kw:
+  - text: Aquí tienes el libro que me pediste.
+  - text: Mira, he encontrado este libro.
+  - text: Aquí tienes un ejemplar de {libro}.
+  utter_libro_kw_autor:
+  - text: Aquí tienes un libro de {libro} escrito por {autores}.
+  - text: Mira, he encontrado este libro.
+  - text: Aquí tiene un ejemplar.
+  utter_libro_titulo:
+  - text: Aquí tienes el libro que me pediste.
+  - text: Mira, he encontrado este libro con ese nombre.
+  - text: Aquí tienes el ejemplar de {libro}.
+  utter_libro_titulo_autor:
+  - text: Aquí tienes un libro llamado {libro} de {autores}.
+  - text: Mira, he encontrado este libro.
+  - text: Aquí tiene un ejemplar.
+  utter_libros_autor:
+  - text: Aquí tienes varios libros de {autores}.
+  - text: Mira, he encontrado estos libros.
+  - text: Aquí tienes ejemplares del escritor {autores}.
+  utter_libros_kw:
+  - text: Aquí tienes los libros que me pediste.
+  - text: Mira, he encontrado estos libros.
+  - text: Aquí tienes varios ejemplares de {libro}.
+  utter_libros_kw_autor:
+  - text: Aquí tienes libros de {libro} escrito por {autores}.
+  - text: Mira, he encontrado estos libros.
+  - text: Aquí tiene varios ejemplares.
+  utter_libros_titulo:
+  - text: Aquí tienes los libros que me pediste.
+  - text: Mira, he encontrado estos libros con ese nombre.
+  - text: Aquí tienes varios ejemplares de {libro}.
+  utter_libros_titulo_autor:
+  - text: Aquí tienes libros llamados {libro} de {autores}.
+  - text: Mira, he encontrado estos libros.
+  - text: Aquí tiene varios ejemplares.
+  utter_musica_kw:
+  - text: Aquí tienes lo que me pediste.
+  - text: Aquí tienes {musica}.
   utter_no_te_entiendo:
-  - text: "No te he entendido."
-  - text: "No entiendo que quieres decir."
-  - text: "No te entiendo. Intenta reformular tu consulta."
-  - text: "Mis creadores no me han enseñado a responder tu consulta."
-
-actions:
-  - utter_saludo
-  - utter_saludo_nombre
-  - utter_quien_soy
-  - utter_consulta_catalogo_libros
-  - utter_despedida
-  - utter_no_te_entiendo
-  - action_busca_libro
-  - utter_consulta_telefono
-  - utter_consulta_localizacion
-  - utter_consulta_horario_abierto
-  - utter_consulta_horario_cerrado
+  - text: No te he entendido.
+  - text: No entiendo que quieres decir.
+  - text: No te entiendo. Intenta reformular tu consulta.
+  - text: Mis creadores no me han enseñado a responder tu consulta.
+  utter_pelicula_kw:
+  - text: Aquí tienes la película que me pediste.
+  - text: Aquí tienes la película {pelicula}.
+  utter_peliculas_kw:
+  - text: Aquí tienes las películas que me pediste.
+  - text: Aquí tienes las películas de {pelicula}.
+  utter_quien_soy:
+  - text: Soy Janet.
+  - text: Soy Janet, pero mis amigos me llaman... Janet
+  - text: ¿Estás de broma? Soy Janet.
+  utter_saludo:
+  - text: Hola. ¿Cómo puedo ayudarle?
+  - text: Salutaciones terrícola.
+  - text: Hola.
+  - text: ¡Hola holita!
+  - text: ¡Buenas!
+  - text: Hola. Me alegra verte de vuelta.
+  utter_saludo_nombre:
+  - text: Hola {persona}.
+  - text: Hola {persona}. ¿Qué tal estás hoy?
