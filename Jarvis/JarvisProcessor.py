@@ -16,6 +16,7 @@ from rasa_nlu import config
 from rasa_core import train
 from rasa_core.training import interactive
 from rasa_core.agent import Agent
+from rasa_core.utils import EndpointConfig
 
 class JarvisProcessor():
 
@@ -23,7 +24,8 @@ class JarvisProcessor():
         directorioModelos = 'model/default/Jarvis'
         if (os.path.isdir(directorioModelos)):
             self.interpreter = RasaNLUInterpreter(directorioModelos)
-            self.agent = Agent.load('model/dialogue', interpreter=self.interpreter)
+            action_endopoint = EndpointConfig(url="http://localhost:5055/webhook")
+            self.agent = Agent.load('model/dialogue', interpreter=self.interpreter, action_endpoint=action_endopoint)
 
     def train_nlu(self):
         

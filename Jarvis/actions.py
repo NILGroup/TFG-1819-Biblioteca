@@ -25,6 +25,22 @@ class ActionBuscaLibros(Action):
             dispatcher.utter_message("Tienes que indicarme un libro.")
             return []
 
+class ActionSaludos(Action):
+    def name(self):
+        return 'action_saludos'
+
+    def run(self, dispatcher, tracker, domain):
+        persona = tracker.get_slot('persona')
+        if persona is not None:
+            print('He entrado aquí')
+            dispatcher.utter_template("utter_saludo_nombre", tracker)
+            return [persona]
+
+        else:
+            print('He entrado aquí 2')
+            dispatcher.utter_template("utter_saludo", tracker)
+            return []
+
 class ActionBuscaMas(Action):
     def name(self):
         return 'action_busca_mas'
