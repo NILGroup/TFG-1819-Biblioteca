@@ -8,7 +8,6 @@ Versión 0.5.0
 """
 
 from rasa_core_sdk import Action
-from rasa_nlu.model import Trainer, Interpreter
 from rasa_core_sdk.events import SlotSet
 
 class ActionBuscaLibros(Action):
@@ -19,7 +18,7 @@ class ActionBuscaLibros(Action):
         libros = tracker.get_slot('libros')
         if libros is not None:
             dispatcher.utter_message("Aquí tienes el libro que me pediste")
-            return [libros]
+            return []
 
         else:
             dispatcher.utter_message("Tienes que indicarme un libro.")
@@ -31,11 +30,15 @@ class ActionSaludos(Action):
 
     def run(self, dispatcher, tracker, domain):
         persona = tracker.get_slot('persona')
+        print(next(tracker.get_latest_entity_values('PER'), None))
         if persona is not None:
             print('He entrado aquí')
             dispatcher.utter_template("utter_saludo_nombre", tracker)
-            return [persona]
-
+            return []
+        elif next(tracker.get_latest_entity_values('PER'), None) is not None:
+            tracker.update(SlotSet("persona", next(tracker.get_latest_entity_values('PER'), None)))
+            dispatcher.utter_template("utter_saludo_nombre", tracker)
+            return [SlotSet("persona", next(tracker.get_latest_entity_values('PER'), None))]
         else:
             print('He entrado aquí 2')
             dispatcher.utter_template("utter_saludo", tracker)
@@ -53,30 +56,38 @@ class ActionBuscaMas(Action):
         musica = tracker.get_slot('musica')
         pelicula = tracker.get_slot('pelicula')
         if libros is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [libros]
+            dispatcher.utter_template("utter_muestra_mas", tracker)
+            return []
         elif articulos is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [articulos]
+            dispatcher.utter_template("utter_muestra_mas", tracker)
+            return []
         elif autores is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [autores]
+            dispatcher.utter_template("utter_muestra_mas", tracker)
+            return []
         elif juego is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [juego]
+            dispatcher.utter_template("utter_muestra_mas", tracker)
+            return []
         elif musica is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [musica]
+            dispatcher.utter_template("utter_muestra_mas", tracker)
+            return []
         elif pelicula is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [pelicula]
+            dispatcher.utter_template("utter_muestra_mas", tracker)
+            return []
+        elif next(tracker.get_latest_entity_values('PER'), None) is not None:
+            tracker.update(SlotSet("autores", next(tracker.get_latest_entity_values('PER'), None)))
+            dispatcher.utter_template("utter_muestra_mas", tracker)
+            return [SlotSet("autores", next(tracker.get_latest_entity_values('PER'), None))]
+        elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
+            tracker.update(SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None)))
+            dispatcher.utter_template("utter_muestra_mas", tracker)
+            return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
         else:
             dispatcher.utter_message("Antes tienes que indicarme algo.")
             return []
 
-class ActionBuscaMas(Action):
+class ActionMuestraPrimero(Action):
     def name(self):
-        return 'action_busca_mas'
+        return 'action_muestra_primero'
 
     def run(self, dispatcher, tracker, domain):
         libros = tracker.get_slot('libro')
@@ -86,23 +97,101 @@ class ActionBuscaMas(Action):
         musica = tracker.get_slot('musica')
         pelicula = tracker.get_slot('pelicula')
         if libros is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [libros]
+            dispatcher.utter_template("utter_primero_list", tracker)
+            return []
         elif articulos is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [articulos]
+            dispatcher.utter_template("utter_primero_list", tracker)
+            return []
         elif autores is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [autores]
+            dispatcher.utter_template("utter_primero_list", tracker)
+            return []
         elif juego is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [juego]
+            dispatcher.utter_template("utter_primero_list", tracker)
+            return []
         elif musica is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [musica]
+            dispatcher.utter_template("utter_primero_list", tracker)
+            return []
         elif pelicula is not None:
-            dispatcher.utter_template("utter_muestra_mas")
-            return [pelicula]
+            dispatcher.utter_template("utter_primero_list", tracker)
+            return []
+        elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
+            tracker.update(SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None)))
+            dispatcher.utter_template("utter_primero_list", tracker)
+            return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
+        else:
+            dispatcher.utter_message("Antes tienes que indicarme algo.")
+            return []
+
+class ActionMuestraSegundo(Action):
+    def name(self):
+        return 'action_muestra_segundo'
+
+    def run(self, dispatcher, tracker, domain):
+        libros = tracker.get_slot('libro')
+        articulos = tracker.get_slot('articulos')
+        autores = tracker.get_slot('autores')
+        juego = tracker.get_slot('juego')
+        musica = tracker.get_slot('musica')
+        pelicula = tracker.get_slot('pelicula')
+        if libros is not None:
+            dispatcher.utter_template("utter_segundo_list", tracker)
+            return []
+        elif articulos is not None:
+            dispatcher.utter_template("utter_segundo_list", tracker)
+            return []
+        elif autores is not None:
+            dispatcher.utter_template("utter_segundo_list", tracker)
+            return []
+        elif juego is not None:
+            dispatcher.utter_template("utter_segundo_list", tracker)
+            return []
+        elif musica is not None:
+            dispatcher.utter_template("utter_segundo_list", tracker)
+            return []
+        elif pelicula is not None:
+            dispatcher.utter_template("utter_segundo_list", tracker)
+            return []
+        elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
+            tracker.update(SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None)))
+            dispatcher.utter_template("utter_segundo_list", tracker)
+            return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
+        else:
+            dispatcher.utter_message("Antes tienes que indicarme algo.")
+            return []
+
+class ActionMuestraTercero(Action):
+    def name(self):
+        return 'action_muestra_tercero'
+
+    def run(self, dispatcher, tracker, domain):
+        libros = tracker.get_slot('libro')
+        articulos = tracker.get_slot('articulos')
+        autores = tracker.get_slot('autores')
+        juego = tracker.get_slot('juego')
+        musica = tracker.get_slot('musica')
+        pelicula = tracker.get_slot('pelicula')
+        if libros is not None:
+            dispatcher.utter_template("utter_tercero_list", tracker)
+            return []
+        elif articulos is not None:
+            dispatcher.utter_template("utter_tercero_list", tracker)
+            return []
+        elif autores is not None:
+            dispatcher.utter_template("utter_tercero_list", tracker)
+            return []
+        elif juego is not None:
+            dispatcher.utter_template("utter_tercero_list", tracker)
+            return []
+        elif musica is not None:
+            dispatcher.utter_template("utter_tercero_list", tracker)
+            return []
+        elif pelicula is not None:
+            dispatcher.utter_template("utter_tercero_list", tracker)
+            return []
+        elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
+            tracker.update(SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None)))
+            dispatcher.utter_template("utter_tercero_list", tracker)
+            return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
         else:
             dispatcher.utter_message("Antes tienes que indicarme algo.")
             return []

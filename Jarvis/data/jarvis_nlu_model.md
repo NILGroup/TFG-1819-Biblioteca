@@ -424,6 +424,8 @@
 - Llámame [María](persona)
 - A partir de ahora me llamarás [Sánchez](persona)
 - Me llamo [Mauri](persona)
+- Me llamo [Mauricio](persona:mauricio)
+- Me llamo [Mauri](persona:mauri)
 
 ## intent:quien_soy
 - Cómo te llamas
@@ -446,6 +448,13 @@
 - Hola
 - Buenas tardes
 - Buenos días
+- Hola
+
+## synonym:mauricio
+- Mauricio
+
+## synonym:venancio tomeo
+- Venancio Tomeo
 
 ## lookup:persona
   data/names/hombres.csv

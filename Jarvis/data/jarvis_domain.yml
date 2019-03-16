@@ -1,70 +1,73 @@
 %YAML 1.1
 ---
 actions:
-- utter_libros_titulo
-- utter_especifica_musica
-- utter_especifica_juego
-- utter_libros_titulo_autor
 - utter_libros_autor
-- action_busca_libro
-- utter_peliculas_kw
-- utter_juego_kw
-- utter_saludo_nombre
-- utter_libro_kw_autor
-- utter_libro_autor
-- utter_libro_titulo_autor
-- utter_gracias
-- utter_info_primero
-- utter_articulos_kw
-- utter_consulta_telefono
-- utter_pelicula_kw
-- utter_despedida
-- utter_libro_kw
-- utter_libro_titulo
-- utter_info_segundo
-- utter_info_tercero
-- utter_consulta_horario_cerrado
-- utter_consulta_horario_abierto
-- action_busca_mas
-- utter_libros_kw_autor
-- utter_no_te_entiendo
-- utter_articulo_kw
 - utter_especifica_articulo
-- utter_musica_kw
-- utter_juegos_kw
-- utter_quien_soy
+- utter_articulo_kw
 - utter_especifica_pelicula
-- utter_especifica_libro
 - utter_consulta_localizacion
-- utter_libros_kw
+- action_busca_mas
+- action_muestra_primero
+- action_muestra_segundo
+- action_muestra_tercero
+- utter_especifica_musica
+- utter_consulta_telefono
+- utter_libro_autor
+- utter_quien_soy
+- utter_libros_titulo_autor
+- utter_no_te_entiendo
+- action_saludos
+- utter_consulta_horario_abierto
 - utter_saludo
+- utter_info_segundo
+- utter_consulta_horario_cerrado
+- utter_info_primero
+- utter_libros_kw
+- utter_peliculas_kw
+- utter_saludo_nombre
+- utter_libro_kw
+- utter_musica_kw
+- action_busca_libro
+- utter_pelicula_kw
+- utter_libro_titulo_autor
+- utter_especifica_libro
+- utter_libro_kw_autor
+- utter_articulos_kw
+- utter_info_tercero
+- utter_juegos_kw
+- utter_libros_kw_autor
+- utter_especifica_juego
+- utter_gracias
+- utter_despedida
+- utter_libros_titulo
+- utter_juego_kw
+- utter_libro_titulo
 entities:
-- persona
-- MISC
-- autor
-- libro
-- juego
-- musica
-- libro_titulo
-- localizacion
-- autores
 - PER
 - pelicula
+- musica
+- libro
+- persona
+- MISC
+- autores
+- localizacion
+- juego
+- autor
+- libro_titulo
 intents:
+- me_llamo
+- saludos
 - busca_mas
 - consulta_libros_kw
 - consulta_localizacion
 - mas_info_primero
 - despedidas
 - consulta_libros_autor
-- saludos:
-    use_entities: false
 - consulta_libro_titulo_autor
 - gracias:
     use_entities: false
 - quien_soy:
     use_entities: false
-- me_llamo
 - como_estas
 - consulta_articulos:
     use_entities: false
@@ -106,6 +109,10 @@ intents:
 - consulta_horario_open
 - consulta_telefono
 slots:
+  PER:
+    type: text
+  MISC:
+    type: text
   articulos:
     type: text
   autores:
@@ -254,11 +261,18 @@ templates:
   utter_saludo_nombre:
   - text: Hola {persona}.
   - text: Hola {persona}. ¿Qué tal estás hoy?
+  - text: Hola {persona}. ¿Cómo puedo ayudarle?
+  - text: Salutaciones terrícola.
+  - text: Hola.
+  - text: ¡Hola holita!
+  - text: ¡Buenas {persona}!
+  - text: ¡Buenas!
+  - text: Hola. Me alegra verte de vuelta.
   utter_segundo_list:
   - text: Aquí tienes el segundo ejemplar.
   - text: Aquí tienes.
   - text: Mira, aquí tienes el segundo de la lista.
-    utter_tercero_list: null
+  utter_tercero_list:
   - text: Aquí tienes el tercero ejemplar.
   - text: Aquí tienes.
   - text: Mira, aquí tienes el tercero de la lista.

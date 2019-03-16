@@ -1,16 +1,16 @@
 ## Conversacion simple
 * saludos
-    - utter_saludo
+    - action_saludos
 * me_llamo{"persona":"Susana"}
-    -utter_saludo_nombre
+    - action_saludos
 * despedidas
     - utter_despedida
     
 ## Solo hola
 * saludos
-    - utter_saludo
+    - action_saludos
 * me_llamo{"persona":"Susana"}
-    -utter_saludo_nombre
+    - action_saludos
 
 ## Generated Story 3005191058733942635
 * consulta_libro
@@ -33,10 +33,10 @@
 
 ## Generated Story -3161024289020967059
 * saludos
-    - utter_saludo
+    - action_saludos
 * me_llamo{"persona": "Mauri"}
     - slot{"persona": "Mauri"}
-    - utter_saludo_nombre
+    - action_saludos
 * quien_soy
     - utter_quien_soy
 * despedidas
@@ -45,7 +45,7 @@
 
 ## Generated Story 6991514439844087412
 * saludos
-    - utter_saludo
+    - action_saludos
 * consulta_libro_titulo_autor{"PER": "Ken Follet", "MISC": "Los Pilares de la Tierra", "autores": "ken follet"}
     - slot{"libro": "Los Pilares de la Tierra"}
     - slot{"autores": "ken follet"}
@@ -76,4 +76,9 @@
     - utter_libros_kw
 * busca_mas
     - action_busca_mas
+
+## Generated Story 5658523965682375881
+* me_llamo{"persona": "mauri"}
+    - slot{"persona": "mauri"}
+    - action_saludos
 

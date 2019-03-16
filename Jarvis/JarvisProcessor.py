@@ -14,9 +14,11 @@ from rasa_nlu.model import Trainer
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_nlu import config
 from rasa_core import train
+from rasa_core.domain import Domain
 from rasa_core.training import interactive
 from rasa_core.agent import Agent
 from rasa_core.utils import EndpointConfig
+from rasa_core.tracker_store import MongoTrackerStore
 
 class JarvisProcessor():
 
@@ -25,7 +27,15 @@ class JarvisProcessor():
         if (os.path.isdir(directorioModelos)):
             self.interpreter = RasaNLUInterpreter(directorioModelos)
             action_endopoint = EndpointConfig(url="http://localhost:5055/webhook")
-            self.agent = Agent.load('model/dialogue', interpreter=self.interpreter, action_endpoint=action_endopoint)
+            tracker_store = MongoTrackerStore(domain= Domain.load('model/dialogue/domain.yml'),
+                                              host='mongodb://localhost:27017',
+                                              db='rasa',
+                                              username='rasa',
+                                              password='Pitonisa46')
+            self.agent = Agent.load('model/dialogue',
+                                    interpreter=self.interpreter,
+                                    action_endpoint=action_endopoint,
+                                    tracker_store= tracker_store)
 
     def train_nlu(self):
         
@@ -51,16 +61,13 @@ class JarvisProcessor():
 
     def train_all(self):
         model_directory = self.train_nlu()
-        agent = self.train_dialogue()
+        self.agent = self.train_dialogue()
 
-        self.interpreter = RasaNLUInterpreter(model_directory)
-        self.agent = Agent.load('model/dialogue', interpreter=self.interpreter)
-
-        return [model_directory, agent]
+        return [model_directory, self.agent]
 
     def train_interactive(self):
         self.train_nlu()
-        self.train_dialogue()
+        self.agent = self.train_dialogue()
 
         return interactive.run_interactive_learning(self.agent)
 
@@ -98,11 +105,11 @@ class JarvisProcessor():
 
 if __name__ == '__main__':
     jarvis = JarvisProcessor()
-    jarvis.agent = Agent.load('model/dialogue', interpreter=jarvis.interpreter)
     while True:
         a = input()
         if a == 'stop':
             break
         responses = jarvis.agent.handle_message(a)
         for response in responses:
+            print(response)
             print(response["text"])

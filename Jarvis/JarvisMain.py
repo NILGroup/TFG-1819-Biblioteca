@@ -77,13 +77,16 @@ def initialize():
 
     if args.train == "nlu":
         tmp.train_nlu()
+        return False
     elif args.train == "dialogue":
         tmp.train_dialogue()
+        return False
     elif args.train == "interactive":
         tmp.train_interactive()
         return False
     elif args.train == "all":
         tmp.train_all()
+        return False
 
     return True
 
