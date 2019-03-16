@@ -30,17 +30,16 @@ class ActionSaludos(Action):
 
     def run(self, dispatcher, tracker, domain):
         persona = tracker.get_slot('persona')
-        print(next(tracker.get_latest_entity_values('PER'), None))
         if persona is not None:
             print('He entrado aquí')
             dispatcher.utter_template("utter_saludo_nombre", tracker)
             return []
-        elif next(tracker.get_latest_entity_values('PER'), None) is not None:
-            tracker.update(SlotSet("persona", next(tracker.get_latest_entity_values('PER'), None)))
+        elif next(tracker.get_latest_entity_values('PER'), None) is not None and \
+                tracker.latest_message['intent'].get('name') != 'saludos':
+            tracker.slots['persona'] = next(tracker.get_latest_entity_values('PER'), None)
             dispatcher.utter_template("utter_saludo_nombre", tracker)
             return [SlotSet("persona", next(tracker.get_latest_entity_values('PER'), None))]
         else:
-            print('He entrado aquí 2')
             dispatcher.utter_template("utter_saludo", tracker)
             return []
 
@@ -74,11 +73,11 @@ class ActionBuscaMas(Action):
             dispatcher.utter_template("utter_muestra_mas", tracker)
             return []
         elif next(tracker.get_latest_entity_values('PER'), None) is not None:
-            tracker.update(SlotSet("autores", next(tracker.get_latest_entity_values('PER'), None)))
+            tracker.slots['autores'] = next(tracker.get_latest_entity_values('PER'), None)
             dispatcher.utter_template("utter_muestra_mas", tracker)
             return [SlotSet("autores", next(tracker.get_latest_entity_values('PER'), None))]
         elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
-            tracker.update(SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None)))
+            tracker.slots['libros'] = next(tracker.get_latest_entity_values('MISC'), None)
             dispatcher.utter_template("utter_muestra_mas", tracker)
             return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
         else:
@@ -115,7 +114,7 @@ class ActionMuestraPrimero(Action):
             dispatcher.utter_template("utter_primero_list", tracker)
             return []
         elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
-            tracker.update(SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None)))
+            tracker.slots['libros'] = next(tracker.get_latest_entity_values('MISC'), None)
             dispatcher.utter_template("utter_primero_list", tracker)
             return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
         else:
@@ -152,7 +151,7 @@ class ActionMuestraSegundo(Action):
             dispatcher.utter_template("utter_segundo_list", tracker)
             return []
         elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
-            tracker.update(SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None)))
+            tracker.slots['libros'] = next(tracker.get_latest_entity_values('MISC'), None)
             dispatcher.utter_template("utter_segundo_list", tracker)
             return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
         else:
@@ -189,7 +188,7 @@ class ActionMuestraTercero(Action):
             dispatcher.utter_template("utter_tercero_list", tracker)
             return []
         elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
-            tracker.update(SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None)))
+            tracker.slots['libros'] = next(tracker.get_latest_entity_values('MISC'), None)
             dispatcher.utter_template("utter_tercero_list", tracker)
             return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
         else:
