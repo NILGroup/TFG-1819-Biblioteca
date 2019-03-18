@@ -3,6 +3,7 @@
 - Busca más
 - Muestrame más
 - Enseñame más ejemplares
+- Busca más
 
 ## intent:como_estas
 - Qué tal
@@ -178,6 +179,7 @@
 - Necesito un libro titulado [Preludio a la fundación](libro_titulo)
 - Libro llamado [Juego de Tronos](libro_titulo)
 - Libro titulado [Juego de Tronos](libro_titulo)
+- Buscame un libro llamado [El amor en tiempos de colera](MISC)
 
 ## intent:consulta_libro_titulo_autor
 - Quiero un libro llamado [El Quijote](libro_titulo) del autores [Miguel de Cervantes](autores)
@@ -235,6 +237,8 @@
 - Libro de [Juego de Tronos](libro)
 - Quiero libros de [matemática discreta](libro)
 - Quiero libros de [Venancio Tomeo](PER)[Venancio Tomeo](libro:venancio tomeo)
+- Necesito que busques libros de [estructuras de datos y algoritmos](libro)
+- Quiero libros de [historia del arte](libro)
 
 ## intent:consulta_libros_kw_autor
 - Quiero libros de [El Quijote](libro_titulo) del autores [Miguel de Cervantes](autores)
@@ -285,6 +289,16 @@
 - Dónde se encuentra la [Facultad de informática](localizacion)
 - Ubicación de la [Zambrano](localizacion)
 - Donde está la [biblioteca de ciencias políticas](localizacion)
+- Quiero ir a la [facultad de geografía e historia](localizacion)
+
+## intent:consulta_localizacion_empty
+- Busca su ubicación
+- Necesito ir
+- Necesito desplazarme allí
+- Dónde está
+- Dónde se encuentra
+- Dónde está
+- [Dónde](PER) está
 
 ## intent:consulta_musica
 - Busca un CD
@@ -371,6 +385,18 @@
 - Busca el número de la [Facultad de medicina](localizacion)
 - Busca el número de teléfono de la [Zambrano](localizacion)
 - Cuál es el número de la [Facultad de informática](localizacion)
+- Cuál es el teléfono de la [Facultad de Ciencias de la Información](localizacion)
+- Quiero el teléfono de la [biblioteca de veterinaria](localizacion)
+
+## intent:consulta_telefono_empty
+- Llámala
+- Necesito su número
+- Necesito el teléfono
+- Busca su teléfono
+- Busca el número de teléfono
+- Cuál es su número
+- Cuál es su teléfono
+- Quiero su teléfono
 
 ## intent:despedidas
 - Adiós
@@ -389,6 +415,9 @@
 - Adiós
 - Hasta pronto
 - Adiós
+- Adiós
+- Hasta pronto
+- Hasta mañana
 
 ## intent:gracias
 - Gracias
@@ -397,6 +426,22 @@
 - Me has ayudado mucho
 - Mil gracias
 - Gracias
+- Gracias
+- Gracias
+
+## intent:insultos
+- Hijo de puta
+- Hija de puta
+- Eres tonta
+- Eres tonto
+- Me caes fatal
+- Zorra
+- Cabrón
+- Eres gilipollas
+- Vete a la mierda
+- Desgraciada
+- Maleducada
+- Asquerosa
 
 ## intent:mas_info_primero
 - Muestrame más información del primero
@@ -415,17 +460,18 @@
 - Enseñame el tercero
 - Quiero ver el 3
 - Quiero ver el tercero
+- Muestrame el tercero
 
 ## intent:me_llamo
 - Soy [Martin](persona)
-- Me llamo [Mauricio Abbati](persona)
 - Mi nombre es [Susana](persona)
 - Me gustaría que me llamases [Miguel](persona)
 - Llámame [María](persona)
 - A partir de ahora me llamarás [Sánchez](persona)
 - Me llamo [Mauri](persona)
-- Me llamo [Mauricio](persona:mauricio)
-- Me llamo [Mauri](persona:mauri)
+- Me llamo [Marcos](persona)
+- Buenos días, me llamo Marina[Marina](persona:marina)
+- Me llamo [Miguel](persona:miguel)
 
 ## intent:quien_soy
 - Cómo te llamas
@@ -445,13 +491,15 @@
 - Saludos
 - Hello
 - Holis
-- Hola
-- Buenas tardes
-- Buenos días
-- Hola
 
-## synonym:mauricio
-- Mauricio
+## synonym:Mauricio
+- Mauri
+
+## synonym:marina
+- Marina
+
+## synonym:miguel
+- Miguel
 
 ## synonym:venancio tomeo
 - Venancio Tomeo

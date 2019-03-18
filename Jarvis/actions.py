@@ -15,19 +15,6 @@ from rasa_core_sdk.events import SlotSet
 from rasa_core_sdk.executor import CollectingDispatcher
 from rasa_core_sdk.forms import FormAction, REQUESTED_SLOT
 
-class ActionBuscaLibros(Action):
-    def name(self):
-        return 'action_busca_libros'
-
-    def run(self, dispatcher, tracker, domain):
-        libros = tracker.get_slot('libros')
-        if libros is not None:
-            dispatcher.utter_message("Aquí tienes el libro que me pediste")
-            return []
-
-        else:
-            dispatcher.utter_message("Tienes que indicarme un libro.")
-            return []
 
 class ActionSaludos(Action):
     def name(self):
@@ -51,11 +38,7 @@ class SaludosForm(FormAction):
         return ["persona"]
 
     def slot_mappings(self):
-        print("He entrado")
         return {"persona": [self.from_entity(entity="PER", intent="me_llamo"),
-                            self.from_entity(entity="PERSON", intent="me_llamo"),
-                            self.from_entity(entity="per", intent="me_llamo"),
-                            self.from_entity(entity="person", intent="me_llamo"),
                             self.from_entity(entity="persona", intent="me_llamo")]}
 
     def validate(self,
@@ -93,7 +76,7 @@ class SaludosForm(FormAction):
             dispatcher.utter_template("utter_saludo", tracker)
             return []
 
-class BuscarForm(FormAction):
+class BuscarLibroForm(FormAction):
     def name(self):
         return "form_libros"
 
@@ -102,46 +85,10 @@ class BuscarForm(FormAction):
         return []
 
     def slot_mapping(self):
-        return {"libro": [self.from_entity(entity="libro", intent=["consulta_libros_kw",
-                                                                   "consulta_libros_autor",
-                                                                   "consulta_libro_titulo_autor",
-                                                                   "consulta_libro_kw",
-                                                                   "consulta_libros_titulo",
-                                                                   "consulta_libro_titulo",
-                                                                   "consulta_libro_autor",
-                                                                   "consulta_libros_titulo_autor",
-                                                                   "consulta_libros_kw_autor",
-                                                                   "consulta_libro_kw_autor"]),
-                          self.from_entity(entity="MISC", intent=["consulta_libros_kw",
-                                                                   "consulta_libros_autor",
-                                                                   "consulta_libro_titulo_autor",
-                                                                   "consulta_libro_kw",
-                                                                   "consulta_libros_titulo",
-                                                                   "consulta_libro_titulo",
-                                                                   "consulta_libro_autor",
-                                                                   "consulta_libros_titulo_autor",
-                                                                   "consulta_libros_kw_autor",
-                                                                   "consulta_libro_kw_autor"])],
-                "autores":  [self.from_entity(entity="PER", intent=["consulta_libros_kw",
-                                                                   "consulta_libros_autor",
-                                                                   "consulta_libro_titulo_autor",
-                                                                   "consulta_libro_kw",
-                                                                   "consulta_libros_titulo",
-                                                                   "consulta_libro_titulo",
-                                                                   "consulta_libro_autor",
-                                                                   "consulta_libros_titulo_autor",
-                                                                   "consulta_libros_kw_autor",
-                                                                   "consulta_libro_kw_autor"]),
-                          self.from_entity(entity="autores", intent=["consulta_libros_kw",
-                                                                   "consulta_libros_autor",
-                                                                   "consulta_libro_titulo_autor",
-                                                                   "consulta_libro_kw",
-                                                                   "consulta_libros_titulo",
-                                                                   "consulta_libro_titulo",
-                                                                   "consulta_libro_autor",
-                                                                   "consulta_libros_titulo_autor",
-                                                                   "consulta_libros_kw_autor",
-                                                                   "consulta_libro_kw_autor"])]
+        return {"libro": [self.from_entity(entity="libro"),
+                          self.from_entity(entity="MISC")],
+                "autores":  [self.from_entity(entity="PER"),
+                          self.from_entity(entity="autores")]
                 }
 
     def validate(self,
@@ -149,20 +96,29 @@ class BuscarForm(FormAction):
                  tracker: Tracker,
                  domain: Dict[Text, Any]) -> List[Dict]:
         slot_values = self.extract_other_slots(dispatcher, tracker, domain)
-        slot_to_fill = tracker.get_slot('libro')
+        slot_to_fill_libro = tracker.get_slot('libro')
+        slot_to_fill_autores = tracker.get_slot('autores')
         temp = {}
 
-        if slot_to_fill:
+        if slot_to_fill_libro:
             slot_values.update(self.extract_requested_slot(dispatcher, tracker, domain))
-
+        elif slot_to_fill_autores:
+            slot_values.update(self.extract_requested_slot(dispatcher, tracker, domain))
         else:
-            aux = next(tracker.get_latest_entity_values('libro'), None)
-            if aux is None:
+            libro = next(tracker.get_latest_entity_values('libro'), None)
+            autor1 = next(tracker.get_latest_entity_values('autores'), None)
+            autorPer = next(tracker.get_latest_entity_values('PER'), None)
+            if libro is None:
                 temp['libro'] = next(tracker.get_latest_entity_values('MISC'),None)
             else:
-                temp['libro'] = aux
+                temp['libro'] = libro
 
-            return [SlotSet('libro', temp['libro'])]
+            if autor1 is None and autorPer is not None:
+                temp['autores'] = autorPer
+            elif autor1 is not None:
+                temp['autores'] = autor1
+
+            return [SlotSet('libro', temp['libro']), SlotSet('autores', temp['autores'])]
 
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
 
@@ -171,12 +127,110 @@ class BuscarForm(FormAction):
                tracker: Tracker,
                domain: Dict[Text, Any]) -> List[Dict]:
         libro = tracker.get_slot('libro')
-        if libro is not None:
-            dispatcher.utter_template("utter_libros_kw_autor", tracker)
-            return []
+        autores = tracker.get_slot('autores')
+        intent = tracker.latest_message['intent'].get('name')
+
+        if intent == "consulta_libros_kw":
+            if libro is not None:
+                dispatcher.utter_template("utter_libros_kw", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        elif intent == "consulta_libros_autor":
+            if autores is not None:
+                dispatcher.utter_template("utter_libros_autor", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        elif intent == "consulta_libro_titulo_autor":
+            if libro is not None and autores is not None:
+                dispatcher.utter_template("utter_libro_titulo_autor", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        elif intent == "consulta_libro_kw":
+            if libro is not None:
+                dispatcher.utter_template("utter_libro_kw", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        elif intent == "consulta_libros_titulo":
+            if libro is not None:
+                dispatcher.utter_template("utter_libros_titulo", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        elif intent == "consulta_libro_titulo":
+            if libro is not None:
+                dispatcher.utter_template("utter_libro_titulo", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        elif intent == "consulta_libro_autor":
+            if autores is not None:
+                dispatcher.utter_template("utter_libro_autor", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        elif intent == "consulta_libros_titulo_autor":
+            if libro is not None and autores is not None:
+                dispatcher.utter_template("utter_libros_titulo_autor", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        elif intent == "consulta_libros_kw_autor":
+            if libro is not None and autores is not None:
+                dispatcher.utter_template("utter_libros_kw_autor", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        elif intent == "consulta_libro_kw_autor":
+            if libro is not None and autores is not None:
+                dispatcher.utter_template("utter_libro_kw_autor", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        return []
+
+class BuscarArticuloForm(FormAction):
+    def name(self):
+        return "form_articulos"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        return []
+
+    def slot_mapping(self):
+        return {"articulos": [self.from_entity(entity="articulos"),
+                          self.from_entity(entity="MISC")]
+                }
+
+    def validate(self,
+                 dispatcher: CollectingDispatcher,
+                 tracker: Tracker,
+                 domain: Dict[Text, Any]) -> List[Dict]:
+        slot_values = self.extract_other_slots(dispatcher, tracker, domain)
+        slot_to_fill_articulos = tracker.get_slot('articulos')
+
+        if slot_to_fill_articulos:
+            slot_values.update(self.extract_requested_slot(dispatcher, tracker, domain))
         else:
-            dispatcher.utter_message("Antes tienes que indicarme algo.")
-            return []
+            articulos = next(tracker.get_latest_entity_values('articulos'), None)
+            if articulos is None:
+                return [SlotSet('articulos',articulos)]
+            else:
+                return [SlotSet('articulos',next(tracker.get_latest_entity_values('MISC'), None))]
+
+        return []
+
+    def submit(self,
+               dispatcher: CollectingDispatcher,
+               tracker: Tracker,
+               domain: Dict[Text, Any]) -> List[Dict]:
+        articulos = tracker.get_slot('articulos')
+        intent = tracker.latest_message['intent'].get('name')
+
+        if intent == "consulta_articulos_kw":
+            if articulos is not None:
+                dispatcher.utter_template("utter_articulos_kw", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        elif intent == "consulta_articulo_kw":
+            if articulos is not None:
+                dispatcher.utter_template("utter_articulo_kw", tracker)
+            else:
+                dispatcher.utter_message("Antes tienes que indicarme algo.")
+        return []
 
 class ActionBuscaMas(Action):
     def name(self):
@@ -191,33 +245,19 @@ class ActionBuscaMas(Action):
         pelicula = tracker.get_slot('pelicula')
         if libros is not None:
             dispatcher.utter_template("utter_muestra_mas", tracker)
-            return []
         elif articulos is not None:
             dispatcher.utter_template("utter_muestra_mas", tracker)
-            return []
         elif autores is not None:
             dispatcher.utter_template("utter_muestra_mas", tracker)
-            return []
         elif juego is not None:
             dispatcher.utter_template("utter_muestra_mas", tracker)
-            return []
         elif musica is not None:
             dispatcher.utter_template("utter_muestra_mas", tracker)
-            return []
         elif pelicula is not None:
             dispatcher.utter_template("utter_muestra_mas", tracker)
-            return []
-        elif next(tracker.get_latest_entity_values('PER'), None) is not None:
-            tracker.slots['autores'] = next(tracker.get_latest_entity_values('PER'), None)
-            dispatcher.utter_template("utter_muestra_mas", tracker)
-            return [SlotSet("autores", next(tracker.get_latest_entity_values('PER'), None))]
-        elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
-            tracker.slots['libro'] = next(tracker.get_latest_entity_values('MISC'), None)
-            dispatcher.utter_template("utter_muestra_mas", tracker)
-            return [SlotSet("libro", next(tracker.get_latest_entity_values('MISC'), None))]
         else:
             dispatcher.utter_message("Antes tienes que indicarme algo.")
-            return []
+        return []
 
 class ActionMuestraPrimero(Action):
     def name(self):
@@ -232,29 +272,19 @@ class ActionMuestraPrimero(Action):
         pelicula = tracker.get_slot('pelicula')
         if libros is not None:
             dispatcher.utter_template("utter_primero_list", tracker)
-            return []
         elif articulos is not None:
             dispatcher.utter_template("utter_primero_list", tracker)
-            return []
         elif autores is not None:
             dispatcher.utter_template("utter_primero_list", tracker)
-            return []
         elif juego is not None:
             dispatcher.utter_template("utter_primero_list", tracker)
-            return []
         elif musica is not None:
             dispatcher.utter_template("utter_primero_list", tracker)
-            return []
         elif pelicula is not None:
             dispatcher.utter_template("utter_primero_list", tracker)
-            return []
-        elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
-            tracker.slots['libros'] = next(tracker.get_latest_entity_values('MISC'), None)
-            dispatcher.utter_template("utter_primero_list", tracker)
-            return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
         else:
             dispatcher.utter_message("Antes tienes que indicarme algo.")
-            return []
+        return []
 
 class ActionMuestraSegundo(Action):
     def name(self):
@@ -269,29 +299,19 @@ class ActionMuestraSegundo(Action):
         pelicula = tracker.get_slot('pelicula')
         if libros is not None:
             dispatcher.utter_template("utter_segundo_list", tracker)
-            return []
         elif articulos is not None:
             dispatcher.utter_template("utter_segundo_list", tracker)
-            return []
         elif autores is not None:
             dispatcher.utter_template("utter_segundo_list", tracker)
-            return []
         elif juego is not None:
             dispatcher.utter_template("utter_segundo_list", tracker)
-            return []
         elif musica is not None:
             dispatcher.utter_template("utter_segundo_list", tracker)
-            return []
         elif pelicula is not None:
             dispatcher.utter_template("utter_segundo_list", tracker)
-            return []
-        elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
-            tracker.slots['libros'] = next(tracker.get_latest_entity_values('MISC'), None)
-            dispatcher.utter_template("utter_segundo_list", tracker)
-            return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
         else:
             dispatcher.utter_message("Antes tienes que indicarme algo.")
-            return []
+        return []
 
 class ActionMuestraTercero(Action):
     def name(self):
@@ -306,29 +326,19 @@ class ActionMuestraTercero(Action):
         pelicula = tracker.get_slot('pelicula')
         if libros is not None:
             dispatcher.utter_template("utter_tercero_list", tracker)
-            return []
         elif articulos is not None:
             dispatcher.utter_template("utter_tercero_list", tracker)
-            return []
         elif autores is not None:
             dispatcher.utter_template("utter_tercero_list", tracker)
-            return []
         elif juego is not None:
             dispatcher.utter_template("utter_tercero_list", tracker)
-            return []
         elif musica is not None:
             dispatcher.utter_template("utter_tercero_list", tracker)
-            return []
         elif pelicula is not None:
             dispatcher.utter_template("utter_tercero_list", tracker)
-            return []
-        elif next(tracker.get_latest_entity_values('MISC'), None) is not None:
-            tracker.slots['libros'] = next(tracker.get_latest_entity_values('MISC'), None)
-            dispatcher.utter_template("utter_tercero_list", tracker)
-            return [SlotSet("libros", next(tracker.get_latest_entity_values('MISC'), None))]
         else:
             dispatcher.utter_message("Antes tienes que indicarme algo.")
-            return []
+        return []
 
 class ActionHayLocalizacion(Action):
     def name(self):
@@ -336,10 +346,12 @@ class ActionHayLocalizacion(Action):
 
     def run(self, dispatcher, tracker, domain):
         localizacion = tracker.get_slot('localizacion')
+        intent = tracker.latest_message['intent'].get('name')
         if localizacion is not None:
-            dispatcher.utter_template("utter_consulta_localizacion", tracker)
-            return []
-
+            if intent == 'consulta_localizacion':
+                dispatcher.utter_template("utter_consulta_localizacion", tracker)
+            elif intent == 'consulta_telefono':
+                dispatcher.utter_template("utter_consulta_telefono", tracker)
         else:
-            dispatcher.utter_message("Primero tienes que indicarme que biblioteca quieres buscar.")
-            return []
+            dispatcher.utter_message("Primero tienes que indicarme una biblioteca.")
+        return []
