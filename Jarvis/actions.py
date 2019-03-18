@@ -62,6 +62,7 @@ class SaludosForm(FormAction):
                  dispatcher: CollectingDispatcher,
                  tracker: Tracker,
                  domain: Dict[Text, Any]) -> List[Dict]:
+
         slot_values = self.extract_other_slots(dispatcher, tracker, domain)
         slot_to_fill = tracker.get_slot(REQUESTED_SLOT)
 
@@ -69,11 +70,14 @@ class SaludosForm(FormAction):
             slot_values.update(self.extract_requested_slot(dispatcher, tracker, domain))
 
         else:
-            dispatcher.utter_message("Dime cómo te llamas")
-
-        for slot, value in slot_values.items():
-            print(slot)
-            print(value)
+            aux = next(tracker.get_latest_entity_values('PER'), None)
+            aux2 = next(tracker.get_latest_entity_values('persona'), None)
+            if aux is None and aux2 is not None:
+                return [SlotSet('persona', aux2)]
+            elif aux is not None:
+                return [SlotSet('persona', aux)]
+            else:
+                dispatcher.utter_message("Dime cómo te llamas")
 
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
 
@@ -83,7 +87,7 @@ class SaludosForm(FormAction):
                domain: Dict[Text, Any]) -> List[Dict]:
         persona = tracker.get_slot('persona')
         if persona is not None:
-            dispatcher.utter_message("Ok, a partir de ahora te llamaré " + persona)
+            dispatcher.utter_template("utter_saludo_nombre", tracker)
             return []
         else:
             dispatcher.utter_template("utter_saludo", tracker)
@@ -145,17 +149,20 @@ class BuscarForm(FormAction):
                  tracker: Tracker,
                  domain: Dict[Text, Any]) -> List[Dict]:
         slot_values = self.extract_other_slots(dispatcher, tracker, domain)
-        slot_to_fill = tracker.get_slot(REQUESTED_SLOT)
+        slot_to_fill = tracker.get_slot('libro')
+        temp = {}
 
         if slot_to_fill:
             slot_values.update(self.extract_requested_slot(dispatcher, tracker, domain))
 
         else:
-            dispatcher.utter_message("Validation failed")
+            aux = next(tracker.get_latest_entity_values('libro'), None)
+            if aux is None:
+                temp['libro'] = next(tracker.get_latest_entity_values('MISC'),None)
+            else:
+                temp['libro'] = aux
 
-        for slot, value in slot_values.items():
-            print(slot)
-            print(value)
+            return [SlotSet('libro', temp['libro'])]
 
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
 
