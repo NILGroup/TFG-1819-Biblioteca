@@ -23,7 +23,7 @@ class ActionSaludos(Action):
     def run(self, dispatcher, tracker, domain):
         persona = tracker.get_slot('persona')
         if persona is not None:
-            dispatcher.utter_template("utter_saludo_nombre", tracker)
+            dispatcher.utter_template("utter_saludo_nombre", tracker, **tracker.slots)
             return []
         else:
             dispatcher.utter_template("utter_saludo", tracker)
@@ -70,8 +70,8 @@ class SaludosForm(FormAction):
                domain: Dict[Text, Any]) -> List[Dict]:
         persona = tracker.get_slot('persona')
         if persona is not None:
-            dispatcher.utter_template("utter_saludo_nombre", tracker)
-            return []
+            dispatcher.utter_template("utter_saludo_nombre", tracker, **tracker.slots)
+            return [SlotSet('persona', persona)]
         else:
             dispatcher.utter_template("utter_saludo", tracker)
             return []
@@ -132,52 +132,52 @@ class BuscarLibroForm(FormAction):
 
         if intent == "consulta_libros_kw":
             if libro is not None:
-                dispatcher.utter_template("utter_libros_kw", tracker)
+                dispatcher.utter_template("utter_libros_kw", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         elif intent == "consulta_libros_autor":
             if autores is not None:
-                dispatcher.utter_template("utter_libros_autor", tracker)
+                dispatcher.utter_template("utter_libros_autor", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         elif intent == "consulta_libro_titulo_autor":
             if libro is not None and autores is not None:
-                dispatcher.utter_template("utter_libro_titulo_autor", tracker)
+                dispatcher.utter_template("utter_libro_titulo_autor", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         elif intent == "consulta_libro_kw":
             if libro is not None:
-                dispatcher.utter_template("utter_libro_kw", tracker)
+                dispatcher.utter_template("utter_libro_kw", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         elif intent == "consulta_libros_titulo":
             if libro is not None:
-                dispatcher.utter_template("utter_libros_titulo", tracker)
+                dispatcher.utter_template("utter_libros_titulo", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         elif intent == "consulta_libro_titulo":
             if libro is not None:
-                dispatcher.utter_template("utter_libro_titulo", tracker)
+                dispatcher.utter_template("utter_libro_titulo", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         elif intent == "consulta_libro_autor":
             if autores is not None:
-                dispatcher.utter_template("utter_libro_autor", tracker)
+                dispatcher.utter_template("utter_libro_autor", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         elif intent == "consulta_libros_titulo_autor":
             if libro is not None and autores is not None:
-                dispatcher.utter_template("utter_libros_titulo_autor", tracker)
+                dispatcher.utter_template("utter_libros_titulo_autor", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         elif intent == "consulta_libros_kw_autor":
             if libro is not None and autores is not None:
-                dispatcher.utter_template("utter_libros_kw_autor", tracker)
+                dispatcher.utter_template("utter_libros_kw_autor", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         elif intent == "consulta_libro_kw_autor":
             if libro is not None and autores is not None:
-                dispatcher.utter_template("utter_libro_kw_autor", tracker)
+                dispatcher.utter_template("utter_libro_kw_autor", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         return []
@@ -222,12 +222,12 @@ class BuscarArticuloForm(FormAction):
 
         if intent == "consulta_articulos_kw":
             if articulos is not None:
-                dispatcher.utter_template("utter_articulos_kw", tracker)
+                dispatcher.utter_template("utter_articulos_kw", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         elif intent == "consulta_articulo_kw":
             if articulos is not None:
-                dispatcher.utter_template("utter_articulo_kw", tracker)
+                dispatcher.utter_template("utter_articulo_kw", tracker, **tracker.slots)
             else:
                 dispatcher.utter_message("Antes tienes que indicarme algo.")
         return []
@@ -349,9 +349,9 @@ class ActionHayLocalizacion(Action):
         intent = tracker.latest_message['intent'].get('name')
         if localizacion is not None:
             if intent == 'consulta_localizacion':
-                dispatcher.utter_template("utter_consulta_localizacion", tracker)
+                dispatcher.utter_template("utter_consulta_localizacion", tracker, **tracker.slots)
             elif intent == 'consulta_telefono':
-                dispatcher.utter_template("utter_consulta_telefono", tracker)
+                dispatcher.utter_template("utter_consulta_telefono", tracker, **tracker.slots)
         else:
             dispatcher.utter_message("Primero tienes que indicarme una biblioteca.")
         return []
