@@ -112,6 +112,8 @@ class BuscarLibroForm(FormAction):
             libro = next(tracker.get_latest_entity_values('libro'), None)
             autor1 = next(tracker.get_latest_entity_values('autores'), None)
             autorPer = next(tracker.get_latest_entity_values('PER'), None)
+            temp['libro'] = None
+            temp['autores'] = None
             if libro is None:
                 temp['libro'] = next(tracker.get_latest_entity_values('MISC'),None)
             else:
