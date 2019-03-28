@@ -99,34 +99,24 @@ class BuscarLibroForm(FormAction):
                  dispatcher: CollectingDispatcher,
                  tracker: Tracker,
                  domain: Dict[Text, Any]) -> List[Dict]:
-        slot_values = self.extract_other_slots(dispatcher, tracker, domain)
-        slot_to_fill_libro = tracker.get_slot('libro')
-        slot_to_fill_autores = tracker.get_slot('autores')
         temp = {}
-
-        if slot_to_fill_libro:
-            slot_values.update(self.extract_requested_slot(dispatcher, tracker, domain))
-        elif slot_to_fill_autores:
-            slot_values.update(self.extract_requested_slot(dispatcher, tracker, domain))
+        libro = next(tracker.get_latest_entity_values('libro'), None)
+        autor1 = next(tracker.get_latest_entity_values('autores'), None)
+        autorPer = next(tracker.get_latest_entity_values('PER'), None)
+        temp['libro'] = None
+        temp['autores'] = None
+        if libro is None:
+            temp['libro'] = next(tracker.get_latest_entity_values('MISC'),None)
         else:
-            libro = next(tracker.get_latest_entity_values('libro'), None)
-            autor1 = next(tracker.get_latest_entity_values('autores'), None)
-            autorPer = next(tracker.get_latest_entity_values('PER'), None)
-            temp['libro'] = None
-            temp['autores'] = None
-            if libro is None:
-                temp['libro'] = next(tracker.get_latest_entity_values('MISC'),None)
-            else:
-                temp['libro'] = libro
+            temp['libro'] = libro
 
-            if autor1 is None and autorPer is not None:
-                temp['autores'] = autorPer
-            elif autor1 is not None:
-                temp['autores'] = autor1
+        if autor1 is None and autorPer is not None:
+            temp['autores'] = autorPer
+        elif autor1 is not None:
+            temp['autores'] = autor1
 
-            return [SlotSet('libro', temp['libro']), SlotSet('autores', temp['autores'])]
+        return [SlotSet('libro', temp['libro']), SlotSet('autores', temp['autores'])]
 
-        return [SlotSet(slot, value) for slot, value in slot_values.items()]
 
     def submit(self,
                dispatcher: CollectingDispatcher,
@@ -205,19 +195,11 @@ class BuscarArticuloForm(FormAction):
                  dispatcher: CollectingDispatcher,
                  tracker: Tracker,
                  domain: Dict[Text, Any]) -> List[Dict]:
-        slot_values = self.extract_other_slots(dispatcher, tracker, domain)
-        slot_to_fill_articulos = tracker.get_slot('articulos')
-
-        if slot_to_fill_articulos:
-            slot_values.update(self.extract_requested_slot(dispatcher, tracker, domain))
+        articulos = next(tracker.get_latest_entity_values('articulos'), None)
+        if articulos is None:
+            return [SlotSet('articulos',articulos)]
         else:
-            articulos = next(tracker.get_latest_entity_values('articulos'), None)
-            if articulos is None:
-                return [SlotSet('articulos',articulos)]
-            else:
-                return [SlotSet('articulos',next(tracker.get_latest_entity_values('MISC'), None))]
-
-        return []
+            return [SlotSet('articulos',next(tracker.get_latest_entity_values('MISC'), None))]
 
     def submit(self,
                dispatcher: CollectingDispatcher,
