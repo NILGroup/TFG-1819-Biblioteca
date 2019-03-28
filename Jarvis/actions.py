@@ -53,11 +53,15 @@ class SaludosForm(FormAction):
             slot_values.update(self.extract_requested_slot(dispatcher, tracker, domain))
 
         else:
-            aux = next(tracker.get_latest_entity_values('PER'), None)
+            temp = tracker.get_latest_entity_values('PER')
+            aux = None
+            for i in temp:
+                if i is not "Hola":
+                    aux = i
             aux2 = next(tracker.get_latest_entity_values('persona'), None)
             if aux is None and aux2 is not None:
                 return [SlotSet('persona', aux2)]
-            elif aux is not None:
+            elif aux is not None and aux is not "Hola":
                 return [SlotSet('persona', aux)]
             else:
                 dispatcher.utter_message("Dime cómo te llamas")
