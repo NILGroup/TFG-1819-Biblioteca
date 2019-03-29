@@ -58,7 +58,7 @@ class SaludosForm(FormAction):
             for i in temp:
                 if i is not "Hola":
                     aux = i
-            aux2 = next(tracker.get_latest_entity_values('persona'), None)
+            aux2 = next(tracker.get_latest_entity_values('persona'), None).capitalize()
             if aux is None and aux2 is not None:
                 return [SlotSet('persona', aux2)]
             elif aux is not None and aux is not "Hola":
@@ -100,8 +100,8 @@ class BuscarLibroForm(FormAction):
                  tracker: Tracker,
                  domain: Dict[Text, Any]) -> List[Dict]:
         temp = {}
-        libro = next(tracker.get_latest_entity_values('libro'), None)
-        autor1 = next(tracker.get_latest_entity_values('autores'), None)
+        libro = next(tracker.get_latest_entity_values('libro'), None).capitalize()
+        autor1 = next(tracker.get_latest_entity_values('autores'), None).capitalize()
         autorPer = next(tracker.get_latest_entity_values('PER'), None)
         temp['libro'] = None
         temp['autores'] = None

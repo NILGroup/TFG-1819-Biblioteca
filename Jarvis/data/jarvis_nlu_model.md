@@ -464,14 +464,24 @@
 
 ## intent:me_llamo
 - Soy [Martin](persona)
+- Soy [Elena](persona)
+- Soy [Abelino](persona)
 - Mi nombre es [Susana](persona)
+- Mi nombre es [Manuel](persona)
 - Me gustaría que me llamases [Miguel](persona)
+- Me gustaría que me llamases [Luisa](persona)
 - Llámame [María](persona)
+- Llámame [Rosa](persona)
 - A partir de ahora me llamarás [Sánchez](persona)
+- A partir de ahora me llamarás [Teresa](persona)
 - Me llamo [Mauri](persona)
 - Me llamo [Marcos](persona)
-- Buenos días, me llamo Marina[Marina](persona:marina)
-- Me llamo [Miguel](persona:miguel)
+- Me llamo [Sara](persona)
+- Me llamo [Antonio](persona)
+- Me llamo [Alberto](persona)
+- Me llamo [Carmen](persona)
+- Buenos días, me llamo [Marina](persona)
+- Buenos días, me llamo [Aurelio](persona)
 
 ## intent:quien_soy
 - Cómo te llamas
@@ -505,16 +515,7 @@
 - Venancio Tomeo
 
 ## lookup:persona
-  data/names/hombres.csv
-
-## lookup:persona
-  data/names/mujeres.csv
-
-## lookup:persona
-  data/names/apellidos.csv
-
-## lookup:persona
-  data/names/apellidos2.csv
+  data/names/nombres.csv
 
 ## lookup:localizacion
   data/libraries.csv

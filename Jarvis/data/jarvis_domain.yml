@@ -63,7 +63,8 @@ forms:
 - form_libros
 - form_articulos
 intents:
-- saludos
+- saludos:
+    use_entities: false
 - consulta_telefono
 - consulta_localizacion_empty:
     use_entities: false

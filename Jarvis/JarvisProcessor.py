@@ -35,14 +35,14 @@ class JarvisProcessor():
             self.agent = Agent.load('model/dialogue',
                                     interpreter=self.interpreter,
                                     action_endpoint=action_endopoint,
-                                    tracker_store= tracker_store)
+                                    tracker_store=tracker_store)
 
     def train_nlu(self):
         
         builder = ComponentBuilder(use_cache=False)
         
         self.__trainer_data = load_data("data/jarvis_nlu_model.md")
-        self.__trainer = Trainer(config.load("config/config_spacy.yml"), builder)
+        self.__trainer = Trainer(config.load("config/config.yml"), builder)
         self.__trainer.train(self.__trainer_data)
         self.__model_directory = self.__trainer.persist('model/',
                                                         fixed_model_name = 'Jarvis')
@@ -52,7 +52,7 @@ class JarvisProcessor():
     def train_dialogue(self, domain_file='data/jarvis_domain.yml',
                        stories_file='data/jarvis_stories_model.md',
                        model_path='model/dialogue',
-                       policy_config='config/policy_config.yml'):
+                       policy_config='config/config.yml'):
         return train.train_dialogue_model(domain_file=domain_file,
                                           stories_file=stories_file,
                                           output_path=model_path,
@@ -77,7 +77,6 @@ class JarvisProcessor():
 
         respuesta["nlu"] = self.interpreter.parse(peticion)
         mensaje = self.agent.handle_message(peticion)
-        print(mensaje)
         print(respuesta["nlu"])
 
         for response in mensaje:
