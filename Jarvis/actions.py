@@ -344,3 +344,51 @@ class ActionHayLocalizacion(Action):
         else:
             dispatcher.utter_message("Primero tienes que indicarme una biblioteca.")
         return []
+
+class ActionComprobarApertura(Action):
+    def name(self):
+        return 'action_check_biblio_abierta'
+    
+    def tratarEntrada(self, entrada):
+        entrada = entrada.replace('biblioteca de ', '')
+        entrada = entrada.replace('facultad de ', '')
+        entrada = entrada.replace('Biblioteca de ', '')
+        entrada = entrada.replace('Facultad de ', '')
+        entrada = entrada.replace('Biblioteca De ', '')
+        entrada = entrada.replace('Facultad De ', '')
+        entrada = entrada.replace('BIBLIOTECA DE ', '')
+        entrada = entrada.replace('FACULTAD DE ', '')
+
+        return entrada
+
+    def run(self, dispatcher, tracker, domain):
+        localizacion = tracker.get_slot('localizacion')
+        if localizacion is not None:
+            from pymongo import MongoClient
+            from datetime import datetime
+            client = MongoClient('mongodb://localhost:27017')
+            db = client.janet
+            collection = db.localizaciones
+
+            cursor = collection.find({"$text": {'$search': self.tratarEntrada(localizacion)}}, {'_id': False, 'kw': False, 'score':
+                {'$meta': "textScore"}}).sort([('score', {'$meta': "textScore"})]).limit(1)
+
+            biblioteca = None
+            for doc in cursor:
+                biblioteca = doc
+            client.close()
+
+            hora_actual = datetime.now().strftime('%H:%M')
+            hora_actual = datetime.strptime(hora_actual, '%H:%M')
+            hora_apertura = datetime.strptime(biblioteca["open_hour"], '%H:%M')
+            hora_cierre = datetime.strptime(biblioteca["close_hour"], '%H:%M')
+
+            if biblioteca["days_opened"] < datetime.today().weekday():
+                dispatcher.utter_template("utter_consulta_horario_cerrado", tracker, **tracker.slots)
+            elif hora_actual < hora_apertura or hora_actual > hora_cierre:
+                dispatcher.utter_template("utter_consulta_horario_cerrado", tracker, **tracker.slots)
+            else:
+                dispatcher.utter_template("utter_consulta_horario_abierto", tracker, **tracker.slots)
+        else:
+            dispatcher.utter_message("Primero tienes que indicarme una biblioteca.")
+        return []
