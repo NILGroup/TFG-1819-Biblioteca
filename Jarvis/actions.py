@@ -374,23 +374,36 @@ class ActionComprobarApertura(Action):
             cursor = collection.find({"$text": {'$search': self.tratarEntrada(localizacion)}},
                                      {'_id': False, 'kw': False, 'score':
                                          {'$meta': "textScore"}}).sort([('score', {'$meta': "textScore"})]).limit(1)
-
             biblioteca = None
             for doc in cursor:
                 biblioteca = doc
             client.close()
 
-            hora_actual = datetime.now().strftime('%H:%M')
-            hora_actual = datetime.strptime(hora_actual, '%H:%M')
-            hora_apertura = datetime.strptime(biblioteca["open_hour"], '%H:%M')
-            hora_cierre = datetime.strptime(biblioteca["close_hour"], '%H:%M')
-
-            if biblioteca["days_opened"] < datetime.today().weekday():
-                dispatcher.utter_template("utter_consulta_horario_cerrado", tracker, **tracker.slots)
-            elif hora_actual < hora_apertura or hora_actual > hora_cierre:
-                dispatcher.utter_template("utter_consulta_horario_cerrado", tracker, **tracker.slots)
+            if biblioteca is None:
+                dispatcher.utter_message("La biblioteca que me has dicho no existe.")
             else:
-                dispatcher.utter_template("utter_consulta_horario_abierto", tracker, **tracker.slots)
+                intent = tracker.latest_message['intent'].get('name')
+                hora_actual = datetime.now().strftime('%H:%M')
+                hora_actual = datetime.strptime(hora_actual, '%H:%M')
+                hora_apertura = datetime.strptime(biblioteca["open_hour"], '%H:%M')
+                hora_cierre = datetime.strptime(biblioteca["close_hour"], '%H:%M')
+
+                if intent == "consulta_horario_general":
+                    if biblioteca["days_opened"] == 4:
+                        dispatcher.utter_message("El horario de la " + biblioteca["name"] + " es de "
+                                                "lunes a viernes de " + hora_apertura.strftime('%H:%M') + " a " +
+                                                 hora_cierre.strftime('%H:%M') + ".")
+                    else:
+                        dispatcher.utter_message("El horario de la " + biblioteca["name"] + " es de "
+                                                 "lunes a domingo de " + hora_apertura.strftime('%H:%M') + " a " +
+                                                 hora_cierre.strftime('%H:%M') + ".")
+                else:
+                    if biblioteca["days_opened"] < datetime.today().weekday():
+                        dispatcher.utter_template("utter_consulta_horario_cerrado", tracker, **tracker.slots)
+                    elif hora_actual < hora_apertura or hora_actual > hora_cierre:
+                        dispatcher.utter_template("utter_consulta_horario_cerrado", tracker, **tracker.slots)
+                    else:
+                        dispatcher.utter_template("utter_consulta_horario_abierto", tracker, **tracker.slots)
         else:
             dispatcher.utter_message("Primero tienes que indicarme una biblioteca.")
         return []
