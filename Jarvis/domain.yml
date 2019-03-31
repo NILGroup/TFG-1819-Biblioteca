@@ -1,143 +1,116 @@
 %YAML 1.1
 ---
 actions:
-- action_saludos
-- utter_libro_titulo
 - utter_gracias
-- utter_especifica_libro
-- utter_especifica_articulo
-- utter_libros_kw
-- utter_despedida
-- utter_info_tercero
-- utter_libro_kw_autor
-- utter_articulo_kw
-- action_localizacion_sin_entidad
-- action_busca_mas
-- utter_libro_autor
+- utter_info_segundo
 - utter_saludo_nombre
-- utter_libros_titulo
-- action_check_biblio_abierta
-- utter_consulta_localizacion
-- utter_libro_titulo_autor
+- action_muestra_segundo
 - utter_articulos_kw
-- utter_especifica_musica
-- utter_no_te_entiendo
+- utter_info_primero
+- utter_libro_kw
+- action_busca_libro
+- utter_especifica_libro
 - utter_consulta_telefono
 - utter_juego_kw
-- utter_consulta_horario_cerrado
-- utter_libros_kw_autor
-- utter_quien_soy
-- action_muestra_primero
-- utter_libros_titulo_autor
-- action_muestra_tercero
-- utter_musica_kw
-- action_busca_libro
 - utter_especifica_juego
-- utter_pelicula_kw
-- utter_consulta_horario_abierto
-- utter_respuesta_insultos
-- utter_juegos_kw
-- utter_peliculas_kw
-- action_muestra_segundo
-- utter_info_segundo
-- utter_info_primero
-- utter_saludo
-- utter_libros_autor
 - utter_especifica_pelicula
-- utter_libro_kw
-config:
-  store_entities_as_slots: true
+- utter_consulta_horario_abierto
+- utter_libro_titulo
+- utter_libro_kw_autor
+- utter_libro_autor
+- utter_libros_titulo
+- utter_especifica_musica
+- utter_info_tercero
+- utter_respuesta_insultos
+- utter_despedida
+- utter_consulta_horario_cerrado
+- utter_saludo
+- action_check_biblio_abierta
+- utter_quien_soy
+- utter_no_te_entiendo
+- utter_libros_titulo_autor
+- utter_especifica_articulo
+- utter_consulta_localizacion
+- utter_libro_titulo_autor
+- utter_juegos_kw
+- action_muestra_tercero
+- action_muestra_primero
+- utter_libros_autor
+- utter_pelicula_kw
+- utter_musica_kw
+- utter_peliculas_kw
+- action_busca_mas
+- utter_libros_kw_autor
+- utter_articulo_kw
+- action_localizacion_sin_entidad
+- action_saludos
+- utter_libros_kw
 entities:
-- libro_titulo
-- juego
 - LOC
-- MISC
-- libro
-- PER
-- musica
+- libro_titulo
 - localizacion
-- autores
 - ORG
-- pelicula
+- autores
+- PER
 - autor
+- pelicula
 - persona
+- libro
+- MISC
+- musica
+- juego
 forms:
 - form_saludos
 - form_articulos
 - form_libros
 intents:
-- consulta_horario_general:
-    use_entities: true
-- mas_info_segundo:
-    use_entities: true
-- mas_info_primero:
-    use_entities: true
-- mas_info_tercero:
-    use_entities: true
-- consulta_libros_autor:
-    use_entities: true
+- consulta_horario_open
+- consulta_horario_close
+- consulta_horario_general
+- mas_info_segundo
+- mas_info_primero
+- mas_info_tercero
+- consulta_libros_autor
 - saludos:
     use_entities: false
-- me_llamo:
-    use_entities: true
-- consulta_libro_kw_autor:
-    use_entities: true
-- consulta_libros_kw_autor:
-    use_entities: true
-- consulta_libros_kw_autores:
-    use_entities: true
-- consulta_libro_kw:
-    use_entities: true
-- consulta_libros_titulo_autor:
-    use_entities: true
-- consulta_libro_autor:
-    use_entities: true
-- consulta_libro_titulo:
-    use_entities: true
-- 'consulta_libros_titulo_autor:':
-    use_entities: true
-- consulta_libro_titulo_autor:
-    use_entities: true
-- consulta_libros_titulo:
-    use_entities: true
-- despedidas:
-    use_entities: true
-- consulta_libros_kw:
-    use_entities: true
+- me_llamo
+- consulta_libro_kw_autor
+- consulta_libros_kw_autor
+- consulta_libros_kw_autores
+- consulta_libro_kw
+- consulta_libros_titulo_autor
+- consulta_libro_autor
+- consulta_libro_titulo
+- 'consulta_libros_titulo_autor:'
+- consulta_libro_titulo_autor
+- consulta_libros_titulo
+- despedidas
+- consulta_libros_kw
 - gracias:
     use_entities: false
-- despedida:
-    use_entities: true
+- despedida
 - quien_soy:
     use_entities: false
-- consulta_telefono:
-    use_entities: true
+- consulta_telefono
 - consulta_localizacion_empty:
     use_entities: false
 - consulta_telefono_empty:
     use_entities: false
-- busca_mas:
-    use_entities: true
-- consulta_localizacion:
-    use_entities: true
-- como_estas:
-    use_entities: true
+- busca_mas
+- consulta_localizacion
+- como_estas
 - consulta_articulos:
     use_entities: false
 - consulta_articulo:
     use_entities: false
-- consulta_articulos_kw:
-    use_entities: true
-- consulta_articulo_kw:
-    use_entities: true
+- consulta_articulos_kw
+- consulta_articulo_kw
 - consulta_juegos:
     use_entities: false
 - consulta_juego:
     use_entities: false
-- consulta_juegos_kw:
-    use_entities: true
-- consulta_juego_kw:
-    use_entities: true
+- consulta_juegos_kw
+- consulta_juego_kw
 - consulta_libros:
     use_entities: false
 - consulta_libro:
@@ -146,61 +119,38 @@ intents:
     use_entities: false
 - consulta_musica:
     use_entities: false
-- consulta_musicas_kw:
-    use_entities: true
-- consulta_musica_kw:
-    use_entities: true
+- consulta_musicas_kw
+- consulta_musica_kw
 - consulta_peliculas:
     use_entities: false
 - consulta_pelicula:
     use_entities: false
 - insultos:
     use_entities: false
-- consulta_peliculas_kw:
-    use_entities: true
-- consulta_pelicula_kw:
-    use_entities: true
-- consulta_horario_close:
-    use_entities: true
-- consulta_horario_open:
-    use_entities: true
+- consulta_peliculas_kw
+- consulta_pelicula_kw
 slots:
   articulos:
-    auto_fill: true
-    initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: text
   autores:
     auto_fill: false
-    initial_value: null
-    type: rasa_core.slots.UnfeaturizedSlot
+    type: unfeaturized
   juego:
-    auto_fill: true
-    initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: text
   libro:
     auto_fill: false
-    initial_value: null
-    type: rasa_core.slots.UnfeaturizedSlot
+    type: unfeaturized
   localizacion:
-    auto_fill: true
-    initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: text
   musica:
-    auto_fill: true
-    initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: text
   pelicula:
-    auto_fill: true
-    initial_value: null
-    type: rasa_core.slots.TextSlot
+    type: text
   persona:
     auto_fill: false
-    initial_value: null
-    type: rasa_core.slots.UnfeaturizedSlot
+    type: unfeaturized
   requested_slot:
-    auto_fill: true
-    initial_value: null
-    type: rasa_core.slots.UnfeaturizedSlot
+    type: unfeaturized
 templates:
   utter_articulo_kw:
   - text: Aquí tienes el artículo que me pediste.

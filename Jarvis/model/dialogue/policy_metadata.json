@@ -2,33 +2,53 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "persona",
         "localizacion"
       ]
     },
-    "utter_saludo_nombre": {
+    "utter_gracias": {
       "slots": []
     },
-    "action_busca_libro": {
+    "form_libros": {
+      "slots": [
+        "requested_slot",
+        "autores",
+        "libro"
+      ]
+    },
+    "action_check_biblio_abierta": {
       "slots": []
+    },
+    "action_saludos": {
+      "slots": []
+    },
+    "form_saludos": {
+      "slots": [
+        "requested_slot",
+        "persona"
+      ]
     },
     "utter_despedida": {
       "slots": []
+    },
+    "action_muestra_tercero": {
+      "slots": []
     }
   },
-  "python": "3.6.8",
+  "python": "3.6.5",
   "max_histories": [
-    5,
+    10,
     null,
-    5
+    10,
+    2
   ],
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
   "policy_names": [
     "rasa_core.policies.keras_policy.KerasPolicy",
     "rasa_core.policies.fallback.FallbackPolicy",
-    "rasa_core.policies.memoization.MemoizationPolicy"
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.form_policy.FormPolicy"
   ],
-  "trained_at": "20190310-114021",
+  "trained_at": "20190331-142613",
   "rasa_core": "0.13.2",
   "tensorflow": "1.12.0",
   "sklearn": "0.20.2"
