@@ -130,21 +130,28 @@
 
 ## intent:consulta_libro_autor
 - Quiero un libro escrito por [Orwell](autores)
-- Busca un libro del autores [Orwell](autores)
-- Busca un libro de la autoresa [J K Rowling](autores)
+- Busca un libro del autor [Orwell](autores)
+- Busca un libro de la autora [J K Rowling](autores)
+- [Busca](LOC)  un libro del autor [Orwell](autores)
+- [Busca](LOC)  un libro de la autora [J K Rowling](autores)
 - Busca un libro escrito por [Francisco de Quevedo](autores)
+- Busca un libro escrito por [Francisco de Quevedo](PER)
 - Quiero un libro del autores [Pablo Neruda](autores)
-- Quiero un libro de la autoresa [Ana María Matute](autores)
+- Quiero un libro de la autora [Ana María Matute](autores)
 - Me podrías decir un libro del autores [Gabriel García Márquez](autores)
-- Me podrías decir un libro de la autoresa [Isabel Allende](autores)
+- Me podrías decir un libro de la autora [Isabel Allende](autores)
 - Me podrías decir un libro escrito por [Isaac Asimov](autores)
+- Necesito una obra literaria del autores [Alberto Verdejo](PER)
 - Necesito una obra literaria del autores [Alberto Verdejo](autores)
 - Busca una obra literaria escrita por [Rafael Caballero](autores)
 - Necesito un libro del autores [Orwell](autores)
 - Libro escrito por [George R Martin](autores)
 - Libro del autores [George R Martin](autores)
-- Libro de la autoresa [George R Martin](autores)
+- Libro de la autora [George R Martin](autores)
 - /consulta_libro_autor[{"autores":"Góngora"}](autores:Góngora)
+- /consulta_libro_autor[{"PER":"Góngora", "autores":"Góngora}](autores:Góngora)[{"PER":"Góngora", "autores":"Góngora}](PER:Góngora)
+- /consulta_libro_autor[{"LOC":"Busca","PER":"Jose Garcia"}](LOC:Busca)[{"LOC":"Busca","PER":"Jose Garcia"}](PER:Jose Garcia)
+- /consulta_libro_autor[{"PER":"Jose Garcia"}](PER:Jose Garcia)
 
 ## intent:consulta_libro_kw
 - Busca un libro de [Fuego y Sangre](libro)
@@ -155,9 +162,17 @@
 - Me podrías decir un libro de [economía](libro)
 - Me podrías dar un libro de [economía](libro)
 - Necesito un libro de [Carlos Fuentes](libro)
+- Busca libro de [Fuego y Sangre](libro)
+- Busco libro de [Matemática Discreta](libro)
+- Quiero libro de [Harry Potter](libro)
+- Busca libro de [Historia del arte](libro)
+- Dame libro de [recetas](libro)
+- Me podrías libro de [economía](libro)
+- Me podrías dar libro de [economía](libro)
+- Necesito un libro de [Carlos Fuentes](libro)
 - Busca una obra literaria de [medicina](libro)
 - Necesito una obra literaria de [Lo que el viento se llevó](libro)
-- Libros de [Juego de Tronos](libro)
+- Libro de [Juego de Tronos](libro)
 - [Harry Potter](libro)
 - /consulta_libro_kw[{"libro":"Topotamadre"}](libro:Topotamadre)
 - /consulta_libro_kw[{"autores":"Benito Pérez-Galdos"}](autores:Benito Pérez-Galdos)
@@ -167,20 +182,29 @@
 - /consulta_libro_kw[{"libro":"Campeones"}](libro:Campeones)
 
 ## intent:consulta_libro_kw_autor
+- [Busco](LOC) un libro de [El Quijote](libro) del autores [Miguel de Cervantes](autores)
+- [Busco](LOC) un libro de [Yo, Julia](libro) escrito por [Santiago Posteguillo](autores)
+- Busco un libro de [El Quijote](libro) del autores [Miguel de Cervantes](autores)
+- Busco un libro de [Yo, Julia](libro) escrito por [Santiago Posteguillo](autores)
 - Quiero un libro de [El Quijote](libro) del autores [Miguel de Cervantes](autores)
 - Quiero un libro de [Yo, Julia](libro) escrito por [Santiago Posteguillo](autores)
 - Me podrías decir un libro de [Luces de bohemia](libro) escrito por [Ramón de Valle-Inclán](autores)
 - Me podrías decir un libro de [Luces de bohemia](libro) del autores [Ramón de Valle-Inclán](autores)
-- Me podrías decir un libro de [Luces de bohemia](libro) de la autoresa [Ramón de Valle-Inclán](autores)
-- Necesito una obra literaria de [Harry Potter y la cámara secreta](libro) de la autoresa [J K Rowling](autores)
+- Me podrías decir un libro de [Luces de bohemia](libro) de la autora [Ramón de Valle-Inclán](autores)
+- Me podrías decir un libro de [Luces de bohemia](libro) del autores [Ramón de Valle-Inclán](PER)
+- Me podrías decir un libro de [Luces de bohemia](MISC) de la autora [Ramón de Valle-Inclán](autores)
+- Me podrías decir un libro de [Luces de bohemia](MISC) de la autora [Ramón de Valle-Inclán](PER)
+- Necesito una obra literaria de [Harry Potter y la cámara secreta](libro) de la autora [J K Rowling](autores)
 - Necesito una obra literaria de [Harry Potter y la cámara secreta](libro) del autores [J K Rowling](autores)
 - Necesito una obra literaria de [Harry Potter y la cámara secreta](libro)  escrita por [J K Rowling](autores)
 - Libro de [Harry Potter y la cámara secreta](libro)  escritas por [J K Rowling](autores)
 - /consulta_libro_kw_autor[{"libro":"RSA, de lo mejor lo superior", "autores":"Programador experto"}](libro:RSA, de lo mejor lo superior)[{"libro":"RSA, de lo mejor lo superior", "autores":"Programador experto"}](autores:Programador experto)
+- /consulta_libro_kw_autor[{"MISC":"RSA de lo mejor lo superior", "autores":"Programador experto"}](MISC:RSA de lo mejor lo superior)[{"libro":"RSA de lo mejor lo superior", "autores":"Programador experto"}](autores:Programador experto)
 
 ## intent:consulta_libro_titulo
 - Quiero un libro llamado [El Quijote](libro)
 - Busco un libro llamado [Narnia](libro)
+- [Busco](LOC) un libro llamado [Narnia](libro)
 - Quiero un libro titulado [Yo, Julia](libro)
 - Quiero un libro llamado [Narnia la travesía del viajero del alba](libro)
 - Me podrías decir un libro llamado [Luces de bohemia](libro)
@@ -194,22 +218,30 @@
 - Libro titulado [Juego de Tronos](libro)
 - Buscame un libro llamado [El amor en tiempos de colera](MISC)
 - /consulta_libro_titulo[{"libro":"Luces de Bohemia"}](libro:Luces de Bohemia)
+- /consulta_libro_titulo[{"MISC":"Luces de Bohemia"}](MISC:Luces de Bohemia)
 
 ## intent:consulta_libro_titulo_autor
+- Busca un libro llamado [El Quijote](libro) del autores [Miguel de Cervantes](autores)
+- Busca un libro llamado [Yo, Julia](libro) escrito por [Santiago Posteguillo](autores)
+- [Busca](LOC) un libro llamado [El Quijote](libro) del autores [Miguel de Cervantes](autores)
+- [Busca](LOC) un libro llamado [Yo, Julia](libro) escrito por [Santiago Posteguillo](autores)
 - Quiero un libro llamado [El Quijote](libro) del autores [Miguel de Cervantes](autores)
 - Quiero un libro llamado [Yo, Julia](libro) escrito por [Santiago Posteguillo](autores)
 - Me podrías decir un libro llamado [Luces de bohemia](libro) escrito por [Ramón de Valle-Inclán](autores)
+- Me podrías decir un libro llamado [Luces de bohemia](MISC) escrito por [Ramón de Valle-Inclán](autores)
 - Me podrías decir un libro llamado [Luces de bohemia](libro) del autores [Ramón de Valle-Inclán](autores)
-- Me podrías decir un libro llamado [Luces de bohemia](libro) de la autoresa [Ramón de Valle-Inclán](autores)
-- Necesito una obra literaria llamada [Harry Potter y la cámara secreta](libro) de la autoresa [J K Rowling](autores)
+- Me podrías decir un libro llamado [Luces de bohemia](libro) de la autora [Ramón de Valle-Inclán](autores)
+- Necesito una obra literaria llamada [Harry Potter y la cámara secreta](libro) de la autora [J K Rowling](autores)
 - Necesito una obra literaria llamada [Harry Potter y la cámara secreta](libro) del autores [J K Rowling](autores)
 - Necesito una obra literaria llamada [Harry Potter y la cámara secreta](libro)  escrita por [J K Rowling](autores)
 - Libros llamado [Harry Potter y la cámara secreta](libro)  escritas por [J K Rowling](autores)
 - Serías tan amable de buscarme un único libro llamado [Los Pilares de la Tierra](libro)[](libro:Los Pilares de la Tierra) del autor [Ken Follet](PER)[](autores:Ken Follet)
 - /consulta_libro_titulo_autor[{"libro":"Don Quijote de la Mancha","autores":"Miguel de Cervantes"}](libro:Don Quijote de la Mancha)[{"libro":"Don Quijote de la Mancha","autores":"Miguel de Cervantes"}](autores:Miguel de Cervantes)
+- /consulta_libro_titulo_autor[{"MISC":"Don Quijote de la Mancha","autores":"Miguel de Cervantes"}](MISC:Don Quijote de la Mancha)[{"libro":"Don Quijote de la Mancha","autores":"Miguel de Cervantes"}](autores:Miguel de Cervantes)
 
 ## intent:consulta_libros
 - Busca libros
+- [Busca](LOC) libros
 - Quiero libros
 - Me podrías decir algún libro
 - Dime libros
@@ -222,27 +254,33 @@
 
 ## intent:consulta_libros_autor
 - Quiero libros escritos por [Orwell](autores)
-- Busca libros del autores [Orwell](autores)
-- Busca libros de la autoresa [J K Rowling](autores)
+- Busca libros del autor [Orwell](autores)
+- Busca libros de la autora [J K Rowling](autores)
+- [Busca](LOC) libros del autor [Orwell](autores)
+- [Busca](LOC) libros de la autora [J K Rowling](autores)
 - Busca libros escritos por [Francisco de Quevedo](autores)
-- Quiero libros del autores [Pablo Neruda](autores)
-- Quiero libros de la autoresa [Ana María Matute](autores)
-- Me podrías decir algún libro del autores [Gabriel García Márquez](autores)
-- Me podrías decir algún libro de la autoresa [Isabel Allende](autores)
+- Quiero libros del autor [Pablo Neruda](autores)
+- Quiero libros de la autora [Ana María Matute](autores)
+- Quiero libros del autor [Pablo Neruda](PER)
+- Quiero libros de la autora [Ana María Matute](PER)
+- Me podrías decir algún libro del autor [Gabriel García Márquez](autores)
+- Me podrías decir algún libro de la autora [Isabel Allende](autores)
 - Me podrías decir algún libro escrito por [Isaac Asimov](autores)
-- Necesito obras literarias del autores [Alberto Verdejo](autores)
+- Necesito obras literarias del autor [Alberto Verdejo](autores)
 - Busca obras literarias escritas por [Rafael Caballero](autores)
-- Necesito libros del autores [Orwell](autores)
+- Necesito libros del autor [Orwell](autores)
 - Libros escritos por [George R Martin](autores)
-- Libros del autores [George R Martin](autores)
-- Libros de la autoresa [George R Martin](autores)
+- Libros del autor [George R Martin](autores)
+- Libros de la autora [George R Martin](autores)
 - Ahora quiero libros del autor [Cervantes](autores)
 - /consulta_libros_autor[{"autores":"Patrick Rothfuss"}](autores:Patrick Rothfuss)
-- /consulta_libros_autor[{"autores":"Patrick Rothfuss"}](autores:Patrick Rothfuss)
+- /consulta_libros_autor[{"LOC":"Busca","PER":"Jose Garcia"}](LOC:Busca)[{"LOC":"Busca","PER":"Jose Garcia"}](PER:Jose Garcia)
+- /consulta_libros_autor[{"PER":"Jose Garcia"}](PER:Jose Garcia)
 
 ## intent:consulta_libros_kw
 - Busca libros de [Fuego y Sangre](libro)
-- Busco libros de [[Matemática Discreta](libro)
+- Busco libros de [Matemática Discreta](libro)
+- [Busca](LOC) libros de [Matemática Discreta](libro)
 - Quiero libros de [Harry Potter](libro)
 - Busca libros de [Historia del arte](libro)
 - Dame libros de [recetas](libro)
@@ -256,17 +294,35 @@
 - Quiero libros de [Venancio Tomeo](PER)[Venancio Tomeo](libro:venancio tomeo)
 - Necesito que busques libros de [estructuras de datos y algoritmos](libro)
 - Quiero libros de [historia del arte](libro)
-- /consulta_libros_kw[{"autores":"Pedro Sánchez"}](autores:Pedro Sánchez)
+- Busca varios libros de [Fuego y Sangre](libro)
+- Busco varios libros de [Matemática Discreta](libro)
+- [Busca](LOC) varios libros de [Matemática Discreta](libro)
+- Quiero varios libros de [Harry Potter](libro)
+- Busca varios libros de [Historia del arte](libro)
+- Dame varios libros de [recetas](libro)
+- Me podrías decir algún libro de [economía](libro)
+- Me podrías dar algún libro de [economía](libro)
+- Necesito varios libros de [Carlos Fuentes](libro)
+- Busca obras literarias de [medicina](libro)
+- Necesito obras literarias de [Lo que el viento se llevó](libro)
+- Libro de [Juego de Tronos](libro)
+- Quiero varios libros de [matemática discreta](libro)
+- Quiero varios libros de [Venancio Tomeo](PER)[Venancio Tomeo](libro:venancio tomeo)
+- Necesito que busques varios libros de [estructuras de datos y algoritmos](libro)
+- Quiero varios libros de [historia del arte](libro)
+- /consulta_libros_kw[{"libro":"Pedro Sánchez"}](libro:Pedro Sánchez)
+- /consulta_libros_kw[{"LOC":"Busca","libro":"1984"}](LOC:Busca)[{"LOC":"Busca","libro":"1984"}](libro:1984)
+- [Busca](LOC) libros de [matemática discreta](libro)
 
 ## intent:consulta_libros_kw_autor
-- Quiero libros de [El Quijote](libro) del autores [Miguel de Cervantes](autores)
+- Quiero libros de [El Quijote](libro) del autor [Miguel de Cervantes](autores)
 - Quiero libros de [Yo, Julia](libro) escritos por [Santiago Posteguillo](autores)
 - Quiero libros de [Narnia](libro) escritos por [Francisco de Quevedo](autores)
 - Me podrías decir algún libro de [Luces de bohemia](libro) escrito por [Ramón de Valle-Inclán](autores)
 - Me podrías decir algún libro de [Luces de bohemia](libro) del autores [Ramón de Valle-Inclán](autores)
-- Me podrías decir algún libro de [Luces de bohemia](libro) de la autoresa [Ramón de Valle-Inclán](autores)
-- Necesito obras literarias de [Harry Potter y la cámara secreta](libro) de la autoresa [J K Rowling](autores)
-- Necesito obras literarias de [Harry Potter y la cámara secreta](libro) del autores [J K Rowling](autores)
+- Me podrías decir algún libro de [Luces de bohemia](libro) de la autora [Ramón de Valle-Inclán](autores)
+- Necesito obras literarias de [Harry Potter y la cámara secreta](libro) de la autora [J K Rowling](autores)
+- Necesito obras literarias de [Harry Potter y la cámara secreta](libro) del autor [J K Rowling](autores)
 - Necesito obras literarias de [Harry Potter y la cámara secreta](libro)  escritas por [J K Rowling](autores)
 - Libros de [Harry Potter y la cámara secreta](libro)  escritas por [J K Rowling](autores)
 - /consulta_libros_kw_autor[{"libro":"Como aprender a programar en 5 minutos","autores":"Rodolfo Rodríguez"}](libro:Como aprender a programar en 5 minutos)[{"libro":"Como aprender a programar en 5 minutos","autores":"Rodolfo Rodríguez"}](autores:Rodolfo Rodríguez)
@@ -288,32 +344,35 @@
 - /consulta_libros_titulo[{"libro":"Narnia"}](libro:Narnia)
 
 ## intent:consulta_libros_titulo_autor
-- Quiero libros llamados [El Quijote](libro) del autores [Miguel de Cervantes](autores)
+- Quiero libros llamados [El Quijote](libro) del autor [Miguel de Cervantes](autores)
 - Quiero libros llamados [Yo, Julia](libro) escritos por [Santiago Posteguillo](autores)
 - Quiero libros llamados [Narnia](libro) escritos por [Francisco de Quevedo](autores)
 - Me podrías decir algún libro llamado [Luces de bohemia](libro) escrito por [Ramón de Valle-Inclán](autores)
 - Me podrías decir algún libro llamado [Luces de bohemia](libro) del autores [Ramón de Valle-Inclán](autores)
-- Me podrías decir algún libro llamado [Luces de bohemia](libro) de la autoresa [Ramón de Valle-Inclán](autores)
-- Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro) de la autoresa [J K Rowling](autores)
-- Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro) del autores [J K Rowling](autores)
+- Me podrías decir algún libro llamado [Luces de bohemia](libro) de la autora [Ramón de Valle-Inclán](autores)
+- Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro) de la autora [J K Rowling](autores)
+- Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro) del autor [J K Rowling](autores)
 - Necesito obras literarias llamadas [Harry Potter y la cámara secreta](libro)  escritas por [J K Rowling](autores)
 - Libros llamados [Harry Potter y la cámara secreta](libro)  escritas por [J K Rowling](autores)
 - /consulta_libros_titulo_autor[{"libro":"Alatriste","autores":"Arturo Pérez-Reverte"}](libro:Alatriste)[{"libro":"Alatriste","autores":"Arturo Pérez-Reverte"}](autores:Arturo Pérez-Reverte)
-
-## intent:consulta_libros_titulo_autor:
-- /consulta_libros_titulo_autor:{"libro":"Mi Españita", "autores":"Miguel Muñoz"}
+- /consulta_libros_titulo_autor[{"libro":"Mi Españita", "autores":"Miguel Muñoz"}](libro:Mi Españita)[{"libro":"Mi Españita", "autores":"Miguel Muñoz"}](autores:Miguel Muñoz)
 
 ## intent:consulta_localizacion
 - Busca la ubicación de la [Biblioteca de odontología](localizacion)
 - Necesito ir a la [Biblioteca de derecho](localizacion)
 - Necesito desplazarme a la [Biblioteca de ciencias políticas](localizacion)
 - Necesito dirigirme a la [Biblioteca de enfermería](localizacion)
+- [Necesito](PER) desplazarme a la [Biblioteca de ciencias políticas](localizacion)
+- [Necesito](PER) dirigirme a la [Biblioteca de enfermería](localizacion)
 - Busca la posición de la [Biblioteca de geología](localizacion)
+- [Dónde](PER) está la [Facultad de informática](localizacion)
+- [Dónde](PER) se encuentra la [Facultad de informática](localizacion)
 - Dónde está la [Facultad de informática](localizacion)
 - Dónde se encuentra la [Facultad de informática](localizacion)
 - Ubicación de la [Zambrano](localizacion)
 - Donde está la [biblioteca de ciencias políticas](localizacion)
 - Quiero ir a la [facultad de geografía e historia](localizacion)
+- /consulta_localizacion[{"localizacion":"facultad de informatica"}](localizacion:facultad de informatica)
 
 ## intent:consulta_localizacion_empty
 - Busca su ubicación
@@ -323,6 +382,7 @@
 - Dónde se encuentra
 - Dónde está
 - [Dónde](PER) está
+- /consulta_localizacion_empty
 
 ## intent:consulta_musica
 - Busca un CD
@@ -411,6 +471,7 @@
 - Cuál es el número de la [Facultad de informática](localizacion)
 - Cuál es el teléfono de la [Facultad de Ciencias de la Información](localizacion)
 - Quiero el teléfono de la [biblioteca de veterinaria](localizacion)
+- /consulta_telefono[{"localizacion":"Zambrano"}](localizacion:Zambrano)
 
 ## intent:consulta_telefono_empty
 - Llámala
@@ -525,6 +586,7 @@
 - /me_llamo[{"persona":"Pepe"}](persona:Pepe)
 - /me_llamo[{"persona":"Basilio"}](persona:Basilio)
 - /me_llamo[{"persona":"Eustaquio"}](persona:Eustaquio)
+- /me_llamo[{"PER":"Eustaquio"}](PER)
 
 ## intent:quien_soy
 - Cómo te llamas
@@ -546,15 +608,13 @@
 - Hello
 - Holis
 - [Hola](PER)
-- [Hola](PER)
 - Buenas
 - /saludos
-- /saludos
-- /saludos
 - /saludos[{"persona":"Jose Luis"}](persona:Jose Luis)
-- /saludos
-- /saludos
-- /saludos
+- /saludos[{"PER":"Jose Luis"}](PER:Jose Luis)
+
+## synonym:1984
+- {"LOC":"Busca","libro":"1984"}
 
 ## synonym:Arturo Pérez-Reverte
 - {"libro":"Alatriste","autores":"Arturo Pérez-Reverte"}
@@ -568,26 +628,42 @@
 ## synonym:Campeones
 - {"libro":"Campeones"}
 
+## synonym:Don Quijote de la Mancha
+- {"MISC":"Don Quijote de la Mancha","autores":"Miguel de Cervantes"}
+
 ## synonym:Eustaquio
 - {"persona":"Eustaquio"}
 
+## synonym:Geologia
+- {"localizacion":"Geologia"}
+
 ## synonym:Góngora
 - {"autores":"Góngora"}
+- {"PER":"Góngora", "autores":"Góngora}
 
 ## synonym:Harry Potter
 - {"libro":"Harry Potter"}
 
+## synonym:Jose Garcia
+- {"LOC":"Busca","PER":"Jose Garcia"}
+- {"PER":"Jose Garcia"}
+
 ## synonym:Jose Luis
 - {"persona":"Jose Luis"}
+- {"PER":"Jose Luis"}
 
 ## synonym:Luces de Bohemia
 - {"libro":"Luces de Bohemia"}
+- {"MISC":"Luces de Bohemia"}
 
 ## synonym:Matemática Discreta y Lógica
 - {"libro":"Matemática Discreta y Lógica"}
 
 ## synonym:Mauricio
 - Mauri
+
+## synonym:Miguel Muñoz
+- {"libro":"Mi Españita", "autores":"Miguel Muñoz"}
 
 ## synonym:Miguel de Cervantes
 - {"libro":"Don Quijote de la Mancha","autores":"Miguel de Cervantes"}
@@ -599,6 +675,7 @@
 - {"autores":"Patrick Rothfuss"}
 
 ## synonym:Pedro Sánchez
+- {"libro":"Pedro Sánchez"}
 - {"autores":"Pedro Sánchez"}
 
 ## synonym:Pepe
@@ -606,9 +683,16 @@
 
 ## synonym:Programador experto
 - {"libro":"RSA, de lo mejor lo superior", "autores":"Programador experto"}
+- {"libro":"RSA de lo mejor lo superior", "autores":"Programador experto"}
+
+## synonym:Psicologia
+- {"localizacion":"Psicologia"}
 
 ## synonym:Quevedo
 - {"autores":"Quevedo"}
+
+## synonym:RSA de lo mejor lo superior
+- {"MISC":"RSA de lo mejor lo superior", "autores":"Programador experto"}
 
 ## synonym:Rodolfo Rodríguez
 - {"libro":"Como aprender a programar en 5 minutos","autores":"Rodolfo Rodríguez"}
@@ -636,6 +720,9 @@
 
 ## synonym:venancio tomeo
 - Venancio Tomeo
+
+## synonym:veterinaria
+- {"localizacion":"veterinaria"}
 
 ## lookup:persona
   data/names/nombres.csv

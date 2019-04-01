@@ -213,3 +213,26 @@
     - slot{"localizacion": "Psicologia"}
     - action_check_biblio_abierta
 
+## Generated Story -5775802271615575279
+* consulta_libros_kw{"LOC": "Busca", "libro": "matem\u00e1tica discreta"}
+    - form_libros
+    - form{"name": "form_libros"}
+    - slot{"libro": "Matem\u00e1tica discreta"}
+    - slot{"autores": null}
+    - form{"name": null}
+    - slot{"requested_slot": null}
+
+## Generated Story 9075783348728934881
+* consulta_localizacion{"localizacion": "facultad de informatica"}
+    - slot{"localizacion": "facultad de informatica"}
+    - utter_consulta_localizacion
+* consulta_localizacion_empty
+    - action_localizacion_sin_entidad
+
+## Generated Story -1100014752812824837
+* consulta_telefono{"localizacion": "Zambrano"}
+    - slot{"localizacion": "Zambrano"}
+    - utter_consulta_telefono
+* consulta_localizacion_empty
+    - action_localizacion_sin_entidad
+

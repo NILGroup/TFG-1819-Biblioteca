@@ -126,58 +126,80 @@ class BuscarLibroForm(FormAction):
         libro = tracker.get_slot('libro')
         autores = tracker.get_slot('autores')
         intent = tracker.latest_message['intent'].get('name')
+        numIndexes = 0
+        numberofmorebooksearch = 0
 
         if intent == "consulta_libros_kw":
             if libro is not None or autores is not None:
                 dispatcher.utter_template("utter_libros_kw", tracker, **tracker.slots)
+                numIndexes = 2
+                numberofmorebooksearch = 2
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
         elif intent == "consulta_libros_autor":
             if autores is not None:
                 dispatcher.utter_template("utter_libros_autor", tracker, **tracker.slots)
+                numIndexes = 2
+                numberofmorebooksearch = 2
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
         elif intent == "consulta_libro_titulo_autor":
             if libro is not None and autores is not None:
                 dispatcher.utter_template("utter_libro_titulo_autor", tracker, **tracker.slots)
+                numIndexes = 1
+                numberofmorebooksearch = 1
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
         elif intent == "consulta_libro_kw":
             if libro is not None or autores is not None:
                 dispatcher.utter_template("utter_libro_kw", tracker, **tracker.slots)
+                numIndexes = 1
+                numberofmorebooksearch = 1
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
         elif intent == "consulta_libros_titulo":
             if libro is not None:
                 dispatcher.utter_template("utter_libros_titulo", tracker, **tracker.slots)
+                numIndexes = 2
+                numberofmorebooksearch = 2
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
         elif intent == "consulta_libro_titulo":
             if libro is not None:
                 dispatcher.utter_template("utter_libro_titulo", tracker, **tracker.slots)
+                numIndexes = 1
+                numberofmorebooksearch = 1
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
         elif intent == "consulta_libro_autor":
             if autores is not None:
                 dispatcher.utter_template("utter_libro_autor", tracker, **tracker.slots)
+                numIndexes = 1
+                numberofmorebooksearch = 1
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
         elif intent == "consulta_libros_titulo_autor":
             if libro is not None and autores is not None:
                 dispatcher.utter_template("utter_libros_titulo_autor", tracker, **tracker.slots)
+                numIndexes = 2
+                numberofmorebooksearch = 2
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
         elif intent == "consulta_libros_kw_autor":
             if libro is not None and autores is not None:
                 dispatcher.utter_template("utter_libros_kw_autor", tracker, **tracker.slots)
+                numIndexes = 2
+                numberofmorebooksearch = 2
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
         elif intent == "consulta_libro_kw_autor":
             if libro is not None and autores is not None:
                 dispatcher.utter_template("utter_libro_kw_autor", tracker, **tracker.slots)
+                numIndexes = 1
+                numberofmorebooksearch = 1
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
-        return []
+        return [SlotSet('searchindex', numIndexes), SlotSet('numberofmorebooksearch', numberofmorebooksearch)]
 
 class BuscarArticuloForm(FormAction):
     def name(self):
@@ -232,6 +254,9 @@ class ActionBuscaMas(Action):
         juego = tracker.get_slot('juego')
         musica = tracker.get_slot('musica')
         pelicula = tracker.get_slot('pelicula')
+        numberofmorebooksearch = tracker.get_slot('numberofmorebooksearch')
+        numIndexes = tracker.get_slot('searchindex')
+
         if libros is not None:
             dispatcher.utter_template("utter_muestra_mas", tracker)
         elif articulos is not None:
@@ -246,7 +271,11 @@ class ActionBuscaMas(Action):
             dispatcher.utter_template("utter_muestra_mas", tracker)
         else:
             dispatcher.utter_message("Antes tienes que indicarme algo.")
-        return []
+            return [SlotSet('searchindex', 0), SlotSet('numberofmorebooksearch', 0)]
+        if numberofmorebooksearch == 1:
+            return [SlotSet('searchindex', numIndexes + 1)]
+        else:
+            return [SlotSet('searchindex', numIndexes + 2)]
 
 class ActionMuestraPrimero(Action):
     def name(self):

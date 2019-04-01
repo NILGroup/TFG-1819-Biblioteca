@@ -5,14 +5,11 @@
         "localizacion"
       ]
     },
-    "utter_gracias": {
-      "slots": []
-    },
     "form_libros": {
       "slots": [
-        "requested_slot",
         "autores",
-        "libro"
+        "libro",
+        "requested_slot"
       ]
     },
     "action_check_biblio_abierta": {
@@ -21,20 +18,26 @@
     "action_saludos": {
       "slots": []
     },
+    "action_localizacion_sin_entidad": {
+      "slots": []
+    },
     "form_saludos": {
       "slots": [
-        "requested_slot",
-        "persona"
+        "persona",
+        "requested_slot"
       ]
     },
     "utter_despedida": {
+      "slots": []
+    },
+    "utter_gracias": {
       "slots": []
     },
     "action_muestra_tercero": {
       "slots": []
     }
   },
-  "python": "3.6.5",
+  "python": "3.6.8",
   "max_histories": [
     10,
     null,
@@ -48,8 +51,8 @@
     "rasa_core.policies.memoization.MemoizationPolicy",
     "rasa_core.policies.form_policy.FormPolicy"
   ],
-  "trained_at": "20190331-142613",
-  "rasa_core": "0.13.2",
+  "trained_at": "20190401-185702",
+  "rasa_core": "0.13.3",
   "tensorflow": "1.12.0",
   "sklearn": "0.20.2"
 }

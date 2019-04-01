@@ -1,71 +1,83 @@
 %YAML 1.1
 ---
 actions:
-- action_saludos
-- utter_libro_titulo
-- utter_gracias
+- utter_respuesta_insultos
+- utter_consulta_horario_cerrado
+- utter_no_te_entiendo
+- utter_especifica_musica
+- action_localizacion_sin_entidad
+- action_check_biblio_abierta
+- utter_libro_autor
+- utter_info_tercero
+- utter_consulta_horario_abierto
+- action_busca_libro
+- utter_info_segundo
+- utter_articulos_kw
+- utter_juegos_kw
+- utter_saludo_nombre
+- utter_saludo
+- utter_libros_kw_autor
+- utter_juego_kw
+- utter_quien_soy
+- utter_consulta_telefono
 - utter_especifica_libro
 - utter_especifica_articulo
-- utter_libros_kw
-- utter_despedida
-- utter_info_tercero
+- utter_musica_kw
+- utter_gracias
+- utter_consulta_localizacion
+- action_muestra_segundo
+- action_muestra_primero
+- utter_info_primero
+- utter_libros_autor
+- utter_peliculas_kw
+- utter_especifica_juego
 - utter_libro_kw_autor
 - utter_articulo_kw
-- action_localizacion_sin_entidad
-- action_busca_mas
-- utter_libro_autor
-- utter_saludo_nombre
-- utter_libros_titulo
-- action_check_biblio_abierta
-- utter_consulta_localizacion
-- utter_libro_titulo_autor
-- utter_articulos_kw
-- utter_especifica_musica
-- utter_no_te_entiendo
-- utter_consulta_telefono
-- utter_juego_kw
-- utter_consulta_horario_cerrado
-- utter_libros_kw_autor
-- utter_quien_soy
-- action_muestra_primero
-- utter_libros_titulo_autor
-- action_muestra_tercero
-- utter_musica_kw
-- action_busca_libro
-- utter_especifica_juego
+- action_saludos
 - utter_pelicula_kw
-- utter_consulta_horario_abierto
-- utter_respuesta_insultos
-- utter_juegos_kw
-- utter_peliculas_kw
-- action_muestra_segundo
-- utter_info_segundo
-- utter_info_primero
-- utter_saludo
-- utter_libros_autor
+- utter_libros_kw
+- utter_libros_titulo
+- utter_libro_titulo_autor
+- utter_libro_titulo
+- action_muestra_tercero
+- utter_despedida
+- utter_libros_titulo_autor
 - utter_especifica_pelicula
+- action_busca_mas
 - utter_libro_kw
 config:
   store_entities_as_slots: true
 entities:
+- autores
+- pelicula
+- musica
+- autor
+- ORG
+- localizacion
 - libro_titulo
 - juego
-- LOC
-- MISC
-- libro
 - PER
-- musica
-- localizacion
-- autores
-- ORG
-- pelicula
-- autor
+- MISC
 - persona
+- libro
+- LOC
 forms:
 - form_saludos
 - form_articulos
 - form_libros
 intents:
+- consulta_telefono:
+    use_entities: true
+- consulta_localizacion:
+    use_entities: true
+- consulta_localizacion_empty:
+    use_entities: false
+- consulta_libros_kw:
+    use_entities: true
+- consulta_horario_open:
+    use_entities: true
+- consulta_horario_close:
+    use_entities: true
 - consulta_horario_general:
     use_entities: true
 - mas_info_segundo:
@@ -94,15 +106,11 @@ intents:
     use_entities: true
 - consulta_libro_titulo:
     use_entities: true
-- 'consulta_libros_titulo_autor:':
-    use_entities: true
 - consulta_libro_titulo_autor:
     use_entities: true
 - consulta_libros_titulo:
     use_entities: true
 - despedidas:
-    use_entities: true
-- consulta_libros_kw:
     use_entities: true
 - gracias:
     use_entities: false
@@ -110,15 +118,9 @@ intents:
     use_entities: true
 - quien_soy:
     use_entities: false
-- consulta_telefono:
-    use_entities: true
-- consulta_localizacion_empty:
-    use_entities: false
 - consulta_telefono_empty:
     use_entities: false
 - busca_mas:
-    use_entities: true
-- consulta_localizacion:
     use_entities: true
 - como_estas:
     use_entities: true
@@ -160,10 +162,6 @@ intents:
     use_entities: true
 - consulta_pelicula_kw:
     use_entities: true
-- consulta_horario_close:
-    use_entities: true
-- consulta_horario_open:
-    use_entities: true
 slots:
   articulos:
     auto_fill: true
@@ -189,6 +187,10 @@ slots:
     auto_fill: true
     initial_value: null
     type: rasa_core.slots.TextSlot
+  numberofmorebooksearch:
+    auto_fill: false
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
   pelicula:
     auto_fill: true
     initial_value: null
@@ -199,6 +201,10 @@ slots:
     type: rasa_core.slots.UnfeaturizedSlot
   requested_slot:
     auto_fill: true
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+  searchindex:
+    auto_fill: false
     initial_value: null
     type: rasa_core.slots.UnfeaturizedSlot
 templates:

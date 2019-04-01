@@ -294,6 +294,30 @@
         "text": "Cierre de la Zambrano"
       },
       {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 23,
+            "end": 50,
+            "value": "Geologia",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "/consulta_horario_close{\"localizacion\":\"Geologia\"}"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 23,
+            "end": 53,
+            "value": "veterinaria",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "/consulta_horario_close{\"localizacion\":\"veterinaria\"}"
+      },
+      {
         "intent": "consulta_horario_general",
         "entities": [
           {
@@ -316,6 +340,30 @@
           }
         ],
         "text": "Horario de la Zambrano"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 25,
+            "end": 54,
+            "value": "periodismo",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "/consulta_horario_general{\"localizacion\":\"periodismo\"}"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 25,
+            "end": 52,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "/consulta_horario_general{\"localizacion\":\"Zambrano\"}"
       },
       {
         "intent": "consulta_horario_open",
@@ -376,6 +424,18 @@
           }
         ],
         "text": "Cuándo está abierta la Zambrano"
+      },
+      {
+        "intent": "consulta_horario_open",
+        "entities": [
+          {
+            "start": 22,
+            "end": 51,
+            "value": "Psicologia",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "/consulta_horario_open{\"localizacion\":\"Psicologia\"}"
       },
       {
         "intent": "consulta_juego",
@@ -781,25 +841,61 @@
         "intent": "consulta_libro_autor",
         "entities": [
           {
-            "start": 27,
-            "end": 33,
+            "start": 25,
+            "end": 31,
             "value": "Orwell",
             "entity": "autores"
           }
         ],
-        "text": "Busca un libro del autores Orwell"
+        "text": "Busca un libro del autor Orwell"
       },
       {
         "intent": "consulta_libro_autor",
         "entities": [
           {
-            "start": 30,
-            "end": 41,
+            "start": 28,
+            "end": 39,
             "value": "J K Rowling",
             "entity": "autores"
           }
         ],
-        "text": "Busca un libro de la autoresa J K Rowling"
+        "text": "Busca un libro de la autora J K Rowling"
+      },
+      {
+        "intent": "consulta_libro_autor",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 26,
+            "end": 32,
+            "value": "Orwell",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busca  un libro del autor Orwell"
+      },
+      {
+        "intent": "consulta_libro_autor",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 29,
+            "end": 40,
+            "value": "J K Rowling",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busca  un libro de la autora J K Rowling"
       },
       {
         "intent": "consulta_libro_autor",
@@ -809,6 +905,18 @@
             "end": 47,
             "value": "Francisco de Quevedo",
             "entity": "autores"
+          }
+        ],
+        "text": "Busca un libro escrito por Francisco de Quevedo"
+      },
+      {
+        "intent": "consulta_libro_autor",
+        "entities": [
+          {
+            "start": 27,
+            "end": 47,
+            "value": "Francisco de Quevedo",
+            "entity": "PER"
           }
         ],
         "text": "Busca un libro escrito por Francisco de Quevedo"
@@ -829,13 +937,13 @@
         "intent": "consulta_libro_autor",
         "entities": [
           {
-            "start": 31,
-            "end": 47,
+            "start": 29,
+            "end": 45,
             "value": "Ana María Matute",
             "entity": "autores"
           }
         ],
-        "text": "Quiero un libro de la autoresa Ana María Matute"
+        "text": "Quiero un libro de la autora Ana María Matute"
       },
       {
         "intent": "consulta_libro_autor",
@@ -853,13 +961,13 @@
         "intent": "consulta_libro_autor",
         "entities": [
           {
-            "start": 41,
-            "end": 55,
+            "start": 39,
+            "end": 53,
             "value": "Isabel Allende",
             "entity": "autores"
           }
         ],
-        "text": "Me podrías decir un libro de la autoresa Isabel Allende"
+        "text": "Me podrías decir un libro de la autora Isabel Allende"
       },
       {
         "intent": "consulta_libro_autor",
@@ -872,6 +980,18 @@
           }
         ],
         "text": "Me podrías decir un libro escrito por Isaac Asimov"
+      },
+      {
+        "intent": "consulta_libro_autor",
+        "entities": [
+          {
+            "start": 40,
+            "end": 55,
+            "value": "Alberto Verdejo",
+            "entity": "PER"
+          }
+        ],
+        "text": "Necesito una obra literaria del autores Alberto Verdejo"
       },
       {
         "intent": "consulta_libro_autor",
@@ -937,13 +1057,73 @@
         "intent": "consulta_libro_autor",
         "entities": [
           {
-            "start": 21,
-            "end": 36,
+            "start": 19,
+            "end": 34,
             "value": "George R Martin",
             "entity": "autores"
           }
         ],
-        "text": "Libro de la autoresa George R Martin"
+        "text": "Libro de la autora George R Martin"
+      },
+      {
+        "intent": "consulta_libro_autor",
+        "entities": [
+          {
+            "start": 21,
+            "end": 42,
+            "value": "Góngora",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libro_autor{\"autores\":\"Góngora\"}"
+      },
+      {
+        "intent": "consulta_libro_autor",
+        "entities": [
+          {
+            "start": 21,
+            "end": 58,
+            "value": "Góngora",
+            "entity": "autores"
+          },
+          {
+            "start": 58,
+            "end": 95,
+            "value": "Góngora",
+            "entity": "PER"
+          }
+        ],
+        "text": "/consulta_libro_autor{\"PER\":\"Góngora\", \"autores\":\"Góngora}{\"PER\":\"Góngora\", \"autores\":\"Góngora}"
+      },
+      {
+        "intent": "consulta_libro_autor",
+        "entities": [
+          {
+            "start": 21,
+            "end": 56,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 56,
+            "end": 91,
+            "value": "Jose Garcia",
+            "entity": "PER"
+          }
+        ],
+        "text": "/consulta_libro_autor{\"LOC\":\"Busca\",\"PER\":\"Jose Garcia\"}{\"LOC\":\"Busca\",\"PER\":\"Jose Garcia\"}"
+      },
+      {
+        "intent": "consulta_libro_autor",
+        "entities": [
+          {
+            "start": 21,
+            "end": 42,
+            "value": "Jose Garcia",
+            "entity": "PER"
+          }
+        ],
+        "text": "/consulta_libro_autor{\"PER\":\"Jose Garcia\"}"
       },
       {
         "intent": "consulta_libro_kw",
@@ -1045,6 +1225,102 @@
         "intent": "consulta_libro_kw",
         "entities": [
           {
+            "start": 15,
+            "end": 29,
+            "value": "Fuego y Sangre",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca libro de Fuego y Sangre"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 15,
+            "end": 34,
+            "value": "Matemática Discreta",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busco libro de Matemática Discreta"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 16,
+            "end": 28,
+            "value": "Harry Potter",
+            "entity": "libro"
+          }
+        ],
+        "text": "Quiero libro de Harry Potter"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 15,
+            "end": 32,
+            "value": "Historia del arte",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca libro de Historia del arte"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 14,
+            "end": 21,
+            "value": "recetas",
+            "entity": "libro"
+          }
+        ],
+        "text": "Dame libro de recetas"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 20,
+            "end": 28,
+            "value": "economía",
+            "entity": "libro"
+          }
+        ],
+        "text": "Me podrías libro de economía"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 24,
+            "end": 32,
+            "value": "economía",
+            "entity": "libro"
+          }
+        ],
+        "text": "Me podrías dar libro de economía"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 21,
+            "end": 35,
+            "value": "Carlos Fuentes",
+            "entity": "libro"
+          }
+        ],
+        "text": "Necesito un libro de Carlos Fuentes"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
             "start": 28,
             "end": 36,
             "value": "medicina",
@@ -1069,13 +1345,13 @@
         "intent": "consulta_libro_kw",
         "entities": [
           {
-            "start": 10,
-            "end": 25,
+            "start": 9,
+            "end": 24,
             "value": "Juego de Tronos",
             "entity": "libro"
           }
         ],
-        "text": "Libros de Juego de Tronos"
+        "text": "Libro de Juego de Tronos"
       },
       {
         "intent": "consulta_libro_kw",
@@ -1090,13 +1366,169 @@
         "text": "Harry Potter"
       },
       {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 18,
+            "end": 41,
+            "value": "Topotamadre",
+            "entity": "libro"
+          }
+        ],
+        "text": "/consulta_libro_kw{\"libro\":\"Topotamadre\"}"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 18,
+            "end": 51,
+            "value": "Benito Pérez-Galdos",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libro_kw{\"autores\":\"Benito Pérez-Galdos\"}"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 18,
+            "end": 39,
+            "value": "Quevedo",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libro_kw{\"autores\":\"Quevedo\"}"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 18,
+            "end": 42,
+            "value": "Harry Potter",
+            "entity": "libro"
+          }
+        ],
+        "text": "/consulta_libro_kw{\"libro\":\"Harry Potter\"}"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 18,
+            "end": 58,
+            "value": "Matemática Discreta y Lógica",
+            "entity": "libro"
+          }
+        ],
+        "text": "/consulta_libro_kw{\"libro\":\"Matemática Discreta y Lógica\"}"
+      },
+      {
+        "intent": "consulta_libro_kw",
+        "entities": [
+          {
+            "start": 18,
+            "end": 39,
+            "value": "Campeones",
+            "entity": "libro"
+          }
+        ],
+        "text": "/consulta_libro_kw{\"libro\":\"Campeones\"}"
+      },
+      {
+        "intent": "consulta_libro_kw_autor",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busco",
+            "entity": "LOC"
+          },
+          {
+            "start": 18,
+            "end": 28,
+            "value": "El Quijote",
+            "entity": "libro"
+          },
+          {
+            "start": 41,
+            "end": 60,
+            "value": "Miguel de Cervantes",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busco un libro de El Quijote del autores Miguel de Cervantes"
+      },
+      {
+        "intent": "consulta_libro_kw_autor",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busco",
+            "entity": "LOC"
+          },
+          {
+            "start": 18,
+            "end": 27,
+            "value": "Yo, Julia",
+            "entity": "libro"
+          },
+          {
+            "start": 40,
+            "end": 60,
+            "value": "Santiago Posteguillo",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busco un libro de Yo, Julia escrito por Santiago Posteguillo"
+      },
+      {
+        "intent": "consulta_libro_kw_autor",
+        "entities": [
+          {
+            "start": 18,
+            "end": 28,
+            "value": "El Quijote",
+            "entity": "libro"
+          },
+          {
+            "start": 41,
+            "end": 60,
+            "value": "Miguel de Cervantes",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busco un libro de El Quijote del autores Miguel de Cervantes"
+      },
+      {
+        "intent": "consulta_libro_kw_autor",
+        "entities": [
+          {
+            "start": 18,
+            "end": 27,
+            "value": "Yo, Julia",
+            "entity": "libro"
+          },
+          {
+            "start": 40,
+            "end": 60,
+            "value": "Santiago Posteguillo",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busco un libro de Yo, Julia escrito por Santiago Posteguillo"
+      },
+      {
         "intent": "consulta_libro_kw_autor",
         "entities": [
           {
             "start": 19,
             "end": 29,
             "value": "El Quijote",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 42,
@@ -1114,7 +1546,7 @@
             "start": 19,
             "end": 28,
             "value": "Yo, Julia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 41,
@@ -1132,7 +1564,7 @@
             "start": 29,
             "end": 45,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 58,
@@ -1150,7 +1582,7 @@
             "start": 29,
             "end": 45,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 58,
@@ -1168,16 +1600,70 @@
             "start": 29,
             "end": 45,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 61,
-            "end": 82,
+            "start": 59,
+            "end": 80,
             "value": "Ramón de Valle-Inclán",
             "entity": "autores"
           }
         ],
-        "text": "Me podrías decir un libro de Luces de bohemia de la autoresa Ramón de Valle-Inclán"
+        "text": "Me podrías decir un libro de Luces de bohemia de la autora Ramón de Valle-Inclán"
+      },
+      {
+        "intent": "consulta_libro_kw_autor",
+        "entities": [
+          {
+            "start": 29,
+            "end": 45,
+            "value": "Luces de bohemia",
+            "entity": "libro"
+          },
+          {
+            "start": 58,
+            "end": 79,
+            "value": "Ramón de Valle-Inclán",
+            "entity": "PER"
+          }
+        ],
+        "text": "Me podrías decir un libro de Luces de bohemia del autores Ramón de Valle-Inclán"
+      },
+      {
+        "intent": "consulta_libro_kw_autor",
+        "entities": [
+          {
+            "start": 29,
+            "end": 45,
+            "value": "Luces de bohemia",
+            "entity": "MISC"
+          },
+          {
+            "start": 59,
+            "end": 80,
+            "value": "Ramón de Valle-Inclán",
+            "entity": "autores"
+          }
+        ],
+        "text": "Me podrías decir un libro de Luces de bohemia de la autora Ramón de Valle-Inclán"
+      },
+      {
+        "intent": "consulta_libro_kw_autor",
+        "entities": [
+          {
+            "start": 29,
+            "end": 45,
+            "value": "Luces de bohemia",
+            "entity": "MISC"
+          },
+          {
+            "start": 59,
+            "end": 80,
+            "value": "Ramón de Valle-Inclán",
+            "entity": "PER"
+          }
+        ],
+        "text": "Me podrías decir un libro de Luces de bohemia de la autora Ramón de Valle-Inclán"
       },
       {
         "intent": "consulta_libro_kw_autor",
@@ -1186,16 +1672,16 @@
             "start": 31,
             "end": 63,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 79,
-            "end": 90,
+            "start": 77,
+            "end": 88,
             "value": "J K Rowling",
             "entity": "autores"
           }
         ],
-        "text": "Necesito una obra literaria de Harry Potter y la cámara secreta de la autoresa J K Rowling"
+        "text": "Necesito una obra literaria de Harry Potter y la cámara secreta de la autora J K Rowling"
       },
       {
         "intent": "consulta_libro_kw_autor",
@@ -1204,7 +1690,7 @@
             "start": 31,
             "end": 63,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 76,
@@ -1222,7 +1708,7 @@
             "start": 31,
             "end": 63,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 77,
@@ -1240,7 +1726,7 @@
             "start": 9,
             "end": 41,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 56,
@@ -1252,13 +1738,49 @@
         "text": "Libro de Harry Potter y la cámara secreta  escritas por J K Rowling"
       },
       {
+        "intent": "consulta_libro_kw_autor",
+        "entities": [
+          {
+            "start": 24,
+            "end": 97,
+            "value": "RSA, de lo mejor lo superior",
+            "entity": "libro"
+          },
+          {
+            "start": 97,
+            "end": 170,
+            "value": "Programador experto",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libro_kw_autor{\"libro\":\"RSA, de lo mejor lo superior\", \"autores\":\"Programador experto\"}{\"libro\":\"RSA, de lo mejor lo superior\", \"autores\":\"Programador experto\"}"
+      },
+      {
+        "intent": "consulta_libro_kw_autor",
+        "entities": [
+          {
+            "start": 24,
+            "end": 95,
+            "value": "RSA de lo mejor lo superior",
+            "entity": "MISC"
+          },
+          {
+            "start": 95,
+            "end": 167,
+            "value": "Programador experto",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libro_kw_autor{\"MISC\":\"RSA de lo mejor lo superior\", \"autores\":\"Programador experto\"}{\"libro\":\"RSA de lo mejor lo superior\", \"autores\":\"Programador experto\"}"
+      },
+      {
         "intent": "consulta_libro_titulo",
         "entities": [
           {
             "start": 24,
             "end": 34,
             "value": "El Quijote",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Quiero un libro llamado El Quijote"
@@ -1270,7 +1792,25 @@
             "start": 23,
             "end": 29,
             "value": "Narnia",
-            "entity": "libro_titulo"
+            "entity": "libro"
+          }
+        ],
+        "text": "Busco un libro llamado Narnia"
+      },
+      {
+        "intent": "consulta_libro_titulo",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busco",
+            "entity": "LOC"
+          },
+          {
+            "start": 23,
+            "end": 29,
+            "value": "Narnia",
+            "entity": "libro"
           }
         ],
         "text": "Busco un libro llamado Narnia"
@@ -1282,7 +1822,7 @@
             "start": 25,
             "end": 34,
             "value": "Yo, Julia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Quiero un libro titulado Yo, Julia"
@@ -1294,7 +1834,7 @@
             "start": 24,
             "end": 63,
             "value": "Narnia la travesía del viajero del alba",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Quiero un libro llamado Narnia la travesía del viajero del alba"
@@ -1306,7 +1846,7 @@
             "start": 34,
             "end": 50,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Me podrías decir un libro llamado Luces de bohemia"
@@ -1318,7 +1858,7 @@
             "start": 20,
             "end": 39,
             "value": "Mortadelo y Filemón",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Dime libro titulado Mortadelo y Filemón"
@@ -1330,7 +1870,7 @@
             "start": 23,
             "end": 42,
             "value": "Mortadelo y Filemón",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Dime un libro titulado Mortadelo y Filemón"
@@ -1342,7 +1882,7 @@
             "start": 22,
             "end": 41,
             "value": "Mortadelo y Filemón",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Dime un libro llamado Mortadelo y Filemón"
@@ -1354,7 +1894,7 @@
             "start": 36,
             "end": 61,
             "value": "Lo que el viento se llevó",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Necesito una obra literaria llamada Lo que el viento se llevó"
@@ -1366,7 +1906,7 @@
             "start": 34,
             "end": 38,
             "value": "1984",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Busca una obras literaria llamada 1984"
@@ -1378,7 +1918,7 @@
             "start": 27,
             "end": 50,
             "value": "Preludio a la fundación",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Necesito un libro titulado Preludio a la fundación"
@@ -1390,7 +1930,7 @@
             "start": 14,
             "end": 29,
             "value": "Juego de Tronos",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Libro llamado Juego de Tronos"
@@ -1402,7 +1942,7 @@
             "start": 15,
             "end": 30,
             "value": "Juego de Tronos",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Libro titulado Juego de Tronos"
@@ -1420,13 +1960,121 @@
         "text": "Buscame un libro llamado El amor en tiempos de colera"
       },
       {
+        "intent": "consulta_libro_titulo",
+        "entities": [
+          {
+            "start": 22,
+            "end": 50,
+            "value": "Luces de Bohemia",
+            "entity": "libro"
+          }
+        ],
+        "text": "/consulta_libro_titulo{\"libro\":\"Luces de Bohemia\"}"
+      },
+      {
+        "intent": "consulta_libro_titulo",
+        "entities": [
+          {
+            "start": 22,
+            "end": 49,
+            "value": "Luces de Bohemia",
+            "entity": "MISC"
+          }
+        ],
+        "text": "/consulta_libro_titulo{\"MISC\":\"Luces de Bohemia\"}"
+      },
+      {
+        "intent": "consulta_libro_titulo_autor",
+        "entities": [
+          {
+            "start": 23,
+            "end": 33,
+            "value": "El Quijote",
+            "entity": "libro"
+          },
+          {
+            "start": 46,
+            "end": 65,
+            "value": "Miguel de Cervantes",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busca un libro llamado El Quijote del autores Miguel de Cervantes"
+      },
+      {
+        "intent": "consulta_libro_titulo_autor",
+        "entities": [
+          {
+            "start": 23,
+            "end": 32,
+            "value": "Yo, Julia",
+            "entity": "libro"
+          },
+          {
+            "start": 45,
+            "end": 65,
+            "value": "Santiago Posteguillo",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busca un libro llamado Yo, Julia escrito por Santiago Posteguillo"
+      },
+      {
+        "intent": "consulta_libro_titulo_autor",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 23,
+            "end": 33,
+            "value": "El Quijote",
+            "entity": "libro"
+          },
+          {
+            "start": 46,
+            "end": 65,
+            "value": "Miguel de Cervantes",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busca un libro llamado El Quijote del autores Miguel de Cervantes"
+      },
+      {
+        "intent": "consulta_libro_titulo_autor",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 23,
+            "end": 32,
+            "value": "Yo, Julia",
+            "entity": "libro"
+          },
+          {
+            "start": 45,
+            "end": 65,
+            "value": "Santiago Posteguillo",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busca un libro llamado Yo, Julia escrito por Santiago Posteguillo"
+      },
+      {
         "intent": "consulta_libro_titulo_autor",
         "entities": [
           {
             "start": 24,
             "end": 34,
             "value": "El Quijote",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 47,
@@ -1444,7 +2092,7 @@
             "start": 24,
             "end": 33,
             "value": "Yo, Julia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 46,
@@ -1462,7 +2110,7 @@
             "start": 34,
             "end": 50,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 63,
@@ -1480,7 +2128,25 @@
             "start": 34,
             "end": 50,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "MISC"
+          },
+          {
+            "start": 63,
+            "end": 84,
+            "value": "Ramón de Valle-Inclán",
+            "entity": "autores"
+          }
+        ],
+        "text": "Me podrías decir un libro llamado Luces de bohemia escrito por Ramón de Valle-Inclán"
+      },
+      {
+        "intent": "consulta_libro_titulo_autor",
+        "entities": [
+          {
+            "start": 34,
+            "end": 50,
+            "value": "Luces de bohemia",
+            "entity": "libro"
           },
           {
             "start": 63,
@@ -1498,16 +2164,16 @@
             "start": 34,
             "end": 50,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 66,
-            "end": 87,
+            "start": 64,
+            "end": 85,
             "value": "Ramón de Valle-Inclán",
             "entity": "autores"
           }
         ],
-        "text": "Me podrías decir un libro llamado Luces de bohemia de la autoresa Ramón de Valle-Inclán"
+        "text": "Me podrías decir un libro llamado Luces de bohemia de la autora Ramón de Valle-Inclán"
       },
       {
         "intent": "consulta_libro_titulo_autor",
@@ -1516,16 +2182,16 @@
             "start": 36,
             "end": 68,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 84,
-            "end": 95,
+            "start": 82,
+            "end": 93,
             "value": "J K Rowling",
             "entity": "autores"
           }
         ],
-        "text": "Necesito una obra literaria llamada Harry Potter y la cámara secreta de la autoresa J K Rowling"
+        "text": "Necesito una obra literaria llamada Harry Potter y la cámara secreta de la autora J K Rowling"
       },
       {
         "intent": "consulta_libro_titulo_autor",
@@ -1534,7 +2200,7 @@
             "start": 36,
             "end": 68,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 81,
@@ -1552,7 +2218,7 @@
             "start": 36,
             "end": 68,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 82,
@@ -1570,7 +2236,7 @@
             "start": 15,
             "end": 47,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 62,
@@ -1588,7 +2254,7 @@
             "start": 53,
             "end": 77,
             "value": "Los Pilares de la Tierra",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 122,
@@ -1600,7 +2266,55 @@
         "text": "Serías tan amable de buscarme un único libro llamado Los Pilares de la Tierra[](libro:Los Pilares de la Tierra) del autor Ken Follet[](autores:Ken Follet)"
       },
       {
+        "intent": "consulta_libro_titulo_autor",
+        "entities": [
+          {
+            "start": 28,
+            "end": 96,
+            "value": "Don Quijote de la Mancha",
+            "entity": "libro"
+          },
+          {
+            "start": 96,
+            "end": 164,
+            "value": "Miguel de Cervantes",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libro_titulo_autor{\"libro\":\"Don Quijote de la Mancha\",\"autores\":\"Miguel de Cervantes\"}{\"libro\":\"Don Quijote de la Mancha\",\"autores\":\"Miguel de Cervantes\"}"
+      },
+      {
+        "intent": "consulta_libro_titulo_autor",
+        "entities": [
+          {
+            "start": 28,
+            "end": 95,
+            "value": "Don Quijote de la Mancha",
+            "entity": "MISC"
+          },
+          {
+            "start": 95,
+            "end": 163,
+            "value": "Miguel de Cervantes",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libro_titulo_autor{\"MISC\":\"Don Quijote de la Mancha\",\"autores\":\"Miguel de Cervantes\"}{\"libro\":\"Don Quijote de la Mancha\",\"autores\":\"Miguel de Cervantes\"}"
+      },
+      {
         "intent": "consulta_libros",
+        "text": "Busca libros"
+      },
+      {
+        "intent": "consulta_libros",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busca",
+            "entity": "LOC"
+          }
+        ],
         "text": "Busca libros"
       },
       {
@@ -1655,25 +2369,61 @@
         "intent": "consulta_libros_autor",
         "entities": [
           {
-            "start": 25,
-            "end": 31,
+            "start": 23,
+            "end": 29,
             "value": "Orwell",
             "entity": "autores"
           }
         ],
-        "text": "Busca libros del autores Orwell"
+        "text": "Busca libros del autor Orwell"
       },
       {
         "intent": "consulta_libros_autor",
         "entities": [
           {
-            "start": 28,
-            "end": 39,
+            "start": 26,
+            "end": 37,
             "value": "J K Rowling",
             "entity": "autores"
           }
         ],
-        "text": "Busca libros de la autoresa J K Rowling"
+        "text": "Busca libros de la autora J K Rowling"
+      },
+      {
+        "intent": "consulta_libros_autor",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 23,
+            "end": 29,
+            "value": "Orwell",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busca libros del autor Orwell"
+      },
+      {
+        "intent": "consulta_libros_autor",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 26,
+            "end": 37,
+            "value": "J K Rowling",
+            "entity": "autores"
+          }
+        ],
+        "text": "Busca libros de la autora J K Rowling"
       },
       {
         "intent": "consulta_libros_autor",
@@ -1691,49 +2441,73 @@
         "intent": "consulta_libros_autor",
         "entities": [
           {
-            "start": 26,
-            "end": 38,
+            "start": 24,
+            "end": 36,
             "value": "Pablo Neruda",
             "entity": "autores"
           }
         ],
-        "text": "Quiero libros del autores Pablo Neruda"
+        "text": "Quiero libros del autor Pablo Neruda"
       },
       {
         "intent": "consulta_libros_autor",
         "entities": [
           {
-            "start": 29,
-            "end": 45,
+            "start": 27,
+            "end": 43,
             "value": "Ana María Matute",
             "entity": "autores"
           }
         ],
-        "text": "Quiero libros de la autoresa Ana María Matute"
+        "text": "Quiero libros de la autora Ana María Matute"
       },
       {
         "intent": "consulta_libros_autor",
         "entities": [
           {
-            "start": 41,
-            "end": 63,
+            "start": 24,
+            "end": 36,
+            "value": "Pablo Neruda",
+            "entity": "PER"
+          }
+        ],
+        "text": "Quiero libros del autor Pablo Neruda"
+      },
+      {
+        "intent": "consulta_libros_autor",
+        "entities": [
+          {
+            "start": 27,
+            "end": 43,
+            "value": "Ana María Matute",
+            "entity": "PER"
+          }
+        ],
+        "text": "Quiero libros de la autora Ana María Matute"
+      },
+      {
+        "intent": "consulta_libros_autor",
+        "entities": [
+          {
+            "start": 39,
+            "end": 61,
             "value": "Gabriel García Márquez",
             "entity": "autores"
           }
         ],
-        "text": "Me podrías decir algún libro del autores Gabriel García Márquez"
+        "text": "Me podrías decir algún libro del autor Gabriel García Márquez"
       },
       {
         "intent": "consulta_libros_autor",
         "entities": [
           {
-            "start": 44,
-            "end": 58,
+            "start": 42,
+            "end": 56,
             "value": "Isabel Allende",
             "entity": "autores"
           }
         ],
-        "text": "Me podrías decir algún libro de la autoresa Isabel Allende"
+        "text": "Me podrías decir algún libro de la autora Isabel Allende"
       },
       {
         "intent": "consulta_libros_autor",
@@ -1751,13 +2525,13 @@
         "intent": "consulta_libros_autor",
         "entities": [
           {
-            "start": 38,
-            "end": 53,
+            "start": 36,
+            "end": 51,
             "value": "Alberto Verdejo",
             "entity": "autores"
           }
         ],
-        "text": "Necesito obras literarias del autores Alberto Verdejo"
+        "text": "Necesito obras literarias del autor Alberto Verdejo"
       },
       {
         "intent": "consulta_libros_autor",
@@ -1775,13 +2549,13 @@
         "intent": "consulta_libros_autor",
         "entities": [
           {
-            "start": 28,
-            "end": 34,
+            "start": 26,
+            "end": 32,
             "value": "Orwell",
             "entity": "autores"
           }
         ],
-        "text": "Necesito libros del autores Orwell"
+        "text": "Necesito libros del autor Orwell"
       },
       {
         "intent": "consulta_libros_autor",
@@ -1799,25 +2573,25 @@
         "intent": "consulta_libros_autor",
         "entities": [
           {
-            "start": 19,
-            "end": 34,
+            "start": 17,
+            "end": 32,
             "value": "George R Martin",
             "entity": "autores"
           }
         ],
-        "text": "Libros del autores George R Martin"
+        "text": "Libros del autor George R Martin"
       },
       {
         "intent": "consulta_libros_autor",
         "entities": [
           {
-            "start": 22,
-            "end": 37,
+            "start": 20,
+            "end": 35,
             "value": "George R Martin",
             "entity": "autores"
           }
         ],
-        "text": "Libros de la autoresa George R Martin"
+        "text": "Libros de la autora George R Martin"
       },
       {
         "intent": "consulta_libros_autor",
@@ -1830,6 +2604,48 @@
           }
         ],
         "text": "Ahora quiero libros del autor Cervantes"
+      },
+      {
+        "intent": "consulta_libros_autor",
+        "entities": [
+          {
+            "start": 22,
+            "end": 52,
+            "value": "Patrick Rothfuss",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libros_autor{\"autores\":\"Patrick Rothfuss\"}"
+      },
+      {
+        "intent": "consulta_libros_autor",
+        "entities": [
+          {
+            "start": 22,
+            "end": 57,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 57,
+            "end": 92,
+            "value": "Jose Garcia",
+            "entity": "PER"
+          }
+        ],
+        "text": "/consulta_libros_autor{\"LOC\":\"Busca\",\"PER\":\"Jose Garcia\"}{\"LOC\":\"Busca\",\"PER\":\"Jose Garcia\"}"
+      },
+      {
+        "intent": "consulta_libros_autor",
+        "entities": [
+          {
+            "start": 22,
+            "end": 43,
+            "value": "Jose Garcia",
+            "entity": "PER"
+          }
+        ],
+        "text": "/consulta_libros_autor{\"PER\":\"Jose Garcia\"}"
       },
       {
         "intent": "consulta_libros_kw",
@@ -1848,12 +2664,30 @@
         "entities": [
           {
             "start": 16,
-            "end": 36,
-            "value": "[Matemática Discreta",
+            "end": 35,
+            "value": "Matemática Discreta",
             "entity": "libro"
           }
         ],
-        "text": "Busco libros de [Matemática Discreta"
+        "text": "Busco libros de Matemática Discreta"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 16,
+            "end": 35,
+            "value": "Matemática Discreta",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca libros de Matemática Discreta"
       },
       {
         "intent": "consulta_libros_kw",
@@ -2018,22 +2852,274 @@
         "text": "Quiero libros de historia del arte"
       },
       {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 23,
+            "end": 37,
+            "value": "Fuego y Sangre",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca varios libros de Fuego y Sangre"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 23,
+            "end": 42,
+            "value": "Matemática Discreta",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busco varios libros de Matemática Discreta"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 23,
+            "end": 42,
+            "value": "Matemática Discreta",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca varios libros de Matemática Discreta"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 24,
+            "end": 36,
+            "value": "Harry Potter",
+            "entity": "libro"
+          }
+        ],
+        "text": "Quiero varios libros de Harry Potter"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 23,
+            "end": 40,
+            "value": "Historia del arte",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca varios libros de Historia del arte"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 22,
+            "end": 29,
+            "value": "recetas",
+            "entity": "libro"
+          }
+        ],
+        "text": "Dame varios libros de recetas"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 32,
+            "end": 40,
+            "value": "economía",
+            "entity": "libro"
+          }
+        ],
+        "text": "Me podrías decir algún libro de economía"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 30,
+            "end": 38,
+            "value": "economía",
+            "entity": "libro"
+          }
+        ],
+        "text": "Me podrías dar algún libro de economía"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 26,
+            "end": 40,
+            "value": "Carlos Fuentes",
+            "entity": "libro"
+          }
+        ],
+        "text": "Necesito varios libros de Carlos Fuentes"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 26,
+            "end": 34,
+            "value": "medicina",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca obras literarias de medicina"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 29,
+            "end": 54,
+            "value": "Lo que el viento se llevó",
+            "entity": "libro"
+          }
+        ],
+        "text": "Necesito obras literarias de Lo que el viento se llevó"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 9,
+            "end": 24,
+            "value": "Juego de Tronos",
+            "entity": "libro"
+          }
+        ],
+        "text": "Libro de Juego de Tronos"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 24,
+            "end": 43,
+            "value": "matemática discreta",
+            "entity": "libro"
+          }
+        ],
+        "text": "Quiero varios libros de matemática discreta"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 24,
+            "end": 38,
+            "value": "Venancio Tomeo",
+            "entity": "PER"
+          },
+          {
+            "start": 38,
+            "end": 52,
+            "value": "venancio tomeo",
+            "entity": "libro"
+          }
+        ],
+        "text": "Quiero varios libros de Venancio TomeoVenancio Tomeo"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 38,
+            "end": 71,
+            "value": "estructuras de datos y algoritmos",
+            "entity": "libro"
+          }
+        ],
+        "text": "Necesito que busques varios libros de estructuras de datos y algoritmos"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 24,
+            "end": 41,
+            "value": "historia del arte",
+            "entity": "libro"
+          }
+        ],
+        "text": "Quiero varios libros de historia del arte"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 19,
+            "end": 44,
+            "value": "Pedro Sánchez",
+            "entity": "libro"
+          }
+        ],
+        "text": "/consulta_libros_kw{\"libro\":\"Pedro Sánchez\"}"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 19,
+            "end": 49,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 49,
+            "end": 79,
+            "value": "1984",
+            "entity": "libro"
+          }
+        ],
+        "text": "/consulta_libros_kw{\"LOC\":\"Busca\",\"libro\":\"1984\"}{\"LOC\":\"Busca\",\"libro\":\"1984\"}"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Busca",
+            "entity": "LOC"
+          },
+          {
+            "start": 16,
+            "end": 35,
+            "value": "matemática discreta",
+            "entity": "libro"
+          }
+        ],
+        "text": "Busca libros de matemática discreta"
+      },
+      {
         "intent": "consulta_libros_kw_autor",
         "entities": [
           {
             "start": 17,
             "end": 27,
             "value": "El Quijote",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 40,
-            "end": 59,
+            "start": 38,
+            "end": 57,
             "value": "Miguel de Cervantes",
             "entity": "autores"
           }
         ],
-        "text": "Quiero libros de El Quijote del autores Miguel de Cervantes"
+        "text": "Quiero libros de El Quijote del autor Miguel de Cervantes"
       },
       {
         "intent": "consulta_libros_kw_autor",
@@ -2042,7 +3128,7 @@
             "start": 17,
             "end": 26,
             "value": "Yo, Julia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 40,
@@ -2060,7 +3146,7 @@
             "start": 17,
             "end": 23,
             "value": "Narnia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 37,
@@ -2078,7 +3164,7 @@
             "start": 32,
             "end": 48,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 61,
@@ -2096,7 +3182,7 @@
             "start": 32,
             "end": 48,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 61,
@@ -2114,16 +3200,16 @@
             "start": 32,
             "end": 48,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 64,
-            "end": 85,
+            "start": 62,
+            "end": 83,
             "value": "Ramón de Valle-Inclán",
             "entity": "autores"
           }
         ],
-        "text": "Me podrías decir algún libro de Luces de bohemia de la autoresa Ramón de Valle-Inclán"
+        "text": "Me podrías decir algún libro de Luces de bohemia de la autora Ramón de Valle-Inclán"
       },
       {
         "intent": "consulta_libros_kw_autor",
@@ -2132,16 +3218,16 @@
             "start": 29,
             "end": 61,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 77,
-            "end": 88,
+            "start": 75,
+            "end": 86,
             "value": "J K Rowling",
             "entity": "autores"
           }
         ],
-        "text": "Necesito obras literarias de Harry Potter y la cámara secreta de la autoresa J K Rowling"
+        "text": "Necesito obras literarias de Harry Potter y la cámara secreta de la autora J K Rowling"
       },
       {
         "intent": "consulta_libros_kw_autor",
@@ -2150,16 +3236,16 @@
             "start": 29,
             "end": 61,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 74,
-            "end": 85,
+            "start": 72,
+            "end": 83,
             "value": "J K Rowling",
             "entity": "autores"
           }
         ],
-        "text": "Necesito obras literarias de Harry Potter y la cámara secreta del autores J K Rowling"
+        "text": "Necesito obras literarias de Harry Potter y la cámara secreta del autor J K Rowling"
       },
       {
         "intent": "consulta_libros_kw_autor",
@@ -2168,7 +3254,7 @@
             "start": 29,
             "end": 61,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 76,
@@ -2186,7 +3272,7 @@
             "start": 10,
             "end": 42,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 57,
@@ -2198,13 +3284,31 @@
         "text": "Libros de Harry Potter y la cámara secreta  escritas por J K Rowling"
       },
       {
+        "intent": "consulta_libros_kw_autor",
+        "entities": [
+          {
+            "start": 25,
+            "end": 105,
+            "value": "Como aprender a programar en 5 minutos",
+            "entity": "libro"
+          },
+          {
+            "start": 105,
+            "end": 185,
+            "value": "Rodolfo Rodríguez",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libros_kw_autor{\"libro\":\"Como aprender a programar en 5 minutos\",\"autores\":\"Rodolfo Rodríguez\"}{\"libro\":\"Como aprender a programar en 5 minutos\",\"autores\":\"Rodolfo Rodríguez\"}"
+      },
+      {
         "intent": "consulta_libros_titulo",
         "entities": [
           {
             "start": 23,
             "end": 33,
             "value": "El Quijote",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Quiero libros llamados El Quijote"
@@ -2216,7 +3320,7 @@
             "start": 22,
             "end": 28,
             "value": "Narnia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Busco libros llamados Narnia"
@@ -2228,7 +3332,7 @@
             "start": 23,
             "end": 32,
             "value": "Yo, Julia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Quiero libros titulado Yo, Julia"
@@ -2240,7 +3344,7 @@
             "start": 23,
             "end": 62,
             "value": "Narnia la travesía del viajero del alba",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Quiero libros llamados Narnia la travesía del viajero del alba"
@@ -2252,7 +3356,7 @@
             "start": 37,
             "end": 53,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Me podrías decir algún libro llamado Luces de bohemia"
@@ -2264,7 +3368,7 @@
             "start": 22,
             "end": 41,
             "value": "Mortadelo y Filemón",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Dime libros titulados Mortadelo y Filemón"
@@ -2276,7 +3380,7 @@
             "start": 26,
             "end": 45,
             "value": "Mortadelo y Filemón",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Dime algún libro titulado Mortadelo y Filemón"
@@ -2288,7 +3392,7 @@
             "start": 25,
             "end": 44,
             "value": "Mortadelo y Filemón",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Dime algún libro llamado Mortadelo y Filemón"
@@ -2300,7 +3404,7 @@
             "start": 35,
             "end": 60,
             "value": "Lo que el viento se llevó",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Necesito obras literarias llamadas Lo que el viento se llevó"
@@ -2312,7 +3416,7 @@
             "start": 32,
             "end": 36,
             "value": "1984",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Busca obras literarias llamadas 1984"
@@ -2324,7 +3428,7 @@
             "start": 26,
             "end": 49,
             "value": "Preludio a la fundación",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Necesito libros titulados Preludio a la fundación"
@@ -2336,7 +3440,7 @@
             "start": 16,
             "end": 31,
             "value": "Juego de Tronos",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Libros llamados Juego de Tronos"
@@ -2348,10 +3452,22 @@
             "start": 17,
             "end": 32,
             "value": "Juego de Tronos",
-            "entity": "libro_titulo"
+            "entity": "libro"
           }
         ],
         "text": "Libros titulados Juego de Tronos"
+      },
+      {
+        "intent": "consulta_libros_titulo",
+        "entities": [
+          {
+            "start": 23,
+            "end": 41,
+            "value": "Narnia",
+            "entity": "libro"
+          }
+        ],
+        "text": "/consulta_libros_titulo{\"libro\":\"Narnia\"}"
       },
       {
         "intent": "consulta_libros_titulo_autor",
@@ -2360,16 +3476,16 @@
             "start": 23,
             "end": 33,
             "value": "El Quijote",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 46,
-            "end": 65,
+            "start": 44,
+            "end": 63,
             "value": "Miguel de Cervantes",
             "entity": "autores"
           }
         ],
-        "text": "Quiero libros llamados El Quijote del autores Miguel de Cervantes"
+        "text": "Quiero libros llamados El Quijote del autor Miguel de Cervantes"
       },
       {
         "intent": "consulta_libros_titulo_autor",
@@ -2378,7 +3494,7 @@
             "start": 23,
             "end": 32,
             "value": "Yo, Julia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 46,
@@ -2396,7 +3512,7 @@
             "start": 23,
             "end": 29,
             "value": "Narnia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 43,
@@ -2414,7 +3530,7 @@
             "start": 37,
             "end": 53,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 66,
@@ -2432,7 +3548,7 @@
             "start": 37,
             "end": 53,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 66,
@@ -2450,16 +3566,16 @@
             "start": 37,
             "end": 53,
             "value": "Luces de bohemia",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 69,
-            "end": 90,
+            "start": 67,
+            "end": 88,
             "value": "Ramón de Valle-Inclán",
             "entity": "autores"
           }
         ],
-        "text": "Me podrías decir algún libro llamado Luces de bohemia de la autoresa Ramón de Valle-Inclán"
+        "text": "Me podrías decir algún libro llamado Luces de bohemia de la autora Ramón de Valle-Inclán"
       },
       {
         "intent": "consulta_libros_titulo_autor",
@@ -2468,16 +3584,16 @@
             "start": 35,
             "end": 67,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 83,
-            "end": 94,
+            "start": 81,
+            "end": 92,
             "value": "J K Rowling",
             "entity": "autores"
           }
         ],
-        "text": "Necesito obras literarias llamadas Harry Potter y la cámara secreta de la autoresa J K Rowling"
+        "text": "Necesito obras literarias llamadas Harry Potter y la cámara secreta de la autora J K Rowling"
       },
       {
         "intent": "consulta_libros_titulo_autor",
@@ -2486,16 +3602,16 @@
             "start": 35,
             "end": 67,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
-            "start": 80,
-            "end": 91,
+            "start": 78,
+            "end": 89,
             "value": "J K Rowling",
             "entity": "autores"
           }
         ],
-        "text": "Necesito obras literarias llamadas Harry Potter y la cámara secreta del autores J K Rowling"
+        "text": "Necesito obras literarias llamadas Harry Potter y la cámara secreta del autor J K Rowling"
       },
       {
         "intent": "consulta_libros_titulo_autor",
@@ -2504,7 +3620,7 @@
             "start": 35,
             "end": 67,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 82,
@@ -2522,7 +3638,7 @@
             "start": 16,
             "end": 48,
             "value": "Harry Potter y la cámara secreta",
-            "entity": "libro_titulo"
+            "entity": "libro"
           },
           {
             "start": 63,
@@ -2532,6 +3648,42 @@
           }
         ],
         "text": "Libros llamados Harry Potter y la cámara secreta  escritas por J K Rowling"
+      },
+      {
+        "intent": "consulta_libros_titulo_autor",
+        "entities": [
+          {
+            "start": 29,
+            "end": 83,
+            "value": "Alatriste",
+            "entity": "libro"
+          },
+          {
+            "start": 83,
+            "end": 137,
+            "value": "Arturo Pérez-Reverte",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libros_titulo_autor{\"libro\":\"Alatriste\",\"autores\":\"Arturo Pérez-Reverte\"}{\"libro\":\"Alatriste\",\"autores\":\"Arturo Pérez-Reverte\"}"
+      },
+      {
+        "intent": "consulta_libros_titulo_autor",
+        "entities": [
+          {
+            "start": 29,
+            "end": 78,
+            "value": "Mi Españita",
+            "entity": "libro"
+          },
+          {
+            "start": 78,
+            "end": 127,
+            "value": "Miguel Muñoz",
+            "entity": "autores"
+          }
+        ],
+        "text": "/consulta_libros_titulo_autor{\"libro\":\"Mi Españita\", \"autores\":\"Miguel Muñoz\"}{\"libro\":\"Mi Españita\", \"autores\":\"Miguel Muñoz\"}"
       },
       {
         "intent": "consulta_localizacion",
@@ -2597,6 +3749,42 @@
         "intent": "consulta_localizacion",
         "entities": [
           {
+            "start": 0,
+            "end": 5,
+            "value": "Dónde",
+            "entity": "PER"
+          },
+          {
+            "start": 14,
+            "end": 37,
+            "value": "Facultad de informática",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Dónde está la Facultad de informática"
+      },
+      {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Dónde",
+            "entity": "PER"
+          },
+          {
+            "start": 22,
+            "end": 45,
+            "value": "Facultad de informática",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Dónde se encuentra la Facultad de informática"
+      },
+      {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
             "start": 14,
             "end": 37,
             "value": "Facultad de informática",
@@ -2654,6 +3842,18 @@
         "text": "Quiero ir a la facultad de geografía e historia"
       },
       {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 22,
+            "end": 64,
+            "value": "facultad de informatica",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "/consulta_localizacion{\"localizacion\":\"facultad de informatica\"}"
+      },
+      {
         "intent": "consulta_localizacion_empty",
         "text": "Busca su ubicación"
       },
@@ -2688,6 +3888,10 @@
           }
         ],
         "text": "Dónde está"
+      },
+      {
+        "intent": "consulta_localizacion_empty",
+        "text": "/consulta_localizacion_empty"
       },
       {
         "intent": "consulta_musica",
@@ -3382,6 +4586,18 @@
         "text": "Quiero el teléfono de la biblioteca de veterinaria"
       },
       {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 18,
+            "end": 45,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "/consulta_telefono{\"localizacion\":\"Zambrano\"}"
+      },
+      {
         "intent": "consulta_telefono_empty",
         "text": "Llámala"
       },
@@ -3412,6 +4628,10 @@
       {
         "intent": "consulta_telefono_empty",
         "text": "Quiero su teléfono"
+      },
+      {
+        "intent": "despedida",
+        "text": "/despedida"
       },
       {
         "intent": "despedidas",
@@ -3490,6 +4710,26 @@
         "text": "Hasta mañana"
       },
       {
+        "intent": "despedidas",
+        "text": "/despedidas"
+      },
+      {
+        "intent": "despedidas",
+        "text": "/despedidas"
+      },
+      {
+        "intent": "despedidas",
+        "text": "/despedidas"
+      },
+      {
+        "intent": "despedidas",
+        "text": "/despedidas"
+      },
+      {
+        "intent": "despedidas",
+        "text": "/despedidas"
+      },
+      {
         "intent": "gracias",
         "text": "Gracias"
       },
@@ -3520,6 +4760,18 @@
       {
         "intent": "gracias",
         "text": "Gracias"
+      },
+      {
+        "intent": "gracias",
+        "text": "/gracias"
+      },
+      {
+        "intent": "gracias",
+        "text": "/gracias"
+      },
+      {
+        "intent": "gracias",
+        "text": "/gracias"
       },
       {
         "intent": "insultos",
@@ -3586,6 +4838,10 @@
         "text": "Quiero ver el primero"
       },
       {
+        "intent": "mas_info_primero",
+        "text": "/mas_info_primero"
+      },
+      {
         "intent": "mas_info_segundo",
         "text": "Muestrame más información del segundo"
       },
@@ -3600,6 +4856,10 @@
       {
         "intent": "mas_info_segundo",
         "text": "Quiero ver el segundo"
+      },
+      {
+        "intent": "mas_info_segundo",
+        "text": "/mas_info_segundo"
       },
       {
         "intent": "mas_info_tercero",
@@ -3620,6 +4880,10 @@
       {
         "intent": "mas_info_tercero",
         "text": "Muestrame el tercero"
+      },
+      {
+        "intent": "mas_info_tercero",
+        "text": "/mas_info_tercero"
       },
       {
         "intent": "me_llamo",
@@ -3850,6 +5114,90 @@
         "text": "Buenos días, me llamo Aurelio"
       },
       {
+        "intent": "me_llamo",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "Hola",
+            "entity": "PER"
+          },
+          {
+            "start": 15,
+            "end": 19,
+            "value": "Pepe",
+            "entity": "PER"
+          },
+          {
+            "start": 19,
+            "end": 23,
+            "value": "pepe",
+            "entity": "persona"
+          }
+        ],
+        "text": "Hola, me llamo PepePepe"
+      },
+      {
+        "intent": "me_llamo",
+        "entities": [
+          {
+            "start": 9,
+            "end": 32,
+            "value": "Jose Luis",
+            "entity": "persona"
+          }
+        ],
+        "text": "/me_llamo{\"persona\":\"Jose Luis\"}"
+      },
+      {
+        "intent": "me_llamo",
+        "entities": [
+          {
+            "start": 9,
+            "end": 27,
+            "value": "Pepe",
+            "entity": "persona"
+          }
+        ],
+        "text": "/me_llamo{\"persona\":\"Pepe\"}"
+      },
+      {
+        "intent": "me_llamo",
+        "entities": [
+          {
+            "start": 9,
+            "end": 30,
+            "value": "Basilio",
+            "entity": "persona"
+          }
+        ],
+        "text": "/me_llamo{\"persona\":\"Basilio\"}"
+      },
+      {
+        "intent": "me_llamo",
+        "entities": [
+          {
+            "start": 9,
+            "end": 32,
+            "value": "Eustaquio",
+            "entity": "persona"
+          }
+        ],
+        "text": "/me_llamo{\"persona\":\"Eustaquio\"}"
+      },
+      {
+        "intent": "me_llamo",
+        "entities": [
+          {
+            "start": 9,
+            "end": 28,
+            "value": "{\"PER\":\"Eustaquio\"}",
+            "entity": "PER"
+          }
+        ],
+        "text": "/me_llamo{\"PER\":\"Eustaquio\"}"
+      },
+      {
         "intent": "quien_soy",
         "text": "Cómo te llamas"
       },
@@ -3876,6 +5224,30 @@
       {
         "intent": "quien_soy",
         "text": "Quien eres tu"
+      },
+      {
+        "intent": "quien_soy",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "Buenas",
+            "entity": "LOC"
+          },
+          {
+            "start": 12,
+            "end": 19,
+            "value": "Amancio",
+            "entity": "LOC"
+          },
+          {
+            "start": 19,
+            "end": 26,
+            "value": "amancio",
+            "entity": "persona"
+          }
+        ],
+        "text": "Buenas, soy AmancioAmancio"
       },
       {
         "intent": "saludos",
@@ -3908,6 +5280,50 @@
       {
         "intent": "saludos",
         "text": "Holis"
+      },
+      {
+        "intent": "saludos",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "Hola",
+            "entity": "PER"
+          }
+        ],
+        "text": "Hola"
+      },
+      {
+        "intent": "saludos",
+        "text": "Buenas"
+      },
+      {
+        "intent": "saludos",
+        "text": "/saludos"
+      },
+      {
+        "intent": "saludos",
+        "entities": [
+          {
+            "start": 8,
+            "end": 31,
+            "value": "Jose Luis",
+            "entity": "persona"
+          }
+        ],
+        "text": "/saludos{\"persona\":\"Jose Luis\"}"
+      },
+      {
+        "intent": "saludos",
+        "entities": [
+          {
+            "start": 8,
+            "end": 27,
+            "value": "Jose Luis",
+            "entity": "PER"
+          }
+        ],
+        "text": "/saludos{\"PER\":\"Jose Luis\"}"
       }
     ],
     "regex_features": [],
@@ -3927,9 +5343,207 @@
     ],
     "entity_synonyms": [
       {
+        "value": "Geologia",
+        "synonyms": [
+          "{\"localizacion\":\"Geologia\"}"
+        ]
+      },
+      {
+        "value": "veterinaria",
+        "synonyms": [
+          "{\"localizacion\":\"veterinaria\"}"
+        ]
+      },
+      {
+        "value": "periodismo",
+        "synonyms": [
+          "{\"localizacion\":\"periodismo\"}"
+        ]
+      },
+      {
+        "value": "Zambrano",
+        "synonyms": [
+          "{\"localizacion\":\"Zambrano\"}"
+        ]
+      },
+      {
+        "value": "Psicologia",
+        "synonyms": [
+          "{\"localizacion\":\"Psicologia\"}"
+        ]
+      },
+      {
+        "value": "Góngora",
+        "synonyms": [
+          "{\"autores\":\"Góngora\"}",
+          "{\"PER\":\"Góngora\", \"autores\":\"Góngora}"
+        ]
+      },
+      {
+        "value": "Jose Garcia",
+        "synonyms": [
+          "{\"LOC\":\"Busca\",\"PER\":\"Jose Garcia\"}",
+          "{\"PER\":\"Jose Garcia\"}"
+        ]
+      },
+      {
+        "value": "Topotamadre",
+        "synonyms": [
+          "{\"libro\":\"Topotamadre\"}"
+        ]
+      },
+      {
+        "value": "Benito Pérez-Galdos",
+        "synonyms": [
+          "{\"autores\":\"Benito Pérez-Galdos\"}"
+        ]
+      },
+      {
+        "value": "Quevedo",
+        "synonyms": [
+          "{\"autores\":\"Quevedo\"}"
+        ]
+      },
+      {
+        "value": "Harry Potter",
+        "synonyms": [
+          "{\"libro\":\"Harry Potter\"}"
+        ]
+      },
+      {
+        "value": "Matemática Discreta y Lógica",
+        "synonyms": [
+          "{\"libro\":\"Matemática Discreta y Lógica\"}"
+        ]
+      },
+      {
+        "value": "Campeones",
+        "synonyms": [
+          "{\"libro\":\"Campeones\"}"
+        ]
+      },
+      {
+        "value": "Programador experto",
+        "synonyms": [
+          "{\"libro\":\"RSA, de lo mejor lo superior\", \"autores\":\"Programador experto\"}",
+          "{\"libro\":\"RSA de lo mejor lo superior\", \"autores\":\"Programador experto\"}"
+        ]
+      },
+      {
+        "value": "RSA de lo mejor lo superior",
+        "synonyms": [
+          "{\"MISC\":\"RSA de lo mejor lo superior\", \"autores\":\"Programador experto\"}"
+        ]
+      },
+      {
+        "value": "Luces de Bohemia",
+        "synonyms": [
+          "{\"libro\":\"Luces de Bohemia\"}",
+          "{\"MISC\":\"Luces de Bohemia\"}"
+        ]
+      },
+      {
+        "value": "Miguel de Cervantes",
+        "synonyms": [
+          "{\"libro\":\"Don Quijote de la Mancha\",\"autores\":\"Miguel de Cervantes\"}"
+        ]
+      },
+      {
+        "value": "Don Quijote de la Mancha",
+        "synonyms": [
+          "{\"MISC\":\"Don Quijote de la Mancha\",\"autores\":\"Miguel de Cervantes\"}"
+        ]
+      },
+      {
+        "value": "Patrick Rothfuss",
+        "synonyms": [
+          "{\"autores\":\"Patrick Rothfuss\"}"
+        ]
+      },
+      {
         "value": "venancio tomeo",
         "synonyms": [
           "Venancio Tomeo"
+        ]
+      },
+      {
+        "value": "Pedro Sánchez",
+        "synonyms": [
+          "{\"libro\":\"Pedro Sánchez\"}",
+          "{\"autores\":\"Pedro Sánchez\"}"
+        ]
+      },
+      {
+        "value": "1984",
+        "synonyms": [
+          "{\"LOC\":\"Busca\",\"libro\":\"1984\"}"
+        ]
+      },
+      {
+        "value": "Rodolfo Rodríguez",
+        "synonyms": [
+          "{\"libro\":\"Como aprender a programar en 5 minutos\",\"autores\":\"Rodolfo Rodríguez\"}"
+        ]
+      },
+      {
+        "value": "Narnia",
+        "synonyms": [
+          "{\"libro\":\"Narnia\"}"
+        ]
+      },
+      {
+        "value": "Arturo Pérez-Reverte",
+        "synonyms": [
+          "{\"libro\":\"Alatriste\",\"autores\":\"Arturo Pérez-Reverte\"}"
+        ]
+      },
+      {
+        "value": "Miguel Muñoz",
+        "synonyms": [
+          "{\"libro\":\"Mi Españita\", \"autores\":\"Miguel Muñoz\"}"
+        ]
+      },
+      {
+        "value": "facultad de informatica",
+        "synonyms": [
+          "{\"localizacion\":\"facultad de informatica\"}"
+        ]
+      },
+      {
+        "value": "pepe",
+        "synonyms": [
+          "Pepe"
+        ]
+      },
+      {
+        "value": "Jose Luis",
+        "synonyms": [
+          "{\"persona\":\"Jose Luis\"}",
+          "{\"PER\":\"Jose Luis\"}"
+        ]
+      },
+      {
+        "value": "Pepe",
+        "synonyms": [
+          "{\"persona\":\"Pepe\"}"
+        ]
+      },
+      {
+        "value": "Basilio",
+        "synonyms": [
+          "{\"persona\":\"Basilio\"}"
+        ]
+      },
+      {
+        "value": "Eustaquio",
+        "synonyms": [
+          "{\"persona\":\"Eustaquio\"}"
+        ]
+      },
+      {
+        "value": "amancio",
+        "synonyms": [
+          "Amancio"
         ]
       },
       {

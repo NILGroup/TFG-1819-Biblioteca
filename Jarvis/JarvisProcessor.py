@@ -81,6 +81,7 @@ class JarvisProcessor():
         tracker = self.agent.tracker_store.get_or_create_tracker(sender_id=senderid)
 
         self._slots = self.__rellenaSlots(tracker)
+        print(self._slots)
 
         for response in mensaje:
             respuesta["text"] = response["text"]
@@ -94,41 +95,38 @@ class JarvisProcessor():
         resultado['entities'] = []
         tmp = {}
 
-        if resultado['intent'] is 'saludos':
-            tmp['persona'] = self._slots['persona']
-        elif resultado['intent'] is 'me_llamo':
-            tmp['persona'] = self._slots['persona']
-        elif resultado['intent'] is 'consulta_telefono' or resultado['intent'] is \
-                'consulta_localizacion_empty' or resultado['intent'] is 'consulta_telefono_empty' \
-                or resultado['intent'] is 'consulta_localizacion' or resultado['intent'] is \
-                'consulta_horario_close' or resultado['intent'] is 'consulta_horario_general' \
-                or resultado['intent'] is 'consulta_horario_open':
+        if resultado['intent'] == 'consulta_telefono' or resultado['intent'] == \
+                'consulta_localizacion_empty' or resultado['intent'] == 'consulta_telefono_empty' \
+                or resultado['intent'] == 'consulta_localizacion' or resultado['intent'] == \
+                'consulta_horario_close' or resultado['intent'] == 'consulta_horario_general' \
+                or resultado['intent'] == 'consulta_horario_open':
             if self._slots['localizacion'] is not None:
                 tmp['localizacion'] = self._slots['localizacion']
 
-        elif resultado['intent'] is 'consulta_libros_kw' or resultado['intent'] is \
-                'consulta_libro_kw' or resultado['intent'] is 'consulta_libros_titulo' \
-                or resultado['intent'] is 'consulta_libro_autor' or resultado['intent'] is \
-                'consulta_libros_titulo_autor' or resultado['intent'] is 'consulta_libros_kw_autor' \
-                or resultado['intent'] is 'consulta_libro_kw_autor' or resultado['intent'] is \
-                'consulta_libros_autor' or resultado['intent'] is 'consulta_libro_titulo_autor':
+        elif resultado['intent'] == 'consulta_libros_kw' or resultado['intent'] == \
+                'consulta_libro_kw' or resultado['intent'] == 'consulta_libros_titulo' \
+                or resultado['intent'] == 'consulta_libro_autor' or resultado['intent'] == \
+                'consulta_libros_titulo_autor' or resultado['intent'] == 'consulta_libros_kw_autor' \
+                or resultado['intent'] == 'consulta_libro_kw_autor' or resultado['intent'] == \
+                'consulta_libros_autor' or resultado['intent'] == 'consulta_libro_titulo_autor':
             if self._slots['libro'] is not None:
                 tmp['libro'] = self._slots['libro']
             if self._slots['autores'] is not None:
+                print('entre')
                 tmp['autores'] = self._slots['autores']
             tmp['searchindex'] = self._slots['searchindex']
 
-        elif resultado['intent'] is 'consulta_articulos_kw' or resultado['intent'] is \
+        elif resultado['intent'] == 'consulta_articulos_kw' or resultado['intent'] == \
                 'consulta_articulo_kw':
             tmp['articulos'] = self._slots['libro']
             tmp['searchindex'] = self._slots['searchindex']
 
-        elif resultado['intent'] is 'consulta_juegos_kw' or resultado['intent'] is \
+        elif resultado['intent'] == 'consulta_juegos_kw' or resultado['intent'] == \
                 'consulta_juego_kw':
             tmp['juego'] = self._slots['juego']
             tmp['searchindex'] = self._slots['searchindex']
 
-        elif resultado['intent'] is 'consulta_musicas_kw' or resultado['intent'] is \
+        elif resultado['intent'] == 'consulta_musicas_kw' or resultado['intent'] == \
                 'consulta_musica_kw':
             if self._slots['musica'] is not None:
                 tmp['musica'] = self._slots['musica']
@@ -136,7 +134,7 @@ class JarvisProcessor():
                 tmp['autores'] = self._slots['autores']
             tmp['searchindex'] = self._slots['searchindex']
 
-        elif resultado['intent'] is 'consulta_peliculas_kw' or resultado['intent'] is \
+        elif resultado['intent'] == 'consulta_peliculas_kw' or resultado['intent'] == \
                 'consulta_pelicula_kw':
             if self._slots['pelicula'] is not None:
                 tmp['pelicula'] = self._slots['pelicula']
@@ -144,9 +142,9 @@ class JarvisProcessor():
                 tmp['autores'] = self._slots['autores']
             tmp['searchindex'] = self._slots['searchindex']
 
-        elif resultado['intent'] is 'busca_mas' or resultado['intent'] is \
-                'mas_info_primero' or resultado['intent'] is 'mas_info_segundo' or \
-                resultado['intent'] is 'mas_info_tercero':
+        elif resultado['intent'] == 'busca_mas' or resultado['intent'] == \
+                'mas_info_primero' or resultado['intent'] == 'mas_info_segundo' or \
+                resultado['intent'] == 'mas_info_tercero':
             if self._slots['pelicula'] is not None:
                 tmp['pelicula'] = self._slots['pelicula']
             elif self._slots['libro'] is not None:
