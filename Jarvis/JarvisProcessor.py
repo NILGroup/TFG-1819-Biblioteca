@@ -76,24 +76,14 @@ class JarvisProcessor():
 
         respuesta = {}
 
-        print(senderid)
         respuesta["nlu"] = self.interpreter.parse(peticion)
-        #self.agent.
-        tracker = self.agent.tracker_store.get_or_create_tracker(sender_id=senderid)
-        #mensaje = self.agent.handle_message(peticion)
-        #tracker.update(SlotSet("channel", channel))
-        #self.agent.tracker_store.save(tracker)
         mensaje = self.agent.handle_text(text_message=peticion, sender_id=senderid)
-        #print(self.agent.domain.slots.)
-        self.agent.tracker_store.save(tracker)
+        tracker = self.agent.tracker_store.get_or_create_tracker(sender_id=senderid)
 
         self._slots = self.__rellenaSlots(tracker)
 
-        print(respuesta["nlu"])
-
         for response in mensaje:
             respuesta["text"] = response["text"]
-        print(respuesta["text"])
 
         return respuesta
 
@@ -169,12 +159,6 @@ class JarvisProcessor():
                 tmp['autores'] = self._slots['autores']
 
             tmp['searchindex'] = self._slots['searchindex']
-
-        #for entity in peticion['nlu']['entities']:
-            #tmp = {}
-            #tmp['type'] = entity['entity']
-            #tmp['value'] = entity['value']
-            #resultado['entities'].append(tmp)
 
         resultado['message'] = peticion['text']
         resultado['entities'].append(tmp)
