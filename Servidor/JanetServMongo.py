@@ -38,11 +38,11 @@ class JanetServMongo:
             i = i + 1
 
         if 'oclc2' in cods and 'oclc3' in cods:
-            collection.update({"_id": user_id}, {'oclc1': cods['oclc1'], 'oclc2': cods['oclc2'],
-                                             'oclc3': cods['oclc3'], 'intent': intent},
+            collection.update({"_id": user_id}, {'$set': {'oclc1': cods['oclc1'], 'oclc2': cods['oclc2'],
+                                             'oclc3': cods['oclc3'], 'intent': intent}},
                               upsert=True)
         else:
-            collection.update({"_id": user_id}, {'oclc1': cods['oclc1'], 'intent': intent},
+            collection.update({"_id": user_id}, {'$set': {'oclc1': cods['oclc1'], 'intent': intent}},
                               upsert=True)
 
     def obtener_consulta(self, user_id):

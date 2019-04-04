@@ -1,0 +1,39 @@
+# -*- coding: utf-8 -*-
+"""
+Servidor de TFG - Proyecto Janet
+Versión 0.9.0
+
+@author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
+© 2018-2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
+"""
+
+from ActionsController import Action
+
+
+class ActionTitle(Action):
+
+    def __init__(self, mongo, wms):
+        Action.__init__(self, mongo, wms)
+
+    def accion(self, intent, entities, response, uid):
+        respuesta = response
+
+        hayEntitie = False
+        for ent in entities:
+            if 'libros' in ent:
+                hayEntitie = True
+        if hayEntitie:
+            respuesta['books'] = self.__wms.buscarLibro(entities['libros'], None, entities['searchindex'], 'title')
+            if not respuesta['books']:
+                del respuesta['books']
+                respuesta['content-type'] = 'text'
+                respuesta['response'] = 'Vaya, parece que no hay libros relacionados con esta consulta'
+            else:
+                if intent == 'consulta_libros_titulo':
+                    respuesta['content-type'] = 'list-books'
+                    self.mongo.guardar_consulta(uid, respuesta['books'], intent)
+                else:
+                    respuesta.update(self.wms.cargarInformacionLibro(respuesta['oclc']))
+                    respuesta['content-type'] = 'single-book'
+
+        return respuesta

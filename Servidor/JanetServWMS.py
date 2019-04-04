@@ -27,7 +27,7 @@ class JanetServWMS:
         self.__URLCovers = "https://covers.openlibrary.org/b/isbn/"
 
     def buscarLibro(self, title, author, index, type):
-        consulta = {"wskey": self.__wskeydata["key"], "count": index + 1, "start": index - 2}
+        consulta = {"wskey": self.__wskeydata["key"], "count": index + 1, "start": index - 1}
         if type == "kw" or type == "title":
             consulta['q'] = 'srw.kw all "' + title + '"'
         elif type == "author":
