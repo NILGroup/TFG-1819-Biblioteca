@@ -92,7 +92,7 @@ class JarvisProcessor():
         resultado = {}
 
         resultado['intent'] = peticion['nlu']['intent']['name']
-        resultado['entities'] = {}
+        resultado['entities'] = []
         tmp = {}
 
         if resultado['intent'] == 'consulta_telefono' or resultado['intent'] == \
@@ -159,7 +159,7 @@ class JarvisProcessor():
             tmp['searchindex'] = self._slots['searchindex']
 
         resultado['message'] = peticion['text']
-        resultado['entities'] = tmp
+        resultado['entities'].append(tmp)
             
         return resultado
 

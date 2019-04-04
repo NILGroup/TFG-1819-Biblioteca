@@ -482,9 +482,6 @@
 - Cuál es su teléfono
 - Quiero su teléfono
 
-## intent:despedida
-- /despedida
-
 ## intent:despedidas
 - Adiós
 - Adios
@@ -606,7 +603,6 @@
 - Saludos
 - Hello
 - Holis
-- [Hola](PER)
 - Buenas
 - /saludos
 - /saludos[{"persona":"Jose Luis"}](persona:Jose Luis)

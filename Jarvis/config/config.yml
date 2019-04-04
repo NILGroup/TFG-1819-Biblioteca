@@ -16,7 +16,7 @@ policies:
     batch_size: 50
     max_training_samples: 300
   - name: FallbackPolicy
-    nlu_threshold: 0.3
+    nlu_threshold: 0.2
     core_threshold: 0.1
     fallback_action_name: 'utter_no_te_entiendo'
   - name: MemoizationPolicy
