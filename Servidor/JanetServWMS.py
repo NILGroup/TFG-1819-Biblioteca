@@ -11,7 +11,6 @@ import urllib
 import requests
 import json
 import lxml.etree as ET
-from lxml import html
 import io
 from authliboclc import wskey
 
@@ -21,8 +20,11 @@ class JanetServWMS:
         with open('wskey.conf') as f:
             self.__wskeydata = json.load(f)
 
+        with open('librarycodes.json') as f:
+            self.__equivalencias = json.load(f, encoding="utf8")
+
         self.__URLopensearch = "http://www.worldcat.org/webservices/catalog/search/opensearch?"
-        self.__URLlibrearies = "http://www.worldcat.org/webservices/catalog/content/libraries/"
+        self.__URLlibraries = "http://www.worldcat.org/webservices/catalog/content/libraries/"
         self.__URLavailability = "https://www.worldcat.org/circ/availability/sru/service?"
         self.__URLCovers = "https://covers.openlibrary.org/b/isbn/"
 
@@ -57,7 +59,6 @@ class JanetServWMS:
                     "author": item.find("Atom:author/Atom:name", xmlnamespaces).text,
                     "oclc": item.find("oclcterms:recordIdentifier", xmlnamespaces).text,
                     "isbn": isbn}
-            #temp["cover-art"] = self.__buscarCoverArts(isbn)
             respuesta.append(temp)
 
         return respuesta
@@ -80,7 +81,7 @@ class JanetServWMS:
         
     def cargarInformacionLibro(self, codigoOCLC):
 
-        URL = self.__URLlibrearies + codigoOCLC + '?'
+        URL = self.__URLlibraries + codigoOCLC + '?'
         
         consulta = {"wskey": self.__wskeydata["key"], "format": "json",
                     "oclcsymbol": self.__wskeydata["oclc_symbol"], "location": "Spain"}
@@ -95,9 +96,8 @@ class JanetServWMS:
         respuesta['title'] = content['title']
         respuesta['author'] = content['author']
         respuesta['available'] = self.comprobarDisponibilidad(codigoOCLC)
-        respuesta['library'] = content['library'][0]['institutionName']
         respuesta['url'] = content['library'][0]['opacUrl']
-        respuesta['cover-art'] = self.__buscarCoverArts("https://ucm.on.worldcat.org/oclc/" + codigoOCLC)
+        respuesta['isbn'] = content['ISBN']
         
         return respuesta
     
@@ -125,13 +125,16 @@ class JanetServWMS:
         xmlns = {'sRR': 'http://www.loc.gov/zing/srw/'}
         
         tree = ET.parse(io.BytesIO(content))
-        
         root = tree.getroot()
+
+        resultado = []
         
         for holdings in root.findall('.//sRR:records/sRR:record/sRR:recordData/opacRecord/holdings', xmlns):
             for items in holdings.iterdescendants('holding'):
                 for item in items.findall('.//circulation'):
-                    if (int(item.find('availableNow').get('value')) > 0): return True
-                    
-            #codsOCLC.append(item.find("oclcterms:recordIdentifier", xmlnamespaces).text)
-        return False
+                    if int(item.find('availableNow').get('value')) > 0:
+                        biblioteca = self.__equivalencias[items.find('localLocation').text]
+                        resultado.append({biblioteca: int(item.find('availableNow').get('value'))})
+
+        return resultado
+

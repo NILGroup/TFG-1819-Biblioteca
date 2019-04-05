@@ -23,7 +23,7 @@ class ActionTitle(Action):
             if 'libros' in ent:
                 hayEntitie = True
         if hayEntitie:
-            respuesta['books'] = self.__wms.buscarLibro(entities['libros'], None, entities['searchindex'], 'title')
+            respuesta['books'] = self.wms.buscarLibro(entities['libros'], None, entities['searchindex'], 'title')
             if not respuesta['books']:
                 del respuesta['books']
                 respuesta['content-type'] = 'text'
@@ -31,9 +31,10 @@ class ActionTitle(Action):
             else:
                 if intent == 'consulta_libros_titulo':
                     respuesta['content-type'] = 'list-books'
-                    self.mongo.guardar_consulta(uid, respuesta['books'], intent)
                 else:
-                    respuesta.update(self.wms.cargarInformacionLibro(respuesta['oclc']))
+                    respuesta.update(self.wms.cargarInformacionLibro(respuesta['books'][0]['oclc']))
+                    del respuesta['books']
                     respuesta['content-type'] = 'single-book'
+                self.mongo.guardar_consulta(uid, respuesta, intent)
 
         return respuesta

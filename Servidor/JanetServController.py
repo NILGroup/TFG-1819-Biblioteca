@@ -7,7 +7,8 @@ Versión 0.9.0
 © 2018-2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
 """
 from Actions import ActionConsultaKw, ActionConsultaTitulo, ActionConsultaAutor, ActionConsultaTitAut,\
-    ActionConsultaKwAutor, ActionConsultaTel, ActionConsultaLoc, ActionConsultaBuscaMas
+    ActionConsultaKwAutor, ActionConsultaTel, ActionConsultaLoc, ActionConsultaBuscaMas, ActionConsultaPrimero, \
+    ActionConsultaSegundo, ActionConsultaTercero
 import JanetServJarvis
 import JanetServWMS
 import JanetServMongo
@@ -30,8 +31,11 @@ class JanetServController:
         
         respuesta = {}
 
-        if client_request["user_id"] == '':
+        if 'user_id' not in client_request:
             raise ValueError('No se ha indicado el id del usuario')
+
+        elif client_request["user_id"] == '':
+            client_request["user_id"] = self._asignarUserId()
 
         if client_request["type"] == "query":
             uid = client_request["user_id"]
@@ -74,7 +78,26 @@ class JanetServController:
             action = ActionConsultaLoc.ActionLocation(self._mongo, self.__wms)
         elif intent == 'busca_mas':
             action = ActionConsultaBuscaMas.ActionMoreBooks(self._mongo, self.__wms)
+        elif intent == 'mas_info_primero':
+            action = ActionConsultaPrimero.ActionFirstBook(self._mongo, self.__wms)
+        elif intent == 'mas_info_segundo':
+            action = ActionConsultaSegundo.ActionSecondBook(self._mongo, self.__wms)
+        elif intent == 'mas_info_tercero':
+            action = ActionConsultaTercero.ActionThirdBook(self._mongo, self.__wms)
+        else:
+            return respuesta
 
         respuesta = action.accion(intent, entities, respuesta, uid)
 
         return respuesta
+
+    def _asignarUserId(self):
+        ultimoID = self._mongo.obtener_ultimo_id()
+
+        if ultimoID == 0:
+            id = 1
+            self._mongo.add_usuario(id)
+            return id
+        else:
+            self._mongo.add_usuario(ultimoID + 1)
+            return ultimoID + 1

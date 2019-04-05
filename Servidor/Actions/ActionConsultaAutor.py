@@ -31,9 +31,10 @@ class ActionAuthor(Action):
             else:
                 if intent == 'consulta_libros_autor':
                     respuesta['content-type'] = 'list-books'
-                    self.mongo.guardar_consulta(uid, respuesta['books'], intent)
                 else:
-                    respuesta.update(self.wms.cargarInformacionLibro(respuesta['oclc']))
+                    respuesta.update(self.wms.cargarInformacionLibro(respuesta['books'][0]['oclc']))
+                    del respuesta['books']
                     respuesta['content-type'] = 'single-book'
+                self.mongo.guardar_consulta(uid, respuesta, intent)
 
         return respuesta
