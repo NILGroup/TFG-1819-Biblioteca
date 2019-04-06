@@ -24,13 +24,15 @@ class ActionLocation(Action):
                 hayEntitie = True
         if hayEntitie:
             tmp = self.mongo.obtener_biblioteca(self._tratarlocalizacion(entities['localizacion']))
+            print(tmp)
             if tmp is not None:
+                respuesta['library'] = tmp['name']
                 respuesta['location'] = tmp['direccion']
                 respuesta['lat'] = tmp['lat']
                 respuesta['long'] = tmp['long']
                 respuesta['content-type'] = 'location'
             else:
-                respuesta['message'] = 'Parece que no existe ninguna biblioteca llamada así.'
+                respuesta['response'] = 'Parece que no existe ninguna biblioteca llamada así.'
 
         return respuesta
 

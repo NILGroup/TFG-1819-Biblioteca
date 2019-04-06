@@ -28,7 +28,7 @@ class ActionPhone(Action):
                 respuesta['phone'] = tmp['telefono']
                 respuesta['content-type'] = 'phone'
             else:
-                respuesta['message'] = 'Parece que no existe ninguna biblioteca llamada así.'
+                respuesta['response'] = 'Parece que no existe ninguna biblioteca llamada así.'
 
         return respuesta
 

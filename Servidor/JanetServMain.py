@@ -19,7 +19,7 @@ class JanetService:
         print ("Preparado.")
         print("Escuchando.")
 
-        @route('/api',method='POST')
+        @route('/api', method='POST')
         def do_listen():
             response.content_type = 'application/json'
             response.status = 200

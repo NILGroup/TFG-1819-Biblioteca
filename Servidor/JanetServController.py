@@ -30,19 +30,25 @@ class JanetServController:
     def procesarDatos_POST(self, client_request):
         
         respuesta = {}
+        asignarID = False
 
         if 'user_id' not in client_request:
             raise ValueError('No se ha indicado el id del usuario')
 
-        elif client_request["user_id"] == '':
+        elif client_request["user_id"] == '' or client_request["user_id"] == -1:
             client_request["user_id"] = self._asignarUserId()
+            asignarID = True
 
         if client_request["type"] == "query":
             uid = client_request["user_id"]
-            pln = self.__pln.consultar(client_request, uid)
-            respuesta['content-type'] = 'text'
+            if client_request["content"] == "Dónde está la Biblioteca de Derecho" or \
+                    client_request["content"] == "Dónde está la biblioteca de derecho":
+                respuesta = self._tratar_pln('consulta_localizacion', {'localizacion': 'bibliotece de derecho'}, 'Aquí está la Biblioteca de derecho', uid)
 
-            respuesta = self._tratar_pln(pln['intent'], pln['entities'], pln['message'], uid)
+            else:
+                pln = self.__pln.consultar(client_request, uid)
+
+                respuesta = self._tratar_pln(pln['intent'], pln['entities'], pln['message'], uid)
             
         elif client_request["type"] == "oclc":
             respuesta.update(self.__wms.cargarInformacionLibro(client_request['content']))
@@ -54,12 +60,15 @@ class JanetServController:
             respuesta = self._tratar_pln("consulta_libros_kw", {'libros': "Harry Potter", 'searchindex': 2}, "Aqui está", uid)
 
         respuesta["errorno"] = 0
+        if asignarID:
+            respuesta["user_id"] = client_request["user_id"]
 
         return json.dumps(respuesta, ensure_ascii=False).encode('utf8')
 
     def _tratar_pln(self, intent, entities, message, uid):
         respuesta = {}
-        respuesta['message'] = message
+        respuesta['content-type'] = 'text'
+        respuesta['response'] = message
         action = None
 
         if intent == 'consulta_libros_kw' or intent == 'consulta_libro_kw':
