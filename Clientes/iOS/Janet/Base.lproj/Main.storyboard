@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,10 +50,10 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0g1-RD-N6f" userLabel="Burbuja">
-                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="67"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="299" height="67"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTy-KQ-bxj">
-                                                            <rect key="frame" x="22" y="11" width="313" height="45"/>
+                                                            <rect key="frame" x="22" y="11" width="258" height="45"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.99195688962936401" green="0.99622899293899536" blue="0.99192315340042114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,7 +74,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="burbuja" destination="0g1-RD-N6f" id="jt8-5L-DYc"/>
-                                                    <outlet property="message" destination="UTy-KQ-bxj" id="GPu-Bg-UlR"/>
+                                                    <outlet property="message" destination="UTy-KQ-bxj" id="bZp-d6-Fxx"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="singleBookViewCell" rowHeight="226" id="9QI-c3-1gs" customClass="SingleBookViewCell" customModule="Janet" customModuleProvider="target">
@@ -85,16 +85,16 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lLp-9u-1Zi" userLabel="Burbuja">
-                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="216"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="299" height="216"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHG-SV-MpZ">
-                                                            <rect key="frame" x="22" y="11" width="313" height="20.5"/>
+                                                            <rect key="frame" x="22" y="11" width="258" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.99195688959999995" green="0.9962289929" blue="0.99192315340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oo6-AA-VSo" userLabel="Book View">
-                                                            <rect key="frame" x="15" y="41.5" width="320" height="162.5"/>
+                                                            <rect key="frame" x="15" y="41.5" width="265" height="162.5"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kXg-tj-Tvq" userLabel="Cover Art">
                                                                     <rect key="frame" x="8" y="0.0" width="70" height="105"/>
@@ -106,25 +106,25 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqQ-AK-j9m" userLabel="Title">
-                                                                    <rect key="frame" x="86" y="0.0" width="234" height="20.5"/>
+                                                                    <rect key="frame" x="86" y="0.0" width="179" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwT-vj-mY5">
-                                                                    <rect key="frame" x="86" y="23" width="234" height="20.5"/>
+                                                                    <rect key="frame" x="86" y="23" width="179" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be8-5L-RDg">
-                                                                    <rect key="frame" x="86" y="47" width="234" height="20.5"/>
+                                                                    <rect key="frame" x="86" y="47" width="179" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH3-fq-qg2">
-                                                                    <rect key="frame" x="86" y="73" width="234" height="89.5"/>
+                                                                    <rect key="frame" x="86" y="73" width="179" height="89.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -185,19 +185,19 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KLN-Qu-Sio" userLabel="Burbuja">
-                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="384"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="299" height="384"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ln-1o-h0M">
-                                                            <rect key="frame" x="22" y="11" width="313" height="20.5"/>
+                                                            <rect key="frame" x="22" y="11" width="258" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.99195688959999995" green="0.9962289929" blue="0.99192315340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZJ-Kc-lMc" userLabel="Book View 1">
-                                                            <rect key="frame" x="22" y="40" width="313" height="105"/>
+                                                            <rect key="frame" x="22" y="40" width="258" height="105"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RO4-3H-S5d" userLabel="Title 1">
-                                                                    <rect key="frame" x="78" y="0.0" width="235" height="20.5"/>
+                                                                    <rect key="frame" x="78" y="0.0" width="180" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -210,7 +210,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMx-n0-qXM" userLabel="Author 1">
-                                                                    <rect key="frame" x="78" y="24" width="235" height="20.5"/>
+                                                                    <rect key="frame" x="78" y="24" width="180" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -230,10 +230,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuO-aO-mfZ" userLabel="Book View 2">
-                                                            <rect key="frame" x="22" y="153" width="313" height="105"/>
+                                                            <rect key="frame" x="22" y="153" width="258" height="105"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qw9-Id-meW" userLabel="Title 2">
-                                                                    <rect key="frame" x="78" y="0.0" width="235" height="20.5"/>
+                                                                    <rect key="frame" x="78" y="0.0" width="180" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -246,7 +246,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTn-7D-1J2" userLabel="Author 2">
-                                                                    <rect key="frame" x="78" y="24" width="235" height="20.5"/>
+                                                                    <rect key="frame" x="78" y="24" width="180" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -266,10 +266,10 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hv7-BF-UB3" userLabel="Book View 3">
-                                                            <rect key="frame" x="22" y="266" width="313" height="105"/>
+                                                            <rect key="frame" x="22" y="266" width="258" height="105"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5p-3N-I9v" userLabel="Title 3">
-                                                                    <rect key="frame" x="78" y="0.0" width="235" height="20.5"/>
+                                                                    <rect key="frame" x="78" y="0.0" width="180" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -282,7 +282,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyH-ra-DRp" userLabel="Author 3">
-                                                                    <rect key="frame" x="78" y="24" width="235" height="20.5"/>
+                                                                    <rect key="frame" x="78" y="24" width="180" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -339,6 +339,48 @@
                                                     <outlet property="titleLabel1" destination="RO4-3H-S5d" id="DuT-Y4-Joi"/>
                                                     <outlet property="titleLabel2" destination="Qw9-Id-meW" id="7kt-Wf-qKE"/>
                                                     <outlet property="titleLabel3" destination="e5p-3N-I9v" id="OQp-jC-Fvo"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="mapViewCell" rowHeight="199" id="QEq-16-s38" userLabel="MapViewCell" customClass="MapViewCell" customModule="Janet" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="725" width="320" height="199"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QEq-16-s38" id="uSj-yc-phs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LPi-9C-470" userLabel="Burbuja">
+                                                            <rect key="frame" x="0.0" y="0.0" width="299" height="188.5"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyh-cp-WlX" userLabel="Message">
+                                                            <rect key="frame" x="15" y="8" width="272" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.99195688959999995" green="0.9962289929" blue="0.99192315340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </label>
+                                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jxu-ny-Ezf">
+                                                            <rect key="frame" x="29" y="36" width="240" height="127.5"/>
+                                                        </mapView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="LPi-9C-470" firstAttribute="leading" secondItem="uSj-yc-phs" secondAttribute="leading" id="Ci9-wP-gSy"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="jxu-ny-Ezf" secondAttribute="trailing" constant="43" id="Ir6-E6-9yy"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="jxu-ny-Ezf" secondAttribute="bottom" constant="27" id="KAE-DF-yva"/>
+                                                        <constraint firstItem="jxu-ny-Ezf" firstAttribute="leading" secondItem="uSj-yc-phs" secondAttribute="leadingMargin" constant="21" id="Rg5-Gh-O3L"/>
+                                                        <constraint firstItem="LPi-9C-470" firstAttribute="top" secondItem="uSj-yc-phs" secondAttribute="top" id="SgW-qH-dqa"/>
+                                                        <constraint firstItem="lyh-cp-WlX" firstAttribute="top" secondItem="uSj-yc-phs" secondAttribute="topMargin" id="XZZ-aU-yz4"/>
+                                                        <constraint firstItem="lyh-cp-WlX" firstAttribute="leading" secondItem="uSj-yc-phs" secondAttribute="leadingMargin" constant="7" id="c6v-kq-7Jt"/>
+                                                        <constraint firstAttribute="bottom" secondItem="LPi-9C-470" secondAttribute="bottom" constant="10" id="cnL-bx-0OT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="LPi-9C-470" secondAttribute="trailing" constant="21" id="dXn-N3-vP7"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="lyh-cp-WlX" secondAttribute="trailing" constant="25" id="fBK-Fb-yPu"/>
+                                                        <constraint firstItem="jxu-ny-Ezf" firstAttribute="top" secondItem="lyh-cp-WlX" secondAttribute="bottom" constant="7.5" id="lBU-F0-cua"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="MapView" destination="jxu-ny-Ezf" id="yMF-Tq-kH0"/>
+                                                    <outlet property="burbuja" destination="LPi-9C-470" id="RJh-Ld-ATk"/>
+                                                    <outlet property="message" destination="lyh-cp-WlX" id="Vn2-qH-a49"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -409,11 +451,13 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="bY8-4E-XSB"/>
+                                <exclude reference="bY8-4E-XSB"/>
                                 <include reference="nWO-q0-TBh"/>
-                                <include reference="vgG-Cd-JBf"/>
+                                <exclude reference="vgG-Cd-JBf"/>
+                                <include reference="9ZM-Qh-UIM"/>
                                 <include reference="gGK-AO-mZY"/>
                                 <include reference="pYN-ee-scK"/>
+                                <include reference="BqZ-wG-Bls"/>
                             </mask>
                         </variation>
                     </view>
@@ -431,8 +475,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="540" height="720"/>
-        <image name="Microphone" width="1280" height="1024"/>
+        <image name="Background" width="750" height="1000"/>
+        <image name="Microphone" width="426.66665649414062" height="341.33334350585938"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

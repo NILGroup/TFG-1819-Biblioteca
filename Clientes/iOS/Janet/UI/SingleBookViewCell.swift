@@ -11,6 +11,8 @@ import UIKit
 
 class SingleBookViewCell: TableViewCell {
     
+    let imageCache = NSCache<NSString, UIImage>()
+
     @IBOutlet weak var View: UIView!
     @IBOutlet weak var coverart: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -19,6 +21,7 @@ class SingleBookViewCell: TableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     
     private var urlString : String? = nil
+    private var isbn: String? = nil
 
     override func setDatos(info: Globos) {
         
@@ -30,7 +33,9 @@ class SingleBookViewCell: TableViewCell {
         self.message.sizeToFit()
         self.cambiarBurbuja(info: .Bot)
 
-        var image: UIImage?
+        imageFromServerURL(info.getISBN())
+
+        /*var image: UIImage?
         
         if (coverart.image == nil) {
             let url = NSURL(string: info.getImagen())! as URL
@@ -41,7 +46,7 @@ class SingleBookViewCell: TableViewCell {
                 }
             }
             coverart.image = image
-        }
+        }*/
         
         titleLabel.text = info.getTitle()
         authorLabel.text = info.getAuthor()
@@ -66,5 +71,49 @@ class SingleBookViewCell: TableViewCell {
         //let svc = SFSafariViewController(url: url as URL)
         //present(svc, animated: true, completion: nil)
         UIApplication.shared.open(url)
+    }
+    
+    func imageFromServerURL(_ isbn: [String]) {
+        
+        var existe = false
+        var i = 0
+        
+        while (i < isbn.count && !existe) {
+            let enlace = "https://covers.openlibrary.org/b/isbn/"+isbn[i]+"-M.jpg"
+            
+            if let cachedImage = imageCache.object(forKey: NSString(string: enlace)) {
+                coverart.image = cachedImage
+                return
+            }
+            
+            if let url = URL(string: enlace) {
+                URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                    
+                    //print("RESPONSE FROM API: \(response)")
+                    if error != nil {
+                        //print("ERROR LOADING IMAGES FROM URL: \(error)")
+                        DispatchQueue.main.async {
+                            self.coverart.image = UIImage(named: "Empty_Book")
+                        }
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        if let data = data {
+                            if let downloadedImage = UIImage(data: data) {
+                                if (downloadedImage.size.width == 1) {
+                                    self.coverart.image = UIImage(named: "Empty_Book")
+                                } else {
+                                    existe = true
+                                    self.imageCache.setObject(downloadedImage, forKey: NSString(string: enlace))
+                                    self.coverart.image = downloadedImage
+                                    
+                                }
+                            }
+                        }
+                    }
+                }).resume()
+            }
+            i += 1
+        }
     }
 }

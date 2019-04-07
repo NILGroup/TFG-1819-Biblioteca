@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		547FFD2620E7BAE400C4331E /* Micro Stopped.wav in Resources */ = {isa = PBXBuildFile; fileRef = 547FFD2520E7BAE400C4331E /* Micro Stopped.wav */; };
 		54868E14215F943800C6E63C /* conexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54868E13215F943800C6E63C /* conexion.swift */; };
 		54868E16215F958000C6E63C /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54868E15215F958000C6E63C /* DAO.swift */; };
+		54A2BC5022580068003F5004 /* MapViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2BC4F22580068003F5004 /* MapViewCell.swift */; };
 		54C9D94420DD71350026E68D /* Micro Start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D94220DD71340026E68D /* Micro Start.wav */; };
 		54C9D94520DD71350026E68D /* Recognized voice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D94320DD71350026E68D /* Recognized voice.wav */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		547FFD2520E7BAE400C4331E /* Micro Stopped.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Micro Stopped.wav"; sourceTree = "<group>"; };
 		54868E13215F943800C6E63C /* conexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conexion.swift; sourceTree = "<group>"; };
 		54868E15215F958000C6E63C /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		54A2BC4F22580068003F5004 /* MapViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCell.swift; sourceTree = "<group>"; };
 		54C9D94220DD71340026E68D /* Micro Start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Micro Start.wav"; sourceTree = "<group>"; };
 		54C9D94320DD71350026E68D /* Recognized voice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Recognized voice.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 				541631A721983C0D00453F3A /* TableViewExtension.swift */,
 				5443C49421BFCA8E00F7BAD6 /* ListBooksViewCell.swift */,
 				5443C49521BFCA8E00F7BAD6 /* SingleBookViewCell.swift */,
+				54A2BC4F22580068003F5004 /* MapViewCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -271,7 +274,7 @@
 				};
 			};
 			buildConfigurationList = 5454621F207F5B3600640980 /* Build configuration list for PBXProject "Janet" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -335,6 +338,7 @@
 				5454622A207F5B3900640980 /* ViewController.swift in Sources */,
 				54868E14215F943800C6E63C /* conexion.swift in Sources */,
 				54546228207F5B3900640980 /* AppDelegate.swift in Sources */,
+				54A2BC5022580068003F5004 /* MapViewCell.swift in Sources */,
 				5473A65B219094C700069A72 /* Globos.swift in Sources */,
 				541631A821983C0D00453F3A /* TableViewExtension.swift in Sources */,
 			);

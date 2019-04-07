@@ -18,6 +18,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
+    private var user_id: Int!
+    
     internal var mensajes: [Globos] = []
     private let audioEngine = AVAudioEngine()
     private let synthesizer = AVSpeechSynthesizer()
@@ -54,6 +56,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         if (contraste) {
             self.altoContraste()
         }
+        
+        let defaults = UserDefaults.standard
+        self.user_id = Int(defaults.string(forKey: "user_id") ?? "-1")
         
         self.prepararSpinner()
         
@@ -105,7 +110,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         self.startButton.isEnabled = false
         
         DispatchQueue.global(qos: .userInitiated).async {
-            dao.tratarDatos(tipo: tipo, peticion: peticion) {
+            dao.tratarDatos(id: self.user_id, tipo: tipo, peticion: peticion) {
                 respuesta in
                 
                 //Si el servidor ha fallado
@@ -117,7 +122,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                     //Si los datos no son correctos
                     if (respuesta.value(forKey: "errorno") as! NSNumber != 0) {
                         self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
-                    } else if (respuesta.value(forKey: "errorno") as! NSNumber == 0){
+                    } else if (respuesta.value(forKey: "errorno") as! NSNumber == 0) {
+                        if let user = respuesta.value(forKey: "user_id") {
+                            let preferences = UserDefaults.standard
+                            preferences.set(user, forKey: "user_id")
+                            self.user_id = user as? Int
+                        }
                         self.ponerDatosEnBot(datos: respuesta)
                     }
                 }
@@ -248,10 +258,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             let aux = datos.value(forKey: "books") as! [[String : Any]]
             var books : [Globos] = []
             for item in aux {
-                let temp = Globos(texto: "", foto: item["cover-art"] as! String, emisor: .Bot,
+                let temp = Globos(texto: "", isbn: item["isbn"] as! [String], emisor: .Bot,
                                   tipo: Globos.TiposMensaje.listbooks)
                 temp.setTitle(text: item["title"] as! String)
-                temp.setAuthor(text: item["author"] as! String)
+                if let author = item["author"] as? String {
+                    temp.setAuthor(text: author)
+                } else {
+                    temp.setAuthor(text: "")
+                }
+                temp.setISBN(isbn: item["isbn"] as! [String])
                 temp.setCodOCLC(code: Int(item["oclc"] as! String)!)
                 books.append(temp)
             }
@@ -260,13 +275,23 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             self.mensajes.append(temp)
         } else if (datos.value(forKey: "content-type") as! String == "single-book"){
             self.botText = datos.value(forKey: "response") as! String;
-            let temp = Globos(texto: self.botText, foto: datos.value(forKey: "cover-art") as! String, emisor: .Bot,
+            let temp = Globos(texto: self.botText, isbn: datos.value(forKey: "isbn") as! [String], emisor: .Bot,
                    tipo: Globos.TiposMensaje.singlebook)
             temp.setTitle(text: datos.value(forKey: "title") as! String)
             temp.setAuthor(text: datos.value(forKey: "author") as! String)
-            temp.setLibrarys(text: datos.value(forKey: "library") as! String)
-            temp.setAvailable(available: datos.value(forKey: "available") as! Bool)
+            /*----------------------ADAPTAR ESTO!!--------------------------------------------*/
+            temp.setAvailable(available: true)
+            temp.setISBN(isbn: datos.value(forKey: "isbn") as! [String])
+            //temp.setAvailable(available: datos.value(forKey: "available") as! Bool)
             temp.setURL(url: datos.value(forKey: "url") as! String)
+            self.mensajes.append(temp)
+        } else if (datos.value(forKey: "content-type") as! String == "location"){
+            self.botText = datos.value(forKey: "response") as! String;
+            let temp = Globos(texto: self.botText, emisor: .Bot,
+                              tipo: Globos.TiposMensaje.location)
+            temp.setLibrarys(text: datos.value(forKey: "library") as! String)
+            temp.setLat(data: datos.value(forKey: "lat") as! Double)
+            temp.setLong(data: datos.value(forKey: "long") as! Double)
             self.mensajes.append(temp)
         } else { //Content-type = Text
             self.botText = datos.value(forKey: "response") as! String;
@@ -351,6 +376,17 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                     
                     var isFinal = false
                     if let result = result {
+                        
+                        /*let numberFormatter = NumberFormatter()
+                        numberFormatter.locale = Locale(identifier: "es")
+                        numberFormatter.numberStyle = .decimal
+                        
+                        var palabra = result.bestTranscription.formattedString
+                        
+                        if let textAsInt = Int(text), let output = numberFormatter.string(from: NSNumber(value: textAsInt)) {
+                            print(output) // "۱۲۳٬۴۵۶"
+                        }*/
+                        
                         self.mensajes[self.mensajes.count - 1].setRespuesta(text: result.bestTranscription.formattedString)
                         let indexPath = IndexPath(row: self.mensajes.count - 1, section: 0)
                         self.tableView.reloadRows(at: [indexPath], with: .none)

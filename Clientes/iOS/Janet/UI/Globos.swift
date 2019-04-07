@@ -12,17 +12,21 @@ import Foundation
 class Globos {
     
     enum TiposEmisor{ case Bot, User }
-    enum TiposMensaje { case text, singlebook, listbooks }
+    enum TiposMensaje { case text, singlebook, listbooks, location }
     
     private let emisor: TiposEmisor
     private var respuesta: String
     private var url: String
     private var imagenURL: String?
+    private var ISBN: [String]?
     private let type: TiposMensaje
     private var title: String?
     private var author: String?
     private var available: Bool
     private var librarys: String?
+    private var lat: Double?
+    private var long: Double?
+    private var phone: Int?
     private var codOCLC: Int?
     private var list: [Globos]?
     
@@ -31,11 +35,15 @@ class Globos {
         self.respuesta = ""
         self.url = ""
         self.imagenURL = ""
+        self.ISBN = []
         self.type = .text
         self.title = nil
         self.author = nil
         self.available = true
         self.librarys = nil
+        self.lat = nil
+        self.long = nil
+        self.phone = nil
         self.codOCLC = nil
         self.list = nil
     }
@@ -45,6 +53,7 @@ class Globos {
         self.respuesta = texto
         self.url = ""
         self.imagenURL = ""
+        self.ISBN = []
         self.type = .text
         self.title = nil
         self.author = nil
@@ -59,6 +68,7 @@ class Globos {
         self.respuesta = texto
         self.url = ""
         self.imagenURL = nil
+        self.ISBN = []
         self.type = tipo
         self.title = nil
         self.author = nil
@@ -68,11 +78,12 @@ class Globos {
         self.list = nil
     }
     
-    init(texto: String, foto: String, emisor: TiposEmisor, tipo: TiposMensaje) {
+    init(texto: String, isbn: [String], emisor: TiposEmisor, tipo: TiposMensaje) {
         self.emisor = emisor
         self.respuesta = texto
         self.url = ""
-        self.imagenURL = foto
+        self.imagenURL = nil
+        self.ISBN = []
         self.type = tipo
         self.title = nil
         self.author = nil
@@ -102,6 +113,10 @@ class Globos {
         return self.imagenURL!
     }
     
+    func getISBN() -> [String] {
+        return self.ISBN!
+    }
+    
     func getTitle() -> String {
         if (self.title == nil) {
             return ""
@@ -125,6 +140,27 @@ class Globos {
             return ""
         }
         return self.librarys!
+    }
+    
+    func getLat() -> Double {
+        if (self.lat == nil) {
+            return 0.0
+        }
+        return self.lat!
+    }
+    
+    func getLong() -> Double {
+        if (self.long == nil) {
+            return 0.0
+        }
+        return self.long!
+    }
+    
+    func getPhone() -> Int {
+        if (self.phone == nil) {
+            return 0
+        }
+        return self.phone!
     }
     
     func getCodOCLC() -> Int {
@@ -161,12 +197,28 @@ class Globos {
         self.librarys = text
     }
     
+    func setLat(data: Double) {
+        self.lat = data
+    }
+    
+    func setLong(data: Double) {
+        self.long = data
+    }
+    
+    func setPhone(data: Int) {
+        self.phone = data
+    }
+    
     func setURL(url: String) {
         self.url = url
     }
     
     func setImagen(foto: String) {
         self.imagenURL = foto
+    }
+    
+    func setISBN(isbn: [String]) {
+        self.ISBN = isbn
     }
     
     func setCodOCLC(code: Int) {
