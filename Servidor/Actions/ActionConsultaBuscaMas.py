@@ -23,16 +23,16 @@ class ActionMoreBooks(Action):
         hayautor = False
         haylibro = False
         for ent in entities:
-            if 'libros' in ent:
+            if 'libro' in ent:
                 haylibro = True
             elif 'autores' in ent:
                 hayautor = True
 
         if haylibro and hayautor:
-            respuesta['books'] = self.wms.buscarLibro(entities['libros'], entities['autores'],
+            respuesta['books'] = self.wms.buscarLibro(entities['libro'], entities['autores'],
                                                         entities['searchindex'], self._acortarkwconsulta(intentant))
         elif haylibro:
-            respuesta['books'] = self.wms.buscarLibro(entities['libros'], None,
+            respuesta['books'] = self.wms.buscarLibro(entities['libro'], None,
                                                         entities['searchindex'], self._acortarkwconsulta(intentant))
         elif hayautor:
             respuesta['books'] = self.wms.buscarLibro(None, entities['autores'],

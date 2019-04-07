@@ -78,4 +78,4 @@ class JanetService:
 
 if __name__ == '__main__':
     JanetService()
-    run(host='0.0.0.0', port=8080, reloader=True)
+    run(host='0.0.0.0', port=80, reloader=True)

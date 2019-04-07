@@ -35,7 +35,7 @@ class JanetServController:
         if 'user_id' not in client_request:
             raise ValueError('No se ha indicado el id del usuario')
 
-        elif client_request["user_id"] == '' or client_request["user_id"] == -1:
+        elif client_request["user_id"] == '' or client_request["user_id"] == -1 or client_request["user_id"] == '-1':
             client_request["user_id"] = self._asignarUserId()
             asignarID = True
 
@@ -62,6 +62,8 @@ class JanetServController:
         respuesta["errorno"] = 0
         if asignarID:
             respuesta["user_id"] = client_request["user_id"]
+
+        print(respuesta)
 
         return json.dumps(respuesta, ensure_ascii=False).encode('utf8')
 
