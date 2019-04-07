@@ -56,16 +56,15 @@ class SaludosForm(FormAction):
             temp = tracker.get_latest_entity_values('PER')
             aux = None
             for i in temp:
-                if i is not "Hola":
+                if i.capitalize() is not "Hola":
                     aux = i
             aux2 = next(tracker.get_latest_entity_values('persona'), None)
             if aux is None and aux2 is not None:
-                return [SlotSet('persona', aux2.capitalize())]
+                return [SlotSet('persona', aux2)]
             elif aux is not None and aux is not "Hola":
                 return [SlotSet('persona', aux)]
             else:
-                dispatcher.utter_message("Dime cómo te llamas")
-                return []
+                dispatcher.utter_message("¿Cómo te llamas?")
 
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
 

@@ -22,243 +22,211 @@
         "text": "Busca más"
       },
       {
-        "intent": "como_estas",
-        "text": "Qué tal"
+        "intent": "busca_mas",
+        "text": "Quiero más"
+      },
+      {
+        "intent": "busca_mas",
+        "text": "Quiero otro"
+      },
+      {
+        "intent": "busca_mas",
+        "text": "Busca más"
+      },
+      {
+        "intent": "busca_mas",
+        "text": "Carga más"
+      },
+      {
+        "intent": "busca_mas",
+        "text": "Muéstrame más"
+      },
+      {
+        "intent": "busca_mas",
+        "text": "Enseñame más ejemplares"
+      },
+      {
+        "intent": "busca_mas",
+        "text": "Podrías buscar más ejemplares"
+      },
+      {
+        "intent": "busca_mas",
+        "text": "Busca más"
+      },
+      {
+        "intent": "busca_mas",
+        "text": "quiero más"
       },
       {
         "intent": "como_estas",
-        "text": "Cómo estás"
+        "text": "¿Qué tal?"
       },
       {
         "intent": "como_estas",
-        "text": "Qué te pasa"
+        "text": "¿Cómo estás?"
       },
       {
         "intent": "como_estas",
-        "text": "Qué te ocurre"
+        "text": "¿Qué te pasa?"
       },
       {
         "intent": "como_estas",
-        "text": "Estás bien"
+        "text": "¿Qué te ocurre?"
       },
       {
         "intent": "como_estas",
-        "text": "Cómo te sientes"
+        "text": "¿Estás bien?"
       },
       {
-        "intent": "consulta_articulo",
-        "text": "Busca un artículo"
+        "intent": "como_estas",
+        "text": "¿Cómo te sientes?"
       },
       {
-        "intent": "consulta_articulo",
-        "text": "Quiero un artículo"
+        "intent": "como_estas",
+        "text": "Hola, ¿que tal?"
       },
       {
-        "intent": "consulta_articulo",
-        "text": "Me podrías decir un artículo"
+        "intent": "como_estas",
+        "text": "Hola, ¿que tal estas hoy?"
       },
       {
-        "intent": "consulta_articulo",
-        "text": "Dime un artículo"
+        "intent": "como_estas",
+        "text": "Hola, ¿como te estas hoy?"
       },
       {
-        "intent": "consulta_articulo",
-        "text": "Dame un artículo"
-      },
-      {
-        "intent": "consulta_articulo",
-        "text": "Necesito un artículo"
-      },
-      {
-        "intent": "consulta_articulo",
-        "text": "Artículo"
-      },
-      {
-        "intent": "consulta_articulo_kw",
+        "intent": "consulta_horario_close",
         "entities": [
           {
-            "start": 21,
-            "end": 29,
-            "value": "biología",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Busca un artículo de biología"
-      },
-      {
-        "intent": "consulta_articulo_kw",
-        "entities": [
-          {
-            "start": 22,
-            "end": 28,
-            "value": "música",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Quiero un artículo de música"
-      },
-      {
-        "intent": "consulta_articulo_kw",
-        "entities": [
-          {
-            "start": 24,
-            "end": 32,
-            "value": "medicina",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Necesito un artículo de medicina"
-      },
-      {
-        "intent": "consulta_articulo_kw",
-        "entities": [
-          {
-            "start": 30,
+            "start": 16,
             "end": 38,
-            "value": "historia",
-            "entity": "articulo"
+            "value": "Biblioteca de medicina",
+            "entity": "localizacion"
           }
         ],
-        "text": "Podrías buscar un artículo de historia"
+        "text": "Está cerrada la Biblioteca de medicina"
       },
       {
-        "intent": "consulta_articulo_kw",
-        "entities": [
-          {
-            "start": 20,
-            "end": 28,
-            "value": "historia",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Dame un artículo de historia"
-      },
-      {
-        "intent": "consulta_articulo_kw",
-        "entities": [
-          {
-            "start": 12,
-            "end": 20,
-            "value": "historia",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Artículo de historia"
-      },
-      {
-        "intent": "consulta_articulos",
-        "text": "Busca artículos"
-      },
-      {
-        "intent": "consulta_articulos",
-        "text": "Quiero artículos"
-      },
-      {
-        "intent": "consulta_articulos",
-        "text": "Me podrías decir algún artículos"
-      },
-      {
-        "intent": "consulta_articulos",
-        "text": "Dime artículos"
-      },
-      {
-        "intent": "consulta_articulos",
-        "text": "Dame artículos"
-      },
-      {
-        "intent": "consulta_articulos",
-        "text": "Necesito artículos"
-      },
-      {
-        "intent": "consulta_articulos",
-        "text": "Artículos"
-      },
-      {
-        "intent": "consulta_articulos_kw",
-        "entities": [
-          {
-            "start": 19,
-            "end": 27,
-            "value": "biología",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Busca artículos de biología"
-      },
-      {
-        "intent": "consulta_articulos_kw",
-        "entities": [
-          {
-            "start": 20,
-            "end": 26,
-            "value": "música",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Quiero artículos de música"
-      },
-      {
-        "intent": "consulta_articulos_kw",
-        "entities": [
-          {
-            "start": 22,
-            "end": 30,
-            "value": "medicina",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Necesito artículos de medicina"
-      },
-      {
-        "intent": "consulta_articulos_kw",
+        "intent": "consulta_horario_close",
         "entities": [
           {
             "start": 28,
             "end": 36,
-            "value": "historia",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Podrías buscar artículos de historia"
-      },
-      {
-        "intent": "consulta_articulos_kw",
-        "entities": [
-          {
-            "start": 18,
-            "end": 26,
-            "value": "historia",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Dame artículos de historia"
-      },
-      {
-        "intent": "consulta_articulos_kw",
-        "entities": [
-          {
-            "start": 13,
-            "end": 21,
-            "value": "historia",
-            "entity": "articulo"
-          }
-        ],
-        "text": "Artículos de historia"
-      },
-      {
-        "intent": "consulta_horario_close",
-        "entities": [
-          {
-            "start": 21,
-            "end": 29,
             "value": "Zambrano",
             "entity": "localizacion"
           }
         ],
-        "text": "A qué hora cierra la Zambrano"
+        "text": "Está cerrada ahora mismo la Zambrano"
       },
       {
         "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 14,
+            "end": 40,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Cierra hoy la Biblioteca de Matem￿áticas"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 33,
+            "end": 59,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Me puedes decir si cierra hoy la Biblioteca de Matem￿áticas"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 36,
+            "end": 62,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Me puedes decir si est￿á cerrada la Biblioteca de Matem￿áticas"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 40,
+            "end": 66,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Me puedes decir si est￿á cerrada hoy la Biblioteca de Matem￿áticas"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 42,
+            "end": 68,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Me puedes decir si est￿á cerrada ahora la Biblioteca de Matem￿áticas"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 37,
+            "end": 63,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Me podrias decir si est￿á cerrada la Biblioteca de Matem￿áticas"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 41,
+            "end": 67,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Me podrias decir si est￿á cerrada hoy la Biblioteca de Matem￿áticas"
+      },
+      {
+        "intent": "consulta_horario_close",
+        "entities": [
+          {
+            "start": 43,
+            "end": 69,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Me podrias decir si est￿á cerrada ahora la Biblioteca de Matem￿áticas"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 15,
+            "end": 35,
+            "value": "Facultad de geología",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Cuándo abre la Facultad de geología"
+      },
+      {
+        "intent": "consulta_horario_general",
         "entities": [
           {
             "start": 17,
@@ -270,52 +238,76 @@
         "text": "Cuándo cierra la Zambrano"
       },
       {
-        "intent": "consulta_horario_close",
-        "entities": [
-          {
-            "start": 16,
-            "end": 24,
-            "value": "Zambrano",
-            "entity": "localizacion"
-          }
-        ],
-        "text": "Está cerrada la Zambrano"
-      },
-      {
-        "intent": "consulta_horario_close",
-        "entities": [
-          {
-            "start": 13,
-            "end": 21,
-            "value": "Zambrano",
-            "entity": "localizacion"
-          }
-        ],
-        "text": "Cierre de la Zambrano"
-      },
-      {
-        "intent": "consulta_horario_close",
+        "intent": "consulta_horario_general",
         "entities": [
           {
             "start": 23,
-            "end": 50,
-            "value": "Geologia",
+            "end": 47,
+            "value": "Biblioteca de Educaci￿ón",
             "entity": "localizacion"
           }
         ],
-        "text": "/consulta_horario_close{\"localizacion\":\"Geologia\"}"
+        "text": "Cuándo está abierta la Biblioteca de Educaci￿ón"
       },
       {
-        "intent": "consulta_horario_close",
+        "intent": "consulta_horario_general",
         "entities": [
           {
             "start": 23,
-            "end": 53,
-            "value": "veterinaria",
+            "end": 49,
+            "value": "Biblioteca de Arquitectura",
             "entity": "localizacion"
           }
         ],
-        "text": "/consulta_horario_close{\"localizacion\":\"veterinaria\"}"
+        "text": "Cuándo está cerrada la Biblioteca de Arquitectura"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 19,
+            "end": 44,
+            "value": "Biblioteca de informática",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "A qué hora abre la Biblioteca de informática"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 21,
+            "end": 45,
+            "value": "Biblioteca de Filosof￿ía",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "A qué hora cierra la Biblioteca de Filosof￿ía"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 14,
+            "end": 33,
+            "value": "biblioteca zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "A que hora la Biblioteca Zambrano abre"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 14,
+            "end": 33,
+            "value": "biblioteca zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "A que hora la Biblioteca Zambrano cierra"
       },
       {
         "intent": "consulta_horario_general",
@@ -333,6 +325,30 @@
         "intent": "consulta_horario_general",
         "entities": [
           {
+            "start": 33,
+            "end": 57,
+            "value": "Biblioteca de Geograf￿ía",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Me puedes decir el horario de la Biblioteca de Geograf￿ía"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 34,
+            "end": 58,
+            "value": "Biblioteca de Geograf￿ía",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Me podrias decir el horario de la Biblioteca de Geograf￿ía"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
             "start": 14,
             "end": 22,
             "value": "Zambrano",
@@ -345,25 +361,43 @@
         "intent": "consulta_horario_general",
         "entities": [
           {
-            "start": 25,
-            "end": 54,
-            "value": "periodismo",
+            "start": 19,
+            "end": 44,
+            "value": "biblioteca de informatica",
             "entity": "localizacion"
           }
         ],
-        "text": "/consulta_horario_general{\"localizacion\":\"periodismo\"}"
+        "text": "A que hora abre la biblioteca de informatica"
       },
       {
         "intent": "consulta_horario_general",
         "entities": [
           {
-            "start": 25,
-            "end": 52,
-            "value": "Zambrano",
+            "start": 19,
+            "end": 29,
+            "value": "biblioteca",
+            "entity": "localizacion"
+          },
+          {
+            "start": 30,
+            "end": 38,
+            "value": "zambrano",
             "entity": "localizacion"
           }
         ],
-        "text": "/consulta_horario_general{\"localizacion\":\"Zambrano\"}"
+        "text": "A que hora abre la biblioteca zambrano"
+      },
+      {
+        "intent": "consulta_horario_general",
+        "entities": [
+          {
+            "start": 19,
+            "end": 43,
+            "value": "biblioteca de Psicologia",
+            "entity": "localizaciones"
+          }
+        ],
+        "text": "A que hora abre la biblioteca de Psicologia"
       },
       {
         "intent": "consulta_horario_open",
@@ -381,405 +415,109 @@
         "intent": "consulta_horario_open",
         "entities": [
           {
-            "start": 19,
-            "end": 44,
-            "value": "Biblioteca de informática",
-            "entity": "localizacion"
-          }
-        ],
-        "text": "A qué hora abre la Biblioteca de informática"
-      },
-      {
-        "intent": "consulta_horario_open",
-        "entities": [
-          {
-            "start": 15,
-            "end": 35,
-            "value": "Facultad de geología",
-            "entity": "localizacion"
-          }
-        ],
-        "text": "Cuándo abre la Facultad de geología"
-      },
-      {
-        "intent": "consulta_horario_open",
-        "entities": [
-          {
-            "start": 15,
-            "end": 23,
-            "value": "Zambrano",
-            "entity": "localizacion"
-          }
-        ],
-        "text": "Apertura de la Zambrano"
-      },
-      {
-        "intent": "consulta_horario_open",
-        "entities": [
-          {
-            "start": 23,
-            "end": 31,
-            "value": "Zambrano",
-            "entity": "localizacion"
-          }
-        ],
-        "text": "Cuándo está abierta la Zambrano"
-      },
-      {
-        "intent": "consulta_horario_open",
-        "entities": [
-          {
-            "start": 22,
-            "end": 51,
-            "value": "Psicologia",
-            "entity": "localizacion"
-          }
-        ],
-        "text": "/consulta_horario_open{\"localizacion\":\"Psicologia\"}"
-      },
-      {
-        "intent": "consulta_juego",
-        "text": "Busca un juego"
-      },
-      {
-        "intent": "consulta_juego",
-        "text": "Quiero un juego"
-      },
-      {
-        "intent": "consulta_juego",
-        "text": "Me podrías decir un juego"
-      },
-      {
-        "intent": "consulta_juego",
-        "text": "Dime un juego"
-      },
-      {
-        "intent": "consulta_juego",
-        "text": "Dame un juego"
-      },
-      {
-        "intent": "consulta_juego",
-        "text": "Necesito un juego"
-      },
-      {
-        "intent": "consulta_juego",
-        "text": "Juego"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 23,
-            "end": 30,
-            "value": "Far Cry",
-            "entity": "juego"
-          }
-        ],
-        "text": "Busca un juego llamado Far Cry"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 18,
-            "end": 28,
-            "value": "God of War",
-            "entity": "juego"
-          }
-        ],
-        "text": "Busca un juego de God of War"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 26,
-            "end": 33,
-            "value": "Far Cry",
-            "entity": "juego"
-          }
-        ],
-        "text": "Necesito un juego llamado Far Cry"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 21,
-            "end": 31,
-            "value": "God of War",
-            "entity": "juego"
-          }
-        ],
-        "text": "Necesito un juego de God of War"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 24,
-            "end": 31,
-            "value": "Far Cry",
-            "entity": "juego"
-          }
-        ],
-        "text": "Quiero un juego llamado Far Cry"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 19,
-            "end": 29,
-            "value": "God of War",
-            "entity": "juego"
-          }
-        ],
-        "text": "Quiero un juego de God of War"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 32,
-            "end": 39,
-            "value": "Far Cry",
-            "entity": "juego"
-          }
-        ],
-        "text": "Podrías un buscar juego llamado Far Cry"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
             "start": 28,
+            "end": 36,
+            "value": "Zambrano",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Está abierta ahora mismo la Zambrano"
+      },
+      {
+        "intent": "consulta_horario_open",
+        "entities": [
+          {
+            "start": 12,
             "end": 38,
-            "value": "God of War",
-            "entity": "juego"
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
           }
         ],
-        "text": "Prodrías un buscar juego de God of War"
+        "text": "Abre hoy la Biblioteca de Matem￿áticas"
       },
       {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 22,
-            "end": 29,
-            "value": "Far Cry",
-            "entity": "juego"
-          }
-        ],
-        "text": "Dame un juego llamado Far Cry"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 17,
-            "end": 27,
-            "value": "God of War",
-            "entity": "juego"
-          }
-        ],
-        "text": "Dame un juego de God of War"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 9,
-            "end": 19,
-            "value": "God of War",
-            "entity": "juego"
-          }
-        ],
-        "text": "Juego de God of War"
-      },
-      {
-        "intent": "consulta_juego_kw",
-        "entities": [
-          {
-            "start": 9,
-            "end": 24,
-            "value": "Juego de Tronos",
-            "entity": "juego"
-          }
-        ],
-        "text": "Juego de Juego de Tronos"
-      },
-      {
-        "intent": "consulta_juegos",
-        "text": "Busca juegos"
-      },
-      {
-        "intent": "consulta_juegos",
-        "text": "Quiero juegos"
-      },
-      {
-        "intent": "consulta_juegos",
-        "text": "Me podrías decir algún juegos"
-      },
-      {
-        "intent": "consulta_juegos",
-        "text": "Dime juegos"
-      },
-      {
-        "intent": "consulta_juegos",
-        "text": "Dame juegos"
-      },
-      {
-        "intent": "consulta_juegos",
-        "text": "Necesito juegos"
-      },
-      {
-        "intent": "consulta_juegos",
-        "text": "Juegos"
-      },
-      {
-        "intent": "consulta_juegos_kw",
-        "entities": [
-          {
-            "start": 22,
-            "end": 29,
-            "value": "Far Cry",
-            "entity": "juego"
-          }
-        ],
-        "text": "Busca juegos llamados Far Cry"
-      },
-      {
-        "intent": "consulta_juegos_kw",
-        "entities": [
-          {
-            "start": 16,
-            "end": 26,
-            "value": "God of War",
-            "entity": "juego"
-          }
-        ],
-        "text": "Busca juegos de God of War"
-      },
-      {
-        "intent": "consulta_juegos_kw",
-        "entities": [
-          {
-            "start": 25,
-            "end": 32,
-            "value": "Far Cry",
-            "entity": "juego"
-          }
-        ],
-        "text": "Necesito juegos llamados Far Cry"
-      },
-      {
-        "intent": "consulta_juegos_kw",
-        "entities": [
-          {
-            "start": 19,
-            "end": 29,
-            "value": "God of War",
-            "entity": "juego"
-          }
-        ],
-        "text": "Necesito juegos de God of War"
-      },
-      {
-        "intent": "consulta_juegos_kw",
-        "entities": [
-          {
-            "start": 23,
-            "end": 30,
-            "value": "Far Cry",
-            "entity": "juego"
-          }
-        ],
-        "text": "Quiero juegos llamados Far Cry"
-      },
-      {
-        "intent": "consulta_juegos_kw",
-        "entities": [
-          {
-            "start": 17,
-            "end": 27,
-            "value": "God of War",
-            "entity": "juego"
-          }
-        ],
-        "text": "Quiero juegos de God of War"
-      },
-      {
-        "intent": "consulta_juegos_kw",
+        "intent": "consulta_horario_open",
         "entities": [
           {
             "start": 31,
-            "end": 38,
-            "value": "Far Cry",
-            "entity": "juego"
+            "end": 57,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
           }
         ],
-        "text": "Podrías buscar juegos llamados Far Cry"
+        "text": "Me puedes decir si abre hoy la Biblioteca de Matem￿áticas"
       },
       {
-        "intent": "consulta_juegos_kw",
+        "intent": "consulta_horario_open",
         "entities": [
           {
-            "start": 26,
-            "end": 36,
-            "value": "God of War",
-            "entity": "juego"
+            "start": 36,
+            "end": 62,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
           }
         ],
-        "text": "Prodrías buscar juegos de God of War"
+        "text": "Me puedes decir si est￿á abierta la Biblioteca de Matem￿áticas"
       },
       {
-        "intent": "consulta_juegos_kw",
+        "intent": "consulta_horario_open",
         "entities": [
           {
-            "start": 21,
-            "end": 28,
-            "value": "Far Cry",
-            "entity": "juego"
+            "start": 40,
+            "end": 66,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
           }
         ],
-        "text": "Dame juegos llamados Far Cry"
+        "text": "Me puedes decir si est￿á abierta hoy la Biblioteca de Matem￿áticas"
       },
       {
-        "intent": "consulta_juegos_kw",
+        "intent": "consulta_horario_open",
         "entities": [
           {
-            "start": 15,
-            "end": 25,
-            "value": "God of War",
-            "entity": "juego"
+            "start": 42,
+            "end": 68,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
           }
         ],
-        "text": "Dame juegos de God of War"
+        "text": "Me puedes decir si est￿á abierta ahora la Biblioteca de Matem￿áticas"
       },
       {
-        "intent": "consulta_juegos_kw",
+        "intent": "consulta_horario_open",
         "entities": [
           {
-            "start": 10,
-            "end": 20,
-            "value": "God of War",
-            "entity": "juego"
+            "start": 37,
+            "end": 63,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
           }
         ],
-        "text": "Juegos de God of War"
+        "text": "Me podrias decir si est￿á abierta la Biblioteca de Matem￿áticas"
       },
       {
-        "intent": "consulta_juegos_kw",
+        "intent": "consulta_horario_open",
         "entities": [
           {
-            "start": 10,
-            "end": 25,
-            "value": "Juego de Tronos",
-            "entity": "juego"
+            "start": 41,
+            "end": 67,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
           }
         ],
-        "text": "Juegos de Juego de Tronos"
+        "text": "Me podrias decir si est￿á abierta hoy la Biblioteca de Matem￿áticas"
+      },
+      {
+        "intent": "consulta_horario_open",
+        "entities": [
+          {
+            "start": 43,
+            "end": 69,
+            "value": "Biblioteca de Matem￿áticas",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Me podrias decir si est￿á abierta ahora la Biblioteca de Matem￿áticas"
       },
       {
         "intent": "consulta_libro",
@@ -1172,24 +910,6 @@
           }
         ],
         "text": "/consulta_libro_autor{\"PER\":\"Góngora\", \"autores\":\"Góngora}{\"PER\":\"Góngora\", \"autores\":\"Góngora}"
-      },
-      {
-        "intent": "consulta_libro_autor",
-        "entities": [
-          {
-            "start": 21,
-            "end": 56,
-            "value": "Busca",
-            "entity": "LOC"
-          },
-          {
-            "start": 56,
-            "end": 91,
-            "value": "Jose Garcia",
-            "entity": "PER"
-          }
-        ],
-        "text": "/consulta_libro_autor{\"LOC\":\"Busca\",\"PER\":\"Jose Garcia\"}{\"LOC\":\"Busca\",\"PER\":\"Jose Garcia\"}"
       },
       {
         "intent": "consulta_libro_autor",
@@ -1633,12 +1353,6 @@
         "intent": "consulta_libro_kw_autor",
         "entities": [
           {
-            "start": 0,
-            "end": 5,
-            "value": "Busco",
-            "entity": "LOC"
-          },
-          {
             "start": 18,
             "end": 28,
             "value": "El Quijote",
@@ -1668,12 +1382,6 @@
       {
         "intent": "consulta_libro_kw_autor",
         "entities": [
-          {
-            "start": 0,
-            "end": 5,
-            "value": "Busco",
-            "entity": "LOC"
-          },
           {
             "start": 18,
             "end": 27,
@@ -2161,12 +1869,6 @@
         "intent": "consulta_libro_titulo",
         "entities": [
           {
-            "start": 0,
-            "end": 5,
-            "value": "Busco",
-            "entity": "LOC"
-          },
-          {
             "start": 23,
             "end": 29,
             "value": "Narnia",
@@ -2473,12 +2175,6 @@
         "intent": "consulta_libro_titulo_autor",
         "entities": [
           {
-            "start": 0,
-            "end": 5,
-            "value": "Busca",
-            "entity": "LOC"
-          },
-          {
             "start": 23,
             "end": 33,
             "value": "El Quijote",
@@ -2508,12 +2204,6 @@
       {
         "intent": "consulta_libro_titulo_autor",
         "entities": [
-          {
-            "start": 0,
-            "end": 5,
-            "value": "Busca",
-            "entity": "LOC"
-          },
           {
             "start": 23,
             "end": 32,
@@ -3198,24 +2888,6 @@
         "entities": [
           {
             "start": 22,
-            "end": 57,
-            "value": "Busca",
-            "entity": "LOC"
-          },
-          {
-            "start": 57,
-            "end": 92,
-            "value": "Jose Garcia",
-            "entity": "PER"
-          }
-        ],
-        "text": "/consulta_libros_autor{\"LOC\":\"Busca\",\"PER\":\"Jose Garcia\"}{\"LOC\":\"Busca\",\"PER\":\"Jose Garcia\"}"
-      },
-      {
-        "intent": "consulta_libros_autor",
-        "entities": [
-          {
-            "start": 22,
             "end": 43,
             "value": "Jose Garcia",
             "entity": "PER"
@@ -3262,12 +2934,6 @@
       {
         "intent": "consulta_libros_kw",
         "entities": [
-          {
-            "start": 0,
-            "end": 5,
-            "value": "Busca",
-            "entity": "LOC"
-          },
           {
             "start": 16,
             "end": 35,
@@ -4805,12 +4471,6 @@
         "intent": "consulta_localizacion",
         "entities": [
           {
-            "start": 0,
-            "end": 8,
-            "value": "Necesito",
-            "entity": "PER"
-          },
-          {
             "start": 26,
             "end": 58,
             "value": "Biblioteca de ciencias políticas",
@@ -4822,12 +4482,6 @@
       {
         "intent": "consulta_localizacion",
         "entities": [
-          {
-            "start": 0,
-            "end": 8,
-            "value": "Necesito",
-            "entity": "PER"
-          },
           {
             "start": 24,
             "end": 48,
@@ -4853,12 +4507,6 @@
         "intent": "consulta_localizacion",
         "entities": [
           {
-            "start": 0,
-            "end": 5,
-            "value": "Dónde",
-            "entity": "PER"
-          },
-          {
             "start": 14,
             "end": 37,
             "value": "Facultad de informática",
@@ -4870,12 +4518,6 @@
       {
         "intent": "consulta_localizacion",
         "entities": [
-          {
-            "start": 0,
-            "end": 5,
-            "value": "Dónde",
-            "entity": "PER"
-          },
           {
             "start": 22,
             "end": 45,
@@ -4946,18 +4588,6 @@
         "text": "Quiero ir a la facultad de geografía e historia"
       },
       {
-        "intent": "consulta_localizacion",
-        "entities": [
-          {
-            "start": 22,
-            "end": 64,
-            "value": "facultad de informatica",
-            "entity": "localizacion"
-          }
-        ],
-        "text": "/consulta_localizacion{\"localizacion\":\"facultad de informatica\"}"
-      },
-      {
         "intent": "consulta_localizacion_empty",
         "text": "Busca su ubicación"
       },
@@ -4980,570 +4610,6 @@
       {
         "intent": "consulta_localizacion_empty",
         "text": "Dónde está"
-      },
-      {
-        "intent": "consulta_localizacion_empty",
-        "entities": [
-          {
-            "start": 0,
-            "end": 5,
-            "value": "Dónde",
-            "entity": "PER"
-          }
-        ],
-        "text": "Dónde está"
-      },
-      {
-        "intent": "consulta_localizacion_empty",
-        "text": "/consulta_localizacion_empty"
-      },
-      {
-        "intent": "consulta_musica",
-        "text": "Busca un CD"
-      },
-      {
-        "intent": "consulta_musica",
-        "text": "Quiero un CD"
-      },
-      {
-        "intent": "consulta_musica",
-        "text": "Necesito un CD"
-      },
-      {
-        "intent": "consulta_musica",
-        "text": "Necesito una partitura"
-      },
-      {
-        "intent": "consulta_musica",
-        "text": "Música"
-      },
-      {
-        "intent": "consulta_musica_kw",
-        "entities": [
-          {
-            "start": 20,
-            "end": 43,
-            "value": "Bajo el yugo del tiempo",
-            "entity": "musica"
-          }
-        ],
-        "text": "Busca un CD llamado Bajo el yugo del tiempo"
-      },
-      {
-        "intent": "consulta_musica_kw",
-        "entities": [
-          {
-            "start": 21,
-            "end": 44,
-            "value": "Bajo el yugo del tiempo",
-            "entity": "musica"
-          }
-        ],
-        "text": "Quiero un CD llamado Bajo el yugo del tiempo"
-      },
-      {
-        "intent": "consulta_musica_kw",
-        "entities": [
-          {
-            "start": 21,
-            "end": 33,
-            "value": "Ray of light",
-            "entity": "musica"
-          }
-        ],
-        "text": "Quiero un cd llamado Ray of light"
-      },
-      {
-        "intent": "consulta_musica_kw",
-        "entities": [
-          {
-            "start": 16,
-            "end": 40,
-            "value": "Florence And The Machine",
-            "entity": "musica"
-          }
-        ],
-        "text": "Quiero un CD de Florence And The Machine"
-      },
-      {
-        "intent": "consulta_musica_kw",
-        "entities": [
-          {
-            "start": 16,
-            "end": 23,
-            "value": "Rosendo",
-            "entity": "musica"
-          }
-        ],
-        "text": "Quiero un cd de Rosendo"
-      },
-      {
-        "intent": "consulta_musica_kw",
-        "entities": [
-          {
-            "start": 26,
-            "end": 30,
-            "value": "Bach",
-            "entity": "autores"
-          }
-        ],
-        "text": "Necesito una partitura de Bach"
-      },
-      {
-        "intent": "consulta_musica_kw",
-        "entities": [
-          {
-            "start": 31,
-            "end": 55,
-            "value": "Concierto para clarinete",
-            "entity": "musica"
-          }
-        ],
-        "text": "Necesito una partitura llamada Concierto para clarinete"
-      },
-      {
-        "intent": "consulta_musica_kw",
-        "entities": [
-          {
-            "start": 31,
-            "end": 55,
-            "value": "Concierto para clarinete",
-            "entity": "musica"
-          }
-        ],
-        "text": "Necesito una partitura llamada Concierto para clarinete del compositor"
-      },
-      {
-        "intent": "consulta_musica_kw",
-        "entities": [
-          {
-            "start": 31,
-            "end": 55,
-            "value": "Concierto para clarinete",
-            "entity": "musica"
-          }
-        ],
-        "text": "Necesito una partitura llamada Concierto para clarinete de la compositora"
-      },
-      {
-        "intent": "consulta_musicas",
-        "text": "Busca CD's"
-      },
-      {
-        "intent": "consulta_musicas",
-        "text": "Quiero CD's"
-      },
-      {
-        "intent": "consulta_musicas",
-        "text": "Quiero varios CD's"
-      },
-      {
-        "intent": "consulta_musicas",
-        "text": "Necesito CD's"
-      },
-      {
-        "intent": "consulta_musicas",
-        "text": "Necesito partituras"
-      },
-      {
-        "intent": "consulta_musicas_kw",
-        "entities": [
-          {
-            "start": 20,
-            "end": 43,
-            "value": "Bajo el yugo del tiempo",
-            "entity": "musica"
-          }
-        ],
-        "text": "Busca CD's llamados Bajo el yugo del tiempo"
-      },
-      {
-        "intent": "consulta_musicas_kw",
-        "entities": [
-          {
-            "start": 21,
-            "end": 44,
-            "value": "Bajo el yugo del tiempo",
-            "entity": "musica"
-          }
-        ],
-        "text": "Quiero CD's llamados Bajo el yugo del tiempo"
-      },
-      {
-        "intent": "consulta_musicas_kw",
-        "entities": [
-          {
-            "start": 21,
-            "end": 33,
-            "value": "Ray of light",
-            "entity": "musica"
-          }
-        ],
-        "text": "Quiero cd's llamados Ray of light"
-      },
-      {
-        "intent": "consulta_musicas_kw",
-        "entities": [
-          {
-            "start": 22,
-            "end": 46,
-            "value": "Florence And The Machine",
-            "entity": "musica"
-          }
-        ],
-        "text": "Quiero varios CD's de Florence And The Machine"
-      },
-      {
-        "intent": "consulta_musicas_kw",
-        "entities": [
-          {
-            "start": 20,
-            "end": 27,
-            "value": "Rosendo",
-            "entity": "musica"
-          }
-        ],
-        "text": "Quiero varios cd de Rosendo"
-      },
-      {
-        "intent": "consulta_musicas_kw",
-        "entities": [
-          {
-            "start": 17,
-            "end": 23,
-            "value": "Eminem",
-            "entity": "musica"
-          }
-        ],
-        "text": "Necesito CD's de Eminem"
-      },
-      {
-        "intent": "consulta_musicas_kw",
-        "entities": [
-          {
-            "start": 23,
-            "end": 27,
-            "value": "Bach",
-            "entity": "autores"
-          }
-        ],
-        "text": "Necesito partituras de Bach"
-      },
-      {
-        "intent": "consulta_musicas_kw",
-        "entities": [
-          {
-            "start": 29,
-            "end": 53,
-            "value": "Concierto para clarinete",
-            "entity": "musica"
-          }
-        ],
-        "text": "Necesito partituras llamadas Concierto para clarinete"
-      },
-      {
-        "intent": "consulta_musicas_kw",
-        "entities": [
-          {
-            "start": 29,
-            "end": 53,
-            "value": "Concierto para clarinete",
-            "entity": "musica"
-          }
-        ],
-        "text": "Necesito partituras llamadas Concierto para clarinete del compositor"
-      },
-      {
-        "intent": "consulta_musicas_kw",
-        "entities": [
-          {
-            "start": 29,
-            "end": 53,
-            "value": "Concierto para clarinete",
-            "entity": "musica"
-          }
-        ],
-        "text": "Necesito partituras llamadas Concierto para clarinete de la compositora"
-      },
-      {
-        "intent": "consulta_pelicula_kw",
-        "entities": [
-          {
-            "start": 21,
-            "end": 38,
-            "value": "Bohemian Rhapsody",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Busco un DVD llamado Bohemian Rhapsody"
-      },
-      {
-        "intent": "consulta_pelicula_kw",
-        "entities": [
-          {
-            "start": 16,
-            "end": 28,
-            "value": "Infinity War",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Busco un dvd de Infinity War"
-      },
-      {
-        "intent": "consulta_pelicula_kw",
-        "entities": [
-          {
-            "start": 22,
-            "end": 34,
-            "value": "Infinity War",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Busca una película de Infinity War"
-      },
-      {
-        "intent": "consulta_pelicula_kw",
-        "entities": [
-          {
-            "start": 27,
-            "end": 44,
-            "value": "Bohemian Rhapsody",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Busca una película llamada Bohemian Rhapsody"
-      },
-      {
-        "intent": "consulta_pelicula_kw",
-        "entities": [
-          {
-            "start": 20,
-            "end": 33,
-            "value": "El resplandor",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Quiero un Bluray de El resplandor"
-      },
-      {
-        "intent": "consulta_pelicula_kw",
-        "entities": [
-          {
-            "start": 25,
-            "end": 34,
-            "value": "Star Wars",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Quiero un Bluray llamado Star Wars"
-      },
-      {
-        "intent": "consulta_pelicula_kw",
-        "entities": [
-          {
-            "start": 34,
-            "end": 44,
-            "value": "Tim Burton",
-            "entity": "autores"
-          }
-        ],
-        "text": "Necesito una película del directorTim Burton"
-      },
-      {
-        "intent": "consulta_pelicula_kw",
-        "entities": [
-          {
-            "start": 44,
-            "end": 52,
-            "value": "Fantasía",
-            "entity": "pelicula"
-          },
-          {
-            "start": 56,
-            "end": 67,
-            "value": "Walt Disney",
-            "entity": "autores"
-          }
-        ],
-        "text": "Busca una grabación cinematográfica llamada Fantasía de Walt Disney"
-      },
-      {
-        "intent": "consulta_pelicula_kw",
-        "entities": [
-          {
-            "start": 12,
-            "end": 17,
-            "value": "miedo",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Película de miedo"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Busco DVD's"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Busca películas"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Quiero Bluray's"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Quiero Bluray"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Necesito películas"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Busca grabaciones cinematográfica"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Películas"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Busco un DVD"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Busca una película"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Quiero un Bluray"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Necesito una película"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Busca una grabaciín cinematográfica"
-      },
-      {
-        "intent": "consulta_peliculas",
-        "text": "Película"
-      },
-      {
-        "intent": "consulta_peliculas_kw",
-        "entities": [
-          {
-            "start": 21,
-            "end": 38,
-            "value": "Bohemian Rhapsody",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Busco DVD's llamados Bohemian Rhapsody"
-      },
-      {
-        "intent": "consulta_peliculas_kw",
-        "entities": [
-          {
-            "start": 15,
-            "end": 27,
-            "value": "Infinity War",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Busco dvd's de Infinity War"
-      },
-      {
-        "intent": "consulta_peliculas_kw",
-        "entities": [
-          {
-            "start": 19,
-            "end": 31,
-            "value": "Infinity War",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Busca películas de Infinity War"
-      },
-      {
-        "intent": "consulta_peliculas_kw",
-        "entities": [
-          {
-            "start": 25,
-            "end": 42,
-            "value": "Bohemian Rhapsody",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Busca películas llamadas Bohemian Rhapsody"
-      },
-      {
-        "intent": "consulta_peliculas_kw",
-        "entities": [
-          {
-            "start": 24,
-            "end": 37,
-            "value": "El resplandor",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Quiero varios Bluray de El resplandor"
-      },
-      {
-        "intent": "consulta_peliculas_kw",
-        "entities": [
-          {
-            "start": 24,
-            "end": 33,
-            "value": "Star Wars",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Quiero Bluray's llamado Star Wars"
-      },
-      {
-        "intent": "consulta_peliculas_kw",
-        "entities": [
-          {
-            "start": 32,
-            "end": 42,
-            "value": "Tim Burton",
-            "entity": "autores"
-          }
-        ],
-        "text": "Necesito películas del director Tim Burton"
-      },
-      {
-        "intent": "consulta_peliculas_kw",
-        "entities": [
-          {
-            "start": 43,
-            "end": 51,
-            "value": "Fantasía",
-            "entity": "pelicula"
-          },
-          {
-            "start": 55,
-            "end": 66,
-            "value": "Walt Disney",
-            "entity": "autores"
-          }
-        ],
-        "text": "Busca grabaciones cinematográfica llamadas Fantasía de Walt Disney"
-      },
-      {
-        "intent": "consulta_peliculas_kw",
-        "entities": [
-          {
-            "start": 13,
-            "end": 18,
-            "value": "miedo",
-            "entity": "pelicula"
-          }
-        ],
-        "text": "Películas de miedo"
       },
       {
         "intent": "consulta_telefono",
@@ -5657,25 +4723,37 @@
         "intent": "consulta_telefono",
         "entities": [
           {
-            "start": 24,
-            "end": 47,
+            "start": 25,
+            "end": 48,
             "value": "Facultad de informática",
             "entity": "localizacion"
           }
         ],
-        "text": "Cuál es el número de la Facultad de informática"
+        "text": "¿Cuál es el número de la Facultad de informática?"
       },
       {
         "intent": "consulta_telefono",
         "entities": [
           {
-            "start": 26,
-            "end": 64,
+            "start": 27,
+            "end": 65,
             "value": "Facultad de Ciencias de la Información",
             "entity": "localizacion"
           }
         ],
-        "text": "Cuál es el teléfono de la Facultad de Ciencias de la Información"
+        "text": "¿Cuál es el teléfono de la Facultad de Ciencias de la Información?"
+      },
+      {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 34,
+            "end": 59,
+            "value": "Biblioteca de Enfermer￿ia",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "¿Me puedes decir el n￿úmero de la Biblioteca de Enfermer￿ia?"
       },
       {
         "intent": "consulta_telefono",
@@ -5688,18 +4766,6 @@
           }
         ],
         "text": "Quiero el teléfono de la biblioteca de veterinaria"
-      },
-      {
-        "intent": "consulta_telefono",
-        "entities": [
-          {
-            "start": 18,
-            "end": 45,
-            "value": "Zambrano",
-            "entity": "localizacion"
-          }
-        ],
-        "text": "/consulta_telefono{\"localizacion\":\"Zambrano\"}"
       },
       {
         "intent": "consulta_telefono_empty",
@@ -5723,11 +4789,11 @@
       },
       {
         "intent": "consulta_telefono_empty",
-        "text": "Cuál es su número"
+        "text": "¿Cuál es su número?"
       },
       {
         "intent": "consulta_telefono_empty",
-        "text": "Cuál es su teléfono"
+        "text": "¿Cuál es su teléfono?"
       },
       {
         "intent": "consulta_telefono_empty",
@@ -5779,6 +4845,10 @@
       },
       {
         "intent": "despedidas",
+        "text": "Bye"
+      },
+      {
+        "intent": "despedidas",
         "text": "Bye bye"
       },
       {
@@ -5811,23 +4881,7 @@
       },
       {
         "intent": "despedidas",
-        "text": "/despedidas"
-      },
-      {
-        "intent": "despedidas",
-        "text": "/despedidas"
-      },
-      {
-        "intent": "despedidas",
-        "text": "/despedidas"
-      },
-      {
-        "intent": "despedidas",
-        "text": "/despedidas"
-      },
-      {
-        "intent": "despedidas",
-        "text": "/despedidas"
+        "text": "Hasta nunca"
       },
       {
         "intent": "gracias",
@@ -5843,35 +4897,15 @@
       },
       {
         "intent": "gracias",
+        "text": "Muchisimas gracias"
+      },
+      {
+        "intent": "gracias",
         "text": "Me has ayudado mucho"
       },
       {
         "intent": "gracias",
         "text": "Mil gracias"
-      },
-      {
-        "intent": "gracias",
-        "text": "Gracias"
-      },
-      {
-        "intent": "gracias",
-        "text": "Gracias"
-      },
-      {
-        "intent": "gracias",
-        "text": "Gracias"
-      },
-      {
-        "intent": "gracias",
-        "text": "/gracias"
-      },
-      {
-        "intent": "gracias",
-        "text": "/gracias"
-      },
-      {
-        "intent": "gracias",
-        "text": "/gracias"
       },
       {
         "intent": "insultos",
@@ -6217,12 +5251,6 @@
         "intent": "me_llamo",
         "entities": [
           {
-            "start": 0,
-            "end": 4,
-            "value": "Hola",
-            "entity": "PER"
-          },
-          {
             "start": 15,
             "end": 19,
             "value": "Pepe",
@@ -6236,66 +5264,6 @@
           }
         ],
         "text": "Hola, me llamo PepePepe"
-      },
-      {
-        "intent": "me_llamo",
-        "entities": [
-          {
-            "start": 9,
-            "end": 32,
-            "value": "Jose Luis",
-            "entity": "persona"
-          }
-        ],
-        "text": "/me_llamo{\"persona\":\"Jose Luis\"}"
-      },
-      {
-        "intent": "me_llamo",
-        "entities": [
-          {
-            "start": 9,
-            "end": 27,
-            "value": "Pepe",
-            "entity": "persona"
-          }
-        ],
-        "text": "/me_llamo{\"persona\":\"Pepe\"}"
-      },
-      {
-        "intent": "me_llamo",
-        "entities": [
-          {
-            "start": 9,
-            "end": 30,
-            "value": "Basilio",
-            "entity": "persona"
-          }
-        ],
-        "text": "/me_llamo{\"persona\":\"Basilio\"}"
-      },
-      {
-        "intent": "me_llamo",
-        "entities": [
-          {
-            "start": 9,
-            "end": 32,
-            "value": "Eustaquio",
-            "entity": "persona"
-          }
-        ],
-        "text": "/me_llamo{\"persona\":\"Eustaquio\"}"
-      },
-      {
-        "intent": "me_llamo",
-        "entities": [
-          {
-            "start": 9,
-            "end": 28,
-            "value": "{\"PER\":\"Eustaquio\"}",
-            "entity": "PER"
-          }
-        ],
-        "text": "/me_llamo{\"PER\":\"Eustaquio\"}"
       },
       {
         "intent": "quien_soy",
@@ -6324,30 +5292,6 @@
       {
         "intent": "quien_soy",
         "text": "Quien eres tu"
-      },
-      {
-        "intent": "quien_soy",
-        "entities": [
-          {
-            "start": 0,
-            "end": 6,
-            "value": "Buenas",
-            "entity": "LOC"
-          },
-          {
-            "start": 12,
-            "end": 19,
-            "value": "Amancio",
-            "entity": "LOC"
-          },
-          {
-            "start": 19,
-            "end": 26,
-            "value": "amancio",
-            "entity": "persona"
-          }
-        ],
-        "text": "Buenas, soy AmancioAmancio"
       },
       {
         "intent": "saludos",
@@ -6384,34 +5328,6 @@
       {
         "intent": "saludos",
         "text": "Buenas"
-      },
-      {
-        "intent": "saludos",
-        "text": "/saludos"
-      },
-      {
-        "intent": "saludos",
-        "entities": [
-          {
-            "start": 8,
-            "end": 31,
-            "value": "Jose Luis",
-            "entity": "persona"
-          }
-        ],
-        "text": "/saludos{\"persona\":\"Jose Luis\"}"
-      },
-      {
-        "intent": "saludos",
-        "entities": [
-          {
-            "start": 8,
-            "end": 27,
-            "value": "Jose Luis",
-            "entity": "PER"
-          }
-        ],
-        "text": "/saludos{\"PER\":\"Jose Luis\"}"
       }
     ],
     "regex_features": [],
@@ -6431,33 +5347,9 @@
     ],
     "entity_synonyms": [
       {
-        "value": "Geologia",
+        "value": "biblioteca zambrano",
         "synonyms": [
-          "{\"localizacion\":\"Geologia\"}"
-        ]
-      },
-      {
-        "value": "veterinaria",
-        "synonyms": [
-          "{\"localizacion\":\"veterinaria\"}"
-        ]
-      },
-      {
-        "value": "periodismo",
-        "synonyms": [
-          "{\"localizacion\":\"periodismo\"}"
-        ]
-      },
-      {
-        "value": "Zambrano",
-        "synonyms": [
-          "{\"localizacion\":\"Zambrano\"}"
-        ]
-      },
-      {
-        "value": "Psicologia",
-        "synonyms": [
-          "{\"localizacion\":\"Psicologia\"}"
+          "Biblioteca Zambrano"
         ]
       },
       {
@@ -6470,7 +5362,6 @@
       {
         "value": "Jose Garcia",
         "synonyms": [
-          "{\"LOC\":\"Busca\",\"PER\":\"Jose Garcia\"}",
           "{\"PER\":\"Jose Garcia\"}"
         ]
       },
@@ -6592,28 +5483,9 @@
         ]
       },
       {
-        "value": "facultad de informatica",
-        "synonyms": [
-          "{\"localizacion\":\"facultad de informatica\"}"
-        ]
-      },
-      {
         "value": "pepe",
         "synonyms": [
           "Pepe"
-        ]
-      },
-      {
-        "value": "Jose Luis",
-        "synonyms": [
-          "{\"persona\":\"Jose Luis\"}",
-          "{\"PER\":\"Jose Luis\"}"
-        ]
-      },
-      {
-        "value": "Pepe",
-        "synonyms": [
-          "{\"persona\":\"Pepe\"}"
         ]
       },
       {
@@ -6629,15 +5501,52 @@
         ]
       },
       {
-        "value": "amancio",
+        "value": "Geologia",
         "synonyms": [
-          "Amancio"
+          "{\"localizacion\":\"Geologia\"}"
+        ]
+      },
+      {
+        "value": "Jose Luis",
+        "synonyms": [
+          "{\"persona\":\"Jose Luis\"}",
+          "{\"PER\":\"Jose Luis\"}"
         ]
       },
       {
         "value": "Mauricio",
         "synonyms": [
           "Mauri"
+        ]
+      },
+      {
+        "value": "Pepe",
+        "synonyms": [
+          "{\"persona\":\"Pepe\"}"
+        ]
+      },
+      {
+        "value": "Psicologia",
+        "synonyms": [
+          "{\"localizacion\":\"Psicologia\"}"
+        ]
+      },
+      {
+        "value": "Zambrano",
+        "synonyms": [
+          "{\"localizacion\":\"Zambrano\"}"
+        ]
+      },
+      {
+        "value": "amancio",
+        "synonyms": [
+          "Amancio"
+        ]
+      },
+      {
+        "value": "facultad de informatica",
+        "synonyms": [
+          "{\"localizacion\":\"facultad de informatica\"}"
         ]
       },
       {
@@ -6650,6 +5559,18 @@
         "value": "miguel",
         "synonyms": [
           "Miguel"
+        ]
+      },
+      {
+        "value": "periodismo",
+        "synonyms": [
+          "{\"localizacion\":\"periodismo\"}"
+        ]
+      },
+      {
+        "value": "veterinaria",
+        "synonyms": [
+          "{\"localizacion\":\"veterinaria\"}"
         ]
       }
     ]

@@ -4,6 +4,15 @@
 - Muestrame más
 - Enseñame más ejemplares
 - Busca más
+- Quiero más 
+- Quiero otro 
+- Busca más
+- Carga más 
+- Muéstrame más 
+- Enseñame más ejemplares 
+- Podrías buscar más ejemplares 
+- Busca más 
+- quiero más
 
 ## intent:como_estas
 - Qué tal
@@ -12,108 +21,50 @@
 - Qué te ocurre
 - Estás bien
 - Cómo te sientes
-
-## intent:consulta_articulo
-- Busca un artículo
-- Quiero un artículo
-- Me podrías decir un artículo
-- Dime un artículo
-- Dame un artículo
-- Necesito un artículo
-- Artículo
-
-## intent:consulta_articulo_kw
-- Busca un artículo de [biología](articulo)
-- Quiero un artículo de [música](articulo)
-- Necesito un artículo de [medicina](articulo)
-- Podrías buscar un artículo de [historia](articulo)
-- Dame un artículo de [historia](articulo)
-- Artículo de [historia](articulo)
-
-## intent:consulta_articulos
-- Busca artículos
-- Quiero artículos
-- Me podrías decir algún artículos
-- Dime artículos
-- Dame artículos
-- Necesito artículos
-- Artículos
-
-## intent:consulta_articulos_kw
-- Busca artículos de [biología](articulo)
-- Quiero artículos de [música](articulo)
-- Necesito artículos de [medicina](articulo)
-- Podrías buscar artículos de [historia](articulo)
-- Dame artículos de [historia](articulo)
-- Artículos de [historia](articulo)
+- Hola, que tal
+- Hola, que tal estas hoy
+- Hola, como te estas hoy
 
 ## intent:consulta_horario_close
-- A qué hora cierra la [Zambrano](localizacion)
-- Cuándo cierra la [Zambrano](localizacion)
-- Está cerrada la [Zambrano](localizacion)
-- Cierre de la [Zambrano](localizacion)
-- /consulta_horario_close[{"localizacion":"Geologia"}](localizacion:Geologia)
-- /consulta_horario_close[{"localizacion":"veterinaria"}](localizacion:veterinaria)
+- Está cerrada la [Biblioteca de medicina](localizacion)
+- Está cerrada ahora mismo la [Zambrano](localizacion)
+- Cierra hoy la [Biblioteca de Matem￿áticas](localizacion)
+- Me puedes decir si cierra hoy la [Biblioteca de Matem￿áticas](localizacion)
+- Me puedes decir si est￿á cerrada la [Biblioteca de Matem￿áticas](localizacion)
+- Me puedes decir si est￿á cerrada hoy la [Biblioteca de Matem￿áticas](localizacion)
+- Me puedes decir si est￿á cerrada ahora la [Biblioteca de Matem￿áticas](localizacion)
+- Me podrias decir si est￿á cerrada la [Biblioteca de Matem￿áticas](localizacion)
+- Me podrias decir si est￿á cerrada hoy la [Biblioteca de Matem￿áticas](localizacion)
+- Me podrias decir si est￿á cerrada ahora la [Biblioteca de Matem￿áticas](localizacion)
 
 ## intent:consulta_horario_general
+- Cuándo abre la [Facultad de geología](localizacion)
+- Cuándo cierra la [Zambrano](localizacion)
+- Cuándo está abierta la [Biblioteca de Educaci￿ón](localizacion)
+- Cuándo está cerrada la [Biblioteca de Arquitectura](localizacion)
+- A qué hora abre la [Biblioteca de informática](localizacion)
+- A qué hora cierra la [Biblioteca de Filosof￿ía](localizacion)
+- A que hora la [Biblioteca Zambrano](localizacion:biblioteca zambrano) abre
+- A que hora la [Biblioteca Zambrano](localizacion:biblioteca zambrano) cierra
 - Cuál es el horario de [Zambrano](localizacion)
+- Me puedes decir el horario de la [Biblioteca de Geograf￿ía](localizacion)
+- Me podrias decir el horario de la [Biblioteca de Geograf￿ía](localizacion)
 - Horario de la [Zambrano](localizacion)
-- /consulta_horario_general[{"localizacion":"periodismo"}](localizacion:periodismo)
-- /consulta_horario_general[{"localizacion":"Zambrano"}](localizacion:Zambrano)
+- A que hora abre la [biblioteca de informatica](localizacion)
+- A que hora abre la [biblioteca](localizacion) [zambrano](localizacion)
+- A que hora abre la [biblioteca de Psicologia](localizaciones)
 
 ## intent:consulta_horario_open
 - Está abierta la [Biblioteca de medicina](localizacion)
-- A qué hora abre la [Biblioteca de informática](localizacion)
-- Cuándo abre la [Facultad de geología](localizacion)
-- Apertura de la [Zambrano](localizacion)
-- Cuándo está abierta la [Zambrano](localizacion)
-- /consulta_horario_open[{"localizacion":"Psicologia"}](localizacion:Psicologia)
-
-## intent:consulta_juego
-- Busca un juego
-- Quiero un juego
-- Me podrías decir un juego
-- Dime un juego
-- Dame un juego
-- Necesito un juego
-- Juego
-
-## intent:consulta_juego_kw
-- Busca un juego llamado [Far Cry](juego)
-- Busca un juego de [God of War](juego)
-- Necesito un juego llamado [Far Cry](juego)
-- Necesito un juego de [God of War](juego)
-- Quiero un juego llamado [Far Cry](juego)
-- Quiero un juego de [God of War](juego)
-- Podrías un buscar juego llamado [Far Cry](juego)
-- Prodrías un buscar juego de [God of War](juego)
-- Dame un juego llamado [Far Cry](juego)
-- Dame un juego de [God of War](juego)
-- Juego de [God of War](juego)
-- Juego de [Juego de Tronos](juego)
-
-## intent:consulta_juegos
-- Busca juegos
-- Quiero juegos
-- Me podrías decir algún juegos
-- Dime juegos
-- Dame juegos
-- Necesito juegos
-- Juegos
-
-## intent:consulta_juegos_kw
-- Busca juegos llamados [Far Cry](juego)
-- Busca juegos de [God of War](juego)
-- Necesito juegos llamados [Far Cry](juego)
-- Necesito juegos de [God of War](juego)
-- Quiero juegos llamados [Far Cry](juego)
-- Quiero juegos de [God of War](juego)
-- Podrías buscar juegos llamados [Far Cry](juego)
-- Prodrías buscar juegos de [God of War](juego)
-- Dame juegos llamados [Far Cry](juego)
-- Dame juegos de [God of War](juego)
-- Juegos de [God of War](juego)
-- Juegos de [Juego de Tronos](juego)
+- Está abierta ahora mismo la [Zambrano](localizacion)
+- Abre hoy la [Biblioteca de Matem￿áticas](localizacion)
+- Me puedes decir si abre hoy la [Biblioteca de Matem￿áticas](localizacion)
+- Me puedes decir si est￿á abierta la [Biblioteca de Matem￿áticas](localizacion)
+- Me puedes decir si est￿á abierta hoy la [Biblioteca de Matem￿áticas](localizacion)
+- Me puedes decir si est￿á abierta ahora la [Biblioteca de Matem￿áticas](localizacion)
+- Me podrias decir si est￿á abierta la [Biblioteca de Matem￿áticas](localizacion)
+- Me podrias decir si est￿á abierta hoy la [Biblioteca de Matem￿áticas](localizacion)
+- Me podrias decir si est￿á abierta ahora la [Biblioteca de Matem￿áticas](localizacion)
 
 ## intent:consulta_libro
 - Busca un libro
@@ -150,7 +101,6 @@
 - Libro de la autora [George R Martin](autores)[George R Martin](PER)
 - /consulta_libro_autor[{"autores":"Góngora"}](autores:Góngora)
 - /consulta_libro_autor[{"PER":"Góngora", "autores":"Góngora}](autores:Góngora)[{"PER":"Góngora", "autores":"Góngora}](PER:Góngora)
-- /consulta_libro_autor[{"LOC":"Busca","PER":"Jose Garcia"}](LOC:Busca)[{"LOC":"Busca","PER":"Jose Garcia"}](PER:Jose Garcia)
 - /consulta_libro_autor[{"PER":"Jose Garcia"}](PER:Jose Garcia)
 
 ## intent:consulta_libro_kw
@@ -182,8 +132,8 @@
 - /consulta_libro_kw[{"libro":"Campeones"}](libro:Campeones)
 
 ## intent:consulta_libro_kw_autor
-- [Busco](LOC) un libro de [El Quijote](libro)[El Quijote](MISC) del autores [Miguel de Cervantes](autores)[Miguel de Cervantes](PER)
-- [Busco](LOC) un libro de [Yo, Julia](libro)[Yo, Julia](MISC) escrito por [Santiago Posteguillo](autores)[Santiago Posteguillo](PER)
+- Busco un libro de [El Quijote](libro)[El Quijote](MISC) del autores [Miguel de Cervantes](autores)[Miguel de Cervantes](PER)
+- Busco un libro de [Yo, Julia](libro)[Yo, Julia](MISC) escrito por [Santiago Posteguillo](autores)[Santiago Posteguillo](PER)
 - Busco un libro de [El Quijote](libro)[El Quijote](MISC) del autores [Miguel de Cervantes](autores)[Miguel de Cervantes](PER)
 - Busco un libro de [Yo, Julia](libro)[Yo, Julia](MISC) escrito por [Santiago Posteguillo](autores)[Santiago Posteguillo](PER)
 - Quiero un libro de [El Quijote](libro)[El Quijote](MISC) del autores [Miguel de Cervantes](autores)[Miguel de Cervantes](PER)
@@ -204,7 +154,7 @@
 ## intent:consulta_libro_titulo
 - Quiero un libro llamado [El Quijote](libro)[El Quijote](MISC)
 - Busco un libro llamado [Narnia](libro)[Narnia](MISC)
-- [Busco](LOC) un libro llamado [Narnia](libro)[Narnia](MISC)
+- Busco un libro llamado [Narnia](libro)[Narnia](MISC)
 - Quiero un libro titulado [Yo, Julia](libro)[Yo, Julia](MISC)
 - Quiero un libro llamado [Narnia la travesía del viajero del alba](libro)[Narnia la travesía del viajero del alba](MISC)
 - Me podrías decir un libro llamado [Luces de bohemia](libro)[Luces de bohemia](MISC)
@@ -223,8 +173,8 @@
 ## intent:consulta_libro_titulo_autor
 - Busca un libro llamado [El Quijote](libro)[El Quijote](MISC) del autores [Miguel de Cervantes](autores)
 - Busca un libro llamado [Yo, Julia](libro)[Yo, Julia](MISC) escrito por [Santiago Posteguillo](autores)
-- [Busca](LOC) un libro llamado [El Quijote](libro)[El Quijote](MISC)[El Quijote](MISC) del autores [Miguel de Cervantes](autores)
-- [Busca](LOC) un libro llamado [Yo, Julia](libro)[Yo, Julia](MISC) escrito por [Santiago Posteguillo](autores)
+- Busca un libro llamado [El Quijote](libro)[El Quijote](MISC)[El Quijote](MISC) del autores [Miguel de Cervantes](autores)
+- Busca un libro llamado [Yo, Julia](libro)[Yo, Julia](MISC) escrito por [Santiago Posteguillo](autores)
 - Quiero un libro llamado [El Quijote](libro)[El Quijote](MISC) del autores [Miguel de Cervantes](autores)
 - Quiero un libro llamado [Yo, Julia](libro)[Yo, Julia](MISC) escrito por [Santiago Posteguillo](autores)
 - Me podrías decir un libro llamado [Luces de bohemia](libro) escrito por [Ramón de Valle-Inclán](autores)
@@ -273,13 +223,12 @@
 - Libros de la autora [George R Martin](autores)[George R Martin](PER)
 - Ahora quiero libros del autor [Cervantes](autores)[Cervantes](PER)
 - /consulta_libros_autor[{"autores":"Patrick Rothfuss"}](autores:Patrick Rothfuss)
-- /consulta_libros_autor[{"LOC":"Busca","PER":"Jose Garcia"}](LOC:Busca)[{"LOC":"Busca","PER":"Jose Garcia"}](PER:Jose Garcia)
 - /consulta_libros_autor[{"PER":"Jose Garcia"}](PER:Jose Garcia)
 
 ## intent:consulta_libros_kw
 - Busca libros de [Fuego y Sangre](libro)[Fuego y Sangre](MISC)
 - Busco libros de [Matemática Discreta](libro)[Matemática Discreta](MISC)
-- [Busca](LOC) libros de [Matemática Discreta](libro)[Matemática Discreta](MISC)
+- Busca libros de [Matemática Discreta](libro)[Matemática Discreta](MISC)
 - Quiero libros de [Harry Potter](libro)[Harry Potter](MISC)
 - Busca libros de [Historia del arte](libro)[Historia del arte](MISC)
 - Dame libros de [recetas](libro)[recetas](MISC)
@@ -361,17 +310,16 @@
 - Necesito ir a la [Biblioteca de derecho](localizacion)
 - Necesito desplazarme a la [Biblioteca de ciencias políticas](localizacion)
 - Necesito dirigirme a la [Biblioteca de enfermería](localizacion)
-- [Necesito](PER) desplazarme a la [Biblioteca de ciencias políticas](localizacion)
-- [Necesito](PER) dirigirme a la [Biblioteca de enfermería](localizacion)
+- Necesito desplazarme a la [Biblioteca de ciencias políticas](localizacion)
+- Necesito dirigirme a la [Biblioteca de enfermería](localizacion)
 - Busca la posición de la [Biblioteca de geología](localizacion)
-- [Dónde](PER) está la [Facultad de informática](localizacion)
-- [Dónde](PER) se encuentra la [Facultad de informática](localizacion)
+- Dónde está la [Facultad de informática](localizacion)
+- Dónde se encuentra la [Facultad de informática](localizacion)
 - Dónde está la [Facultad de informática](localizacion)
 - Dónde se encuentra la [Facultad de informática](localizacion)
 - Ubicación de la [Zambrano](localizacion)
 - Donde está la [biblioteca de ciencias políticas](localizacion)
 - Quiero ir a la [facultad de geografía e historia](localizacion)
-- /consulta_localizacion[{"localizacion":"facultad de informatica"}](localizacion:facultad de informatica)
 
 ## intent:consulta_localizacion_empty
 - Busca su ubicación
@@ -380,82 +328,6 @@
 - Dónde está
 - Dónde se encuentra
 - Dónde está
-- [Dónde](PER) está
-- /consulta_localizacion_empty
-
-## intent:consulta_musica
-- Busca un CD
-- Quiero un CD
-- Necesito un CD
-- Necesito una partitura
-- Música
-
-## intent:consulta_musica_kw
-- Busca un CD llamado [Bajo el yugo del tiempo](musica)
-- Quiero un CD llamado [Bajo el yugo del tiempo](musica)
-- Quiero un cd llamado [Ray of light](musica)
-- Quiero un CD de [Florence And The Machine](musica)
-- Quiero un cd de [Rosendo](musica)
-- Necesito una partitura de [Bach](autores)
-- Necesito una partitura llamada [Concierto para clarinete](musica)
-- Necesito una partitura llamada [Concierto para clarinete](musica) del compositor
-- Necesito una partitura llamada [Concierto para clarinete](musica) de la compositora
-
-## intent:consulta_musicas
-- Busca CD's
-- Quiero CD's
-- Quiero varios CD's
-- Necesito CD's
-- Necesito partituras
-
-## intent:consulta_musicas_kw
-- Busca CD's llamados [Bajo el yugo del tiempo](musica)
-- Quiero CD's llamados [Bajo el yugo del tiempo](musica)
-- Quiero cd's llamados [Ray of light](musica)
-- Quiero varios CD's de [Florence And The Machine](musica)
-- Quiero varios cd de [Rosendo](musica)
-- Necesito CD's de [Eminem](musica)
-- Necesito partituras de [Bach](autores)
-- Necesito partituras llamadas [Concierto para clarinete](musica)
-- Necesito partituras llamadas [Concierto para clarinete](musica) del compositor
-- Necesito partituras llamadas [Concierto para clarinete](musica) de la compositora
-
-## intent:consulta_pelicula_kw
-- Busco un DVD llamado [Bohemian Rhapsody](pelicula)
-- Busco un dvd de [Infinity War](pelicula)
-- Busca una película de [Infinity War](pelicula)
-- Busca una película llamada [Bohemian Rhapsody](pelicula)
-- Quiero un Bluray de [El resplandor](pelicula)
-- Quiero un Bluray llamado [Star Wars](pelicula)
-- Necesito una película del director[Tim Burton](autores)
-- Busca una grabación cinematográfica llamada [Fantasía](pelicula) de [Walt Disney](autores)
-- Película de [miedo](pelicula)
-
-## intent:consulta_peliculas
-- Busco DVD's
-- Busca películas
-- Quiero Bluray's
-- Quiero Bluray
-- Necesito películas
-- Busca grabaciones cinematográfica
-- Películas
-- Busco un DVD
-- Busca una película
-- Quiero un Bluray
-- Necesito una película
-- Busca una grabaciín cinematográfica
-- Película
-
-## intent:consulta_peliculas_kw
-- Busco DVD's llamados [Bohemian Rhapsody](pelicula)
-- Busco dvd's de [Infinity War](pelicula)
-- Busca películas de [Infinity War](pelicula)
-- Busca películas llamadas [Bohemian Rhapsody](pelicula)
-- Quiero varios Bluray de [El resplandor](pelicula)
-- Quiero Bluray's llamado [Star Wars](pelicula)
-- Necesito películas del director [Tim Burton](autores)
-- Busca grabaciones cinematográfica llamadas [Fantasía](pelicula) de [Walt Disney](autores)
-- Películas de [miedo](pelicula)
 
 ## intent:consulta_telefono
 - Llama a la [Facultad de matemáticas](localizacion)
@@ -469,8 +341,8 @@
 - Busca el número de teléfono de la [Zambrano](localizacion)
 - Cuál es el número de la [Facultad de informática](localizacion)
 - Cuál es el teléfono de la [Facultad de Ciencias de la Información](localizacion)
+- Me puedes decir el n￿úmero de la [Biblioteca de Enfermer￿ia](localizacion)
 - Quiero el teléfono de la [biblioteca de veterinaria](localizacion)
-- /consulta_telefono[{"localizacion":"Zambrano"}](localizacion:Zambrano)
 
 ## intent:consulta_telefono_empty
 - Llámala
@@ -494,6 +366,7 @@
 - Te veo luego
 - Mañana hablamos
 - Luego hablamos
+- Bye
 - Bye bye
 - adios
 - Adiós
@@ -502,24 +375,15 @@
 - Adiós
 - Hasta pronto
 - Hasta mañana
-- /despedidas
-- /despedidas
-- /despedidas
-- /despedidas
-- /despedidas
+- Hasta nunca
 
 ## intent:gracias
 - Gracias
 - Te lo agradezco
 - Muchas gracias
+- Muchisimas gracias
 - Me has ayudado mucho
 - Mil gracias
-- Gracias
-- Gracias
-- Gracias
-- /gracias
-- /gracias
-- /gracias
 
 ## intent:insultos
 - Hijo de puta
@@ -577,12 +441,7 @@
 - Me llamo [Carmen](persona)
 - Buenos días, me llamo [Marina](persona)
 - Buenos días, me llamo [Aurelio](persona)
-- [Hola](PER), me llamo [Pepe](PER)[Pepe](persona:pepe)
-- /me_llamo[{"persona":"Jose Luis"}](persona:Jose Luis)
-- /me_llamo[{"persona":"Pepe"}](persona:Pepe)
-- /me_llamo[{"persona":"Basilio"}](persona:Basilio)
-- /me_llamo[{"persona":"Eustaquio"}](persona:Eustaquio)
-- /me_llamo[{"PER":"Eustaquio"}](PER)
+- Hola, me llamo [Pepe](PER)[Pepe](persona:pepe)
 
 ## intent:quien_soy
 - Cómo te llamas
@@ -592,7 +451,6 @@
 - Cómo decías que te llamabas
 - Podrías presentarte
 - Quien eres tu
-- [Buenas](LOC), soy [Amancio](LOC)[Amancio](persona:amancio)
 
 ## intent:saludos
 - Hola
@@ -604,9 +462,6 @@
 - Hello
 - Holis
 - Buenas
-- /saludos
-- /saludos[{"persona":"Jose Luis"}](persona:Jose Luis)
-- /saludos[{"PER":"Jose Luis"}](PER:Jose Luis)
 
 ## synonym:1984
 - {"LOC":"Busca","libro":"1984"}
@@ -640,7 +495,6 @@
 - {"libro":"Harry Potter"}
 
 ## synonym:Jose Garcia
-- {"LOC":"Busca","PER":"Jose Garcia"}
 - {"PER":"Jose Garcia"}
 
 ## synonym:Jose Luis
@@ -700,6 +554,12 @@
 
 ## synonym:amancio
 - Amancio
+
+## synonym:biblioteca zambrano
+- Biblioteca Zambrano
+
+## synonym:facultad de informatica
+- {"localizacion":"facultad de informatica"}
 
 ## synonym:marina
 - Marina
