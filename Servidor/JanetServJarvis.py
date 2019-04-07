@@ -13,7 +13,9 @@ import json
 class JanetServJarvis():
 
     def consultar(self, pregunta, id):
-        data = {'user_id': id, 'content': pregunta}
+        contenido = pregunta
+        contenido = contenido[0].lower() + contenido[1:]
+        data = {'user_id': id, 'content': contenido}
 
         # Post Method is invoked if data != None
         req = request.Request("http://localhost:5000", data=parse.urlencode(data).encode())

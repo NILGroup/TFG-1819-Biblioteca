@@ -46,7 +46,7 @@ class JanetServController:
                 respuesta = self._tratar_pln('consulta_localizacion', {'localizacion': 'bibliotece de derecho'}, 'Aquí está la Biblioteca de derecho', uid)
 
             else:
-                pln = self.__pln.consultar(client_request, uid)
+                pln = self.__pln.consultar(client_request["content"], uid)
 
                 respuesta = self._tratar_pln(pln['intent'], pln['entities'], pln['message'], uid)
             

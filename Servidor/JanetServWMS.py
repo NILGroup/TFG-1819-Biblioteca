@@ -91,13 +91,15 @@ class JanetServWMS:
         content = r.json()
         
         respuesta = {}
-        
+
         respuesta['response'] = "Aquí tienes el libro que me pediste"
         respuesta['title'] = content['title']
         respuesta['author'] = content['author']
         respuesta['available'] = self.comprobarDisponibilidad(codigoOCLC)
+        respuesta['oclc'] = content['OCLCnumber']
         respuesta['url'] = content['library'][0]['opacUrl']
-        respuesta['isbn'] = content['ISBN']
+        if 'ISBN' in content:
+            respuesta['isbn'] = content['ISBN']
         
         return respuesta
     
@@ -135,6 +137,5 @@ class JanetServWMS:
                     if int(item.find('availableNow').get('value')) > 0:
                         biblioteca = self.__equivalencias[items.find('localLocation').text]
                         resultado.append({biblioteca: int(item.find('availableNow').get('value'))})
-
         return resultado
 

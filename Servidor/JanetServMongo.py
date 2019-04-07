@@ -35,7 +35,7 @@ class JanetServMongo:
             cods = {}
             i = 1
 
-            for item in consulta:
+            for item in consulta['books']:
                 cods['oclc'+repr(i)] = item['oclc']
                 i = i + 1
 
