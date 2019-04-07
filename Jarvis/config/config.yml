@@ -11,7 +11,7 @@ pipeline:
 
 policies:
   - name: KerasPolicy
-    max_history: 1
+    max_history: 5
     epochs: 100
     batch_size: 50
     max_training_samples: 300
@@ -20,5 +20,5 @@ policies:
     core_threshold: 0.1
     fallback_action_name: 'utter_no_te_entiendo'
   - name: MemoizationPolicy
-    max_history: 1
+    max_history: 5
   - name: FormPolicy

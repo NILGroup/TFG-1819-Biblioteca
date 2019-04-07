@@ -1,93 +1,93 @@
 %YAML 1.1
 ---
 actions:
-- utter_especifica_pelicula
-- action_muestra_segundo
-- action_localizacion_sin_entidad
-- utter_juegos_kw
-- utter_especifica_juego
-- utter_consulta_telefono
-- utter_libro_titulo_autor
-- utter_consulta_horario_abierto
 - utter_musica_kw
-- utter_pelicula_kw
-- utter_no_te_entiendo
-- utter_saludo
-- utter_libros_autor
-- utter_juego_kw
-- utter_articulos_kw
-- utter_libro_kw
-- action_muestra_primero
-- action_check_biblio_abierta
-- utter_respuesta_insultos
-- utter_especifica_libro
-- action_muestra_tercero
-- utter_libros_kw_autor
-- utter_consulta_localizacion
+- action_muestra_segundo
 - utter_saludo_nombre
-- action_busca_libro
-- utter_info_segundo
-- action_busca_mas
-- utter_quien_soy
-- utter_libro_kw_autor
-- utter_libros_titulo_autor
-- utter_gracias
-- utter_libros_titulo
-- utter_info_primero
-- action_saludos
-- utter_libros_kw
-- utter_especifica_musica
-- utter_peliculas_kw
-- utter_info_tercero
-- utter_libro_autor
-- utter_consulta_horario_cerrado
 - utter_despedida
-- utter_articulo_kw
+- utter_especifica_musica
+- utter_libro_kw_autor
+- utter_info_tercero
+- utter_consulta_horario_abierto
 - utter_libro_titulo
+- action_muestra_tercero
+- utter_saludo
+- utter_libro_autor
+- utter_articulos_kw
+- utter_libros_autor
+- utter_pelicula_kw
+- action_check_biblio_abierta
+- action_muestra_primero
 - utter_especifica_articulo
+- utter_consulta_telefono
+- action_saludos
+- utter_no_te_entiendo
+- utter_juego_kw
+- utter_libros_titulo_autor
+- action_localizacion_sin_entidad
+- utter_libros_titulo
+- utter_libros_kw
+- utter_juegos_kw
+- utter_info_primero
+- action_busca_libro
+- utter_especifica_libro
+- utter_quien_soy
+- utter_especifica_pelicula
+- utter_libros_kw_autor
+- utter_peliculas_kw
+- utter_info_segundo
+- utter_consulta_localizacion
+- utter_especifica_juego
+- utter_libro_titulo_autor
+- utter_consulta_horario_cerrado
+- utter_respuesta_insultos
+- utter_gracias
+- action_busca_mas
+- utter_libro_kw
+- utter_articulo_kw
 config:
   store_entities_as_slots: true
 entities:
-- libro_titulo
-- PER
-- musica
 - autores
+- musica
+- pelicula
+- MISC
+- autor
+- libro_titulo
+- juego
 - localizacion
 - LOC
-- libro
+- PER
 - ORG
-- pelicula
 - persona
-- MISC
 - localizaciones
-- juego
-- autor
+- libro
 forms:
+- form_libros
 - form_articulos
 - form_saludos
-- form_libros
 intents:
+- consulta_localizacion:
+    use_entities: true
+- mas_info_segundo:
+    use_entities: true
+- consulta_libros_kw:
+    use_entities: true
+- mas_info_primero:
+    use_entities: true
+- mas_info_tercero:
+    use_entities: true
 - consulta_horario_general:
     use_entities: true
 - saludos:
     use_entities: false
 - consulta_telefono:
     use_entities: true
-- consulta_localizacion:
-    use_entities: true
 - consulta_localizacion_empty:
     use_entities: false
-- consulta_libros_kw:
-    use_entities: true
 - consulta_horario_open:
     use_entities: true
 - consulta_horario_close:
-    use_entities: true
-- mas_info_segundo:
-    use_entities: true
-- mas_info_primero:
-    use_entities: true
-- mas_info_tercero:
     use_entities: true
 - consulta_libros_autor:
     use_entities: true

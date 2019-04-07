@@ -4,14 +4,14 @@
 - Muestrame más
 - Enseñame más ejemplares
 - Busca más
-- Quiero más 
-- Quiero otro 
+- Quiero más
+- Quiero otro
 - Busca más
-- Carga más 
-- Muéstrame más 
-- Enseñame más ejemplares 
-- Podrías buscar más ejemplares 
-- Busca más 
+- Carga más
+- Muéstrame más
+- Enseñame más ejemplares
+- Podrías buscar más ejemplares
+- Busca más
 - quiero más
 
 ## intent:como_estas
@@ -23,7 +23,7 @@
 - Cómo te sientes
 - Hola, que tal
 - Hola, que tal estas hoy
-- Hola, como te estas hoy
+- Hola, como estas hoy
 
 ## intent:consulta_horario_close
 - Está cerrada la [Biblioteca de medicina](localizacion)
@@ -52,7 +52,7 @@
 - Horario de la [Zambrano](localizacion)
 - A que hora abre la [biblioteca de informatica](localizacion)
 - A que hora abre la [biblioteca](localizacion) [zambrano](localizacion)
-- A que hora abre la [biblioteca de Psicologia](localizaciones)
+- A que hora abre la [biblioteca de Psicologia](localizacion)
 
 ## intent:consulta_horario_open
 - Está abierta la [Biblioteca de medicina](localizacion)
@@ -252,15 +252,19 @@
 - Me podrías dar algún libro de [economía](libro)[economía](MISC)
 - Necesito varios libros de [Carlos Fuentes](libro)[Carlos Fuentes](MISC)
 - Busca obras literarias de [medicina](libro)[medicina](MISC)
-- Necesito obras literarias de [Lo que el viento se llevó](libro)[Lo que el viento se llevó](M)
+- Necesito obras literarias de [Lo que el viento se llevó](libro)[Lo que el viento se llevó](MISC)
 - Libro de [Juego de Tronos](libro)[Juego de Tronos](MISC)
 - Quiero varios libros de [matemática discreta](libro)[Matemática Discreta](MISC)
 - Quiero varios libros de [Venancio Tomeo](PER)[Venancio Tomeo](libro:venancio tomeo)
 - Necesito que busques varios libros de [estructuras de datos y algoritmos](libro)[estructuras de datos y algoritmos](MISC)
 - Quiero varios libros de [historia del arte](libro)[Historia del arte](MISC)
 - /consulta_libros_kw[{"libro":"Pedro Sánchez"}](libro:Pedro Sánchez)
-- /consulta_libros_kw[{"LOC":"Busca","libro":"1984"}](LOC:Busca)[{"LOC":"Busca","libro":"1984"}](libro:1984)
 - Busca libros de [matemática discreta](libro)[Matemática Discreta](MISC)
+- Quiero libros de [Federico Garcia Lorca](PER)
+- Necesito libros de [Tolkien](PER)
+- Dame libros de [Pedro Sanchez](PER)
+- Quiero libros de [Quevedo](PER)
+- Dame libros de [Derecho Legal Civil](MISC)
 
 ## intent:consulta_libros_kw_autor
 - Quiero libros de [El Quijote](libro)[El Quijote](MISC) del autor [Miguel de Cervantes](autores)[Miguel de Cervantes](PER)
@@ -320,6 +324,7 @@
 - Ubicación de la [Zambrano](localizacion)
 - Donde está la [biblioteca de ciencias políticas](localizacion)
 - Quiero ir a la [facultad de geografía e historia](localizacion)
+- /consulta_localizacion[{"localizacion":"biblioteca de educacion"}](localizacion:biblioteca de educacion)
 
 ## intent:consulta_localizacion_empty
 - Busca su ubicación
@@ -339,10 +344,11 @@
 - Busca el teléfono de la [Facultad de informática](localizacion)
 - Busca el número de la [Facultad de medicina](localizacion)
 - Busca el número de teléfono de la [Zambrano](localizacion)
-- Cuál es el número de la [Facultad de informática](localizacion)
-- Cuál es el teléfono de la [Facultad de Ciencias de la Información](localizacion)
-- Me puedes decir el n￿úmero de la [Biblioteca de Enfermer￿ia](localizacion)
+- ¿Cuál es el número de la [Facultad de informática](localizacion)?
+- ¿Cuál es el teléfono de la [Facultad de Ciencias de la Información](localizacion)?
+- ¿Me puedes decir el n￿úmero de la [Biblioteca de Enfermer￿ia](localizacion)?
 - Quiero el teléfono de la [biblioteca de veterinaria](localizacion)
+- [Llama](PER) a la [facultad de informatica](localizacion)
 
 ## intent:consulta_telefono_empty
 - Llámala
@@ -350,8 +356,8 @@
 - Necesito el teléfono
 - Busca su teléfono
 - Busca el número de teléfono
-- Cuál es su número
-- Cuál es su teléfono
+- ¿Cuál es su número?
+- ¿Cuál es su teléfono?
 - Quiero su teléfono
 
 ## intent:despedidas
@@ -404,14 +410,18 @@
 - Enseñame el primero
 - Quiero ver el 1
 - Quiero ver el primero
-- /mas_info_primero
+- Muestrame el primero
+- [Muestrame](PER) el primero
+- [Muestrame](PER) mas informacion del primero
 
 ## intent:mas_info_segundo
 - Muestrame más información del segundo
 - Enseñame el segundo
 - Quiero ver el 2
 - Quiero ver el segundo
-- /mas_info_segundo
+- Muestrame el segundo
+- [Muestrame](PER) el segundo
+- [Muestrame](PER) mas informacion del segundo
 
 ## intent:mas_info_tercero
 - Muestrame más información del tercero
@@ -419,7 +429,8 @@
 - Quiero ver el 3
 - Quiero ver el tercero
 - Muestrame el tercero
-- /mas_info_tercero
+- [Muestrame](PER) el tercero
+- [Muestrame](PER) mas informacion del tercero
 
 ## intent:me_llamo
 - Soy [Martin](persona)
@@ -554,6 +565,9 @@
 
 ## synonym:amancio
 - Amancio
+
+## synonym:biblioteca de educacion
+- {"localizacion":"biblioteca de educacion"}
 
 ## synonym:biblioteca zambrano
 - Biblioteca Zambrano

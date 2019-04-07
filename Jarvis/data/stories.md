@@ -11,6 +11,17 @@
     - form{"name": null}
     - slot{"requested_slot": null}
 
+## Generated Story 8376104521155456626
+* saludos
+    - action_saludos
+* me_llamo{"persona": "Jose Luis"}
+    - form_saludos
+    - form{"name": "form_saludos"}
+    - slot{"persona": "Jose luis"}
+    - slot{"persona": "Jose luis"}
+    - form{"name": null}
+    - slot{"requested_slot": null}
+    
 ## Generated Story -1034194379672101934
 * gracias
     - utter_gracias
@@ -160,4 +171,87 @@
 ## Generated Story 2834761783499160472
 * consulta_horario_general{"MISC": "\u00bfA", "localizaciones": "biblioteca de Psicologia"}
     - action_check_biblio_abierta
+
+## Generated Story -7515515927349987331
+* consulta_libros_kw{"PER": "Federico Garcia Lorca"}
+    - form_libros
+    - form{"name": "form_libros"}
+    - slot{"libro": null}
+    - slot{"autores": "Federico Garcia Lorca"}
+    - slot{"searchindex": 2}
+    - slot{"numberofmorebooksearch": 2}
+    - form{"name": null}
+    - slot{"requested_slot": null}
+* mas_info_primero
+    - action_muestra_primero
+
+## Generated Story -2582539635563917555
+* consulta_libros_kw{"PER": "Tolkien"}
+    - form_libros
+    - form{"name": "form_libros"}
+    - slot{"libro": null}
+    - slot{"autores": "Tolkien"}
+    - slot{"searchindex": 2}
+    - slot{"numberofmorebooksearch": 2}
+    - form{"name": null}
+    - slot{"requested_slot": null}
+* mas_info_segundo
+    - action_muestra_segundo
+
+## Generated Story 4877097227065574514
+* consulta_libros_kw{"PER": "Pedro Sanchez"}
+    - form_libros
+    - form{"name": "form_libros"}
+    - slot{"libro": null}
+    - slot{"autores": "Pedro Sanchez"}
+    - slot{"searchindex": 2}
+    - slot{"numberofmorebooksearch": 2}
+    - form{"name": null}
+    - slot{"requested_slot": null}
+* mas_info_tercero
+    - action_muestra_tercero
+
+## Generated Story -208291240907484129
+* consulta_libros_kw{"PER": "Quevedo"}
+    - form_libros
+    - form{"name": "form_libros"}
+    - slot{"libro": null}
+    - slot{"autores": "Quevedo"}
+    - slot{"searchindex": 2}
+    - slot{"numberofmorebooksearch": 2}
+    - form{"name": null}
+    - slot{"requested_slot": null}
+* mas_info_primero
+    - action_muestra_primero
+* mas_info_segundo{"PER": "Muestrame"}
+    - action_muestra_segundo
+* mas_info_tercero
+    - action_muestra_tercero
+
+## Generated Story -4356790959934697676
+* consulta_libros_kw{"MISC": "Derecho Legal Civil"}
+    - form_libros
+    - form{"name": "form_libros"}
+    - slot{"libro": "Derecho Legal Civil"}
+    - slot{"autores": null}
+    - slot{"searchindex": 2}
+    - slot{"numberofmorebooksearch": 2}
+    - form{"name": null}
+    - slot{"requested_slot": null}
+* mas_info_primero
+    - action_muestra_primero
+* mas_info_tercero
+    - action_muestra_tercero
+* mas_info_segundo{"PER": "Muestrame"}
+    - action_muestra_segundo
+
+## Generated Story 1359657386334538879
+* consulta_localizacion{"localizacion": "biblioteca de educacion"}
+    - slot{"localizacion": "biblioteca de educacion"}
+    - utter_consulta_localizacion
+
+## Generated Story -4950611639272936335
+* consulta_telefono{"PER": "Llama", "localizacion": "facultad de informatica"}
+    - slot{"localizacion": "facultad de informatica"}
+    - utter_consulta_telefono
 

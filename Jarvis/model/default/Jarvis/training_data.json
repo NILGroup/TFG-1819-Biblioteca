@@ -59,39 +59,39 @@
       },
       {
         "intent": "como_estas",
-        "text": "¿Qué tal?"
+        "text": "Qué tal"
       },
       {
         "intent": "como_estas",
-        "text": "¿Cómo estás?"
+        "text": "Cómo estás"
       },
       {
         "intent": "como_estas",
-        "text": "¿Qué te pasa?"
+        "text": "Qué te pasa"
       },
       {
         "intent": "como_estas",
-        "text": "¿Qué te ocurre?"
+        "text": "Qué te ocurre"
       },
       {
         "intent": "como_estas",
-        "text": "¿Estás bien?"
+        "text": "Estás bien"
       },
       {
         "intent": "como_estas",
-        "text": "¿Cómo te sientes?"
+        "text": "Cómo te sientes"
       },
       {
         "intent": "como_estas",
-        "text": "Hola, ¿que tal?"
+        "text": "Hola, que tal"
       },
       {
         "intent": "como_estas",
-        "text": "Hola, ¿que tal estas hoy?"
+        "text": "Hola, que tal estas hoy"
       },
       {
         "intent": "como_estas",
-        "text": "Hola, ¿como te estas hoy?"
+        "text": "Hola, como estas hoy"
       },
       {
         "intent": "consulta_horario_close",
@@ -394,7 +394,7 @@
             "start": 19,
             "end": 43,
             "value": "biblioteca de Psicologia",
-            "entity": "localizaciones"
+            "entity": "localizacion"
           }
         ],
         "text": "A que hora abre la biblioteca de Psicologia"
@@ -3382,7 +3382,7 @@
             "start": 54,
             "end": 79,
             "value": "Lo que el viento se llevó",
-            "entity": "M"
+            "entity": "MISC"
           }
         ],
         "text": "Necesito obras literarias de Lo que el viento se llevóLo que el viento se llevó"
@@ -3493,24 +3493,6 @@
         "intent": "consulta_libros_kw",
         "entities": [
           {
-            "start": 19,
-            "end": 49,
-            "value": "Busca",
-            "entity": "LOC"
-          },
-          {
-            "start": 49,
-            "end": 79,
-            "value": "1984",
-            "entity": "libro"
-          }
-        ],
-        "text": "/consulta_libros_kw{\"LOC\":\"Busca\",\"libro\":\"1984\"}{\"LOC\":\"Busca\",\"libro\":\"1984\"}"
-      },
-      {
-        "intent": "consulta_libros_kw",
-        "entities": [
-          {
             "start": 16,
             "end": 35,
             "value": "matemática discreta",
@@ -3524,6 +3506,66 @@
           }
         ],
         "text": "Busca libros de matemática discretaMatemática Discreta"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 17,
+            "end": 38,
+            "value": "Federico Garcia Lorca",
+            "entity": "PER"
+          }
+        ],
+        "text": "Quiero libros de Federico Garcia Lorca"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 19,
+            "end": 26,
+            "value": "Tolkien",
+            "entity": "PER"
+          }
+        ],
+        "text": "Necesito libros de Tolkien"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 15,
+            "end": 28,
+            "value": "Pedro Sanchez",
+            "entity": "PER"
+          }
+        ],
+        "text": "Dame libros de Pedro Sanchez"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 17,
+            "end": 24,
+            "value": "Quevedo",
+            "entity": "PER"
+          }
+        ],
+        "text": "Quiero libros de Quevedo"
+      },
+      {
+        "intent": "consulta_libros_kw",
+        "entities": [
+          {
+            "start": 15,
+            "end": 34,
+            "value": "Derecho Legal Civil",
+            "entity": "MISC"
+          }
+        ],
+        "text": "Dame libros de Derecho Legal Civil"
       },
       {
         "intent": "consulta_libros_kw_autor",
@@ -4973,7 +5015,31 @@
       },
       {
         "intent": "mas_info_primero",
-        "text": "/mas_info_primero"
+        "text": "Muestrame el primero"
+      },
+      {
+        "intent": "mas_info_primero",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "Muestrame",
+            "entity": "PER"
+          }
+        ],
+        "text": "Muestrame el primero"
+      },
+      {
+        "intent": "mas_info_primero",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "Muestrame",
+            "entity": "PER"
+          }
+        ],
+        "text": "Muestrame mas informacion del primero"
       },
       {
         "intent": "mas_info_segundo",
@@ -4993,7 +5059,31 @@
       },
       {
         "intent": "mas_info_segundo",
-        "text": "/mas_info_segundo"
+        "text": "Muestrame el segundo"
+      },
+      {
+        "intent": "mas_info_segundo",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "Muestrame",
+            "entity": "PER"
+          }
+        ],
+        "text": "Muestrame el segundo"
+      },
+      {
+        "intent": "mas_info_segundo",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "Muestrame",
+            "entity": "PER"
+          }
+        ],
+        "text": "Muestrame mas informacion del segundo"
       },
       {
         "intent": "mas_info_tercero",
@@ -5017,7 +5107,27 @@
       },
       {
         "intent": "mas_info_tercero",
-        "text": "/mas_info_tercero"
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "Muestrame",
+            "entity": "PER"
+          }
+        ],
+        "text": "Muestrame el tercero"
+      },
+      {
+        "intent": "mas_info_tercero",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "Muestrame",
+            "entity": "PER"
+          }
+        ],
+        "text": "Muestrame mas informacion del tercero"
       },
       {
         "intent": "me_llamo",
@@ -5453,12 +5563,6 @@
         ]
       },
       {
-        "value": "1984",
-        "synonyms": [
-          "{\"LOC\":\"Busca\",\"libro\":\"1984\"}"
-        ]
-      },
-      {
         "value": "Rodolfo Rodríguez",
         "synonyms": [
           "{\"libro\":\"Como aprender a programar en 5 minutos\",\"autores\":\"Rodolfo Rodríguez\"}"
@@ -5486,6 +5590,12 @@
         "value": "pepe",
         "synonyms": [
           "Pepe"
+        ]
+      },
+      {
+        "value": "1984",
+        "synonyms": [
+          "{\"LOC\":\"Busca\",\"libro\":\"1984\"}"
         ]
       },
       {

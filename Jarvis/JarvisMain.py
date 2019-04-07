@@ -26,7 +26,10 @@ class jarvisService():
             post_data["content"] = request.POST.content
             post_data["user_id"] = request.POST.user_id
 
-            analisis = self.procesador.procesarPeticion(post_data["content"], post_data["user_id"])
+            if 'user_id' in request.POST:
+                analisis = self.procesador.procesarPeticion(post_data["content"], post_data["user_id"])
+            else:
+                analisis = self.procesador.procesarPeticion(post_data["content"], post_data["user_id"])
             respuesta = self.procesador.formatearResultado(analisis)
             return json.dumps(respuesta, ensure_ascii=False).encode('utf8')
 

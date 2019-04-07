@@ -1,0 +1,2796 @@
+Rasa process starting
+Available web server routes: 
+static                                             HEAD, GET, OPTIONS             /static/[filename]
+custom_webhook_CmdlineInput.health                 HEAD, GET, OPTIONS             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                POST, OPTIONS                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Creating a new tracker for id 'default'.
+Received user message 'hola' with intent '{'name': 'hola', 'confidence': 1.0}' and entities '[]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [None, None, None, None, None, None, None, None, {}, {'intent_hola': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_libros' with prob 0.23.
+Encountered an exception while running action 'form_libros'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+The model predicted the custom action 'form_libros' but you didn't configure an endpoint to run this custom action. Please take a look at the docs and set an endpoint configuration. https://rasa.com/docs/core/customactions/
+Traceback (most recent call last):
+  File "/Users/josse/venvPython3.6/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = action.run(dispatcher, tracker, self.domain)
+  File "/Users/josse/venvPython3.6/lib/python3.6/site-packages/rasa_core/actions/action.py", line 325, in run
+    "".format(self.name(), DOCS_BASE_URL))
+Exception: The model predicted the custom action 'form_libros' but you didn't configure an endpoint to run this custom action. Please take a look at the docs and set an endpoint configuration. https://rasa.com/docs/core/customactions/
+Action 'form_libros' ended with events '[]'
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [None, None, None, None, None, None, None, {}, {'intent_hola': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_hola': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Recreating tracker for id 'default'
+Received user message 'Buenos días' with intent '{'name': 'Buenos días', 'confidence': 1.0}' and entities '[]'
+Logged UserUtterance - tracker now has 5 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [None, None, None, None, None, None, {}, {'intent_hola': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_hola': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 0.48.
+Encountered an exception while running action 'action_saludos'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+The model predicted the custom action 'action_saludos' but you didn't configure an endpoint to run this custom action. Please take a look at the docs and set an endpoint configuration. https://rasa.com/docs/core/customactions/
+Traceback (most recent call last):
+  File "/Users/josse/venvPython3.6/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = action.run(dispatcher, tracker, self.domain)
+  File "/Users/josse/venvPython3.6/lib/python3.6/site-packages/rasa_core/actions/action.py", line 325, in run
+    "".format(self.name(), DOCS_BASE_URL))
+Exception: The model predicted the custom action 'action_saludos' but you didn't configure an endpoint to run this custom action. Please take a look at the docs and set an endpoint configuration. https://rasa.com/docs/core/customactions/
+Action 'action_saludos' ended with events '[]'
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [None, None, None, None, None, {}, {'intent_hola': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_hola': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_listen': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Recreating tracker for id 'default'
+Failed to parse intent end entities from ''. 
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 8 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [None, None, None, None, {}, {'intent_hola': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_hola': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_listen': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_saludos': 1.0}, {'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te entiendo. Intenta reformular tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [None, None, None, {}, {'intent_hola': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_hola': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_listen': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_saludos': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Recreating tracker for id 'default'
+Failed to parse intent end entities from ''. 
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 12 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [None, None, {}, {'intent_hola': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_hola': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_listen': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_saludos': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No entiendo que quieres decir., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [None, {}, {'intent_hola': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_hola': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_listen': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_saludos': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Recreating tracker for id 'default'
+Failed to parse intent end entities from ''. 
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 16 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{}, {'intent_hola': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_hola': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_listen': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_saludos': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'intent_hola': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_hola': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_listen': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_saludos': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Recreating tracker for id 'default'
+Failed to parse intent end entities from ''. 
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 20 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Feature 'intent_hola' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_form_libros': 1.0, 'intent_hola': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_listen': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_saludos': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'intent_Buenos días': 1.0, 'prev_action_listen': 1.0}, {'intent_Buenos días': 1.0, 'prev_action_saludos': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Recreating tracker for id 'default'
+Failed to parse intent end entities from ''. 
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 24 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Feature 'intent_Buenos días' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'intent_Buenos días': 1.0, 'prev_action_saludos': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}, {'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Rasa Core server is up and running on http://localhost:5005
+Encountered an exception while running action 'form_libros'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Encountered an exception while running action 'action_saludos'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Failed to parse intent end entities from ''. 
+Failed to parse intent end entities from ''. 
+Failed to parse intent end entities from ''. 
+Rasa process starting
+Rasa Core server is up and running on http://localhost:5005
+Encountered an exception while running action 'action_saludos'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             OPTIONS, HEAD, GET             /static/[filename]
+custom_webhook_CmdlineInput.health                 OPTIONS, HEAD, GET             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                OPTIONS, POST                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Creating a new tracker for id 'default'.
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [None, None, None, None, None, None, None, None, {}, {'intent_saludos': 1.0, 'prev_action_listen': 1.0}]
+There is a memorised next action '17'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Encountered an exception while running action 'action_saludos'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+The model predicted the custom action 'action_saludos' but you didn't configure an endpoint to run this custom action. Please take a look at the docs and set an endpoint configuration. https://rasa.com/docs/core/customactions/
+Traceback (most recent call last):
+  File "/Users/josse/venvPython3.6/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = action.run(dispatcher, tracker, self.domain)
+  File "/Users/josse/venvPython3.6/lib/python3.6/site-packages/rasa_core/actions/action.py", line 325, in run
+    "".format(self.name(), DOCS_BASE_URL))
+Exception: The model predicted the custom action 'action_saludos' but you didn't configure an endpoint to run this custom action. Please take a look at the docs and set an endpoint configuration. https://rasa.com/docs/core/customactions/
+Action 'action_saludos' ended with events '[]'
+Current tracker state [None, None, None, None, None, None, None, {}, {'intent_saludos': 1.0, 'prev_action_listen': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Recreating tracker for id 'default'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 5 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [None, None, None, None, None, None, {}, {'intent_saludos': 1.0, 'prev_action_listen': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_saludos': 1.0, 'prev_action_listen': 1.0}]
+There is a memorised next action '17'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Encountered an exception while running action 'action_saludos'. Bot will continue, but the actions events are lost. Make sure to fix the exception in your custom code.
+The model predicted the custom action 'action_saludos' but you didn't configure an endpoint to run this custom action. Please take a look at the docs and set an endpoint configuration. https://rasa.com/docs/core/customactions/
+Traceback (most recent call last):
+  File "/Users/josse/venvPython3.6/lib/python3.6/site-packages/rasa_core/processor.py", line 346, in _run_action
+    events = action.run(dispatcher, tracker, self.domain)
+  File "/Users/josse/venvPython3.6/lib/python3.6/site-packages/rasa_core/actions/action.py", line 325, in run
+    "".format(self.name(), DOCS_BASE_URL))
+Exception: The model predicted the custom action 'action_saludos' but you didn't configure an endpoint to run this custom action. Please take a look at the docs and set an endpoint configuration. https://rasa.com/docs/core/customactions/
+Action 'action_saludos' ended with events '[]'
+Current tracker state [None, None, None, None, None, {}, {'intent_saludos': 1.0, 'prev_action_listen': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_saludos': 1.0, 'prev_action_listen': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Rasa process starting
+Rasa process starting
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             HEAD, OPTIONS, GET             /static/[filename]
+custom_webhook_CmdlineInput.health                 HEAD, OPTIONS, GET             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                OPTIONS, POST                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             HEAD, GET, OPTIONS             /static/[filename]
+custom_webhook_CmdlineInput.health                 HEAD, GET, OPTIONS             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                POST, OPTIONS                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [None, None, None, None, None, None, None, None, {}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is a memorised next action '17'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Buenas!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, None, None, None, None, None, {}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '¿Qué tal?' with intent '{'name': 'quien_soy', 'confidence': 0.12372356450071345}' and entities '[{'entity': 'MISC', 'value': '¿Qué', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 6 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.12372356450071345 is lower than NLU threshold 0.2. 
+Current tracker state [None, None, None, None, None, None, {}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te entiendo. Intenta reformular tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, None, None, None, {}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '¿Que tal estas?' with intent '{'name': 'quien_soy', 'confidence': 0.1221768694967382}' and entities '[{'entity': 'MISC', 'value': '¿Que', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 10 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.1221768694967382 is lower than NLU threshold 0.2. 
+Current tracker state [None, None, None, None, {}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: Mis creadores no me han enseñado a responder tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, None, {}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Quiero un libro' with intent '{'name': 'consulta_libro', 'confidence': 0.2545479149134745}' and entities '[]'
+Logged UserUtterance - tracker now has 14 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [None, None, {}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'utter_despedida' with prob 0.39.
+Action 'utter_despedida' ended with events '[]'
+Bot utterance 'BotUttered(text: Te veo luego., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_consulta_libro': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Dame un libro' with intent '{'name': 'consulta_libro', 'confidence': 0.30746035274292}' and entities '[]'
+Logged UserUtterance - tracker now has 18 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [{}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_consulta_libro': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_libros' with prob 0.37.
+Calling action endpoint to run action 'form_libros'.
+Action 'form_libros' ended with events '['Form(form_libros)', 'SlotSet(key: libro, value: None)', 'SlotSet(key: autores, value: None)', 'SlotSet(key: searchindex, value: 0)', 'SlotSet(key: numberofmorebooksearch, value: 0)', 'Form(None)', 'SlotSet(key: requested_slot, value: None)']'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_consulta_libro': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_consulta_libro': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'de' with intent '{'name': 'despedidas', 'confidence': 0.4301206478700048}' and entities '[]'
+Logged UserUtterance - tracker now has 28 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_consulta_libro': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_consulta_libro': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'utter_despedida' with prob 1.00.
+Action 'utter_despedida' ended with events '[]'
+Bot utterance 'BotUttered(text: Hasta luego., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_consulta_libro': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_consulta_libro': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'dew' with intent '{'name': 'despedidas', 'confidence': 0.27734132512972937}' and entities '[]'
+Logged UserUtterance - tracker now has 32 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_consulta_libro': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_consulta_libro': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'utter_despedida' with prob 1.00.
+Action 'utter_despedida' ended with events '[]'
+Bot utterance 'BotUttered(text: Hasta luego., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_quien_soy': 1.0, 'prev_action_listen': 1.0}, {'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_consulta_libro': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_consulta_libro': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hello' with intent '{'name': 'saludos', 'confidence': 0.22363653109311638}' and entities '[]'
+Logged UserUtterance - tracker now has 36 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'intent_quien_soy': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_consulta_libro': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_consulta_libro': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: Hola., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_consulta_libro': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_consulta_libro': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'ohayou' with intent '{'name': 'consulta_peliculas', 'confidence': 0.16858007700954084}' and entities '[]'
+Logged UserUtterance - tracker now has 40 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 0
+NLU confidence 0.16858007700954084 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_utter_despedida': 1.0, 'intent_consulta_libro': 1.0}, {'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_consulta_libro': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_consulta_peliculas': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No entiendo que quieres decir., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_consulta_libro': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'intent_consulta_libro': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_consulta_peliculas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_peliculas': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'puta' with intent '{'name': 'insultos', 'confidence': 0.23591660575204074}' and entities '[]'
+Logged UserUtterance - tracker now has 44 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_form_libros': 1.0, 'intent_consulta_libro': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_consulta_peliculas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_peliculas': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'utter_despedida' with prob 0.37.
+Action 'utter_despedida' ended with events '[]'
+Bot utterance 'BotUttered(text: Hasta luego., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_consulta_peliculas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_peliculas': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_utter_despedida': 1.0, 'intent_insultos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Asquerosa' with intent '{'name': 'insultos', 'confidence': 0.2296004018752235}' and entities '[{'entity': 'LOC', 'value': 'Asquerosa', 'start': 0, 'confidence': None, 'end': 9, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 48 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_consulta_peliculas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_peliculas': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_utter_despedida': 1.0, 'intent_insultos': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_libros' with prob 0.35.
+Calling action endpoint to run action 'form_libros'.
+Action 'form_libros' ended with events '['Form(form_libros)', 'SlotSet(key: libro, value: None)', 'SlotSet(key: autores, value: None)', 'SlotSet(key: searchindex, value: 0)', 'SlotSet(key: numberofmorebooksearch, value: 0)', 'Form(None)', 'SlotSet(key: requested_slot, value: None)']'
+Current tracker state [{'intent_despedidas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_consulta_peliculas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_peliculas': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_utter_despedida': 1.0, 'intent_insultos': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_form_libros': 1.0, 'intent_insultos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Me llamo Jose Luis' with intent '{'name': 'me_llamo', 'confidence': 0.34678909821168424}' and entities '[{'entity': 'PER', 'value': 'Jose Luis', 'start': 9, 'confidence': None, 'end': 18, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 58 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_utter_despedida': 1.0, 'intent_despedidas': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_consulta_peliculas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_peliculas': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_utter_despedida': 1.0, 'intent_insultos': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_form_libros': 1.0, 'intent_insultos': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_saludos' with prob 1.00.
+Calling action endpoint to run action 'form_saludos'.
+Action 'form_saludos' ended with events '['Form(form_saludos)', 'SlotSet(key: persona, value: Jose Luis)', 'SlotSet(key: persona, value: Jose Luis)', 'Form(None)', 'SlotSet(key: requested_slot, value: None)']'
+Bot utterance 'BotUttered(text: Hola Jose Luis. ¿Cómo puedo ayudarle?, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_consulta_peliculas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_peliculas': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_utter_despedida': 1.0, 'intent_insultos': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_form_libros': 1.0, 'intent_insultos': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_form_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[{'entity': 'PER', 'value': 'Hola', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 67 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'intent_consulta_peliculas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_peliculas': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_utter_despedida': 1.0, 'intent_insultos': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_form_libros': 1.0, 'intent_insultos': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_form_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Buenas Jose Luis!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_consulta_peliculas': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_peliculas': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_utter_despedida': 1.0, 'intent_insultos': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_form_libros': 1.0, 'intent_insultos': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_form_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[{'entity': 'PER', 'value': 'Hola', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 71 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_peliculas': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_utter_despedida': 1.0, 'intent_insultos': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_form_libros': 1.0, 'intent_insultos': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_form_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: Hola., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_utter_despedida': 1.0, 'intent_insultos': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_form_libros': 1.0, 'intent_insultos': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_form_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[{'entity': 'PER', 'value': 'Hola', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 75 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_utter_despedida': 1.0, 'intent_insultos': 1.0}, {'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_form_libros': 1.0, 'intent_insultos': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_form_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Buenas!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_insultos': 1.0}, {'prev_form_libros': 1.0, 'intent_insultos': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_form_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 79 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_form_libros': 1.0, 'intent_insultos': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_form_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Hola holita!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_form_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 83 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'prev_form_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: Hola., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 87 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: Salutaciones terrícola., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 91 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Hola holita!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 95 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Hola holita!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 99 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Hola holita!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 103 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Buenas Jose Luis!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[{'entity': 'PER', 'value': 'Hola', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 107 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Buenas!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[{'entity': 'PER', 'value': 'Hola', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 111 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Buenas!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[{'entity': 'PER', 'value': 'Hola', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 115 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Hola holita!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[{'entity': 'PER', 'value': 'Hola', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 119 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Buenas Jose Luis!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Quiero un libro de Arturo Gonzalez' with intent '{'name': 'consulta_pelicula_kw', 'confidence': 0.27644610055880336}' and entities '[{'entity': 'PER', 'value': 'Arturo Gonzalez', 'start': 19, 'confidence': None, 'end': 34, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 123 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'intent_consulta_pelicula_kw': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 0.59.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Buenas!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'intent_consulta_pelicula_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'prev_action_saludos': 1.0, 'intent_consulta_pelicula_kw': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Quiero un libro de medicina' with intent '{'name': 'consulta_libro_kw', 'confidence': 0.16207361796430145}' and entities '[{'start': 19, 'end': 27, 'value': 'medicina', 'entity': 'articulo', 'confidence': 0.7369695276315951, 'extractor': 'ner_crf'}]'
+Logged UserUtterance - tracker now has 127 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+NLU confidence 0.16207361796430145 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'intent_consulta_pelicula_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'prev_action_saludos': 1.0, 'intent_consulta_pelicula_kw': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No entiendo que quieres decir., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'intent_consulta_pelicula_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'prev_action_saludos': 1.0, 'intent_consulta_pelicula_kw': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Quiero un libro de Harry Potter' with intent '{'name': 'consulta_libro_kw', 'confidence': 0.29411542608955277}' and entities '[{'entity': 'MISC', 'value': 'Harry Potter', 'start': 19, 'confidence': None, 'end': 31, 'extractor': 'ner_spacy'}, {'start': 19, 'end': 31, 'value': 'harry potter', 'entity': 'libro', 'confidence': 0.5876010722853204, 'extractor': 'ner_crf'}]'
+Logged UserUtterance - tracker now has 131 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'intent_consulta_pelicula_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'prev_action_saludos': 1.0, 'intent_consulta_pelicula_kw': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0, 'entity_libro': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_libros' with prob 1.00.
+Calling action endpoint to run action 'form_libros'.
+Action 'form_libros' ended with events '['Form(form_libros)', 'SlotSet(key: libro, value: Harry potter)', 'SlotSet(key: autores, value: None)', 'SlotSet(key: searchindex, value: 1)', 'SlotSet(key: numberofmorebooksearch, value: 1)', 'Form(None)', 'SlotSet(key: requested_slot, value: None)']'
+Bot utterance 'BotUttered(text: Mira, he encontrado este libro., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'intent_consulta_pelicula_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'prev_action_saludos': 1.0, 'intent_consulta_pelicula_kw': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0, 'entity_libro': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_form_libros': 1.0, 'entity_libro': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 142 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: Harry potter
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 1
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 1
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'intent_consulta_pelicula_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'prev_action_saludos': 1.0, 'intent_consulta_pelicula_kw': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0, 'entity_libro': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_form_libros': 1.0, 'entity_libro': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: Hola. Me alegra verte de vuelta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'intent_consulta_pelicula_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'prev_action_saludos': 1.0, 'intent_consulta_pelicula_kw': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0, 'entity_libro': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_form_libros': 1.0, 'entity_libro': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Dame libros de Matematica Discreta' with intent '{'name': 'consulta_libros_kw', 'confidence': 0.2330413900858571}' and entities '[{'entity': 'PER', 'value': 'Matematica Discreta', 'start': 15, 'confidence': None, 'end': 34, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 146 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: Harry potter
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 1
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 1
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'intent_consulta_pelicula_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'prev_action_saludos': 1.0, 'intent_consulta_pelicula_kw': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0, 'entity_libro': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_form_libros': 1.0, 'entity_libro': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_libros' with prob 1.00.
+Calling action endpoint to run action 'form_libros'.
+Action 'form_libros' ended with events '['Form(form_libros)', 'SlotSet(key: libro, value: None)', 'SlotSet(key: autores, value: Matematica Discreta)', 'SlotSet(key: searchindex, value: 2)', 'SlotSet(key: numberofmorebooksearch, value: 2)', 'Form(None)', 'SlotSet(key: requested_slot, value: None)']'
+Bot utterance 'BotUttered(text: Aquí tienes varios ejemplares de None., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'entity_PER': 1.0, 'intent_consulta_pelicula_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_PER': 1.0, 'prev_action_saludos': 1.0, 'intent_consulta_pelicula_kw': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0, 'entity_libro': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_form_libros': 1.0, 'entity_libro': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Dame libros de Matemática Discreta' with intent '{'name': 'consulta_libros_kw', 'confidence': 0.29430404592501896}' and entities '[{'entity': 'ORG', 'value': 'Matemática Discreta', 'start': 15, 'confidence': None, 'end': 34, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 157 events
+Current slot values: 
+	articulos: None
+	autores: Matematica Discreta
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 2
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 2
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'entity_PER': 1.0, 'prev_action_saludos': 1.0, 'intent_consulta_pelicula_kw': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0, 'entity_libro': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_form_libros': 1.0, 'entity_libro': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_libros' with prob 1.00.
+Calling action endpoint to run action 'form_libros'.
+Action 'form_libros' ended with events '['Form(form_libros)', 'SlotSet(key: libro, value: None)', 'SlotSet(key: autores, value: None)', 'SlotSet(key: searchindex, value: 0)', 'SlotSet(key: numberofmorebooksearch, value: 0)', 'Form(None)', 'SlotSet(key: requested_slot, value: None)']'
+Bot utterance 'BotUttered(text: Necesito más información sobre el libro que quieres buscar. Podrías decirmelo?, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0, 'entity_libro': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_form_libros': 1.0, 'entity_libro': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Dame libros de la asignatura Derecho Español' with intent '{'name': 'consulta_libro_titulo_autor', 'confidence': 0.21277357364158367}' and entities '[{'entity': 'PER', 'value': 'Derecho Español', 'start': 29, 'confidence': None, 'end': 44, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 168 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+Feature 'entity_articulo' (value: '1.0') could not be found in feature map. Make sure you added all intents and entities to the domain
+Current tracker state [{'entity_articulo': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0, 'entity_libro': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_form_libros': 1.0, 'entity_libro': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_libros' with prob 0.97.
+Calling action endpoint to run action 'form_libros'.
+Action 'form_libros' ended with events '['Form(form_libros)', 'SlotSet(key: libro, value: None)', 'SlotSet(key: autores, value: Derecho Español)', 'SlotSet(key: searchindex, value: 0)', 'SlotSet(key: numberofmorebooksearch, value: 0)', 'Form(None)', 'SlotSet(key: requested_slot, value: None)']'
+Bot utterance 'BotUttered(text: Qué libro?, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0, 'entity_libro': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_form_libros': 1.0, 'entity_libro': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Necesito el libro llamado El Quijote' with intent '{'name': 'consulta_libro_titulo', 'confidence': 0.16633996643836785}' and entities '[{'entity': 'MISC', 'value': 'El Quijote', 'start': 26, 'confidence': None, 'end': 36, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 179 events
+Current slot values: 
+	articulos: None
+	autores: Derecho Español
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+NLU confidence 0.16633996643836785 is lower than NLU threshold 0.2. 
+Current tracker state [{'entity_MISC': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_form_libros': 1.0, 'entity_libro': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_MISC': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No entiendo que quieres decir., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_MISC': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_libro_titulo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Dame el libro titulado El Quijote' with intent '{'name': 'consulta_libro_titulo', 'confidence': 0.18051128406246852}' and entities '[{'entity': 'MISC', 'value': 'El Quijote', 'start': 23, 'confidence': None, 'end': 33, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 183 events
+Current slot values: 
+	articulos: None
+	autores: Derecho Español
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+NLU confidence 0.18051128406246852 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_saludos': 1.0, 'intent_saludos': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_MISC': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: Mis creadores no me han enseñado a responder tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_MISC': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_libro_titulo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'como te llamas' with intent '{'name': 'me_llamo', 'confidence': 0.08117226404638987}' and entities '[]'
+Logged UserUtterance - tracker now has 187 events
+Current slot values: 
+	articulos: None
+	autores: Derecho Español
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+NLU confidence 0.08117226404638987 is lower than NLU threshold 0.2. 
+Current tracker state [{'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_MISC': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'entity_ORG': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_ORG': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libros_kw': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_PER': 1.0, 'prev_form_libros': 1.0, 'intent_consulta_libro_titulo_autor': 1.0}, {'entity_MISC': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_action_listen': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'intent_me_llamo': 1.0, 'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             OPTIONS, HEAD, GET             /static/[filename]
+custom_webhook_CmdlineInput.health                 OPTIONS, HEAD, GET             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                OPTIONS, POST                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Received user message 'Quiero libros de Pepe Gonzalez' with intent '{'name': 'consulta_libros_kw', 'confidence': 0.19813412360760801}' and entities '[{'entity': 'PER', 'value': 'Pepe Gonzalez', 'start': 17, 'confidence': None, 'end': 30, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 191 events
+Current slot values: 
+	articulos: None
+	autores: Derecho Español
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 0
+	pelicula: None
+	persona: Jose Luis
+	requested_slot: None
+	searchindex: 0
+NLU confidence 0.19813412360760801 is lower than NLU threshold 0.2. 
+Current tracker state [{'entity_ORG': 1.0, 'intent_consulta_libros_kw': 1.0, 'prev_form_libros': 1.0}, {'intent_consulta_libro_titulo_autor': 1.0, 'entity_PER': 1.0, 'prev_action_listen': 1.0}, {'intent_consulta_libro_titulo_autor': 1.0, 'entity_PER': 1.0, 'prev_form_libros': 1.0}, {'prev_action_listen': 1.0, 'entity_MISC': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'entity_MISC': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_titulo': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'entity_MISC': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'intent_me_llamo': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_PER': 1.0, 'intent_consulta_libros_kw': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te entiendo. Intenta reformular tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_consulta_libro_titulo_autor': 1.0, 'entity_PER': 1.0, 'prev_action_listen': 1.0}, {'intent_consulta_libro_titulo_autor': 1.0, 'entity_PER': 1.0, 'prev_form_libros': 1.0}, {'prev_action_listen': 1.0, 'entity_MISC': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'entity_MISC': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'entity_MISC': 1.0, 'intent_consulta_libro_titulo': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'entity_MISC': 1.0, 'intent_consulta_libro_titulo': 1.0}, {'intent_me_llamo': 1.0, 'prev_action_listen': 1.0}, {'intent_me_llamo': 1.0, 'prev_utter_no_te_entiendo': 1.0}, {'entity_PER': 1.0, 'intent_consulta_libros_kw': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'entity_PER': 1.0, 'intent_consulta_libros_kw': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             GET, HEAD, OPTIONS             /static/[filename]
+custom_webhook_CmdlineInput.health                 GET, HEAD, OPTIONS             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                POST, OPTIONS                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Received user message 'Quiero un libro de Miguel de Cervantes' with intent '{'name': 'consulta_libro_kw', 'confidence': 0.20703621776995654}' and entities '[{'entity': 'PER', 'value': 'Miguel de Cervantes', 'start': 19, 'confidence': None, 'end': 38, 'extractor': 'ner_spacy'}, {'start': 19, 'end': 38, 'value': 'miguel de cervantes', 'entity': 'autores', 'confidence': 0.776626337316745, 'extractor': 'ner_crf'}]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [None, None, None, None, None, None, None, None, {}, {'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_libros' with prob 1.00.
+Calling action endpoint to run action 'form_libros'.
+Action 'form_libros' ended with events '['Form(form_libros)', 'SlotSet(key: libro, value: None)', 'SlotSet(key: autores, value: Miguel de cervantes)', 'SlotSet(key: searchindex, value: 1)', 'SlotSet(key: numberofmorebooksearch, value: 1)', 'Form(None)', 'SlotSet(key: requested_slot, value: None)']'
+Bot utterance 'BotUttered(text: Mira, he encontrado este libro., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, None, None, None, None, None, {}, {'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.21735612584096048}' and entities '[]'
+Logged UserUtterance - tracker now has 13 events
+Current slot values: 
+	articulos: None
+	autores: Miguel de cervantes
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 1
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 1
+Current tracker state [None, None, None, None, None, None, {}, {'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: ¡Hola holita!, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, None, None, None, {}, {'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'intent_saludos': 1.0, 'prev_action_saludos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Quiero un libro de Lorca' with intent '{'name': 'consulta_libro_kw', 'confidence': 0.14826780258968883}' and entities '[{'entity': 'LOC', 'value': 'Lorca', 'start': 19, 'confidence': None, 'end': 24, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 17 events
+Current slot values: 
+	articulos: None
+	autores: Miguel de cervantes
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 1
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 1
+NLU confidence 0.14826780258968883 is lower than NLU threshold 0.2. 
+Current tracker state [None, None, None, None, {}, {'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'intent_saludos': 1.0, 'prev_action_saludos': 1.0}, {'intent_consulta_libro_kw': 1.0, 'entity_LOC': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te entiendo. Intenta reformular tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, None, {}, {'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0, 'prev_action_listen': 1.0}, {'prev_form_libros': 1.0, 'entity_autores': 1.0, 'entity_PER': 1.0, 'intent_consulta_libro_kw': 1.0}, {'prev_action_listen': 1.0, 'intent_saludos': 1.0}, {'intent_saludos': 1.0, 'prev_action_saludos': 1.0}, {'intent_consulta_libro_kw': 1.0, 'entity_LOC': 1.0, 'prev_action_listen': 1.0}, {'intent_consulta_libro_kw': 1.0, 'entity_LOC': 1.0, 'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             HEAD, GET, OPTIONS             /static/[filename]
+custom_webhook_CmdlineInput.health                 HEAD, GET, OPTIONS             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                POST, OPTIONS                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             HEAD, OPTIONS, GET             /static/[filename]
+custom_webhook_CmdlineInput.health                 HEAD, OPTIONS, GET             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                OPTIONS, POST                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 21 events
+Current slot values: 
+	articulos: None
+	autores: Miguel de cervantes
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 1
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 1
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: Mis creadores no me han enseñado a responder tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 25 events
+Current slot values: 
+	articulos: None
+	autores: Miguel de cervantes
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: 1
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 1
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: Mis creadores no me han enseñado a responder tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Inconsistent BILOU tagging found, B- tag, L- tag pair encloses multiple entity classes.i.e. [B-a, I-b, L-a] instead of [B-a, I-a, L-a].
+Assuming B- class is correct.
+Inconsistent BILOU tagging found, B- tag, L- tag pair encloses multiple entity classes.i.e. [B-a, I-b, L-a] instead of [B-a, I-a, L-a].
+Assuming B- class is correct.
+Received user message 'a que hora abre la biblioteca de psicologia' with intent '{'name': 'consulta_horario_general', 'confidence': 0.4451574222811688}' and entities '[{'start': 19, 'end': 43, 'value': 'biblioteca de psicologia', 'entity': 'localizacion', 'confidence': 0.5234128562420465, 'extractor': 'ner_crf'}]'
+Logged UserUtterance - tracker now has 30 events
+Current slot values: 
+	articulos: None
+	autores: Miguel de cervantes
+	juego: None
+	libro: None
+	localizacion: biblioteca de psicologia
+	musica: None
+	numberofmorebooksearch: 1
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 1
+Current tracker state [{'slot_localizacion_0': 1.0, 'intent_consulta_horario_general': 1.0, 'entity_localizacion': 1.0, 'prev_action_listen': 1.0}]
+There is a memorised next action '24'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_check_biblio_abierta' with prob 1.00.
+Calling action endpoint to run action 'action_check_biblio_abierta'.
+Action 'action_check_biblio_abierta' ended with events '[]'
+Bot utterance 'BotUttered(text: El horario de la Biblioteca de Psicología es de lunes a viernes de 09:00 a 21:00., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'slot_localizacion_0': 1.0, 'intent_consulta_horario_general': 1.0, 'entity_localizacion': 1.0, 'prev_action_check_biblio_abierta': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'esta abierta la bibioteca de informatica' with intent '{'name': 'insultos', 'confidence': 0.2441219918060435}' and entities '[{'start': 16, 'end': 40, 'value': 'bibioteca de informatica', 'entity': 'localizacion', 'confidence': 0.9478682974455784, 'extractor': 'ner_crf'}]'
+Logged UserUtterance - tracker now has 35 events
+Current slot values: 
+	articulos: None
+	autores: Miguel de cervantes
+	juego: None
+	libro: None
+	localizacion: bibioteca de informatica
+	musica: None
+	numberofmorebooksearch: 1
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: 1
+Current tracker state [{'slot_localizacion_0': 1.0, 'prev_action_listen': 1.0, 'intent_insultos': 1.0}]
+There is no memorised next action
+There is no active form
+Action 'action_listen' was predicted after a user message using policy_0_KerasPolicy. Predicting fallback action: utter_no_te_entiendo
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No entiendo que quieres decir., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'slot_localizacion_0': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_insultos': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             HEAD, GET, OPTIONS             /static/[filename]
+custom_webhook_CmdlineInput.health                 HEAD, GET, OPTIONS             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                POST, OPTIONS                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Inconsistent BILOU tagging found, B- tag not closed by L- tag, i.e [B-a, I-a, O] instead of [B-a, L-a, O].
+Assuming last tag is L-
+Received user message 'esta abierta la biblioteca zambrano' with intent '{'name': 'consulta_horario_general', 'confidence': 0.21241771544860136}' and entities '[{'start': 16, 'end': 26, 'value': 'biblioteca', 'entity': 'localizacion', 'confidence': 0.855597476287253, 'extractor': 'ner_crf'}, {'start': 27, 'end': 35, 'value': 'zambrano', 'entity': 'localizacion', 'confidence': 0.9672193331981609, 'extractor': 'ner_crf'}]'
+Logged UserUtterance - tracker now has 3 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [{'entity_localizacion': 1.0, 'intent_consulta_horario_general': 1.0, 'slot_localizacion_0': 1.0, 'prev_action_listen': 1.0}]
+There is a memorised next action '24'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_check_biblio_abierta' with prob 1.00.
+Calling action endpoint to run action 'action_check_biblio_abierta'.
+Action 'action_check_biblio_abierta' ended with events '[]'
+Bot utterance 'BotUttered(text: El horario de la Biblioteca María Zambrano es de lunes a domingo de 09:00 a 21:00., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'entity_localizacion': 1.0, 'intent_consulta_horario_general': 1.0, 'prev_action_check_biblio_abierta': 1.0, 'slot_localizacion_0': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'quiero libros de Harry Potter' with intent '{'name': 'consulta_libros_kw', 'confidence': 0.38852927990605235}' and entities '[{'entity': 'MISC', 'value': 'Harry Potter', 'start': 17, 'confidence': None, 'end': 29, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 7 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [{'prev_action_listen': 1.0, 'intent_consulta_libros_kw': 1.0, 'slot_localizacion_0': 1.0, 'entity_MISC': 1.0}]
+There is no memorised next action
+There is no active form
+Action 'action_listen' was predicted after a user message using policy_0_KerasPolicy. Predicting fallback action: utter_no_te_entiendo
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No entiendo que quieres decir., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'intent_consulta_libros_kw': 1.0, 'slot_localizacion_0': 1.0, 'entity_MISC': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             GET, HEAD, OPTIONS             /static/[filename]
+custom_webhook_CmdlineInput.health                 GET, HEAD, OPTIONS             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                POST, OPTIONS                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 11 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: Mis creadores no me han enseñado a responder tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 15 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No entiendo que quieres decir., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 19 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: Mis creadores no me han enseñado a responder tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 23 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te entiendo. Intenta reformular tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 27 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No entiendo que quieres decir., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 31 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 35 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: Mis creadores no me han enseñado a responder tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 39 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te entiendo. Intenta reformular tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 43 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te entiendo. Intenta reformular tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 47 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te entiendo. Intenta reformular tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 51 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No entiendo que quieres decir., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 55 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 59 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 63 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message '' with intent '{'name': None, 'confidence': 0.0}' and entities '[]'
+Logged UserUtterance - tracker now has 67 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+NLU confidence 0.0 is lower than NLU threshold 0.2. 
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             GET, OPTIONS, HEAD             /static/[filename]
+custom_webhook_CmdlineInput.health                 GET, OPTIONS, HEAD             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                POST, OPTIONS                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Received user message 'busca varios libros del autor George R Martin' with intent '{'name': 'consulta_libros_autor', 'confidence': 0.44451081975550294}' and entities '[{'entity': 'PER', 'value': 'George R Martin', 'start': 30, 'confidence': None, 'end': 45, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 71 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [{'prev_action_listen': 1.0, 'intent_consulta_libros_autor': 1.0, 'entity_PER': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Action 'action_listen' was predicted after a user message using policy_0_KerasPolicy. Predicting fallback action: utter_no_te_entiendo
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No entiendo que quieres decir., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_consulta_libros_autor': 1.0, 'entity_PER': 1.0, 'slot_localizacion_0': 1.0, 'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             GET, OPTIONS, HEAD             /static/[filename]
+custom_webhook_CmdlineInput.health                 GET, OPTIONS, HEAD             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                POST, OPTIONS                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Received user message 'Hola' with intent '{'name': 'saludos', 'confidence': 0.4233280955521538}' and entities '[{'entity': 'PER', 'value': 'Hola', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 75 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [{'slot_localizacion_0': 1.0, 'prev_action_listen': 1.0, 'intent_saludos': 1.0}]
+There is a memorised next action '27'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: Hola. Me alegra verte de vuelta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'slot_localizacion_0': 1.0, 'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'Hola, me llamo Carlos' with intent '{'name': 'me_llamo', 'confidence': 0.30092028334272425}' and entities '[{'entity': 'PER', 'value': 'Hola', 'start': 0, 'confidence': None, 'end': 4, 'extractor': 'ner_spacy'}]'
+Logged UserUtterance - tracker now has 79 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [{'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Action 'action_listen' was predicted after a user message using policy_0_KerasPolicy. Predicting fallback action: utter_no_te_entiendo
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: Mis creadores no me han enseñado a responder tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola, me llamo Carlos' with intent '{'name': 'me_llamo', 'confidence': 0.30092028334272425}' and entities '[]'
+Logged UserUtterance - tracker now has 83 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [{'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Action 'action_listen' was predicted after a user message using policy_0_KerasPolicy. Predicting fallback action: utter_no_te_entiendo
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola, me llamo carlos' with intent '{'name': 'me_llamo', 'confidence': 0.30092028334272425}' and entities '[]'
+Logged UserUtterance - tracker now has 87 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [{'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'prev_action_listen': 1.0}]
+There is no memorised next action
+There is no active form
+Action 'action_listen' was predicted after a user message using policy_0_KerasPolicy. Predicting fallback action: utter_no_te_entiendo
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te entiendo. Intenta reformular tu consulta., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'prev_utter_no_te_entiendo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola, me llamo Pepe' with intent '{'name': 'me_llamo', 'confidence': 0.2401052157653951}' and entities '[{'entity': 'PER', 'value': 'pepe', 'start': 15, 'confidence': None, 'end': 19, 'extractor': 'ner_spacy', 'processors': ['ner_synonyms']}, {'start': 15, 'end': 19, 'value': 'pepe', 'entity': 'persona', 'confidence': 0.5047328165678276, 'extractor': 'ner_crf', 'processors': ['ner_synonyms']}]'
+Logged UserUtterance - tracker now has 91 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [{'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'prev_action_listen': 1.0, 'entity_persona': 1.0}]
+There is no memorised next action
+There is no active form
+Action 'action_listen' was predicted after a user message using policy_0_KerasPolicy. Predicting fallback action: utter_no_te_entiendo
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'utter_no_te_entiendo' with prob 1.00.
+Action 'utter_no_te_entiendo' ended with events '[]'
+Bot utterance 'BotUttered(text: No te he entendido., data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'entity_PER': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'entity_persona': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_1_FallbackPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             HEAD, OPTIONS, GET             /static/[filename]
+custom_webhook_CmdlineInput.health                 HEAD, OPTIONS, GET             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                OPTIONS, POST                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Received user message 'me llamo carlos' with intent '{'name': 'me_llamo', 'confidence': 0.4335686250455162}' and entities '[]'
+Logged UserUtterance - tracker now has 95 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [{'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'entity_PER': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_saludos' with prob 0.99.
+Calling action endpoint to run action 'form_saludos'.
+Action 'form_saludos' ended with events '['Form(form_saludos)', 'SlotSet(key: requested_slot, value: persona)']'
+Bot utterance 'BotUttered(text: Dime cómo te llamas, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'entity_PER': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is an active form 'form_saludos'
+Predicted next action using policy_3_FormPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.4631379850481138}' and entities '[]'
+Logged UserUtterance - tracker now has 101 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: persona
+	searchindex: None
+Current tracker state [{'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'entity_PER': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is an active form 'form_saludos'
+Predicted next action using policy_3_FormPolicy
+Predicted next action 'form_saludos' with prob 1.00.
+Calling action endpoint to run action 'form_saludos'.
+Action 'form_saludos' ended with events '['SlotSet(key: requested_slot, value: persona)']'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'entity_PER': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is an active form 'form_saludos'
+Predicted next action using policy_3_FormPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.4631379850481138}' and entities '[]'
+Logged UserUtterance - tracker now has 105 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: persona
+	searchindex: None
+Current tracker state [{'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'entity_PER': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is an active form 'form_saludos'
+Predicted next action using policy_3_FormPolicy
+Predicted next action 'form_saludos' with prob 1.00.
+Calling action endpoint to run action 'form_saludos'.
+Action 'form_saludos' ended with events '['SlotSet(key: requested_slot, value: persona)']'
+Current tracker state [{'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}, {'entity_PER': 1.0, 'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'entity_PER': 1.0, 'prev_utter_no_te_entiendo': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0}, {'prev_action_listen': 1.0, 'intent_me_llamo': 1.0, 'slot_localizacion_0': 1.0}]
+There is no memorised next action
+There is an active form 'form_saludos'
+Predicted next action using policy_3_FormPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Rasa Core server is up and running on http://localhost:5005
+Rasa process starting
+Added 'nlp_spacy' to component cache. Key 'nlp_spacy-es_core_news_sm'.
+Available web server routes: 
+static                                             HEAD, GET, OPTIONS             /static/[filename]
+custom_webhook_CmdlineInput.health                 HEAD, GET, OPTIONS             /webhooks/rest/
+custom_webhook_CmdlineInput.receive                POST, OPTIONS                  /webhooks/rest/webhook
+Rasa Core server is up and running on http://localhost:5005
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.4631379850481138}' and entities '[]'
+Logged UserUtterance - tracker now has 121 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: zambrano
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: persona
+	searchindex: None
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0, 'intent_me_llamo': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0, 'intent_me_llamo': 1.0}, {'prev_action_listen': 1.0, 'entity_PER': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0, 'intent_me_llamo': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'entity_PER': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0, 'intent_me_llamo': 1.0}, {'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0, 'intent_me_llamo': 1.0}]
+There is no memorised next action
+There is an active form 'form_saludos'
+Predicted next action using policy_3_FormPolicy
+Predicted next action 'form_saludos' with prob 1.00.
+Calling action endpoint to run action 'form_saludos'.
+Action 'form_saludos' ended with events '['SlotSet(key: requested_slot, value: persona)']'
+Current tracker state [{'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0, 'intent_me_llamo': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'slot_localizacion_0': 1.0, 'intent_me_llamo': 1.0}, {'prev_action_listen': 1.0, 'entity_PER': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0, 'intent_me_llamo': 1.0}, {'prev_utter_no_te_entiendo': 1.0, 'entity_PER': 1.0, 'slot_localizacion_0': 1.0, 'entity_persona': 1.0, 'intent_me_llamo': 1.0}, {'prev_action_listen': 1.0, 'slot_localizacion_0': 1.0, 'intent_me_llamo': 1.0}]
+There is no memorised next action
+There is an active form 'form_saludos'
+Predicted next action using policy_3_FormPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola' with intent '{'name': 'saludos', 'confidence': 0.4631379850481138}' and entities '[]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [None, None, None, {}, {'intent_saludos': 1.0, 'prev_action_listen': 1.0}]
+There is a memorised next action '27'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_saludos' with prob 1.00.
+Calling action endpoint to run action 'action_saludos'.
+Action 'action_saludos' ended with events '[]'
+Bot utterance 'BotUttered(text: Hola. ¿Cómo puedo ayudarle?, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, {}, {'intent_saludos': 1.0, 'prev_action_listen': 1.0}, {'prev_action_saludos': 1.0, 'intent_saludos': 1.0}]
+There is a memorised next action '0'
+There is no active form
+Predicted next action using policy_2_MemoizationPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
+Received user message 'hola, me llamo Carlos' with intent '{'name': 'me_llamo', 'confidence': 0.305770831737129}' and entities '[]'
+Logged UserUtterance - tracker now has 2 events
+Current slot values: 
+	articulos: None
+	autores: None
+	juego: None
+	libro: None
+	localizacion: None
+	musica: None
+	numberofmorebooksearch: None
+	pelicula: None
+	persona: None
+	requested_slot: None
+	searchindex: None
+Current tracker state [None, None, None, {}, {'prev_action_listen': 1.0, 'intent_me_llamo': 1.0}]
+There is no memorised next action
+There is no active form
+Predicted next action using policy_0_KerasPolicy
+Predicted next action 'form_saludos' with prob 0.98.
+Calling action endpoint to run action 'form_saludos'.
+Action 'form_saludos' ended with events '['Form(form_saludos)', 'SlotSet(key: requested_slot, value: persona)']'
+Bot utterance 'BotUttered(text: Dime cómo te llamas, data: {
+  "elements": null,
+  "buttons": null,
+  "attachment": null
+})'
+Current tracker state [None, None, None, {}, {'prev_action_listen': 1.0, 'intent_me_llamo': 1.0}]
+There is no memorised next action
+There is an active form 'form_saludos'
+Predicted next action using policy_3_FormPolicy
+Predicted next action 'action_listen' with prob 1.00.
+Action 'action_listen' ended with events '[]'
