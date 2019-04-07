@@ -81,7 +81,6 @@ class JarvisProcessor():
         tracker = self.agent.tracker_store.get_or_create_tracker(sender_id=senderid)
 
         self._slots = self.__rellenaSlots(tracker)
-        print(self._slots)
 
         for response in mensaje:
             respuesta["text"] = response["text"]
@@ -92,7 +91,8 @@ class JarvisProcessor():
         resultado = {}
 
         resultado['intent'] = peticion['nlu']['intent']['name']
-        resultado['entities'] = []
+        resultado['entities'] = {}
+        print(peticion)
         tmp = {}
 
         if resultado['intent'] == 'consulta_telefono' or resultado['intent'] == \
@@ -108,11 +108,11 @@ class JarvisProcessor():
                 or resultado['intent'] == 'consulta_libro_autor' or resultado['intent'] == \
                 'consulta_libros_titulo_autor' or resultado['intent'] == 'consulta_libros_kw_autor' \
                 or resultado['intent'] == 'consulta_libro_kw_autor' or resultado['intent'] == \
-                'consulta_libros_autor' or resultado['intent'] == 'consulta_libro_titulo_autor':
+                'consulta_libros_autor' or resultado['intent'] == 'consulta_libro_titulo_autor' \
+                or resultado['intent'] == 'consulta_libro_titulo':
             if self._slots['libro'] is not None:
                 tmp['libro'] = self._slots['libro']
             if self._slots['autores'] is not None:
-                print('entre')
                 tmp['autores'] = self._slots['autores']
             tmp['searchindex'] = self._slots['searchindex']
 
@@ -159,7 +159,7 @@ class JarvisProcessor():
             tmp['searchindex'] = self._slots['searchindex']
 
         resultado['message'] = peticion['text']
-        resultado['entities'].append(tmp)
+        resultado['entities'] = tmp
             
         return resultado
 

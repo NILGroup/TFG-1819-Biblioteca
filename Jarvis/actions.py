@@ -56,15 +56,16 @@ class SaludosForm(FormAction):
             temp = tracker.get_latest_entity_values('PER')
             aux = None
             for i in temp:
-                if i.capitalize() is not "Hola":
+                if i.lower() != "hola":
                     aux = i
             aux2 = next(tracker.get_latest_entity_values('persona'), None)
             if aux is None and aux2 is not None:
-                return [SlotSet('persona', aux2)]
+                return [SlotSet('persona', aux2.capitalize())]
             elif aux is not None and aux is not "Hola":
                 return [SlotSet('persona', aux)]
             else:
-                dispatcher.utter_message("¿Cómo te llamas?")
+                dispatcher.utter_message("Dime cómo te llamas")
+                return []
 
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
 
@@ -106,7 +107,7 @@ class BuscarLibroForm(FormAction):
         temp['libro'] = None
         temp['autores'] = None
         if libro is None:
-            temp['libro'] = next(tracker.get_latest_entity_values('MISC'),None)
+            temp['libro'] = next(tracker.get_latest_entity_values('MISC'), None)
         else:
             temp['libro'] = libro.capitalize()
 
