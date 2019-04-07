@@ -25,7 +25,7 @@ class JarvisProcessor():
     def __init__(self):
         directorioModelos = 'model/default/Jarvis'
         if (os.path.isdir(directorioModelos)):
-            self.interpreter = RasaNLUInterpreter(directorioModelos)
+            self.interpreter = RasaNLUInterpreter(model_directory=directorioModelos)
             action_endopoint = EndpointConfig(url="http://localhost:5055/webhook")
             tracker_store = MongoTrackerStore(domain= Domain.load('model/dialogue/domain.yml'),
                                               host='mongodb://localhost:27017',
