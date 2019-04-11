@@ -16,16 +16,17 @@ import json
 
 class JanetServController:
 
-    def __init__(self):
-        print("Iniciando módulo Jarvis")
+    def __init__(self, logger):
+        self._log = logger
+        self._log.info("Iniciando módulo Jarvis")
         self.__pln = JanetServJarvis.JanetServJarvis()
-        print("Jarvis iniciado")
-        print("Iniciando módulo WMS")
+        self._log.info("Jarvis iniciado")
+        self._log.info("Iniciando módulo WMS")
         self.__wms = JanetServWMS.JanetServWMS()
-        print("WMS iniciado")
-        print("Iniciando módulo MongoDB")
+        self._log.info("WMS iniciado")
+        self._log.info("Iniciando módulo MongoDB")
         self._mongo = JanetServMongo.JanetServMongo()
-        print("MongoDB iniciado")
+        self._log.info("MongoDB iniciado")
 
     def procesarDatos_POST(self, client_request):
         
@@ -59,11 +60,12 @@ class JanetServController:
             respuesta['content-type'] = 'text'
             respuesta = self._tratar_pln("consulta_libros_kw", {'libros': "Harry Potter", 'searchindex': 2}, "Aqui está", uid)
 
+        else:
+            raise Exception("No se ha especificado un tipo de acción.")
+
         respuesta["errorno"] = 0
         if asignarID:
             respuesta["user_id"] = client_request["user_id"]
-
-        print(respuesta)
 
         return json.dumps(respuesta, ensure_ascii=False).encode('utf8')
 

@@ -21,7 +21,7 @@ class ActionFirstBook(Action):
         historial = self.mongo.obtener_consulta(uid)
 
         respuesta.update(self.wms.cargarInformacionLibro(historial['oclc1']))
-        self.mongo.guardar_consulta(uid, respuesta['books'], "mas_info_primero")
+        #self.mongo.guardar_consulta(uid, respuesta, "mas_info_primero")
         respuesta['content-type'] = 'single-book'
 
         return respuesta
