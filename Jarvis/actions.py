@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Módulo PLN Codename Jarvis - Proyecto Janet
-Versión 0.5.0
+Versión 0.9.0
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
 © 2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.

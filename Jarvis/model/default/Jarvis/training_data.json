@@ -4630,8 +4630,28 @@
         "text": "Quiero ir a la facultad de geografía e historia"
       },
       {
+        "intent": "consulta_localizacion",
+        "entities": [
+          {
+            "start": 22,
+            "end": 64,
+            "value": "biblioteca de educacion",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "/consulta_localizacion{\"localizacion\":\"biblioteca de educacion\"}"
+      },
+      {
         "intent": "consulta_localizacion_empty",
         "text": "Busca su ubicación"
+      },
+      {
+        "intent": "consulta_localizacion_empty",
+        "text": "Busca su ubicación de la biblioteca"
+      },
+      {
+        "intent": "consulta_localizacion_empty",
+        "text": "Busca su ubicación de la facultad"
       },
       {
         "intent": "consulta_localizacion_empty",
@@ -4639,11 +4659,35 @@
       },
       {
         "intent": "consulta_localizacion_empty",
+        "text": "Necesito ir a la biblioteca"
+      },
+      {
+        "intent": "consulta_localizacion_empty",
+        "text": "Necesito ir a la facultad"
+      },
+      {
+        "intent": "consulta_localizacion_empty",
         "text": "Necesito desplazarme allí"
       },
       {
         "intent": "consulta_localizacion_empty",
+        "text": "Necesito desplazarme a la biblioteca"
+      },
+      {
+        "intent": "consulta_localizacion_empty",
+        "text": "Necesito desplazarme a la facultad"
+      },
+      {
+        "intent": "consulta_localizacion_empty",
         "text": "Dónde está"
+      },
+      {
+        "intent": "consulta_localizacion_empty",
+        "text": "Dónde está la biblioteca"
+      },
+      {
+        "intent": "consulta_localizacion_empty",
+        "text": "Dónde está la facultad"
       },
       {
         "intent": "consulta_localizacion_empty",
@@ -4651,7 +4695,11 @@
       },
       {
         "intent": "consulta_localizacion_empty",
-        "text": "Dónde está"
+        "text": "Dónde se encuentra la biblioteca"
+      },
+      {
+        "intent": "consulta_localizacion_empty",
+        "text": "Dónde se encuentra la facultad"
       },
       {
         "intent": "consulta_telefono",
@@ -4810,8 +4858,34 @@
         "text": "Quiero el teléfono de la biblioteca de veterinaria"
       },
       {
+        "intent": "consulta_telefono",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "Llama",
+            "entity": "PER"
+          },
+          {
+            "start": 11,
+            "end": 34,
+            "value": "facultad de informatica",
+            "entity": "localizacion"
+          }
+        ],
+        "text": "Llama a la facultad de informatica"
+      },
+      {
         "intent": "consulta_telefono_empty",
         "text": "Llámala"
+      },
+      {
+        "intent": "consulta_telefono_empty",
+        "text": "Llama a la biblioteca"
+      },
+      {
+        "intent": "consulta_telefono_empty",
+        "text": "Llama a la facultad"
       },
       {
         "intent": "consulta_telefono_empty",
@@ -4819,11 +4893,23 @@
       },
       {
         "intent": "consulta_telefono_empty",
-        "text": "Necesito el teléfono"
+        "text": "Necesito el número"
+      },
+      {
+        "intent": "consulta_telefono_empty",
+        "text": "Necesito su número de teléfono"
+      },
+      {
+        "intent": "consulta_telefono_empty",
+        "text": "Necesito el teléfono de teléfono"
       },
       {
         "intent": "consulta_telefono_empty",
         "text": "Busca su teléfono"
+      },
+      {
+        "intent": "consulta_telefono_empty",
+        "text": "Busca el teléfono"
       },
       {
         "intent": "consulta_telefono_empty",
@@ -4840,6 +4926,14 @@
       {
         "intent": "consulta_telefono_empty",
         "text": "Quiero su teléfono"
+      },
+      {
+        "intent": "consulta_telefono_empty",
+        "text": "Quiero el teléfono de la biblioteca"
+      },
+      {
+        "intent": "consulta_telefono_empty",
+        "text": "Quiero el teléfono de la facultad"
       },
       {
         "intent": "despedidas",
@@ -5584,6 +5678,12 @@
         "value": "Miguel Muñoz",
         "synonyms": [
           "{\"libro\":\"Mi Españita\", \"autores\":\"Miguel Muñoz\"}"
+        ]
+      },
+      {
+        "value": "biblioteca de educacion",
+        "synonyms": [
+          "{\"localizacion\":\"biblioteca de educacion\"}"
         ]
       },
       {

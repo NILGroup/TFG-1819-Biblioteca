@@ -13,6 +13,9 @@
 - Podrías buscar más ejemplares
 - Busca más
 - quiero más
+- quiero mas
+- busca mas
+- busca mas
 
 ## intent:como_estas
 - Qué tal
@@ -265,6 +268,7 @@
 - Dame libros de [Pedro Sanchez](PER)
 - Quiero libros de [Quevedo](PER)
 - Dame libros de [Derecho Legal Civil](MISC)
+- quiero libros de [Matemática Discreta](MISC)
 
 ## intent:consulta_libros_kw_autor
 - Quiero libros de [El Quijote](libro)[El Quijote](MISC) del autor [Miguel de Cervantes](autores)[Miguel de Cervantes](PER)
@@ -325,14 +329,25 @@
 - Donde está la [biblioteca de ciencias políticas](localizacion)
 - Quiero ir a la [facultad de geografía e historia](localizacion)
 - /consulta_localizacion[{"localizacion":"biblioteca de educacion"}](localizacion:biblioteca de educacion)
+- donde esta la [biblioteca de educacion](localizacion)
 
 ## intent:consulta_localizacion_empty
 - Busca su ubicación
+- Busca su ubicación de la biblioteca
+- Busca su ubicación de la facultad
 - Necesito ir
+- Necesito ir a la biblioteca
+- Necesito ir a la facultad
 - Necesito desplazarme allí
+- Necesito desplazarme a la biblioteca
+- Necesito desplazarme a la facultad
 - Dónde está
+- Dónde está la biblioteca
+- Dónde está la facultad
 - Dónde se encuentra
-- Dónde está
+- Dónde se encuentra la biblioteca
+- Dónde se encuentra la facultad
+- donde esta
 
 ## intent:consulta_telefono
 - Llama a la [Facultad de matemáticas](localizacion)
@@ -349,16 +364,25 @@
 - ¿Me puedes decir el n￿úmero de la [Biblioteca de Enfermer￿ia](localizacion)?
 - Quiero el teléfono de la [biblioteca de veterinaria](localizacion)
 - [Llama](PER) a la [facultad de informatica](localizacion)
+- busca el numero de telefono de la [facultad de medicina](localizacion)
 
 ## intent:consulta_telefono_empty
 - Llámala
+- Llama a la biblioteca
+- Llama a la facultad
 - Necesito su número
-- Necesito el teléfono
+- Necesito el número
+- Necesito su número de teléfono
+- Necesito el teléfono de teléfono
 - Busca su teléfono
+- Busca el teléfono
 - Busca el número de teléfono
 - ¿Cuál es su número?
 - ¿Cuál es su teléfono?
 - Quiero su teléfono
+- Quiero el teléfono de la biblioteca
+- Quiero el teléfono de la facultad
+- llámala
 
 ## intent:despedidas
 - Adiós

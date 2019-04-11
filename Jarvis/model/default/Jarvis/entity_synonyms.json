@@ -23,6 +23,7 @@
   "{\"libro\":\"narnia\"}": "Narnia",
   "{\"libro\":\"alatriste\",\"autores\":\"arturo pérez-reverte\"}": "Arturo Pérez-Reverte",
   "{\"libro\":\"mi españita\", \"autores\":\"miguel muñoz\"}": "Miguel Muñoz",
+  "{\"localizacion\":\"biblioteca de educacion\"}": "biblioteca de educacion",
   "pepe": "pepe",
   "{\"loc\":\"busca\",\"libro\":\"1984\"}": "1984",
   "{\"persona\":\"basilio\"}": "Basilio",

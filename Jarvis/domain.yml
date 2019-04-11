@@ -1,77 +1,83 @@
 %YAML 1.1
 ---
 actions:
-- utter_despedida
-- action_muestra_primero
-- action_busca_mas
-- action_saludos
-- utter_info_primero
-- action_muestra_segundo
-- utter_saludo_nombre
-- utter_info_tercero
-- utter_saludo
-- utter_juego_kw
-- action_localizacion_sin_entidad
-- utter_consulta_horario_cerrado
-- utter_libros_kw_autor
-- utter_especifica_musica
-- action_busca_libro
-- utter_pelicula_kw
-- utter_libro_kw
-- utter_consulta_localizacion
-- utter_respuesta_insultos
-- utter_especifica_articulo
-- utter_libros_autor
-- utter_especifica_juego
-- utter_libro_autor
-- utter_especifica_libro
-- utter_libros_titulo
-- utter_especifica_pelicula
-- utter_quien_soy
-- utter_libro_titulo_autor
-- utter_libro_kw_autor
-- utter_libros_titulo_autor
-- utter_juegos_kw
-- utter_articulo_kw
-- utter_libros_kw
 - utter_info_segundo
-- utter_consulta_horario_abierto
-- utter_musica_kw
-- action_check_biblio_abierta
-- utter_no_te_entiendo
-- utter_consulta_telefono
-- action_muestra_tercero
-- utter_peliculas_kw
-- utter_articulos_kw
+- utter_respuesta_insultos
 - utter_libro_titulo
+- action_busca_mas
+- action_busca_libro
+- utter_info_primero
+- utter_saludo_nombre
+- utter_consulta_localizacion
+- utter_consulta_horario_cerrado
+- utter_musica_kw
+- utter_consulta_telefono
+- utter_saludo
+- utter_despedida
+- utter_juegos_kw
+- utter_libro_autor
+- utter_peliculas_kw
+- utter_libro_kw
+- utter_quien_soy
+- action_check_biblio_abierta
+- utter_info_tercero
+- utter_especifica_articulo
+- utter_libros_titulo_autor
+- action_muestra_tercero
+- action_saludos
+- utter_especifica_libro
+- utter_consulta_horario_abierto
+- utter_libros_titulo
+- action_localizacion_sin_entidad
+- utter_libros_kw
 - utter_gracias
+- action_muestra_segundo
+- utter_articulo_kw
+- utter_pelicula_kw
+- utter_especifica_juego
+- action_muestra_primero
+- utter_libro_kw_autor
+- utter_especifica_pelicula
+- utter_especifica_musica
+- utter_libros_autor
+- utter_no_te_entiendo
+- utter_libro_titulo_autor
+- utter_juego_kw
+- utter_libros_kw_autor
+- utter_articulos_kw
 entities:
-- autor
-- MISC
-- LOC
-- localizaciones
 - PER
-- autores
+- localizacion
+- musica
+- juego
+- pelicula
 - libro_titulo
-- libro
+- LOC
+- autor
 - ORG
 - persona
-- localizacion
+- localizaciones
+- MISC
+- autores
+- libro
 forms:
+- form_saludos
 - form_libros
 - form_articulos
-- form_saludos
 intents:
-- consulta_telefono
-- consulta_localizacion
-- mas_info_segundo
+- busca_mas
 - consulta_libros_kw
+- consulta_localizacion
+- consulta_localizacion_empty:
+    use_entities: false
+- consulta_telefono
+- consulta_telefono_empty:
+    use_entities: false
+- mas_info_segundo
 - mas_info_primero
 - mas_info_tercero
 - consulta_horario_general
 - saludos:
-    use_entities: false
-- consulta_localizacion_empty:
     use_entities: false
 - consulta_horario_open
 - consulta_horario_close
@@ -92,9 +98,6 @@ intents:
 - despedida
 - quien_soy:
     use_entities: false
-- consulta_telefono_empty:
-    use_entities: false
-- busca_mas
 - como_estas
 - consulta_articulos:
     use_entities: false
@@ -127,17 +130,25 @@ intents:
 - consulta_peliculas_kw
 - consulta_pelicula_kw
 slots:
+  articulos:
+    type: text
   autores:
     auto_fill: false
     type: unfeaturized
+  juego:
+    type: text
   libro:
     auto_fill: false
     type: unfeaturized
   localizacion:
     type: text
+  musica:
+    type: text
   numberofmorebooksearch:
     auto_fill: false
     type: unfeaturized
+  pelicula:
+    type: text
   persona:
     auto_fill: false
     type: unfeaturized

@@ -255,3 +255,37 @@
     - slot{"localizacion": "facultad de informatica"}
     - utter_consulta_telefono
 
+## Generated Story 2412239539487568233
+* consulta_telefono{"localizacion": "facultad de medicina"}
+    - slot{"localizacion": "facultad de medicina"}
+    - utter_consulta_telefono
+* consulta_telefono_empty
+    - action_localizacion_sin_entidad
+
+## Generated Story 2881904004833241302
+* consulta_localizacion{"localizacion": "biblioteca de educacion"}
+    - slot{"localizacion": "biblioteca de educacion"}
+    - utter_consulta_localizacion
+* consulta_localizacion_empty
+    - action_localizacion_sin_entidad
+
+## Generated Story 141516076241791491
+* consulta_libros_kw{"MISC": "Matem\u00e1tica Discreta"}
+    - form_libros
+    - form{"name": "form_libros"}
+    - slot{"libro": "Matem\u00e1tica Discreta"}
+    - slot{"autores": null}
+    - slot{"searchindex": 2}
+    - slot{"numberofmorebooksearch": 2}
+    - form{"name": null}
+    - slot{"requested_slot": null}
+* busca_mas
+    - action_busca_mas
+    - slot{"searchindex": 4}
+* busca_mas
+    - action_busca_mas
+    - slot{"searchindex": 6}
+* busca_mas
+    - action_busca_mas
+    - slot{"searchindex": 8}
+
