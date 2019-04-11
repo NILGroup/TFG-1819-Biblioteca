@@ -32,7 +32,6 @@ class JanetServMongo:
         collection = self._db.historial
 
         if "books" in consulta:
-            print(consulta)
             cods = {}
             i = 1
 
@@ -44,6 +43,11 @@ class JanetServMongo:
                                                           'oclc3': cods['oclc3'], 'intent': intent}}, upsert=True)
         else:
             collection.update({"_id": int(user_id)}, {'$set': {'oclc1': consulta['oclc'], 'intent': intent}}, upsert=True)
+
+    def reiniciar_consulta(self, user_id,):
+        collection = self._db.historial
+
+        collection.update({"_id": int(user_id)}, {}, upsert=True)
 
     def obtener_consulta(self, user_id):
         collection = self._db.historial

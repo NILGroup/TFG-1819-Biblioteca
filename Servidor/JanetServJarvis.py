@@ -24,3 +24,9 @@ class JanetServJarvis():
         resp = request.urlopen(req)
 
         return json.load(resp)
+
+    def restart(self, id):
+        data = {'user_id': id, 'content': '/restart'}
+
+        req = request.Request("http://localhost:5000", data=parse.urlencode(data).encode())
+        request.urlopen(req)

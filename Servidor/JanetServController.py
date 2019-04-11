@@ -55,10 +55,10 @@ class JanetServController:
             respuesta.update(self.__wms.cargarInformacionLibro(client_request['content']))
             respuesta['content-type'] = 'single-book'
 
-        elif client_request["type"] == "test":
+        elif client_request["type"] == "restart":
             uid = client_request["user_id"]
-            respuesta['content-type'] = 'text'
-            respuesta = self._tratar_pln("consulta_libros_kw", {'libros': "Harry Potter", 'searchindex': 2}, "Aqui está", uid)
+            self._mongo.reiniciar_consulta(uid)
+            self.__pln.restart(uid)
 
         else:
             raise Exception("No se ha especificado un tipo de acción.")

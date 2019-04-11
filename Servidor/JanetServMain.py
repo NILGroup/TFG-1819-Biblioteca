@@ -81,7 +81,7 @@ class JanetService:
             errores ocurren cuando nuestro código python ha fallado, por lo que habrá
             que mirar la salida de error del programa para verlos.'''
             response.content_type = 'application/json'
-            logger.error('Error 500: ' + error.exception)
+            logger.error('Error 500: ' + str(error.exception))
             return json.dumps({
                 'errorno': 500,
                 'errorMessage': 'Ha habido un problema imprevisto.',
