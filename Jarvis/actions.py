@@ -100,20 +100,38 @@ class BuscarLibroForm(FormAction):
                  tracker: Tracker,
                  domain: Dict[Text, Any]) -> List[Dict]:
         temp = {}
+        intent = tracker.latest_message['intent'].get('name')
+        MISC = next(tracker.get_latest_entity_values('MISC'), None)
         libro = next(tracker.get_latest_entity_values('libro'), None)
+        loc = next(tracker.get_latest_entity_values('LOC'), None)
         autor1 = next(tracker.get_latest_entity_values('autores'), None)
-        autorPer = next(tracker.get_latest_entity_values('PER'), None)
+        PER = next(tracker.get_latest_entity_values('PER'), None)
         temp['libro'] = None
         temp['autores'] = None
-        if libro is None:
-            temp['libro'] = next(tracker.get_latest_entity_values('MISC'), None)
-        else:
-            temp['libro'] = libro.capitalize()
 
-        if autor1 is None and autorPer is not None:
-            temp['autores'] = autorPer
-        elif autor1 is not None:
-            temp['autores'] = autor1.capitalize()
+        if intent == 'consulta_libros_kw' or intent == 'consulta_libro_kw' or \
+                intent == 'consulta_libros_titulo_autor' or intent == 'consulta_libro_titulo_autor' or \
+                intent == 'consulta_libros_titulo' or intent == 'consulta_libro_titulo' or \
+                intent == 'consulta_libros_kw_autor' or intent == 'consulta_libro_kw_autor':
+            if MISC is not None:
+                temp['libro'] = next(tracker.get_latest_entity_values('MISC'), None)
+            elif libro is not None:
+                temp['libro'] = libro.capitalize()
+            elif intent == 'consulta_libros_kw' or intent == 'consulta_libro_kw' and loc is not None:
+                temp['libro'] = loc
+            elif autor1 is not None:
+                temp['libro'] = autor1.capitalize()
+            elif PER is not None:
+                temp['libro'] = PER
+
+        if intent == 'consulta_libros_autor' or intent == 'consulta_libro_autor' or \
+               intent == 'consulta_libros_autor' or intent == 'consulta_libro_autor' or \
+                intent == 'consulta_libros_titulo_autor' or intent == 'consulta_libro_titulo_autor' or \
+                intent == 'consulta_libros_kw_autor' or intent == 'consulta_libro_kw_autor':
+            if autor1 is None and PER is not None:
+                temp['autores'] = PER
+            elif autor1 is not None:
+                temp['autores'] = autor1.capitalize()
 
         return [SlotSet('libro', temp['libro']), SlotSet('autores', temp['autores'])]
 
