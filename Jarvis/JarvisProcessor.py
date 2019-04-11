@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Módulo PLN Codename Jarvis - Proyecto Janet
-Versión 0.5.0
+Versión 0.5.1
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
 © 2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
@@ -14,6 +14,7 @@ from rasa_nlu.model import Trainer
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_nlu import config
 from rasa_core import train
+from rasa_core.events import SlotSet
 from rasa_core.domain import Domain
 from rasa_core.training import interactive
 from rasa_core.agent import Agent
@@ -71,6 +72,18 @@ class JarvisProcessor():
         self.agent = self.train_dialogue()
 
         return interactive.run_interactive_learning(self.agent)
+
+    def reiniciarSlots(self, senderid):
+        tracker = self.agent.tracker_store.get_or_create_tracker(sender_id=senderid)
+
+        tracker.update(SlotSet('autores', None))
+        tracker.update(SlotSet('libro', None))
+        tracker.update(SlotSet('localizacion', None))
+        tracker.update(SlotSet('numberofmorebooksearch', None))
+        tracker.update(SlotSet('requested_slot', None))
+        tracker.update(SlotSet('searchindex', None))
+
+        self.agent.tracker_store.save(tracker)
 
     def procesarPeticion(self, peticion, senderid='default'):
 

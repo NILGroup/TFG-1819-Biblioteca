@@ -49,14 +49,11 @@ entities:
 - autor
 - MISC
 - LOC
-- juego
 - localizaciones
 - PER
 - autores
 - libro_titulo
-- pelicula
 - libro
-- musica
 - ORG
 - persona
 - localizacion
@@ -130,25 +127,17 @@ intents:
 - consulta_peliculas_kw
 - consulta_pelicula_kw
 slots:
-  articulos:
-    type: text
   autores:
     auto_fill: false
     type: unfeaturized
-  juego:
-    type: text
   libro:
     auto_fill: false
     type: unfeaturized
   localizacion:
     type: text
-  musica:
-    type: text
   numberofmorebooksearch:
     auto_fill: false
     type: unfeaturized
-  pelicula:
-    type: text
   persona:
     auto_fill: false
     type: unfeaturized
