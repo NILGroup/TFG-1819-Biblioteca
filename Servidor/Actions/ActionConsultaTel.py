@@ -26,6 +26,7 @@ class ActionPhone(Action):
             tmp = self.mongo.obtener_biblioteca(self._tratarlocalizacion(entities['localizacion']))
             if tmp is not None:
                 respuesta['phone'] = tmp['telefono']
+                respuesta['library'] = tmp['name']
                 respuesta['content-type'] = 'phone'
             else:
                 respuesta['response'] = 'Parece que no existe ninguna biblioteca llamada así.'
