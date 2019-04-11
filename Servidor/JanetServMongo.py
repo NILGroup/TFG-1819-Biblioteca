@@ -15,9 +15,6 @@ class JanetServMongo:
     def __init__(self):
         self._client = MongoClient('mongodb://localhost:27017')
         self._db = self._client.janet
-        # Issue the serverStatus command and print the results
-        # serverStatusResult = self._db.command("serverStatus")
-        # pprint(serverStatusResult)
 
     def obtener_biblioteca(self, nombre):
         collection = self._db.localizaciones

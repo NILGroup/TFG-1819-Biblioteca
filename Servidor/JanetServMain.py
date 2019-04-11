@@ -15,7 +15,7 @@ import logging
 
 class JanetService:
     def __init__(self):
-        # set up the logger
+        # Creacion de logger
         logger = logging.getLogger('janet')
         logger.setLevel(logging.INFO)
         file_handler = logging.FileHandler('janet.log')
@@ -90,4 +90,4 @@ class JanetService:
 
 if __name__ == '__main__':
     JanetService()
-    run(host='0.0.0.0', port=80, reloader=True)
+    run(host='0.0.0.0', port=8080, reloader=True)

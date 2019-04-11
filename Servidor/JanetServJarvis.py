@@ -17,10 +17,8 @@ class JanetServJarvis():
         contenido = contenido[0].lower() + contenido[1:]
         data = {'user_id': id, 'content': contenido}
 
-        # Post Method is invoked if data != None
         req = request.Request("http://localhost:5000", data=parse.urlencode(data).encode())
 
-        # Response
         resp = request.urlopen(req)
 
         return json.load(resp)
