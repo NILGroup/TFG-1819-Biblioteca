@@ -28,6 +28,7 @@
 		54A2BC5022580068003F5004 /* MapViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2BC4F22580068003F5004 /* MapViewCell.swift */; };
 		54C9D94420DD71350026E68D /* Micro Start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D94220DD71340026E68D /* Micro Start.wav */; };
 		54C9D94520DD71350026E68D /* Recognized voice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D94320DD71350026E68D /* Recognized voice.wav */; };
+		54FB3067225D191000C0FBE0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54FB3066225D191000C0FBE0 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		54A2BC4F22580068003F5004 /* MapViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCell.swift; sourceTree = "<group>"; };
 		54C9D94220DD71340026E68D /* Micro Start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Micro Start.wav"; sourceTree = "<group>"; };
 		54C9D94320DD71350026E68D /* Recognized voice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Recognized voice.wav"; sourceTree = "<group>"; };
+		54FB3066225D191000C0FBE0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54FB3067225D191000C0FBE0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +126,7 @@
 				5454623B207F5B7A00640980 /* JanetTests */,
 				54546246207F5B7A00640980 /* JanetUITests */,
 				54546225207F5B3800640980 /* Products */,
+				54FB3063225D190A00C0FBE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +193,14 @@
 				54C9D94320DD71350026E68D /* Recognized voice.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		54FB3063225D190A00C0FBE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54FB3066225D191000C0FBE0 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +272,11 @@
 					54546223207F5B3800640980 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					54546237207F5B7A00640980 = {
 						CreatedOnToolsVersion = 9.3;

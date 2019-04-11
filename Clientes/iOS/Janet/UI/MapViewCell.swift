@@ -9,15 +9,20 @@
 import UIKit
 import MapKit
 
-class MapViewCell: TableViewCell {
+class MapViewCell: TableViewCell, MKMapViewDelegate {
     
     @IBOutlet weak var MapView: MKMapView!
+    @IBOutlet weak var Direction: UILabel!
     
     override func setDatos(info: Globos) {
         
+        MapView.delegate = self
+        
         self.message.text = "Janet: " + info.getRespuesta()
+        self.Direction.text = info.getDirection()
         self.message.textAlignment = .left
-        self.message.sizeToFit()
+        //self.message.sizeToFit()
+        //self.Direction.sizeToFit()
         self.cambiarBurbuja(info: .Bot)
         
         let pLat = info.getLat()
@@ -26,11 +31,12 @@ class MapViewCell: TableViewCell {
         
         let reg = MKCoordinateRegion(center: localizacion, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
+        self.MapView.sizeToFit()
         self.MapView.setRegion(reg, animated: true)
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = localizacion
-        annotation.title = info.getLibrarys()
+        annotation.title = info.getLibrary()
         self.MapView.addAnnotation(annotation)
     }
     

@@ -55,7 +55,11 @@ class SingleBookViewCell: TableViewCell {
         } else {
             availableLabel.text = "Disponible: No"
         }
-        locationLabel.text = "Biblioteca: " + info.getLibrarys()
+        var biblios = ""
+        for item in info.getLibraryAvailable() {
+            biblios += item.key + "\t" + String(item.value) + "\n"
+        }
+        locationLabel.text = biblios
         locationLabel.sizeToFit()
         self.urlString = info.getURL().replacingOccurrences(of: "http://www.worldcat.org/wcpa/", with: "https://ucm.on.worldcat.org/", options: .literal, range: nil)
         
@@ -77,6 +81,13 @@ class SingleBookViewCell: TableViewCell {
         
         var existe = false
         var i = 0
+        
+        if isbn.isEmpty {
+            DispatchQueue.main.async {
+                self.coverart.image = UIImage(named: "Empty_Book")
+            }
+            return
+        }
         
         while (i < isbn.count && !existe) {
             let enlace = "https://covers.openlibrary.org/b/isbn/"+isbn[i]+"-M.jpg"

@@ -18,14 +18,16 @@ class Globos {
     private var respuesta: String
     private var url: String
     private var imagenURL: String?
-    private var ISBN: [String]?
+    private var ISBN: [String]
     private let type: TiposMensaje
     private var title: String?
     private var author: String?
     private var available: Bool
-    private var librarys: String?
+    private var library: String?
+    private var librarysAvailabe: [String : Int]?
     private var lat: Double?
     private var long: Double?
+    private var direction: String?
     private var phone: Int?
     private var codOCLC: Int?
     private var list: [Globos]?
@@ -40,9 +42,11 @@ class Globos {
         self.title = nil
         self.author = nil
         self.available = true
-        self.librarys = nil
+        self.library = nil
+        self.librarysAvailabe = [:]
         self.lat = nil
         self.long = nil
+        self.direction = ""
         self.phone = nil
         self.codOCLC = nil
         self.list = nil
@@ -58,7 +62,12 @@ class Globos {
         self.title = nil
         self.author = nil
         self.available = true
-        self.librarys = nil
+        self.library = nil
+        self.librarysAvailabe = [:]
+        self.lat = nil
+        self.long = nil
+        self.direction = ""
+        self.phone = nil
         self.codOCLC = nil
         self.list = nil
     }
@@ -73,7 +82,12 @@ class Globos {
         self.title = nil
         self.author = nil
         self.available = true
-        self.librarys = nil
+        self.library = nil
+        self.librarysAvailabe = [:]
+        self.lat = nil
+        self.long = nil
+        self.direction = ""
+        self.phone = nil
         self.codOCLC = nil
         self.list = nil
     }
@@ -88,7 +102,12 @@ class Globos {
         self.title = nil
         self.author = nil
         self.available = true
-        self.librarys = nil
+        self.library = nil
+        self.librarysAvailabe = [:]
+        self.lat = nil
+        self.long = nil
+        self.direction = ""
+        self.phone = nil
         self.codOCLC = nil
         self.list = nil
     }
@@ -114,7 +133,7 @@ class Globos {
     }
     
     func getISBN() -> [String] {
-        return self.ISBN!
+        return self.ISBN
     }
     
     func getTitle() -> String {
@@ -135,11 +154,18 @@ class Globos {
         return self.available
     }
     
-    func getLibrarys() -> String {
-        if (self.librarys == nil) {
+    func getLibrary() -> String {
+        if (self.library == nil) {
             return ""
         }
-        return self.librarys!
+        return self.library!
+    }
+    
+    func getLibraryAvailable() -> [String:Int] {
+        if ((self.librarysAvailabe?.isEmpty ?? nil)!) {
+            return [:]
+        }
+        return self.librarysAvailabe!
     }
     
     func getLat() -> Double {
@@ -154,6 +180,10 @@ class Globos {
             return 0.0
         }
         return self.long!
+    }
+    
+    func getDirection() -> String {
+        return self.direction!
     }
     
     func getPhone() -> Int {
@@ -193,8 +223,12 @@ class Globos {
         self.available = available
     }
     
-    func setLibrarys(text: String) {
-        self.librarys = text
+    func setLibrary(text: String) {
+        self.library = text
+    }
+    
+    func addLibraryAvailable(index: String, count: Int) {
+        self.librarysAvailabe?[index] = count
     }
     
     func setLat(data: Double) {
@@ -203,6 +237,10 @@ class Globos {
     
     func setLong(data: Double) {
         self.long = data
+    }
+    
+    func setDirection(data: String) {
+        self.direction = data
     }
     
     func setPhone(data: Int) {

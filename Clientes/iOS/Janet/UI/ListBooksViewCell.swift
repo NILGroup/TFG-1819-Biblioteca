@@ -143,6 +143,7 @@ class ListBooksViewCell: TableViewCell {
                 default: break;
                 }
             }
+            return
         }
         else {
             while (i < isbn.count && !existe) {
