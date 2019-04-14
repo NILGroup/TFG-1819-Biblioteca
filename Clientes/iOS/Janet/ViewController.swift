@@ -276,8 +276,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         } else if (datos.value(forKey: "content-type") as! String == "single-book"){
             self.botText = datos.value(forKey: "response") as! String;
             var temp : Globos
-            if !(datos.value(forKey: "isbn") as! [String]).isEmpty {
-                temp = Globos(texto: self.botText, isbn: datos.value(forKey: "isbn") as! [String], emisor: .Bot,
+            let isbns = datos.value(forKey: "isbn") as! [String]
+            if !isbns.isEmpty {
+                temp = Globos(texto: self.botText, isbn: isbns, emisor: .Bot,
                    tipo: Globos.TiposMensaje.singlebook)
             } else {
                 temp = Globos(texto: self.botText, emisor: .Bot,
@@ -285,7 +286,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             }
             temp.setTitle(text: datos.value(forKey: "title") as! String)
             temp.setAuthor(text: datos.value(forKey: "author") as! String)
-            /*----------------------ADAPTAR ESTO!!--------------------------------------------*/
             if (datos.value(forKey: "available") as! [[String:Int]]).isEmpty {
                 temp.setAvailable(available: false)
             } else {
@@ -294,7 +294,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                     temp.addLibraryAvailable(index: item.first!.key, count: item.first!.value)
                 }
             }
-            //temp.setAvailable(available: datos.value(forKey: "available") as! Bool)
             temp.setURL(url: datos.value(forKey: "url") as! String)
             self.mensajes.append(temp)
         } else if (datos.value(forKey: "content-type") as! String == "location"){
@@ -306,7 +305,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             temp.setLong(data: datos.value(forKey: "long") as! Double)
             temp.setDirection(data: datos.value(forKey: "location") as! String)
             self.mensajes.append(temp)
-        } else { //Content-type = Text
+        } else if (datos.value(forKey: "content-type") as! String == "phone"){
+            self.botText = datos.value(forKey: "response") as! String;
+            let temp = Globos(texto: self.botText, emisor: .Bot,
+                              tipo: Globos.TiposMensaje.phone)
+            temp.setLibrary(text: datos.value(forKey: "library") as! String)
+            temp.setPhone(data: datos.value(forKey: "phone") as! Int)
+            self.mensajes.append(temp)
+        } else {
             self.botText = datos.value(forKey: "response") as! String;
             self.mensajes.append(Globos(texto: self.botText, emisor: .Bot))
         }

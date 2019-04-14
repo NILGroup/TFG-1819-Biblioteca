@@ -12,6 +12,7 @@ import MapKit
 class MapViewCell: TableViewCell, MKMapViewDelegate {
     
     @IBOutlet weak var MapView: MKMapView!
+    @IBOutlet weak var libraryName: UILabel!
     @IBOutlet weak var Direction: UILabel!
     
     override func setDatos(info: Globos) {
@@ -19,10 +20,9 @@ class MapViewCell: TableViewCell, MKMapViewDelegate {
         MapView.delegate = self
         
         self.message.text = "Janet: " + info.getRespuesta()
+        self.libraryName.text = info.getLibrary()
         self.Direction.text = info.getDirection()
         self.message.textAlignment = .left
-        //self.message.sizeToFit()
-        //self.Direction.sizeToFit()
         self.cambiarBurbuja(info: .Bot)
         
         let pLat = info.getLat()

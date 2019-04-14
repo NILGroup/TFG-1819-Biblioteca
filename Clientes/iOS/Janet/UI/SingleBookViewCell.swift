@@ -34,19 +34,6 @@ class SingleBookViewCell: TableViewCell {
         self.cambiarBurbuja(info: .Bot)
 
         imageFromServerURL(info.getISBN())
-
-        /*var image: UIImage?
-        
-        if (coverart.image == nil) {
-            let url = NSURL(string: info.getImagen())! as URL
-            if let imageData: NSData = NSData(contentsOf: url) {
-                image = UIImage(data: imageData as Data)
-                if (image?.size.width == 1) {
-                    image = UIImage(named: "Empty_Book")
-                }
-            }
-            coverart.image = image
-        }*/
         
         titleLabel.text = info.getTitle()
         authorLabel.text = info.getAuthor()
@@ -66,14 +53,12 @@ class SingleBookViewCell: TableViewCell {
         if let aux = self.urlString!.range(of: "?") {
             self.urlString!.removeSubrange(aux.lowerBound..<self.urlString!.endIndex)
         }
-        //library.adjustsFontSizeToFitWidth = true
     }
     
     @objc private func viewTapped(sender: UITapGestureRecognizer) {
         let temp = self.urlString!
         guard let url = URL(string: temp) else { return }
-        //let svc = SFSafariViewController(url: url as URL)
-        //present(svc, animated: true, completion: nil)
+        
         UIApplication.shared.open(url)
     }
     
@@ -94,6 +79,7 @@ class SingleBookViewCell: TableViewCell {
             
             if let cachedImage = imageCache.object(forKey: NSString(string: enlace)) {
                 coverart.image = cachedImage
+                existe = true
                 return
             }
             
@@ -108,16 +94,18 @@ class SingleBookViewCell: TableViewCell {
                         }
                         return
                     }
-                    DispatchQueue.main.async {
-                        if let data = data {
-                            if let downloadedImage = UIImage(data: data) {
-                                if (downloadedImage.size.width == 1) {
-                                    self.coverart.image = UIImage(named: "Empty_Book")
-                                } else {
-                                    existe = true
-                                    self.imageCache.setObject(downloadedImage, forKey: NSString(string: enlace))
-                                    self.coverart.image = downloadedImage
-                                    
+                    if (!existe) {
+                        DispatchQueue.main.async {
+                            if let data = data {
+                                if let downloadedImage = UIImage(data: data) {
+                                    if (downloadedImage.size.width == 1) {
+                                        self.coverart.image = UIImage(named: "Empty_Book")
+                                    } else {
+                                        existe = true
+                                        self.imageCache.setObject(downloadedImage, forKey: NSString(string: enlace))
+                                        self.coverart.image = downloadedImage
+                                        
+                                    }
                                 }
                             }
                         }

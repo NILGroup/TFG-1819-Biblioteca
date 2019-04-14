@@ -12,7 +12,7 @@ import Foundation
 class Globos {
     
     enum TiposEmisor{ case Bot, User }
-    enum TiposMensaje { case text, singlebook, listbooks, location }
+    enum TiposMensaje { case text, singlebook, listbooks, location, phone }
     
     private let emisor: TiposEmisor
     private var respuesta: String
@@ -97,7 +97,7 @@ class Globos {
         self.respuesta = texto
         self.url = ""
         self.imagenURL = nil
-        self.ISBN = []
+        self.ISBN = isbn
         self.type = tipo
         self.title = nil
         self.author = nil

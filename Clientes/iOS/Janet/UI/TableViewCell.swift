@@ -12,15 +12,6 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var burbuja: UIImageView!
-    /*@IBOutlet weak var vistaLibros: UIView!
-    
-    @IBOutlet weak var bottomMes: NSLayoutConstraint!
-    
-    @IBOutlet weak var coverart: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var available: UILabel!
-    @IBOutlet weak var library: UILabel!*/
     
     private var altoContraste: Bool! = false
     
@@ -32,50 +23,9 @@ class TableViewCell: UITableViewCell {
         return self.message.text!
     }
     
-    /*internal func getAltura() -> CGFloat {
-        if (self.vistaLibros.isHidden) {
-            return self.message.frame.size.height + 15
-        }
-        
-        return self.message.frame.size.height + self.vistaLibros.frame.size.height
-    }*/
-    
     func setAltoContraste(contraste: Bool) {
         self.altoContraste = contraste
     }
-    
-    /*internal func updateAltura(ancho: CGFloat) {
-        self.message.bounds.size.width = ancho
-    }*/
-    
-    /*internal func vistaLibrosHidden() -> Bool{
-        print (self.message.text!)
-        return self.vistaLibros.isHidden
-    }*/
-    
-    /*private func generarInterfaz(datos: Globos) {
-        
-        var image: UIImage?
-        
-        if (coverart.image == nil) {
-            let url = NSURL(string: datos.getImagen())! as URL
-            if let imageData: NSData = NSData(contentsOf: url) {
-                image = UIImage(data: imageData as Data)
-                if (image?.size.width == 1) {
-                    image = nil
-                }
-            }
-            coverart.image = image
-        }
-        
-        title.text = datos.getTitle(); title.font = UIFont.boldSystemFont(ofSize: 17.0); title.textColor = UIColor.white
-        author.text = datos.getAuthor(); author.textColor = UIColor.white
-        available.text = "Disponible: " + String(datos.getAvailable()); available.textColor = UIColor.white
-        library.text = "Biblioteca: " + datos.getLibrarys(); library.textColor = UIColor.white
-        library.adjustsFontSizeToFitWidth = true
-        coverart.isHidden = false; title.isHidden = false; author.isHidden = false; available.isHidden = false; library.isHidden = false
-        vistaLibros.isHidden = false
-    }*/
     
     internal func cambiarBurbuja(info: Globos.TiposEmisor) {
         
@@ -99,20 +49,3 @@ class TableViewCell: UITableViewCell {
     }
     
 }
-
-/*private extension UIImage {
-    func imageWithBorder(width: CGFloat, color: UIColor) -> UIImage? {
-        let square = CGSize(width: min(size.width, size.height) + width * 2, height: min(size.width, size.height) + width * 2)
-        let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
-        imageView.contentMode = .center
-        imageView.image = self
-        imageView.layer.borderWidth = width
-        imageView.layer.borderColor = color.cgColor
-        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        imageView.layer.render(in: context)
-        let result = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return result
-    }
-}*/

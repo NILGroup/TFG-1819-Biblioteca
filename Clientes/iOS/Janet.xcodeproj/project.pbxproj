@@ -26,6 +26,7 @@
 		54868E14215F943800C6E63C /* conexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54868E13215F943800C6E63C /* conexion.swift */; };
 		54868E16215F958000C6E63C /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54868E15215F958000C6E63C /* DAO.swift */; };
 		54A2BC5022580068003F5004 /* MapViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2BC4F22580068003F5004 /* MapViewCell.swift */; };
+		54C65B9F2260D2A700C91FBD /* PhoneViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C65B9E2260D2A700C91FBD /* PhoneViewCell.swift */; };
 		54C9D94420DD71350026E68D /* Micro Start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D94220DD71340026E68D /* Micro Start.wav */; };
 		54C9D94520DD71350026E68D /* Recognized voice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D94320DD71350026E68D /* Recognized voice.wav */; };
 		54FB3067225D191000C0FBE0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54FB3066225D191000C0FBE0 /* MapKit.framework */; };
@@ -74,6 +75,7 @@
 		54868E13215F943800C6E63C /* conexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conexion.swift; sourceTree = "<group>"; };
 		54868E15215F958000C6E63C /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		54A2BC4F22580068003F5004 /* MapViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCell.swift; sourceTree = "<group>"; };
+		54C65B9E2260D2A700C91FBD /* PhoneViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewCell.swift; sourceTree = "<group>"; };
 		54C9D94220DD71340026E68D /* Micro Start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Micro Start.wav"; sourceTree = "<group>"; };
 		54C9D94320DD71350026E68D /* Recognized voice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Recognized voice.wav"; sourceTree = "<group>"; };
 		54FB3066225D191000C0FBE0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -115,6 +117,7 @@
 				5443C49421BFCA8E00F7BAD6 /* ListBooksViewCell.swift */,
 				5443C49521BFCA8E00F7BAD6 /* SingleBookViewCell.swift */,
 				54A2BC4F22580068003F5004 /* MapViewCell.swift */,
+				54C65B9E2260D2A700C91FBD /* PhoneViewCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			files = (
 				5443C49321BFC63800F7BAD6 /* MessageViewCell.swift in Sources */,
 				542D81812198CD7D0041763F /* SettingsBundleHelper.swift in Sources */,
+				54C65B9F2260D2A700C91FBD /* PhoneViewCell.swift in Sources */,
 				5452564D2163B05A002C4990 /* TableViewCell.swift in Sources */,
 				5443C49621BFCA8E00F7BAD6 /* ListBooksViewCell.swift in Sources */,
 				54868E16215F958000C6E63C /* DAO.swift in Sources */,

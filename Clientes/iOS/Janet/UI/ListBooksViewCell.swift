@@ -56,51 +56,12 @@ class ListBooksViewCell: TableViewCell {
         
         for i in 0..<3 {
             if (i == 0) {
-                /*var image: UIImage?
-                
-                if (coverart1.image == nil) {
-                    let url = NSURL(string: list[i].getImagen())! as URL
-                    if let imageData: NSData = NSData(contentsOf: url) {
-                        image = UIImage(data: imageData as Data)
-                        if (image?.size.width == 1) {
-                            image = UIImage(named: "Empty_Book")
-                        }
-                    }
-                    coverart1.image = image
-                }*/
-                
                 titleLabel1.text = list[i].getTitle()
                 authorLabel1.text = list[i].getAuthor()
             } else if (i == 1) {
-                /*var image: UIImage?
-                
-                if (coverart2.image == nil) {
-                    let url = NSURL(string: list[i].getImagen())! as URL
-                    if let imageData: NSData = NSData(contentsOf: url) {
-                        image = UIImage(data: imageData as Data)
-                        if (image?.size.width == 1) {
-                            image = UIImage(named: "Empty_Book")
-                        }
-                    }
-                    coverart2.image = image
-                }*/
-                
                 titleLabel2.text = list[i].getTitle()
                 authorLabel2.text = list[i].getAuthor()
             } else {
-                /*var image: UIImage?
-                
-                if (coverart3.image == nil) {
-                    let url = NSURL(string: list[i].getImagen())! as URL
-                    if let imageData: NSData = NSData(contentsOf: url) {
-                        image = UIImage(data: imageData as Data)
-                        if (image?.size.width == 1) {
-                            image = UIImage(named: "Empty_Book")
-                        }
-                    }
-                    coverart3.image = image
-                }*/
-                
                 titleLabel3.text = list[i].getTitle()
                 authorLabel3.text = list[i].getAuthor()
             }
@@ -152,18 +113,21 @@ class ListBooksViewCell: TableViewCell {
                     case 0:
                         if let cachedImage = imageCache1.object(forKey: NSString(string: enlace)) {
                             coverart1.image = cachedImage
+                            existe = true
                             return
                         }
                         break
                     case 1:
                         if let cachedImage = imageCache2.object(forKey: NSString(string: enlace)) {
                             coverart2.image = cachedImage
+                            existe = true
                             return
                         }
                         break
                     case 2:
                         if let cachedImage = imageCache3.object(forKey: NSString(string: enlace)) {
                             coverart3.image = cachedImage
+                            existe = true
                             return
                         }
                         break
@@ -186,34 +150,37 @@ class ListBooksViewCell: TableViewCell {
                             }
                             return
                         }
-                        DispatchQueue.main.async {
-                            if let data = data {
-                                if let downloadedImage = UIImage(data: data) {
-                                    if (downloadedImage.size.width == 1) {
-                                        switch(num) {
-                                        case 0: self.coverart1.image = UIImage(named: "Empty_Book"); break;
-                                        case 1: self.coverart2.image = UIImage(named: "Empty_Book"); break;
-                                        case 2: self.coverart3.image = UIImage(named: "Empty_Book"); break;
-                                        default: break;
-                                        }
-                                    } else {
-                                        switch(num) {
-                                        case 0:
-                                            existe = true
-                                            self.imageCache1.setObject(downloadedImage, forKey: NSString(string: enlace))
-                                            self.coverart1.image = downloadedImage
-                                            break
-                                        case 1:
-                                            existe = true
-                                            self.imageCache2.setObject(downloadedImage, forKey: NSString(string: enlace))
-                                            self.coverart2.image = downloadedImage
-                                            break
-                                        case 2:
-                                            existe = true
-                                            self.imageCache3.setObject(downloadedImage, forKey: NSString(string: enlace))
-                                            self.coverart3.image = downloadedImage
-                                            break
-                                        default: break;
+                        if (!existe) {
+                            DispatchQueue.main.async {
+                                if let data = data {
+                                    if let downloadedImage = UIImage(data: data) {
+                                        if (downloadedImage.size.width == 1 && !existe) {
+                                            switch(num) {
+                                            case 0: self.coverart1.image = UIImage(named: "Empty_Book"); break;
+                                            case 1: self.coverart2.image = UIImage(named: "Empty_Book"); break;
+                                            case 2: self.coverart3.image = UIImage(named: "Empty_Book"); break;
+                                            default: break;
+                                            }
+                                            existe = false
+                                        } else {
+                                            switch(num) {
+                                            case 0:
+                                                existe = true
+                                                self.imageCache1.setObject(downloadedImage, forKey: NSString(string: enlace))
+                                                self.coverart1.image = downloadedImage
+                                                break
+                                            case 1:
+                                                existe = true
+                                                self.imageCache2.setObject(downloadedImage, forKey: NSString(string: enlace))
+                                                self.coverart2.image = downloadedImage
+                                                break
+                                            case 2:
+                                                existe = true
+                                                self.imageCache3.setObject(downloadedImage, forKey: NSString(string: enlace))
+                                                self.coverart3.image = downloadedImage
+                                                break
+                                            default: break;
+                                            }
                                         }
                                     }
                                 }
