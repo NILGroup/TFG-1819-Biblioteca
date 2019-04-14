@@ -1,13 +1,13 @@
 /* A single strings file, whose title is specified in your preferences schema. The strings files provide the localized content to display to the user for each of your preferences. */
 
 "Group" = "Grupo";
-"Audio Group" = "Sonido"
+"Audio Group" = "Sonido";
 "Name" = "Nombre";
 "none given" = "Desconocido";
 "Enabled" = "Activado";
-"App Title" = "Ajustes de Janet"
-"Sound Switch" = "Transcripción de texto a audio"
-"Speed" = "Velocidad de transcripción"
-"Screen" = "Visualización"
-"Contrast" = "Alto contraste"
-"Info" = "Información de versión"
+"App Title" = "Ajustes de Janet";
+"Sound Switch" = "Transcripción de texto a audio";
+"Speed" = "Velocidad de transcripción";
+"Screen" = "Visualización";
+"Contrast" = "Alto contraste";
+"Info" = "Información de versión";
