@@ -17,11 +17,11 @@ from authliboclc import wskey
 class JanetServWMS:
 
     def __init__(self):
-        with open('wskey.conf') as f:
+        with open(r'wskey.conf') as f:
             self.__wskeydata = json.load(f)
 
-        with open('librarycodes.json') as f:
-            self.__equivalencias = json.load(f, encoding="utf8")
+        with open(r'librarycodes.json') as f:
+            self.__equivalencias = json.load(f, encoding="ANSI")
 
         self.__URLopensearch = "http://www.worldcat.org/webservices/catalog/search/opensearch?"
         self.__URLlibraries = "http://www.worldcat.org/webservices/catalog/content/libraries/"
@@ -62,22 +62,6 @@ class JanetServWMS:
             respuesta.append(temp)
 
         return respuesta
-
-    def __buscarCoverArts(self, isbn):
-        response = None
-        i = 0
-        while i < len(isbn) and response is None:
-            url = self.__URLCovers + isbn[i] + '-S.jpg?default=false'
-            try:
-                r = requests.head(url, timeout=0.8)
-                print(r)
-                if r.status_code == 200:
-                    response = self.__URLCovers + isbn[i] + '-L.jpg'
-                i = i + 1
-            except:
-                i = i + 1
-
-        return response
         
     def cargarInformacionLibro(self, codigoOCLC):
 
@@ -98,6 +82,7 @@ class JanetServWMS:
         respuesta['available'] = self.comprobarDisponibilidad(codigoOCLC)
         respuesta['oclc'] = content['OCLCnumber']
         respuesta['url'] = content['library'][0]['opacUrl']
+
         if 'ISBN' in content:
             respuesta['isbn'] = content['ISBN']
         
@@ -130,12 +115,19 @@ class JanetServWMS:
         root = tree.getroot()
 
         resultado = []
+        biblioteca = {}
         
         for holdings in root.findall('.//sRR:records/sRR:record/sRR:recordData/opacRecord/holdings', xmlns):
             for items in holdings.iterdescendants('holding'):
                 for item in items.findall('.//circulation'):
                     if int(item.find('availableNow').get('value')) > 0:
-                        biblioteca = self.__equivalencias[items.find('localLocation').text]
-                        resultado.append({biblioteca: int(item.find('availableNow').get('value'))})
+                        if self.__equivalencias[items.find('localLocation').text] not in biblioteca:
+                            biblioteca[self.__equivalencias[items.find('localLocation').text]] = \
+                                int(item.find('availableNow').get('value'))
+                        else:
+                            biblioteca[self.__equivalencias[items.find('localLocation').text]] += \
+                                int(item.find('availableNow').get('value'))
+
+        resultado.append(biblioteca)
         return resultado
 

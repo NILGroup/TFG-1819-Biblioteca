@@ -24,7 +24,6 @@ class ActionLocation(Action):
                 hayEntitie = True
         if hayEntitie:
             tmp = self.mongo.obtener_biblioteca(self._tratarlocalizacion(entities['localizacion']))
-            print(tmp)
             if tmp is not None:
                 respuesta['library'] = tmp['name']
                 respuesta['location'] = tmp['direccion']

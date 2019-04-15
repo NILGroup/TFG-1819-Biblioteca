@@ -42,14 +42,9 @@ class JanetServController:
 
         if client_request["type"] == "query":
             uid = client_request["user_id"]
-            if client_request["content"] == "Dónde está la Biblioteca de Derecho" or \
-                    client_request["content"] == "Dónde está la biblioteca de derecho":
-                respuesta = self._tratar_pln('consulta_localizacion', {'localizacion': 'bibliotece de derecho'}, 'Aquí está la Biblioteca de derecho', uid)
+            pln = self.__pln.consultar(client_request["content"], uid)
 
-            else:
-                pln = self.__pln.consultar(client_request["content"], uid)
-
-                respuesta = self._tratar_pln(pln['intent'], pln['entities'], pln['message'], uid)
+            respuesta = self._tratar_pln(pln['intent'], pln['entities'], pln['message'], uid)
             
         elif client_request["type"] == "oclc":
             respuesta.update(self.__wms.cargarInformacionLibro(client_request['content']))
