@@ -11,11 +11,22 @@ import argparse
 from bottle import request, route, run, response, static_file, error
 import JarvisProcessor
 import json
+import logging
 
 class jarvisService():
 
     def __init__(self):
-        self.procesador = JarvisProcessor.JarvisProcessor()
+
+        # Creacion de logger
+        logger = logging.getLogger('jarvis')
+        logger.setLevel(logging.INFO)
+        file_handler = logging.FileHandler('jarvis.log')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        file_handler.setLevel(logging.DEBUG)
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+
+        self.procesador = JarvisProcessor.JarvisProcessor(logger)
         
         @route('/',method='POST')
         def do_petition():
@@ -26,12 +37,13 @@ class jarvisService():
             post_data["content"] = request.POST.content
             post_data["user_id"] = request.POST.user_id
 
-            if 'user_id' in request.POST:
-                analisis = self.procesador.procesarPeticion(post_data["content"], post_data["user_id"])
+            if post_data["content"] == '/restart':
+                self.procesador.reiniciarSlots(post_data["user_id"])
+
             else:
                 analisis = self.procesador.procesarPeticion(post_data["content"], post_data["user_id"])
-            respuesta = self.procesador.formatearResultado(analisis)
-            return json.dumps(respuesta, ensure_ascii=False).encode('utf8')
+                respuesta = self.procesador.formatearResultado(analisis)
+                return json.dumps(respuesta, ensure_ascii=False).encode('utf8')
 
         @route('/static/<filepath:path>')
         def server_static(filepath):
@@ -45,6 +57,7 @@ class jarvisService():
             habido un error y en los detalles ponemos la explicación para que el usuario
             sepa qué ha hecho mal.'''
             response.content_type = 'application/json'
+            logger.error('Error 400: ' + error.body)
             return json.dumps({
                 'errorno': 400,
                 'errorMessage': error.body
@@ -54,6 +67,7 @@ class jarvisService():
         def custom404 (error):
             '''El error 404 no necesita demasiada información.'''
             response.content_type = 'application/json'
+            logger.error('Error 404: ' + error.body)
             return json.dumps({
                 'errorno': 404,
                 'errorMessage': 'No existe el recurso solicitado.'
@@ -66,6 +80,7 @@ class jarvisService():
             errores ocurren cuando nuestro código python ha fallado, por lo que habrá
             que mirar la salida de error del programa para verlos.'''
             response.content_type = 'application/json'
+            logger.error('Error 500: ' + str(error.exception))
             return json.dumps({
                 'errorno': 500,
                 'errorMessage': 'Ha habido un problema imprevisto.',
@@ -101,5 +116,4 @@ def initialize():
 if __name__ == '__main__':
     jarvisService()
     if initialize():
-        run(host='0.0.0.0', port=5000, reloader=True)
-    #run(host='0.0.0.0', port=5000, reloader=True)
+        run(host='0.0.0.0', port=5000)

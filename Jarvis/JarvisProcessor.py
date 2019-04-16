@@ -14,15 +14,18 @@ from rasa_nlu.model import Trainer
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_nlu import config
 from rasa_core import train
+from rasa_core.events import SlotSet
 from rasa_core.domain import Domain
 from rasa_core.training import interactive
 from rasa_core.agent import Agent
 from rasa_core.utils import EndpointConfig
 from rasa_core.tracker_store import MongoTrackerStore
 
+
 class JarvisProcessor():
 
-    def __init__(self):
+    def __init__(self, log):
+        self.logger = log
         directorioModelos = 'model/default/Jarvis'
         if (os.path.isdir(directorioModelos)):
             self.interpreter = RasaNLUInterpreter(model_directory=directorioModelos)
@@ -72,6 +75,19 @@ class JarvisProcessor():
 
         return interactive.run_interactive_learning(self.agent)
 
+    def reiniciarSlots(self, senderid):
+        tracker = self.agent.tracker_store.get_or_create_tracker(sender_id=senderid)
+
+        tracker.update(SlotSet('autores', None))
+        tracker.update(SlotSet('libro', None))
+        tracker.update(SlotSet('localizacion', None))
+        tracker.update(SlotSet('numberofmorebooksearch', None))
+        tracker.update(SlotSet('requested_slot', None))
+        tracker.update(SlotSet('searchindex', None))
+
+        self.agent.tracker_store.save(tracker)
+        self.logger.info('Usuario ' + senderid + ' reiniciado')
+
     def procesarPeticion(self, peticion, senderid='default'):
 
         respuesta = {}
@@ -85,6 +101,8 @@ class JarvisProcessor():
         for response in mensaje:
             respuesta["text"] = response["text"]
 
+        self.logger.info('Usuario ' + senderid + ':\n' + str(respuesta))
+
         return respuesta
 
     def formatearResultado(self, peticion):
@@ -92,7 +110,6 @@ class JarvisProcessor():
 
         resultado['intent'] = peticion['nlu']['intent']['name']
         resultado['entities'] = {}
-        print(peticion)
         tmp = {}
 
         if resultado['intent'] == 'consulta_telefono' or resultado['intent'] == \
@@ -185,5 +202,6 @@ if __name__ == '__main__':
             break
         responses = jarvis.agent.handle_message(a)
         for response in responses:
-            print(response)
-            print(response["text"])
+            jarvis.logger.info('MODO DEBUG')
+            jarvis.logger.info(response)
+            jarvis.logger.info(response["text"])
