@@ -103,6 +103,7 @@ class BuscarLibroForm(FormAction):
         intent = tracker.latest_message['intent'].get('name')
         MISC = next(tracker.get_latest_entity_values('MISC'), None)
         libro = next(tracker.get_latest_entity_values('libro'), None)
+        ORG = next(tracker.get_latest_entity_values('ORG'), None)
         loc = next(tracker.get_latest_entity_values('LOC'), None)
         autor1 = next(tracker.get_latest_entity_values('autores'), None)
         PER = next(tracker.get_latest_entity_values('PER'), None)
@@ -123,6 +124,8 @@ class BuscarLibroForm(FormAction):
                 temp['libro'] = autor1.capitalize()
             elif PER is not None:
                 temp['libro'] = PER
+            elif ORG is not None:
+                temp['libro'] = ORG
 
         if intent == 'consulta_libros_autor' or intent == 'consulta_libro_autor' or \
                intent == 'consulta_libros_autor' or intent == 'consulta_libro_autor' or \
@@ -147,7 +150,7 @@ class BuscarLibroForm(FormAction):
         numberofmorebooksearch = 0
 
         if intent == "consulta_libros_kw":
-            if libro is not None or autores is not None:
+            if libro is not None:
                 dispatcher.utter_template("utter_libros_kw", tracker, **tracker.slots)
                 numIndexes = 2
                 numberofmorebooksearch = 2
@@ -168,7 +171,7 @@ class BuscarLibroForm(FormAction):
             else:
                 dispatcher.utter_template("utter_especifica_libro", tracker, **tracker.slots)
         elif intent == "consulta_libro_kw":
-            if libro is not None or autores is not None:
+            if libro is not None:
                 dispatcher.utter_template("utter_libro_kw", tracker, **tracker.slots)
                 numIndexes = 1
                 numberofmorebooksearch = 1

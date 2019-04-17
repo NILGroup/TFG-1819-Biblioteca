@@ -623,5 +623,5 @@
 ## lookup:localizacion
   data/libraries.csv
 
-## lookup:libro_titulo
+## lookup:libro
   data/names/booksnames.csv
