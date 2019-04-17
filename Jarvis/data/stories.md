@@ -289,3 +289,14 @@
     - action_busca_mas
     - slot{"searchindex": 8}
 
+## Generated Story 7417286478629298217
+* consulta_libros_titulo{"MISC": "Harry Potter y el misterio del principe", "libro": "harry potter y el misterio del principe"}
+    - form_libros
+    - form{"name": "form_libros"}
+    - slot{"libro": "Harry Potter y el misterio del principe"}
+    - slot{"autores": null}
+    - slot{"searchindex": 2}
+    - slot{"numberofmorebooksearch": 2}
+    - form{"name": null}
+    - slot{"requested_slot": null}
+

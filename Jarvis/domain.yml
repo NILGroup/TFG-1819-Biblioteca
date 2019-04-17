@@ -1,70 +1,55 @@
 %YAML 1.1
 ---
 actions:
-- utter_info_segundo
-- utter_respuesta_insultos
-- utter_libro_titulo
-- action_busca_mas
-- action_busca_libro
-- utter_info_primero
-- utter_saludo_nombre
-- utter_consulta_localizacion
-- utter_consulta_horario_cerrado
-- utter_musica_kw
-- utter_consulta_telefono
-- utter_saludo
-- utter_despedida
-- utter_juegos_kw
-- utter_libro_autor
-- utter_peliculas_kw
 - utter_libro_kw
-- utter_quien_soy
-- action_check_biblio_abierta
-- utter_info_tercero
-- utter_especifica_articulo
-- utter_libros_titulo_autor
-- action_muestra_tercero
-- action_saludos
-- utter_especifica_libro
-- utter_consulta_horario_abierto
-- utter_libros_titulo
-- action_localizacion_sin_entidad
-- utter_libros_kw
-- utter_gracias
-- action_muestra_segundo
-- utter_articulo_kw
 - utter_pelicula_kw
-- utter_especifica_juego
+- action_muestra_tercero
+- utter_consulta_telefono
+- utter_info_primero
+- utter_libro_titulo
+- utter_info_tercero
 - action_muestra_primero
-- utter_libro_kw_autor
-- utter_especifica_pelicula
-- utter_especifica_musica
+- utter_libros_titulo
+- utter_respuesta_insultos
+- utter_gracias
+- utter_saludo_nombre
 - utter_libros_autor
 - utter_no_te_entiendo
-- utter_libro_titulo_autor
-- utter_juego_kw
 - utter_libros_kw_autor
-- utter_articulos_kw
+- utter_quien_soy
+- utter_consulta_localizacion
+- utter_especifica_libro
+- utter_libro_kw_autor
+- action_busca_libro
+- utter_libros_kw
+- utter_libro_titulo_autor
+- utter_consulta_horario_abierto
+- action_localizacion_sin_entidad
+- utter_despedida
+- action_busca_mas
+- utter_info_segundo
+- action_check_biblio_abierta
+- action_muestra_segundo
+- utter_libros_titulo_autor
+- action_saludos
+- utter_saludo
+- utter_libro_autor
+- utter_consulta_horario_cerrado
 entities:
-- PER
-- localizacion
-- musica
-- juego
-- pelicula
-- libro_titulo
-- LOC
-- autor
-- ORG
-- persona
-- localizaciones
 - MISC
-- autores
+- localizacion
+- PER
 - libro
+- LOC
+- localizaciones
+- persona
+- ORG
+- autores
 forms:
-- form_saludos
 - form_libros
-- form_articulos
+- form_saludos
 intents:
+- consulta_libros_titulo
 - busca_mas
 - consulta_libros_kw
 - consulta_localizacion
@@ -91,7 +76,6 @@ intents:
 - consulta_libro_autor
 - consulta_libro_titulo
 - consulta_libro_titulo_autor
-- consulta_libros_titulo
 - despedidas
 - gracias:
     use_entities: false
@@ -99,56 +83,20 @@ intents:
 - quien_soy:
     use_entities: false
 - como_estas
-- consulta_articulos:
-    use_entities: false
-- consulta_articulo:
-    use_entities: false
-- consulta_articulos_kw
-- consulta_articulo_kw
-- consulta_juegos:
-    use_entities: false
-- consulta_juego:
-    use_entities: false
-- consulta_juegos_kw
-- consulta_juego_kw
-- consulta_libros:
-    use_entities: false
-- consulta_libro:
-    use_entities: false
-- consulta_musicas:
-    use_entities: false
-- consulta_musica:
-    use_entities: false
-- consulta_musicas_kw
-- consulta_musica_kw
-- consulta_peliculas:
-    use_entities: false
-- consulta_pelicula:
-    use_entities: false
 - insultos:
     use_entities: false
-- consulta_peliculas_kw
-- consulta_pelicula_kw
 slots:
-  articulos:
-    type: text
   autores:
     auto_fill: false
     type: unfeaturized
-  juego:
-    type: text
   libro:
     auto_fill: false
     type: unfeaturized
   localizacion:
     type: text
-  musica:
-    type: text
   numberofmorebooksearch:
     auto_fill: false
     type: unfeaturized
-  pelicula:
-    type: text
   persona:
     auto_fill: false
     type: unfeaturized
@@ -158,12 +106,6 @@ slots:
     auto_fill: false
     type: unfeaturized
 templates:
-  utter_articulo_kw:
-  - text: Aquí tienes el artículo que me pediste.
-  - text: Aquí tienes el articulo de {articulos}.
-  utter_articulos_kw:
-  - text: Aquí tienes los artículos que me pediste.
-  - text: Aquí tienes articulos de {articulos}.
   utter_como_estas:
   - text: Muy bien, gracias por preguntar.
   - text: Me siento la mar de bien.
@@ -188,36 +130,14 @@ templates:
   - text: Hasta luego.
   - text: Bye bye.
   - text: Chao.
-  utter_especifica_articulo:
-  - text: Necesito más información sobre el artículo que quieres buscar. Podrías decirmelo?
-  - text: Qué artículo quieres buscar?
-  - text: Qué artículo?
-  utter_especifica_juego:
-  - text: Necesito más información sobre el juego que quieres buscar. Podrías decirmelo?
-  - text: Qué juego quieres buscar?
-  - text: Qué juego?
   utter_especifica_libro:
   - text: Necesito más información sobre el libro que quieres buscar. Podrías decirmelo?
   - text: Qué libro quieres buscar?
   - text: Qué libro?
-  utter_especifica_musica:
-  - text: Necesito más información sobre la música que quieres buscar. Podrías decirmelo?
-  - text: Qué disco o partitura quieres buscar?
-  - text: Qué disco?
-  utter_especifica_pelicula:
-  - text: Necesito más información sobre la película que quieres buscar. Podrías decirmelo?
-  - text: Qué película quieres buscar?
-  - text: Qué película?
   utter_gracias:
   - text: No hay de que.
   - text: Para eso estamos.
   - text: De nada.
-  utter_juego_kw:
-  - text: Aquí tienes los juegos que me pediste.
-  - text: Aquí tienes el juego {juego}.
-  utter_juegos_kw:
-  - text: Aquí tienes los juegos que me pediste.
-  - text: Aquí tienes los juegos {juego}.
   utter_libro_autor:
   - text: Aquí tienes un libro de {autores}.
   - text: Mira, he encontrado este libro.
@@ -260,20 +180,11 @@ templates:
   - text: Aquí tiene varios ejemplares.
   utter_muestra_mas:
   - text: Aquí tienes más ejemplares.
-  utter_musica_kw:
-  - text: Aquí tienes lo que me pediste.
-  - text: Aquí tienes {musica}.
   utter_no_te_entiendo:
   - text: No te he entendido.
   - text: No entiendo que quieres decir.
   - text: No te entiendo. Intenta reformular tu consulta.
   - text: Mis creadores no me han enseñado a responder tu consulta.
-  utter_pelicula_kw:
-  - text: Aquí tienes la película que me pediste.
-  - text: Aquí tienes la película {pelicula}.
-  utter_peliculas_kw:
-  - text: Aquí tienes las películas que me pediste.
-  - text: Aquí tienes las películas de {pelicula}.
   utter_primero_list:
   - text: Aquí tienes el primer ejemplar.
   - text: Aquí tienes.
