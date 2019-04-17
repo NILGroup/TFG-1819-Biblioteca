@@ -50,7 +50,7 @@ class ActionMoreBooks(Action):
                 respuesta.update(self.wms.cargarInformacionLibro(respuesta['books'][0]['oclc']))
                 del respuesta['books']
                 respuesta['content-type'] = 'single-book'
-            self.mongo.guardar_consulta(uid, respuesta, intent)
+            self.mongo.guardar_consulta(uid, respuesta, intentant)
 
         return respuesta
 
