@@ -2,3 +2,6 @@
 ######################
 .DS_Store
 .DS_Store?
+# Python cache generated files #
+######################
+__pycache__
