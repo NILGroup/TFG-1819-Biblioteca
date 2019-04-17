@@ -1,4 +1,4 @@
-El se√±or de los anillos
+el seÒor de los anillos
 Harry Potter y la piedra filosofal
 Harry Potter y la camara secreta
 Harry Potter y el prisionero de Azkaban
@@ -6,27 +6,28 @@ Harry Potter y el caliz de fuego
 Harry Potter y la orden del fenix
 Harry Potter y el misterio del principe
 Harry Potter y las reliquias de la muerte
-Crep√∫sculo
+Crep˙sculo
 Luna Nueva
 Eclipse
 Amanecer
+el hobbit
 El Hobbit
-El C√≥digo Da Vinci
-Piense y h√°gase rico
-Lo que el viento se llev√≥
+El CÛdigo Da Vinci
+Piense y h·gase rico
+Lo que el viento se llevÛ
 Los Pilares de la Tierra
 El diario de Ana Frank
-Cien a√±os de soledad
+Cien aÒos de soledad
 El principito
 El ingenioso hidalgo Don Quijote de la Mancha
 El alquimista
-Rebeli√≥n en la granja
+RebeliÛn en la granja
 El Perfume
-El amor en los tiempos del c√≥lera
-Cr√≥nica de una muerte anunciada
+El amor en los tiempos del cÛlera
+CrÛnica de una muerte anunciada
 El retrato de Dorian Gray
-√Ångeles y demonios
-La Il√≠ada
+¡ngeles y demonios
+La IlÌada
 El conde de Montecristo
 La divina comedia
 La Metamorfosis
@@ -36,11 +37,11 @@ Las mil y una noches
 La sombra del viento
 El secreto
 El nombre de la rosa
-El t√∫nel
+El t˙nel
 El arte de la guerra
-Diccionario de la Real Academia Espa√±ola
-Relato de un n√°ufrago
-El mundo de Sof√≠a
+Diccionario de la Real Academia EspaÒola
+Relato de un n·ufrago
+El mundo de SofÌa
 Crimen y Castigo
 Ensayo sobre la ceguera
 Rayuela
@@ -49,77 +50,77 @@ Un mundo feliz
 Cuentos de amor, de locura y de muerte
 Siddharta
 La tregua
-Las venas abiertas de Am√©rica Latina
+Las venas abiertas de AmÈrica Latina
 El lobo estepario
-As√≠ habl√≥ Zaratustra
+AsÌ hablÛ Zaratustra
 El hombre que calculaba
-Los 7 h√°bitos de la gente altamente efectiva
+Los 7 h·bitos de la gente altamente efectiva
 Obras completas
 La insoportable levedad del ser
 Fahrenheit 451
 El Aleph
 El silmarillion
-El guardi√°n entre el centeno
-Por qui√©n doblan las campanas
+El guardi·n entre el centeno
+Por quiÈn doblan las campanas
 El amor las mujeres y la vida
-A Sangre Fr√≠a
+A Sangre FrÌa
 La guerra del fin del mundo
-La t√≠a Julia y el escribidor
+La tÌa Julia y el escribidor
 Cuentos completos
-Fundaci√≥n
+FundaciÛn
 Ficciones
-Cr√≥nicas marcianas
+CrÛnicas marcianas
 El tambor de hojalata
 El libro de los abrazos
 La conjura de los necios
 Final de juego
-El p√©ndulo de Foucault
-Diccionario Filos√≥fico
-Cr√≥nica del p√°jaro que da cuerda al mundo
-La borra del caf√©
-Antolog√≠a de la Literatura Fant√°stica
+El pÈndulo de Foucault
+Diccionario FilosÛfico
+CrÛnica del p·jaro que da cuerda al mundo
+La borra del cafÈ
+AntologÌa de la Literatura Fant·stica
 El libro de las ilusiones
-Cr√≥nicas del √°ngel gris
+CrÛnicas del ·ngel gris
 Mujeres que corren con los lobos
 Los detectives Salvajes
 Andamios
 La historia del arte
 Vigilar y Castigar
 Cuentos Chinos
-C√≥digo Civil
-Poes√≠a completa
+CÛdigo Civil
+PoesÌa completa
 Las cartas que no llegaron
 La imagen de la vida humana
-En penumbras. La masoner√≠a uruguaya
-La consagraci√≥n de la primavera
+En penumbras. La masonerÌa uruguaya
+La consagraciÛn de la primavera
 El rojo en la pluma del loro
 En el camino
 Historia del Siglo XX
 El Anti Edipo
 Capitanes de la arena
-La interpretaci√≥n de las culturas
-Apocal√≠pticos e Integrados
-Macroeconom√≠a de econom√≠as peque√±as y abiertas
+La interpretaciÛn de las culturas
+ApocalÌpticos e Integrados
+MacroeconomÌa de economÌas pequeÒas y abiertas
 Entrevista con la historia
-Nuestra se√±ora de Par√≠s
-La era del vac√≠o
-Econom√≠a Internacional - Teor√≠a y Pol√≠tica
+Nuestra seÒora de ParÌs
+La era del vacÌo
+EconomÌa Internacional - TeorÌa y PolÌtica
 El Astillero
 La gesta del marrano
 Las palabras y las cosas
-Canci√≥n de Hielo y Fuego
+CanciÛn de Hielo y Fuego
 Juego de tronos
 Choque de reyes
-Fest√≠n de cuervos
+FestÌn de cuervos
 Danza de dragones
 Vientos de invierno
 To Kill a Mockingbird
 Pride and Prejudice
 The Diary of Anne Frank
 1984
-Matem√°tica discreta
-Matem√°tica discreta y l√≥gica matem√°tica
-L√≥gica matem√°tica
+Matem·tica discreta
+Matem·tica discreta y lÛgica matem·tica
+LÛgica matem·tica
 Estructuras de datos y algoritmos
 Harry Potter and the Sorcerer's Stone
 The Lord of the Rings
@@ -182,7 +183,7 @@ A Game of Thrones
 Great Expectations
 The Old Man and the Sea
 The Adventures of Sherlock Holmes
-Les Mis√©rables
+Les MisÈrables
 Harry Potter and the Half-Blood Prince
 Life of Pi
 The Scarlet Letter
@@ -223,7 +224,7 @@ Money
 The Information
 The Bottle Factory Outing
 According to Queeney
-Flaubert‚Äôs Parrot
+Flaubertís Parrot
 A History of the World in 10 1/2 Chapters
 Augustus Carp, Esq.
 Molloy
@@ -240,7 +241,7 @@ A Season in Sinji
 The Harpole Report
 The Hearing Trumpet
 Mister Johnson
-The Horse‚Äôs Mouth
+The Horseís Mouth
 Don Quixote
 The Case of the Gilded Fly
 Just William
@@ -253,19 +254,19 @@ A Fairy Tale of New York
 The Commitments
 Ennui
 Cheese
-Bridget Jones‚Äôs Diary
+Bridget Jonesís Diary
 Joseph Andrews
 Tom Jones
 Caprice
-Bouvard et P√©cuchet
+Bouvard et PÈcuchet
 Towards the End of the Morning
 The Polygots
 Cold Comfort Farm
 Dead Souls
 Oblomov
 The Wind in the Willows
-Brewster‚Äôs Millions
-Squire Haggard‚Äôs Journal
+Brewsterís Millions
+Squire Haggardís Journal
 Our Man in Havana
 Travels with My Aunt
 Diary of a Nobody
@@ -275,7 +276,7 @@ Catch-22
 Mr Blandings Builds His Dream House
 High Fidelity
 I Served the King of England
-The Lecturer‚Äôs Tale
+The Lecturerís Tale
 Mr Norris Changes Trains
 The Mighty Walzer Howard
 Pictures from an Institution
@@ -285,7 +286,7 @@ The Castle
 Lake Wobegon Days
 Death and the Penguin
 The Debt to Pleasure
-L‚ÄôHistoire de Gil Blas de Santillane (Gil Blas) Alain-Ren√© Lesage
+LíHistoire de Gil Blas de Santillane (Gil Blas) Alain-RenÈ Lesage
 Changing Places
 Nice Work
 The Towers of Trebizond
@@ -306,7 +307,7 @@ Fireflies
 The Sacred Book of the Werewolf
 La Disparition
 Les Revenentes
-La Vie Mode d‚ÄôEmploi
+La Vie Mode díEmploi
 My Search for Warren Harding
 A Dance to the Music of Time
 A Time to be Born
@@ -315,10 +316,10 @@ Less Than Angels
 Zazie in the Metro
 Solomon Gursky Was Here
 Alms for Oblivion
-Portnoy‚Äôs Complaint
+Portnoyís Complaint
 The Westminster Alice
 The Unbearable Bassington
-Hurrah for St Trinian‚Äôs
+Hurrah for St Trinianís
 Great Apes
 Porterhouse Blue
 Blott on the Landscape
@@ -332,7 +333,7 @@ The Adventures of Peregrine Pickle
 The Expedition of Humphry Clinker
 The Prime of Miss Jean Brodie
 The Girls of Slender Means
-The Driver‚Äôs Seat
+The Driverís Seat
 Loitering with Intent
 A Far Cry from Kensington
 The Life and Opinions of Tristram Shandy, Gentleman
@@ -373,10 +374,10 @@ The Mask of Dimitrios
 Epitaph for a Spy
 Journey into Fear
 The New York Trilogy
-Trent‚Äôs Last Case
+Trentís Last Case
 The Poisoned Chocolates Case
 The Beast Must Die
-Lady Audley‚Äôs Secret
+Lady Audleyís Secret
 The Neon Rain
 The Tin Roof Blowdown
 The Thirty-Nine Steps
@@ -451,11 +452,11 @@ Strangers on a Train
 The Talented Mr Ripley
 Bones and Silence
 A Rage in Harlem
-Miss Smilla‚Äôs Feeling for Snow
+Miss Smillaís Feeling for Snow
 Rogue Male
 Malice Aforethought
 Silence of the Grave
-Death at the President‚Äôs Lodging
+Death at the Presidentís Lodging
 Cover Her Face
 A Taste for Death
 Friday the Rabbi Slept Late
@@ -505,10 +506,10 @@ Perfume
 The Secret History
 The Daughter of Time
 The Getaway
-Pudd‚Äônhead Wilson
+Puddínhead Wilson
 A Dark-Adapted Eye
 A Fatal inversion
-King Solomon‚Äôs Carpet
+King Solomonís Carpet
 The Four Just Men
 Fingersmith
 Native Son
@@ -516,7 +517,7 @@ Therese Raquin
 The Face of Another
 Little Women
 Behind the Scenes at the Museum
-Cat‚Äôs Eye
+Catís Eye
 Epileptic
 Room Temperature
 Eugenie Grandet
@@ -527,8 +528,8 @@ Fun Home
 Malone Dies
 A Legacy
 Herzog
-Humboldt‚Äôs Gift
-The Old Wives‚Äô Tale
+Humboldtís Gift
+The Old Wivesí Tale
 G
 Extinction
 Two Serious Ladies
@@ -539,7 +540,7 @@ The Way of All Flesh
 The Sound of my Voice
 The Outsider
 Wise Children
-The Professor‚Äôs House
+The Professorís House
 The Wapshot Chronicle
 The Awakening
 Les Enfants Terrible
@@ -575,7 +576,7 @@ The Old Man and the Sea
 Steppenwolf
 Narziss and Goldmund
 The Three Paradoxes
-Tom Brown‚Äôs Schooldays
+Tom Brownís Schooldays
 A Prayer for Owen Meany
 The Ambassadors
 Washington Square
@@ -585,7 +586,7 @@ A Portrait of the Artist as a Young Man
 Ulysses
 Good Behaviour
 Memet my Hawk
-One Flew Over the Cuckoo‚Äôs Nest
+One Flew Over the Cuckooís Nest
 The Buddha of Suburbia
 Sons and Lovers
 Cider with Rosie
@@ -599,7 +600,7 @@ Palace Walk
 The Assistant
 Buddenbrooks
 The Chateau
-The Rector‚Äôs Daughter
+The Rectorís Daughter
 The Ordeal of Richard Feverek
 Family Matters
 Sour Sweet
@@ -655,7 +656,7 @@ Frost in May
 The Tree of Man
 The Picture of Dorian Gray
 Oranges Are Not the Only Fruit
-I‚Äôll Go to Bed at Noon
+Iíll Go to Bed at Noon
 To the Lighthouse
 Mrs Dalloway
 Swiss Family Robinson
@@ -667,7 +668,7 @@ Pride and Prejudice
 Mansfield Park
 Emma
 Persuasion
-Giovanni‚Äôs Room
+Giovanniís Room
 Nightwood
 The Garden of the Finzi-Cortinis
 Love for Lydia
@@ -681,12 +682,12 @@ Wuthering Heights
 Look At Me
 Rubyfruit Jungle
 Possession
-Breakfast at Tiffany‚Äôs
+Breakfast at Tiffanyís
 Oscar and Lucinda
 A Month in the Country
 My Antonia
 A Lost Lady
-Claudine a l‚Äôecole
+Claudine a líecole
 Cheri
 Victory: An Island Tale
 The Princess of Cleves
@@ -703,7 +704,7 @@ The Blue Flower
 Madame Bovary
 The Good Soldier
 A Room with a View
-The French Lieutenant‚Äôs Woman
+The French Lieutenantís Woman
 The Snow Goose
 Ruth
 Strait is the Gate
@@ -714,7 +715,7 @@ The End of the Affair
 The Well of Loneliness
 Far From the Madding Crowd
 Jude the Obscure
-Tess of the D‚ÄôUrbervilles
+Tess of the DíUrbervilles
 The Woodlanders
 The Go-Between
 The Scarlet Letter
@@ -737,7 +738,7 @@ Moon over Africa
 The Book of Laughter and Forgetting
 The Unbearable Lightness of Being
 Les Liaisons Dangereuses
-Lady Chatterley‚Äôs Lover
+Lady Chatterleyís Lover
 The Rainbow
 Women in Love
 The Echoing Grove
@@ -761,7 +762,7 @@ Patience and Sarah
 Gone With the Wind
 The Pursuit of Love
 Love in a Cold Climate
-Arturo‚Äôs Island
+Arturoís Island
 Norwegian Wood
 Lolita, or the Confessions of a White Widowed Male
 The Painter of Signs
@@ -803,7 +804,7 @@ Revolutionary RoadThe Hitchhikers Guide to the Galaxy
 Non-Stop
 Foundation
 The Blind Assassin
-The Handmaid‚Äôs Tale
+The Handmaidís Tale
 In the Country of Last Things
 The Drowned World
 Crash
@@ -813,7 +814,7 @@ Consider Phlebas
 Weaveworld
 Darkmans
 The Time Ships
-Darwin‚Äôs Radio
+Darwinís Radio
 Vathek
 The Stars My Destination
 Fahrenheit 451
@@ -830,13 +831,13 @@ Kindred
 Erewhon
 The Baron in the Trees
 The Influence
-Alice‚Äôs Adventures in Wonderland
+Aliceís Adventures in Wonderland
 Through the Looking Glass and What Alice Found There
 Nights at the Circus
 The Passion of New Eve
 The Amazing Adventures of Kavalier and Clay
 The Man who was Thursday
-Childhood‚Äôs End
+Childhoodís End
 Jonathan Strange & Mr Norrell
 Hello Summer, Goodbye
 Girlfriend in a Coma
@@ -846,7 +847,7 @@ The Einstein Intersection
 Do Androids Dream of Electric Sheep?
 The Man in the High Castle
 Camp Concentration
-Foucault‚Äôs Pendulum
+Foucaultís Pendulum
 Under the Skin
 The Magus
 American Gods
@@ -899,7 +900,7 @@ News from Nowhere
 Beloved
 The Wind-Up Bird Chronicle
 Ada or Ardor
-The Time Traveler‚Äôs Wife
+The Time Travelerís Wife
 Ringworld
 Vurt
 The Third Policeman
@@ -917,7 +918,7 @@ Gargantua and Pantagruel
 The Mysteries of Udolpho
 Revelation Space
 The Years of Rice and Salt
-Harry Potter and the Philosopher‚Äôs Stone
+Harry Potter and the Philosopherís Stone
 Satanic Verses
 The Female Man
 Air
@@ -933,7 +934,7 @@ Dracula
 The Insult
 The Hobbit
 The Lord of the Rings
-A Connecticut Yankee in King Arthur‚Äôs Court
+A Connecticut Yankee in King Arthurís Court
 Sirens of Titan
 The Castle of Otranto
 Institute Benjamenta
@@ -956,7 +957,7 @@ Go Tell it on the Mountain
 La Comedie Humaine
 They Were Counted
 A Kind of Loving
-Uncle Tom‚Äôs Cabin
+Uncle Tomís Cabin
 Oroonoko, or The Royal Slave
 Clayhanger
 The Last September
@@ -1004,7 +1005,7 @@ North and South
 The Counterfeiters
 The Odd Women
 New Grub Street
-July‚Äôs People
+Julyís People
 Mother
 Lanark
 Love on the Dole
@@ -1048,13 +1049,13 @@ Vineland
 The Radetzky March
 American Pastoral
 The Human Stain
-Midnight‚Äôs Children
+Midnightís Children
 Shame
 To Each his Own
 Staying On
 Last Exit to Brooklyn
 The Lonely Londoners
-God‚Äôs Bit of Wood
+Godís Bit of Wood
 The Case of Comrade Tulayev
 Richshaw Boy
 Saturday Night and Sunday Morning
@@ -1089,7 +1090,7 @@ Empire of the Sun
 Regeneration
 A Long Long Way
 Fair Stood the Wind for France
-Carrie‚Äôs War
+Carrieís War
 The Savage Detectives
 The Sheltering Sky
 An Ice-Cream War
@@ -1102,7 +1103,7 @@ Monkey
 Heart of Darkness
 Lord Jim
 Nostromo
-Sharpe‚Äôs Eagle
+Sharpeís Eagle
 The History of Pompey the Little
 The Red Badge of Courage
 Robinson Crusoe
@@ -1115,7 +1116,7 @@ Justine
 The Bamboo Bed
 The Siege of Krishnapur
 Birdsong
-Parade‚Äôs End
+Paradeís End
 The African Queen
 The Ship
 Flashman
@@ -1126,8 +1127,8 @@ Asterix the Gaul
 The Tin Drum
 Count Belisarius
 Life and Fate
-De Niro‚Äôs Game
-King Solomon‚Äôs Mines
+De Niroís Game
+King Solomonís Mines
 She: A History of Adventure
 The Slaves of Solitude
 Covenant with Death
@@ -1141,7 +1142,7 @@ Rasselas
 From Here to Eternity
 Andersonville
 Confederates
-Schindler‚Äôs Ark
+Schindlerís Ark
 Day
 On the Road
 Darkness at Noon
@@ -1170,9 +1171,9 @@ The Scarlet Pimpernel
 Burmese Days
 Zen and the Art of Motorcycle Maintenance
 The Valley of Bones
-The Soldier‚Äôs Art
+The Soldierís Art
 The Military Philosophers
-Gravity‚Äôs Rainbow
+Gravityís Rainbow
 The Surprising Adventures of Baron Munchausen
 All Quiet on the Western Front
 The Crab with the Golden Claws
@@ -1196,8 +1197,8 @@ A Sentimental Journey
 Kidnapped
 Treasure Island
 A Flag for Sunrise
-Sophie‚Äôs Choice
-Gulliver‚Äôs Travels
+Sophieís Choice
+Gulliverís Travels
 War and Peace
 The Adventures of Huckleberry Finn
 Around the World in Eighty Days
@@ -1221,25 +1222,25 @@ El conde Lucanor
 Metamorfosis, o El asno de oro
 Tirant lo Blanc
 La Celestina
-Amad√≠s de Gaula
+AmadÌs de Gaula
 Lazarillo de Tormes
-Gargant√∫a y Pantagruel
-Los Lus√≠adas
+Gargant˙a y Pantagruel
+Los LusÌadas
 Libro de la vida
-Guzm√°n de Alfarache
+Guzm·n de Alfarache
 Novelas ejemplares
 Don Quijote de la Mancha
 Los trabajos de Persiles y Segismunda
-El busc√≥n
-Historia verdadera de la conquista de la Nueva Espa√±a
+El buscÛn
+Historia verdadera de la conquista de la Nueva EspaÒa
 La Dorotea
-El Critic√≥n
-La princesa de Cl√®ves
+El CriticÛn
+La princesa de ClËves
 Robinson Crusoe
 Love in Excess
 Moll Flanders
 Los viajes de Gulliver
-Una modesta proposici√≥n
+Una modesta proposiciÛn
 Joseph Andrews
 Memoirs of Martinus Scriblerus
 Pamela
@@ -1247,10 +1248,10 @@ Clarissa
 Tom Jones
 Fanny Hill: Memorias de una cortesana
 Peregrine Pickle
-C√°ndido, o el optimismo
-La historia de Rasselas, pr√≠ncipe de Abisinia
-Julia, o la nueva Elo√≠sa
-Emilio, o de la educaci√≥n
+C·ndido, o el optimismo
+La historia de Rasselas, prÌncipe de Abisinia
+Julia, o la nueva EloÌsa
+Emilio, o de la educaciÛn
 El castillo de Otranto
 El vicario de Wakefield
 Tristram Shandy
@@ -1259,23 +1260,23 @@ The man of feeling
 Humphry Clinker
 Las desventuras del joven Werther
 Evelina
-Las enso√±aciones del paseante solitario
+Las ensoÒaciones del paseante solitario
 Las amistades peligrosas
 Las confesiones
 Las ciento veinte jornadas de Sodoma
 Anton Reiser
 Vathez
 Justine
-Sue√±o en el pabell√≥n rojo
+SueÒo en el pabellÛn rojo
 Las aventuras de Caleb Williams
-Narraci√≥n de la vida de Olaudah Equiano
+NarraciÛn de la vida de Olaudah Equiano
 Los misterios de Udolfo
-Los a√±os de aprendizaje de Wilhelm Meister
+Los aÒos de aprendizaje de Wilhelm Meister
 El monje
 Camila
 Jacques el fatalista
 La religiosa
-Hiperi√≥n
+HiperiÛn
 El castillo de Rackrent
 Enrique de Ofterdingen
 El sobrino de Rameau
@@ -1291,24 +1292,24 @@ Ivanhoe
 Melmoth El Errabundo
 Opiniones del gato Murr
 Memorias privadas y confesiones de un pecador justificado
-De la vida de un in√∫til
-El √∫ltimo mohicano
+De la vida de un in˙til
+El ˙ltimo mohicano
 Los novios
 Rojo y negro
-El jorobado de N√¥tre Dame
+El jorobado de NÙtre Dame
 Eugenio Oneguin
 Eugenia Grandet
-Pap√° Goriot
+Pap· Goriot
 La nariz
 Oliver Twist
-El le√≥n de Flandes
+El leÛn de Flandes
 La cartuja de Parma
-La ca√≠da de la casa Usher
+La caÌda de la casa Usher
 Camera Obscura
-Un h√©roe de nuestro tiempo
+Un hÈroe de nuestro tiempo
 Almas muertas
 Las ilusiones perdidas
-El pozo y el p√©ndulo
+El pozo y el pÈndulo
 Los tres mosqueteros
 Facundo
 La charca del diablo
@@ -1321,7 +1322,7 @@ David Copperfield
 La letra escarlata
 Moby Dick
 La casa de las siete torres
-La caba√±a del T√≠o Tom
+La cabaÒa del TÌo Tom
 Cranford
 La casa desolada
 Walden
@@ -1338,57 +1339,57 @@ Grandes esperanzas
 Silas Marner
 Padres e hijos
 Los miserables
-Los ni√±os del agua
+Los niÒos del agua
 Memorias del subsuelo
-El t√≠o Silas
-Alicia en el Pa√≠s de las Maravillas
+El tÌo Silas
+Alicia en el PaÌs de las Maravillas
 Viaje al centro de la Tierra
 Crimen y castigo
-Mar√≠a
+MarÌa
 Teresa Raquin
 La piedra lunar
 Mujercitas
 El idiota
 Los cantos de Maldonor
 Phineas Finn
-La educaci√≥n sentimental
+La educaciÛn sentimental
 Guerra y paz
 Leyendas
-Alicia a trav√©s del espejo
+Alicia a travÈs del espejo
 Middlemarch
 Aguas primaverales
 Erewhon
 Los demonios
 Las criaturas del espejo
-La vuelta al mundo en 80 d√≠as
+La vuelta al mundo en 80 dÌas
 Episodios nacionales
 Lejos del mundanal ruido
-Pepita Jim√©nez
+Pepita JimÈnez
 El crimen del padre Amaro
 La taberna
 Ana Karenina
-Mart√≠n Fierro
-La habitaci√≥n roja
+MartÌn Fierro
+La habitaciÛn roja
 Ben-Hur
 Nana
 Retrato de una dama
 Los Malavoglia
-Memorias p√≥stumas de Br√°s Cubas
+Memorias pÛstumas de Br·s Cubas
 El amigo manso
 La isla del tesoro
 Una vida
 La muerte de Ivan Ilich
 A contrapelo
-Mario el epic√∫reo
+Mario el epic˙reo
 Bel-Ami
 La regenta
 Las aventuras de Huckleberry Finn
 Germinal
 Sotileza
 Fortunata y Jacinta
-El extra√±o caso del Dr. Jeckyll y Mr. Hyde
+El extraÒo caso del Dr. Jeckyll y Mr. Hyde
 Los pazos de Ulloa
-Los habitantes de Hems√∂
+Los habitantes de Hemsˆ
 Pierre y Jean
 Bajo el yugo
 El placer
@@ -1396,26 +1397,26 @@ Eline Vere
 Hambre
 La febre d'or
 La bestia humana
-Tha√Øs, la cortesana
+ThaÔs, la cortesana
 La sonata a Kreutzer
 El retrato de Dorian Gray
-All√° abajo
+All· abajo
 Tess, la de los d'Uberville
-La saga de G√∂sta Berling
+La saga de Gˆsta Berling
 New Grub Street
 Noticias de ninguna parte
 Las aventuras de Sherlock Holmes
 Diario de un don nadie
-Do√±a Berta. Cuervo. Supercher√≠a
+DoÒa Berta. Cuervo. SupercherÌa
 Jude el oscuro
 Effi Briest
-La m√°quina del tiempo
+La m·quina del tiempo
 La isla del Dr. Moreau
 Quo Vadis
-Dr√°cula
-Lo que Maisie sab√≠a
+Dr·cula
+Lo que Maisie sabÌa
 Misericordia
-Fara√≥n
+FaraÛn
 Los alimentos terrenales
 La guerra de los mundos
 Senectud
@@ -1430,8 +1431,8 @@ El teniente Gustl
 Kim
 Los Buddenbrook
 El sabueso de los Baskerville
-El coraz√≥n de las tinieblas
-Ca√±as y barro
+El corazÛn de las tinieblas
+CaÒas y barro
 El inmoralista
 Los embajadores
 El enigma de las arenas
@@ -1440,29 +1441,29 @@ Sucesos memorables de un enfermo de los nervios
 Sonatas
 Adriano VII
 Nostromo
-La casa de la alegr√≠a
+La casa de la alegrÌa
 El profesor Unrat
 Solitud
-Los extrav√≠os del colegial T√∂rless
+Los extravÌos del colegial Tˆrless
 La saga de los Forsyte
 La jungla
 El agente secreto
 La madre
-La casa en el conf√≠n de la tierra
+La casa en el confÌn de la tierra
 Cuento de viejas
 El infierno
-Una habitaci√≥n con vistas
+Una habitaciÛn con vistas
 La puerta estrecha
 Los cuadernos de Malte Laurids Brigge
 Regreso a Howards End
-Impresiones de √Åfrica
-El √°rbol de la ciencia
+Impresiones de ¡frica
+El ·rbol de la ciencia
 Ethan Frome
 Castilla
 The Charwoman's Daughter
 La muerte en Venecia
 Hijos y amantes
-Memorias de un hombre de acci√≥n
+Memorias de un hombre de acciÛn
 Platero y yo
 Niebla
 Kokoro
@@ -1476,14 +1477,14 @@ Retrato del artista adolescente
 Los de abajo
 Pallieter
 Cuentos
-Bendici√≥n de la tierra
+BendiciÛn de la tierra
 El retorno del soldado
 Tarr
 Tempestades de acero
 Belarmino y Apolonio
 Nuestro padre San Daniel y El obispo leproso
 La edad de la inocencia
-Los esc√°ndalos de Crome
+Los esc·ndalos de Crome
 Historia de Cristo
 Ulises
 Babbitt
@@ -1491,22 +1492,22 @@ La casa de Claudina
 Life and Death of Harriett Frean
 El incongruente
 Siddhartha
-La habitaci√≥n enorme
+La habitaciÛn enorme
 Cristina, hija de Lavrans
 Amok
 El diablo en el cuerpo
 La conciencia de Zeno
 Pasaje a la India
 Nosotros
-La monta√±a m√°gica
+La montaÒa m·gica
 El sombrero verde
-Addis Al√§m
+Addis Al‰m
 The Professor's House
-Los Artam√≥nov
+Los ArtamÛnov
 El proceso
 Los monederos falsos
 El gran Gatsby
-La se√±ora Dalloway
+La seÒora Dalloway
 Chaka
 Ser americanos
 El asesinato de Rogelio Ackroyd
@@ -1517,35 +1518,35 @@ Tirano Banderas
 El castillo
 Blindness
 Fiesta
-Am√©rica
+AmÈrica
 La disputa por el sargento Grischa
 El lobo estepario
 Al faro
 En busca del tiempo perdido
-El ruedo ib√©rico
+El ruedo ibÈrico
 Nadja
 Quicksand
-Decadencia y ca√≠da
+Decadencia y caÌda
 Hay quien prefiere las ortigas
 Parade's End
 El pozo de la soledad
 El amante de lady Chatterley
 Orlando
 Historia del ojo
-Do√±a B√°rbara
-Los ni√±os terribles
+DoÒa B·rbara
+Los niÒos terribles
 Berlin Alexanderplatz
 Sin novedad en el frente
 Los indiferentes
 Living
 Los siete locos
-Adi√≥s a las armas
+AdiÛs a las armas
 Passing
-El √°ngel que nos mira
-El halc√≥n malt√©s
-Im√°n
-Los monos de imitaci√≥n de Dios
-San Manuel Bueno, m√°rtir y tres historias m√°s
+El ·ngel que nos mira
+El halcÛn maltÈs
+Im·n
+Los monos de imitaciÛn de Dios
+San Manuel Bueno, m·rtir y tres historias m·s
 Mort de dama
 Las olas
 Las lanzas coloradas
@@ -1556,43 +1557,43 @@ La marcha Radetzky
 Laia
 La hija de Robert Poste
 Un mundo feliz
-Nudo de v√≠boras
+Nudo de vÌboras
 El hombre sin atributos
 Queso
-La condici√≥n humana
+La condiciÛn humana
 A Day Off
 Testament of Youth
-Autobiograf√≠a de Alice B. Toklas
+AutobiografÌa de Alice B. Toklas
 Muerte de un agente de publicidad
 Huasipungo
-Ll√°malo sue√±o
+Ll·malo sueÒo
 La calle de los cocodrilos
 Gracias, Jeeves
 Suave es la noche
-Tr√≥pico de C√°ncer
+TrÛpico de C·ncer
 El cartero siempre llama dos veces
-En las cimas de la desesperaci√≥n
-Les cloches de B√¢le
+En las cimas de la desesperaciÛn
+Les cloches de B‚le
 Los nueve sastres
 Auto de fe
-¬øAcaso no matan a los caballos?
+øAcaso no matan a los caballos?
 Mr. Norris cambia de tren
 El intocable
 Gente independiente
 El bosque de la noche
-En las monta√±as de la locura
-¬°Absal√≥n, Absal√≥n!
+En las montaÒas de la locura
+°AbsalÛn, AbsalÛn!
 La guerra de las salamandras
-¬°Venciste, Rosemary!
-Lo que el viento se llev√≥
-La ca√±a que piensa
+°Venciste, Rosemary!
+Lo que el viento se llevÛ
+La caÒa que piensa
 Ciego en Gaza
 Summer Will Show
 Luotuo Xiangai
-Memorias de √Åfrica
-Entre par√©ntesis
+Memorias de ¡frica
+Entre parÈntesis
 Ferdydurke
-El b√∫ho ciego
+El b˙ho ciego
 El Hobbit
 Sus ojos miraban a Dios
 De ratones y hombres
@@ -1602,70 +1603,70 @@ Brighton, parque de atracciones
 Motivo de alarma
 Alamut
 Rebeca
-La n√°usea
+La n·usea
 Miss Pettigrew Lives for a Day
 Na rubu pameti
-El sue√±o eterno
-Adi√≥s a Berl√≠n
+El sueÒo eterno
+AdiÛs a BerlÌn
 Las uvas de la ira
-Buenos d√≠as, medianoche
-En Nadar-dos-P√°jaros
+Buenos dÌas, medianoche
+En Nadar-dos-P·jaros
 Hijo nativo
-La invenci√≥n de Morel
-El desierto de los t√°rtaros
+La invenciÛn de Morel
+El desierto de los t·rtaros
 El poder y la gloria
 Por quien doblan las campanas
 The Man Who Loved Children
 El mundo es ancho y ajeno
 Los vivos y los muertos
 De tu tierra
-Cr√≥nica del alba
+CrÛnica del alba
 El extranjero
-El √∫ltimo encuentro
-El laberinto m√°gico
+El ˙ltimo encuentro
+El laberinto m·gico
 El juego de los abalorios
-Jos√© y sus hermanos
+JosÈ y sus hermanos
 El Principito
 El hombre en suspenso
 El filo de la navaja
 Ficciones
 Pippi Calzaslargas
 Memorias de Leticia Valle
-Rebeli√≥n en la granja
+RebeliÛn en la granja
 Un puente sobre el Drina
-Cristo se detuvo en √âboli
+Cristo se detuvo en …boli
 Arcanum 17
 Retorno a Brideshead
-Cr√≥nica de Travnik
+CrÛnica de Travnik
 La flauta de la lata
 Nada
 La muerte de Virgilio
-El se√±or presidente
+El seÒor presidente
 Alexis Zorba
 Back
 El hombre perdido
-El sendero de los nidos de ara√±a
-Bajo el volc√°n
+El sendero de los nidos de araÒa
+Bajo el volc·n
 Si esto es un hombre
 Ejercicios de estilo
 La peste
 Doktor Faustus
-El callej√≥n de los milagros
-La espuma de los d√≠as
+El callejÛn de los milagros
+La espuma de los dÌas
 Viaje a la Alcarria
 Cenizas y diamantes
 La desobediencia
-Ad√°n Buenosayres
+Ad·n Buenosayres
 Llanto por la tierra amada
-En el coraz√≥n de los mares
-El t√∫nel
+En el corazÛn de los mares
+El t˙nel
 La sentencia de muerte
 1984
 El hombre del brazo de oro
 La cabeza del cordero
 The Heat of the Day
-Amor en un clima fr√≠o
-El caso Tula√©v
+Amor en un clima frÌo
+El caso TulaÈv
 El Aleph
 Yo, robot
 Canta la hierba
@@ -1680,54 +1681,54 @@ La colmena
 El fin de la aventura
 Molloy
 El hombre rebelde
-El guardi√°n entre el centeno
+El guardi·n entre el centeno
 El mar de las Sirtes
-Fundaci√≥n
+FundaciÛn
 Malone muere
-El d√≠a de los tr√≠fidos
+El dÌa de los trÌfidos
 Memorias de Adriano
-El asesino dentro de m√≠
+El asesino dentro de mÌ
 Sangre sabia
 El viejo y el mar
 El hombre invisible
 El juez y su verdugo
 Confabulario
 Mil grullas
-Ve y dilo en la monta√±a
+Ve y dilo en la montaÒa
 Casino Royale
 Yonqui
 Jim buena suerte
 Los pasos perdidos
 El invernadero
-El largo adi√≥s
+El largo adiÛs
 El llano en llamas
-R√©quiem por un campesino espa√±ol
+RÈquiem por un campesino espaÒol
 Pomladni dan
 El desprecio
 Historia de O
 Bajo la red
-El se√±or de las moscas
+El seÒor de las moscas
 Los mandarines
-Buenos d√≠as tristeza
-El sue√±o de los h√©roes
+Buenos dÌas tristeza
+El sueÒo de los hÈroes
 El rumor del oleaje
 Los bravos
 Rosaura a las diez
 Chicos del arroyo
 Los reconocimientos
-Pedro P√°ramo
+Pedro P·ramo
 El americano impasible
-Cr√≥nicas de la verdad oculta
-El halc√≥n
-La √∫ltima tentaci√≥n de Cristo
-Gran Sert√≥n: veredas
+CrÛnicas de la verdad oculta
+El halcÛn
+La ˙ltima tentaciÛn de Cristo
+Gran SertÛn: veredas
 Lolita
 El talento de Mr. Ripley
-El Se√±or de los Anillos
+El SeÒor de los Anillos
 The Lonely Londoners
 Incierta gloria
 El Jarama
-La habitaci√≥n de Giovanni
+La habitaciÛn de Giovanni
 Justine
 Abejas de cristal
 El doctor Zhivago
@@ -1739,18 +1740,18 @@ Homo Faber
 El azul del cielo
 Los cucos de Midwich
 Tierra ignota
-La celos√≠a
-Merl√≠n y familia
+La celosÌa
+MerlÌn y familia
 Camelot
 La campana
-Confesiones de un rebelde irland√©s
+Confesiones de un rebelde irlandÈs
 Gabriela, clavo y canela
-S√°bado por la noche y domingo por la ma√±ana
+S·bado por la noche y domingo por la maÒana
 Todo se desmorona
 The Bitter Glass
-El gu√≠a
+El guÌa
 El gatopardo
-Los r√≠os profundos
+Los rÌos profundos
 Desayuno en Tiffany's
 La parranda
 Billar a las nueve y media
@@ -1762,7 +1763,7 @@ Billy Liar
 Las armas secretas
 La promesa del alba
 Corre, Conejo
-Matar un ruise√±or
+Matar un ruiseÒor
 El mago de Lublin
 Halbzeit
 The Country Girls
@@ -1771,31 +1772,31 @@ Las historias naturales
 El astillero
 Trampa 22
 Solaris
-El gato y el rat√≥n
+El gato y el ratÛn
 The Prime of Miss Jean Brodie
 Cabeza cortada
-Bearn o la sala de las mu√±ecas
-Memorias de un ni√±o campesino
-Sobre h√©roes y tumbas
+Bearn o la sala de las muÒecas
+Memorias de un niÒo campesino
+Sobre hÈroes y tumbas
 El siglo de las luces
 Las ratas
 Bomarzo
 El cuaderno dorado
 Tiempo de silencio
-P√°lido fuego
-La naranja mec√°nica
-Alguien vol√≥ sobre el nido del cuco
+P·lido fuego
+La naranja mec·nica
+Alguien volÛ sobre el nido del cuco
 Girl with Green Eyes
 La muerte de Artemio Cruz
 La plaza del Diamante
 La ciudad y los perros
-Un d√≠a en la vida de Iv√°n Denisovich
+Un dÌa en la vida de Iv·n Denisovich
 Rayuela
 Los pasos contados
 La campana de cristal
 Enderby por dentro
-Las se√±oritas de escasos medios
-El esp√≠a que surgi√≥ del fr√≠o
+Las seÒoritas de escasos medios
+El espÌa que surgiÛ del frÌo
 Manon des Sources
 El graduado
 Cuna de gato
@@ -1805,71 +1806,71 @@ El arrebato de Lol von Stein
 Arrow of God
 A veces un gran impulso
 Tres tristes tigres
-La pasi√≥n seg√∫n G.H.
+La pasiÛn seg˙n G.H.
 Gracias por el fuego
 Trenes rigurosamente vigilados
 The River Between
-Ba≈°ta, pepeo
+Baöta, pepeo
 Todo lo que crece tiene que converger
 Las cosas
-A sangre fr√≠a
+A sangre frÌa
 Paradiso
-√öltimas tardes con Teresa
+⁄ltimas tardes con Teresa
 A cada cual lo suyo
 La subasta del lote 49
 Giles Goat-Boy
-Se√±as de identidad
+SeÒas de identidad
 Cinco horas con Mario
 El cuaderno gris
 El maestro y Margarita
 Ancho mar de los Sargazos
-El tercer polic√≠a
+El tercer policÌa
 Miramar
 Z
 Pilgrimage
 La casa de Jampol
-Cien a√±os de soledad
+Cien aÒos de soledad
 No Laughing Matter
-Un animal dotado de raz√≥n
-Ponche de √°cido lis√©rgico
+Un animal dotado de razÛn
+Ponche de ·cido lisÈrgico
 Eva Trout
-Volver√°s a Regi√≥n
+Volver·s a RegiÛn
 A Kestrel for a Knave
 In Watermelon Sugar
-Lecci√≥n de alem√°n
+LecciÛn de alem·n
 Noticias sobre Christa T.
-¬øSue√±an los androides con ovejas el√©ctricas?
+øSueÒan los androides con ovejas elÈctricas?
 2001: Una odisea del espacio
-Bella del se√±or
-Pabell√≥n de c√°ncer
+Bella del seÒor
+PabellÛn de c·ncer
 Myra Breckinridge
-El primer c√≠rculo
+El primer cÌrculo
 El secuestro
 Them
 Ada o el ardor
 El padrino
 El lamento de Portnoy
-El d√≠a que muri√≥ Marilyn
-La mujer del teniente franc√©s
+El dÌa que muriÛ Marilyn
+La mujer del teniente francÈs
 Matadero cinco
 Un ciego con una pistola
-El hurg√≥n m√°gico
+El hurgÛn m·gico
 Tienda de los milagros
-A l√°togat√≥
-Mosc√∫-Petushk√≠
+A l·togatÛ
+Mosc˙-PetushkÌ
 Boquitas pintadas
 Mawsim al-hijrah ila'l-shamal
-Hasta no verte, Jes√∫s m√≠o
+Hasta no verte, Jes˙s mÌo
 El informe de Brodie
 El rey de los alisos
 Jahrestage
 Un mundo para Julius
-Yo s√© por qu√© canta el p√°jaro enjaulado
+Yo sÈ por quÈ canta el p·jaro enjaulado
 Ojos azules
 El mar de la fertilidad
 El regreso de Conejo
 Bilmo
-Retrato de grupo con se√±ora
+Retrato de grupo con seÒora
 Miedo y asco en Las Vegas
 El libro de Daniel
 En un estado libre
@@ -1878,46 +1879,46 @@ Cobra
 Resurgir
 G.
 El gran momento de Mary Tribune
-K√¥kotsu no hito
+KÙkotsu no hito
 Las ciudades invisibles
-Si te dicen que ca√≠
+Si te dicen que caÌ
 El arco iris de gravedad
-El c√≥nsul honorario
+El cÛnsul honorario
 Crash
 El castillo de los destinos cruzados
-Antagon√≠a
+AntagonÌa
 A Question of Power
 Miedo a volar
 Yo el Supremo
 Escuela de mandarines
 El honor perdido de Katharina Blum
 Tierras en penumbra
-√Ågata ojo de gato
+¡gata ojo de gato
 Ragtime
 Luka
 Icaria, Icaria
-El a√±o de la liebre
+El aÒo de la liebre
 El legado de Humboldt
 Mortal y rosa
 Willard y sus trofeos de bolos
 Sin destino
 The Dead Father
 La verdad sobre el caso Savolta
-Una danza para la m√∫sica del tiempo
+Una danza para la m˙sica del tiempo
 Te dejo el mar
-El oto√±o del patriarca
+El otoÒo del patriarca
 Muestra de infancia
 Las delicias de la maternidad
 Cutter and Bone
 Entrevista con el vampiro
 La mujer zurda
-El beso de la mujer ara√±a
+El beso de la mujer araÒa
 Azul casi transparente
-Visi√≥n del ahogado
+VisiÛn del ahogado
 El ingeniero de almas
 La esposa americana
 La hora de la estrella
-La canci√≥n de Salom√≥n
+La canciÛn de SalomÛn
 Las guerras
 Despachos de guera
 El resplandor
@@ -1927,10 +1928,10 @@ Una bandada de zarapitos
 The Singapore Grip
 El mar, el mar
 La vida: instrucciones de uso
-El cuarto de atr√°s
+El cuarto de atr·s
 Los convidados de piedra
-Jard√≠n de cemento
-Gu√≠a del autoestopista gal√°ctico
+JardÌn de cemento
+GuÌa del autoestopista gal·ctico
 Si una noche de invierno un viajero
 La gente de Smiley
 La hija de Burger
@@ -1941,56 +1942,56 @@ Asedio preventivo
 Shikasta
 Los mares del sur
 El nombre de la rosa
-Respiraci√≥n artificial
+RespiraciÛn artificial
 La conjura de los necios
 Rituales
-Sa√∫l ante Samuel
+Sa˙l ante Samuel
 Abril quebrado
 Hijos de la medianoche
-Esperando a los b√°rbaros
-No habr√° m√°s penas ni olvido
+Esperando a los b·rbaros
+No habr· m·s penas ni olvido
 Octubre, octubre
-El r√≠o de la luna
+El rÌo de la luna
 La guerra del fin del mundo
 Lanark, una vida en cuatro libros
 Conejo es rico
-Parejas, transe√∫ntes
+Parejas, transe˙ntes
 La gente de July
 Colina negra
-La casa de los esp√≠ritus
+La casa de los espÌritus
 La lista de Schindler
-P√°lida luz en las colinas
+P·lida luz en las colinas
 El sobrino de Wittgenstein
-El color p√∫rpura
+El color p˙rpura
 La historia particular de un muchacho
-Si ahora no, ¬øcu√°ndo?
+Si ahora no, øcu·ndo?
 Libro del desasosiego
 Memorial del convento
-La pena de B√©lgica
+La pena de BÈlgica
 La pianista
-Vida y √©poca de Michael K
-El pa√≠s del agua
+Vida y Època de Michael K
+El paÌs del agua
 Larva. Babel de una noche de San Juan
 El oratorio de Navidad
 Fado Alexandrino
 El entenado
-Verg√ºenza
+Verg¸enza
 Dinero
 El loro de Flaubert
 La partida del profesor Martens
 Aborto en la escuela
 Noches en el circo
-El Griff√≥n
+El GriffÛn
 Neuromante
-La f√°brica de las avispas
+La f·brica de las avispas
 El imperio del sol
 El amante
-El a√±o de la muerte de Ricardo Reis
+El aÒo de la muerte de Ricardo Reis
 Ciclo de Drenai, 1. Waylander
 The Busconductor Hines
-Diccionario j√°zaro: novela-l√©xico en 100.000 palabras
+Diccionario j·zaro: novela-lÈxico en 100.000 palabras
 La insoportable levedad del ser
-El h√©roe de las mansardas de Mansard
+El hÈroe de las mansardas de Mansard
 El hombre joven
 La mitad del hombre es la mujer
 Ruido de fondo
@@ -2005,18 +2006,18 @@ La historia de Simon
 Las normas de la casa de la sidra
 La orilla oscura
 Der Blindensturz
-El amor en los tiempos del c√≥lera
+El amor en los tiempos del cÛlera
 Beatus ille
-La bella se√±ora Seidenman
+La bella seÒora Seidenman
 Los hundidos y los salvados
 La fuente de la edad
-Extinci√≥n: un desmoronamiento
+ExtinciÛn: un desmoronamiento
 Un artista del mundo flotante
 Watchmen
 Los viejos demonios
 Matigari
 Anagramas
-El lenguaje perdido de las gr√∫as
+El lenguaje perdido de las gr˙as
 Todas las almas
 Balada za Georg Henih
 El enigma de la llegada
@@ -2025,48 +2026,48 @@ La paloma
 Noticias del Imperio
 Beloved
 Taebaek Sanmaek
-La trilog√≠a de Nueva York
+La trilogÌa de Nueva York
 La caja negra
 La feria de las vanidades
 La dalia negra
 La tarde de un escritor
 El camino radiante
 Kitchen
-Dirk Gently: Agencia de investigaciones hol√≠sticas
+Dirk Gently: Agencia de investigaciones holÌsticas
 Cigarettes
 Nervous Conditions
 Camino de sirga
-El √∫ltimo mundo
+El ˙ltimo mundo
 Oscar y Lucinda
 La biblioteca de la piscina
-Los versos sat√°nicos
+Los versos sat·nicos
 Obabakoak
-Los para√≠sos ciegos
-El p√©ndulo de Foucault
+Los paraÌsos ciegos
+El pÈndulo de Foucault
 Gimmick!
-El jard√≠n de los siete crep√∫sculos
+El jardÌn de los siete crep˙sculos
 Inland
-Oraci√≥n por Owen
+OraciÛn por Owen
 Como agua para chocolate
 Historia del cerco de Lisboa
 La magnitud de la tragedia
-Juegos de la edad tard√≠a
-Melancol√≠a de la resistencia
-Los restos del d√≠a
+Juegos de la edad tardÌa
+MelancolÌa de la resistencia
+Los restos del dÌa
 Campos de Londres
 El palacio de la luna
 Espejismos
 Como la vida misma
 El buda de los suburbios
-L√≠neas de sombra
+LÌneas de sombra
 El metro de platino iridiado
 Amongst Women
-La m√∫sica del azar
+La m˙sica del azar
 Stone Junction
-Un mill√≥n de vacas
-C√≥mo conquistar Hollywood
+Un millÛn de vacas
+CÛmo conquistar Hollywood
 Memorias de una hija de perra
-V√©rtigo
+VÈrtigo
 American Psycho
 The Laws
 Asesinos sin rostro
@@ -2080,16 +2081,16 @@ Una infancia en Marraquech
 Memoirs of Rain
 Asphodel
 El aprendiz de carnicero
-La se√±orita Smila y su especial percepci√≥n de la nieve
-Coraz√≥n tan blanco
+La seÒorita Smila y su especial percepciÛn de la nieve
+CorazÛn tan blanco
 Escrito en el cuerpo
 The Crow Road
 Indigo
-El paciente ingl√©s
-En posesi√≥n del secreto de la alegr√≠a
-Las pira√±as
+El paciente inglÈs
+En posesiÛn del secreto de la alegrÌa
+Las piraÒas
 The Triple Mirror of the Self
-T√≠o Petros y la conjetura de Goldbach
+TÌo Petros y la conjetura de Goldbach
 El descubrimiento del cielo
 La vida es un caravasar
 Antes que anochezca
@@ -2097,7 +2098,7 @@ El secreto
 Empresas y tribulaciones de Maqroll el Gaviero
 El club Dumas
 Vidas de santos
-Las v√≠rgenes suicidas
+Las vÌrgenes suicidas
 La memoria de las piedras
 Un buen partido
 Tic-tac
@@ -2110,16 +2111,16 @@ Atando cabos
 Cekani na tmu, cekani na svetlo
 La escala de los mapas
 Dissapearance
-R√≠o profundo
+RÌo profundo
 Gracias por la propina
-La mandolina del capit√°n Corelli
+La mandolina del capit·n Corelli
 How Late it Was, How Late
 Sestra
 Sostiene Pereira
-Cr√≥nica del p√°jaro que da cuerda al mundo
+CrÛnica del p·jaro que da cuerda al mundo
 La Virgen de los Sicarios
-Las √∫ltimas sombras
-Ampliaci√≥n del campo de batalla
+Las ˙ltimas sombras
+AmpliaciÛn del campo de batalla
 El amor molesto
 Tonto, muerto, bastardo e invisible
 El final de la historia
@@ -2130,7 +2131,7 @@ Santa Evita
 Los pasos incontables
 Los inconsolables
 Alias Grace
-El me√±ique de Buda
+El meÒique de Buda
 La broma infinita
 Seda
 Ghost Road
@@ -2138,8 +2139,8 @@ Piezas fugitivas
 La locura de Foucault
 Una comedia ligera
 Carreteras secundarias
-Fuegos con lim√≥n
-El Dios de las peque√±as cosas
+Fuegos con limÛn
+El Dios de las pequeÒas cosas
 Margot en de Engelen
 Plenilunio
 Plata quemada
@@ -2150,30 +2151,30 @@ Kurosufaia (Crossfire)
 La biblia envenenada
 Veronika decide morir
 Las horas
-El d√≠a de todas las almas
+El dÌa de todas las almas
 Rompenubes
 El hereje
-Las part√≠culas elementales
+Las partÌculas elementales
 The talk of the town
-Trilog√≠a sucia de La Habana
+TrilogÌa sucia de La Habana
 Los detectives salvajes
 Desgracia
 Como si yo no estuviera
-Los rom√°nticos
+Los rom·nticos
 En busca de Klingsor
-El museo de la rendici√≥n incondicional
+El museo de la rendiciÛn incondicional
 Estupor y temblores
 La casa de las hojas 
 Blonde
-Bartleby y compa√±√≠a
+Bartleby y compaÒÌa
 Small Remedies
 Estado fronterizo (Piiririik)
-Armon√≠a celestial
+ArmonÌa celestial
 La mancha humana
 Dientes blancos
 Bajo la piel
 The Heart of Redness
-Fr√≠as flores de marzo
+FrÌas flores de marzo
 La ingorancia
 An Obedient Father
 La Fiesta del Chivo
@@ -2181,16 +2182,16 @@ Asfixia
 Soldados de Salamina
 Nadan dos chicos
 No te muevas
-Expiaci√≥n
+ExpiaciÛn
 Austerlitz
 Welcome to Our Hillbrow
 Vida de Pi
 Las correcciones
 Plataforma
 El hombre de ninguna parte
-Los aires dif√≠ciles
+Los aires difÌciles
 Imposturas
-Todo est√° iluminado
+Todo est· iluminado
 Kafka en la orilla
 La sombra del viento
 El primer amor de Casanova
@@ -2198,19 +2199,19 @@ Erec y Enide
 Eilande
 The Namesake
 El curioso incidente del perro a medianoche
-Pasardh√´si (El sucesor, in√©dito en espa√±ol)
-La dama n√∫mero trece
-Todo cuanto am√©
+PasardhÎsi (El sucesor, inÈdito en espaÒol)
+La dama n˙mero trece
+Todo cuanto amÈ
 Blanco sobre negro
-Tu rostro ma√±ana
+Tu rostro maÒana
 Drop City
 El atlas de las nubes
 El testigo
 2666
 Boken om Blanche och Marie
 El maestro. Retrato del novelista adulto
-La conjura contra Am√©rica
+La conjura contra AmÈrica
 Al morir Don Quijote
 La Biblia de barro
-S√°bado
-La medici√≥n del mundo
+S·bado
+La mediciÛn del mundo

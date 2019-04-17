@@ -3,8 +3,15 @@ language: "es_core_news_sm"
 pipeline:
 - name: "nlp_spacy"
 - name: "tokenizer_spacy"
+- name: "intent_entity_featurizer_regex"
 - name: "ner_spacy"
 - name: "ner_crf"
+  features: [
+            ["low", "title", "upper"],
+            ["bias", "low", "prefix5", "prefix2", "suffix5", "suffix3",
+             "suffix2", "upper", "title", "digit", "pattern"],
+            ["low", "title", "upper"]
+  ]
 - name: "ner_synonyms"
 - name: "intent_featurizer_spacy"
 - name: "intent_classifier_sklearn"
@@ -16,7 +23,7 @@ policies:
     batch_size: 50
     max_training_samples: 300
   - name: FallbackPolicy
-    nlu_threshold: 0.2
+    nlu_threshold: 0.15
     core_threshold: 0.1
     fallback_action_name: 'utter_no_te_entiendo'
   - name: MemoizationPolicy
