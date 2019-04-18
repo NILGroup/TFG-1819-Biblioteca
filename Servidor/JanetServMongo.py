@@ -39,7 +39,7 @@ class JanetServMongo:
             collection.update({"_id": int(user_id)}, {'$set': {'oclc1': cods['oclc1'], 'oclc2': cods['oclc2'],
                                                           'oclc3': cods['oclc3'], 'intent': intent}}, upsert=True)
         else:
-            collection.update({"_id": int(user_id)}, {'$set': {'oclc1': consulta['oclc'], 'intent': intent}}, upsert=True)
+            collection.update({"_id": int(user_id)}, {'$set': {'oclc1': consulta['oclc'], 'intent': intent}, '$unset': {'oclc2': '', 'oclc3': ''}}, upsert=True)
 
     def reiniciar_consulta(self, user_id,):
         collection = self._db.historial

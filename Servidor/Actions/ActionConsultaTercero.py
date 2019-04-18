@@ -20,8 +20,8 @@ class ActionThirdBook(Action):
 
         historial = self.mongo.obtener_consulta(uid)
 
-        respuesta.update(self.wms.cargarInformacionLibro(historial['oclc3']))
-        #self.mongo.guardar_consulta(uid, respuesta, "mas_info_tercero")
-        respuesta['content-type'] = 'single-book'
+        if 'oclc3' in historial:
+            respuesta.update(self.wms.cargarInformacionLibro(historial['oclc3']))
+            respuesta['content-type'] = 'single-book'
 
         return respuesta
