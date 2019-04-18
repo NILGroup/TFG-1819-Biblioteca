@@ -23,7 +23,7 @@ internal class conexion {
         request.httpBody = transformarDatos(datos: peticion).data(using: String.Encoding.utf8);
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        request.timeoutInterval = 10
+        request.timeoutInterval = 20
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             

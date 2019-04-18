@@ -276,22 +276,26 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         } else if (datos.value(forKey: "content-type") as! String == "single-book"){
             self.botText = datos.value(forKey: "response") as! String;
             var temp : Globos
-            let isbns = datos.value(forKey: "isbn") as! [String]
-            if !isbns.isEmpty {
-                temp = Globos(texto: self.botText, isbn: isbns, emisor: .Bot,
-                   tipo: Globos.TiposMensaje.singlebook)
-            } else {
+            if datos.value(forKey: "isbn") == nil {
                 temp = Globos(texto: self.botText, emisor: .Bot,
                               tipo: Globos.TiposMensaje.singlebook)
+            } else {
+                let isbns = datos.value(forKey: "isbn") as! [String]
+                if !isbns.isEmpty {
+                    temp = Globos(texto: self.botText, isbn: isbns, emisor: .Bot,
+                       tipo: Globos.TiposMensaje.singlebook)
+                } else {
+                    temp = Globos(texto: self.botText, emisor: .Bot,
+                                  tipo: Globos.TiposMensaje.singlebook)
+                }
             }
             temp.setTitle(text: datos.value(forKey: "title") as! String)
             temp.setAuthor(text: datos.value(forKey: "author") as! String)
-            if (datos.value(forKey: "available") as! [[String:Int]]).isEmpty {
-                temp.setAvailable(available: false)
-            } else {
-                temp.setAvailable(available: true)
-                for item in datos.value(forKey: "available") as! [[String:Int]] {
-                    temp.addLibraryAvailable(index: item.first!.key, count: item.first!.value)
+            temp.setAvailable(available: false)
+            for item in datos.value(forKey: "available") as! [[String:Int]] {
+                for biblioteca in item {
+                    temp.setAvailable(available: true)
+                    temp.addLibraryAvailable(index: biblioteca.key, count: biblioteca.value)
                 }
             }
             temp.setURL(url: datos.value(forKey: "url") as! String)
