@@ -569,12 +569,13 @@
 - hasta nunca
 
 ## intent:gracias
-- Gracias
+- gracias
 - te lo agradezco
 - muchas gracias
 - muchisimas gracias
 - me has ayudado mucho
 - mil gracias
+- muy amable
 
 ## intent:insultos
 - hijo de puta
@@ -582,13 +583,21 @@
 - eres tonta
 - eres tonto
 - me caes fatal
-- zzorra
+- zorra
 - cabrón
 - eres gilipollas
 - vete a la mierda
 - desgraciada
 - maleducada
 - asquerosa
+- idiota
+- me caes mal
+- tonta
+- tonto
+- gilipollas
+- subnormal
+- fea
+- retrasada
 
 ## intent:mas_info_primero
 - muestrame más información del primero
@@ -652,7 +661,7 @@
 - te conozco
 - cómo decías que te llamabas
 - podrías presentarte
-- quien eres tu
+- quién eres tú
 
 ## intent:saludos
 - hola

@@ -265,7 +265,10 @@ class ActionMuestraSegundo(Action):
     def run(self, dispatcher, tracker, domain):
         libros = tracker.get_slot('libro')
         autores = tracker.get_slot('autores')
-        if libros is not None:
+        numberofmorebooksearch = tracker.get_slot('numberofmorebooksearch')
+        if numberofmorebooksearch is None or numberofmorebooksearch == 1:
+            dispatcher.utter_message("Solo me has pedido un libro. No te puedo mostrar un segundo.")
+        elif libros is not None:
             dispatcher.utter_template("utter_segundo_list", tracker)
         elif autores is not None:
             dispatcher.utter_template("utter_segundo_list", tracker)
@@ -280,7 +283,10 @@ class ActionMuestraTercero(Action):
     def run(self, dispatcher, tracker, domain):
         libros = tracker.get_slot('libro')
         autores = tracker.get_slot('autores')
-        if libros is not None:
+        numberofmorebooksearch = tracker.get_slot('numberofmorebooksearch')
+        if numberofmorebooksearch is None or numberofmorebooksearch == 1:
+            dispatcher.utter_message("Solo me has pedido un libro. No te puedo mostrar un tercero.")
+        elif libros is not None:
             dispatcher.utter_template("utter_tercero_list", tracker)
         elif autores is not None:
             dispatcher.utter_template("utter_tercero_list", tracker)

@@ -29,6 +29,14 @@
 ## Generated Story -1646929840932845608
 * despedidas
     - utter_despedida
+    
+## Generated Story -1646929840932845790
+* quien_soy
+    - utter_quien_soy
+    
+## Generated Story -1646929840932845698
+* insultos
+    - utter_respuesta_insultos
 
 ## Generated Story -227894685352773728
 * consulta_libro_kw{"autores": "Quevedo"}
