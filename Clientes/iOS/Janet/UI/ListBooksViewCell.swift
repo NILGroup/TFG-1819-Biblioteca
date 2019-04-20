@@ -58,12 +58,18 @@ class ListBooksViewCell: TableViewCell {
             if (i == 0) {
                 titleLabel1.text = list[i].getTitle()
                 authorLabel1.text = list[i].getAuthor()
+                authorLabel1.minimumScaleFactor = 0.2
+                authorLabel1.adjustsFontSizeToFitWidth = true
             } else if (i == 1) {
                 titleLabel2.text = list[i].getTitle()
                 authorLabel2.text = list[i].getAuthor()
+                authorLabel2.minimumScaleFactor = 0.2
+                authorLabel2.adjustsFontSizeToFitWidth = true
             } else {
                 titleLabel3.text = list[i].getTitle()
                 authorLabel3.text = list[i].getAuthor()
+                authorLabel3.minimumScaleFactor = 0.2
+                authorLabel3.adjustsFontSizeToFitWidth = true
             }
             
             imageFromServerURL(list[i].getISBN(), num: i)
@@ -90,7 +96,7 @@ class ListBooksViewCell: TableViewCell {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "view1Tapped"), object: nil, userInfo: dict)
     }
     
-    func imageFromServerURL(_ isbn: [String], num: Int/*actualImage: inout UIImageView*/) {
+    func imageFromServerURL(_ isbn: [String], num: Int) {
         
         var existe = false
         var i = 0

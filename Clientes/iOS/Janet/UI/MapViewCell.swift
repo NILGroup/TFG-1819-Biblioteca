@@ -40,4 +40,11 @@ class MapViewCell: TableViewCell, MKMapViewDelegate {
         self.MapView.addAnnotation(annotation)
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        let destination = MKMapItem(placemark: MKPlacemark(coordinate: view.annotation!.coordinate))
+        destination.name = view.annotation?.title!
+        
+        MKMapItem.openMaps(with: [destination], launchOptions: [:])
+    }
 }
