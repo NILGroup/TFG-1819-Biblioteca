@@ -16,6 +16,7 @@ El Código Da Vinci
 Piense y hágase rico
 Lo que el viento se llevó
 Los Pilares de la Tierra
+Una Columna de Fuego
 El diario de Ana Frank
 Cien años de soledad
 El principito
@@ -97,6 +98,7 @@ El rojo en la pluma del loro
 En el camino
 Historia del Siglo XX
 El Anti Edipo
+enciclopedia
 Capitanes de la arena
 La interpretación de las culturas
 Apocalípticos e Integrados
@@ -880,7 +882,6 @@ The Earthsea Series
 The Left Hand of Darkness
 Solaris
 Memoirs of a Survivor
-The Chronicles of Narnia
 The Monk
 A Voyage to Arcturus
 The Night Sessions
@@ -961,6 +962,7 @@ Uncle Tom’s Cabin
 Oroonoko, or The Royal Slave
 Clayhanger
 The Last September
+Septimus
 Room at the Top
 A Dry White Season
 Shirley
@@ -2215,3 +2217,475 @@ Al morir Don Quijote
 La Biblia de barro
 Sábado
 La medición del mundo
+Fundamentals of Wavelets
+Data Smart
+God Created the Integers
+Superfreakonomics
+Orientalism
+Nature of Statistical Learning Theory, The
+Integration of the Indian States
+Drunkard's Walk, The
+Image Processing & Mathematical Morphology
+How to Think Like Sherlock Holmes
+Data Scientists at Work,Sebastian Gutierrez,tech,data_science,230,Apress
+Slaughterhouse Five
+Birth of a Theorem
+Structure & Interpretation of Computer Programs
+Age of Wrath, The
+Trial, The
+Statistical Decision Theory'
+Data Mining Handbook
+New Machiavelli, The
+Physics & Philosophy
+Making Software
+Analysis, Vol I
+Machine Learning for Hackers
+Signal and the Noise, The
+Python for Data Analysis
+Introduction to Algorithms
+Beautiful and the Damned, The
+Outsider, The
+Complete Sherlock Holmes, The - Vol I
+Complete Sherlock Holmes, The - Vol II
+Wealth of Nations, The
+Pillars of the Earth, The
+Mein Kampf
+Tao of Physics, The
+Surely You're Joking Mr Feynman
+Farewell to Arms, A
+Veteran, The
+False Impressions
+Last Lecture, The
+Return of the Primitive
+Jurassic Park
+Russian Journal, A
+Tales of Mystery and Imagination
+Freakonomics
+Hidden Connections, The
+Story of Philosophy, The
+Asami Asami
+Journal of a Novel
+Once There Was a War
+Moon is Down, The
+Brethren, The
+In a Free State
+Catch 22
+Complete Mastermind, The,BBC,nonfiction,trivia,178,BBC
+Dylan on Dylan
+Soft Computing & Intelligent Systems
+Textbook of Economic Theory
+Econometric Analysis
+Learning OpenCV
+Data Structures Using C & C++
+Computer Vision, A Modern Approach
+Principles of Communication Systems
+Let Us C
+Amulet of Samarkand, The
+Crime and Punishment
+Angels & Demons
+Argumentative Indian, The
+Sea of Poppies
+Idea of Justice, The
+Raisin in the Sun, A
+All the President's Men
+Prisoner of Birth, A
+Scoop!
+Ahe Manohar Tari
+Last Mughal, The
+Social Choice & Welfare, Vol 39 No. 1,Various,tech,economics,235,Springer
+Radiowaril Bhashane & Shrutika
+Gun Gayin Awadi
+Aghal Paghal
+Maqta-e-Ghalib
+Beyond Degrees,,philosophy,education,222,HarperCollins
+Manasa
+India from Midnight to Milennium
+World's Greatest Trials, The,,nonfiction,history,210,
+Great Indian Novel, The
+O Jerusalem!
+City of Joy, The
+Freedom at Midnight
+Winter of Our Discontent, The
+On Education
+Free Will
+Bookless in Baghdad
+Case of the Lame Canary, The
+Theory of Everything, The
+New Markets & Other Essays
+Electric Universe
+Hunchback of Notre Dame, The
+Burning Bright
+Age of Discontuinity, The
+Doctor in the Nude
+Down and Out in Paris & London
+Identity & Violence
+Beyond the Three Seas
+World's Greatest Short Stories, The,,fiction,classic,217,Jaico
+Talking Straight
+Maugham's Collected Short Stories, Vol 3
+Phantom of Manhattan, The
+Ashenden of The British Agent
+Zen & The Art of Motorcycle Maintenance
+Great War for Civilization, The
+We the Living
+Artist and the Mathematician, The
+History of Western Philosophy
+Selected Short Stories,,fiction,classic,215,Jaico
+Rationality & Freedom
+Clash of Civilizations and Remaking of the World Order
+Uncommon Wisdom
+One
+Karl Marx Biography,,nonfiction,autobiography,162,
+To Sir With Love,Braithwaite,fiction,classic,197,Penguin
+Half A Life
+Discovery of India, The
+Apulki
+Unpopular Essays
+Deceiver, The
+Veil: Secret Wars of the CIA
+Char Shabda
+Rosy is My Relative
+Moon and Sixpence, The
+Political Philosophers,,philosophy,politics,162,
+Short History of the World, A
+Trembling of a Leaf, The
+Doctor on the Brain
+Simpsons & Their Mathematical Secrets
+Pattern Classification
+From Beirut to Jerusalem
+Code Book, The
+Age of the Warrior, The
+Final Crisis,,fiction,comic,257,
+Killing Joke, The,,fiction,comic,283,
+Flashpoint,,fiction,comic,265,
+Batman Earth One,,fiction,comic,265,
+Crisis on Infinite Earths,,fiction,comic,258,
+Numbers Behind Numb3rs, The
+Superman Earth One - 1,,fiction,comic,259,
+Superman Earth One - 2,,fiction,comic,258,
+Justice League: Throne of Atlantis,,fiction,comic,258,
+Justice League: The Villain's Journey,,fiction,comic,258,
+Death of Superman, The,,fiction,comic,258,
+History of the DC Universe,,fiction,comic,258,
+Batman: The Long Halloween,,fiction,comic,258,
+Life in Letters, A
+Information, The
+Journal of Economics, vol 106 No 3,,science,economics,235,
+Elements of Information Theory
+Power Electronics - Rashid
+Power Electronics - Mohan
+Neural Networks
+Grapes of Wrath, The
+Vyakti ani Valli
+Statistical Learning Theory
+Empire of the Mughal - The Tainted Throne
+Empire of the Mughal - Brothers at War
+Empire of the Mughal - Ruler of the World
+Empire of the Mughal - The Serpent's Tooth
+Empire of the Mughal - Raiders from the North
+Mossad
+Jim Corbett Omnibus
+20000 Leagues Under the Sea
+Batatyachi Chal,Deshpande P L,fiction,novel,200,
+Hafasavnuk,Deshpande P L,fiction,novel,211,
+Urlasurla,Deshpande P L,fiction,novel,211,
+Pointers in C
+Cathedral and the Bazaar, The
+Design with OpAmps
+Think Complexity
+Devil's Advocate, The
+Ayn Rand Answers
+Philosophy: Who Needs It
+World's Great Thinkers, The,,science,physics,189,
+Data Analysis with Open Source Tools
+Broca's Brain
+Men of Mathematics
+Oxford book of Modern Science Writing
+Justice, Judiciary and Democracy
+Arthashastra, The,Kautiyla,philosophy,philosophy,214,
+We the People,Palkhivala,philosophy,philosophy,216,
+We the Nation,Palkhivala,philosophy,philosophy,216,
+Courtroom Genius, The,Sorabjee,nonfiction,autobiography,217,
+Dongri to Dubai
+History of England, Foundation
+City of Djinns
+India's Legal System,Nariman,nonfiction,legal,177,
+More Tears to Cry
+Ropemaker, The
+Angels & Demons
+Judge, The,,fiction,novel,170,
+Attorney, The,,fiction,novel,170,
+Prince, The,Machiavelli,fiction,classic,173,
+Eyeless in Gaza
+Tales of Beedle the Bard
+Girl with the Dragon Tattoo
+Girl who kicked the Hornet's Nest
+Girl who played with Fire
+Batman Handbook,,fiction,comic,270,
+Murphy's Law,,philosophy,psychology,178,
+Structure and Randomness
+Image Processing with MATLAB
+Animal Farm
+Idiot, The
+Christmas Carol, A
+Fundamentals of Wavelets
+Data Smart
+God Created the Integers
+Superfreakonomics
+Orientalism
+Nature of Statistical Learning Theory, The
+Integration of the Indian States
+Drunkard's Walk, The
+Image Processing & Mathematical Morphology
+How to Think Like Sherlock Holmes
+Data Scientists at Work,Sebastian Gutierrez,data_science,230,Apress
+Slaughterhouse Five
+Birth of a Theorem
+Structure & Interpretation of Computer Programs
+Age of Wrath, The
+Trial, The
+Statistical Decision Theory'
+Data Mining Handbook
+New Machiavelli, The
+Physics & Philosophy
+Making Software
+Analysis, Vol I
+Machine Learning for Hackers
+Signal and the Noise, The
+Python for Data Analysis
+Introduction to Algorithms
+Beautiful and the Damned, The
+Outsider, The
+Complete Sherlock Holmes, The - Vol I
+Complete Sherlock Holmes, The - Vol II
+Wealth of Nations, The
+Pillars of the Earth, The
+Mein Kampf
+Tao of Physics, The
+Surely You're Joking Mr Feynman
+Farewell to Arms, A
+Veteran, The
+False Impressions
+Last Lecture, The
+Return of the Primitive
+Jurassic Park
+Russian Journal, A
+Tales of Mystery and Imagination
+Freakonomics
+Hidden Connections, The
+Story of Philosophy, The
+Asami Asami
+Journal of a Novel
+Once There Was a War
+Moon is Down, The
+Brethren, The
+In a Free State
+Catch 22
+Complete Mastermind, The,BBC,nonfiction,178,BBC
+Dylan on Dylan
+Soft Computing & Intelligent Systems
+Textbook of Economic Theory
+Econometric Analysis
+Learning OpenCV
+Data Structures Using C & C++
+Computer Vision, A Modern Approach
+Principles of Communication Systems
+Let Us C
+Amulet of Samarkand, The
+Crime and Punishment
+Angels & Demons
+Argumentative Indian, The
+Sea of Poppies
+Idea of Justice, The
+Raisin in the Sun, A
+All the President's Men
+Prisoner of Birth, A
+Scoop!
+Ahe Manohar Tari
+Last Mughal, The
+Social Choice & Welfare, Vol 39 No. 1,Various,economics,235,Springer
+Radiowaril Bhashane & Shrutika
+Gun Gayin Awadi
+Aghal Paghal
+Maqta-e-Ghalib
+Beyond Degrees,,nonfiction,222,HarperCollins
+Manasa
+India from Midnight to Milennium
+World's Greatest Trials, The,,history,210,
+Great Indian Novel, The
+O Jerusalem!
+City of Joy, The
+Freedom at Midnight
+Winter of Our Discontent, The
+On Education
+Free Will
+Bookless in Baghdad
+Case of the Lame Canary, The
+Theory of Everything, The
+New Markets & Other Essays
+Electric Universe
+Hunchback of Notre Dame, The
+Burning Bright
+Age of Discontuinity, The
+Doctor in the Nude
+Down and Out in Paris & London
+Identity & Violence
+Beyond the Three Seas
+World's Greatest Short Stories, The,,fiction,217,Jaico
+Talking Straight
+Maugham's Collected Short Stories, Vol 3
+Phantom of Manhattan, The
+Ashenden of The British Agent
+Zen & The Art of Motorcycle Maintenance
+Great War for Civilization, The
+We the Living
+Artist and the Mathematician, The
+History of Western Philosophy
+Selected Short Stories,,fiction,215,Jaico
+Rationality & Freedom
+Clash of Civilizations and Remaking of the World Order
+Uncommon Wisdom
+One
+Karl Marx Biography,,nonfiction,162,
+To Sir With Love,Braithwaite,fiction,197,Penguin
+Half A Life
+Discovery of India, The
+Apulki
+Unpopular Essays
+Deceiver, The
+Veil: Secret Wars of the CIA
+Char Shabda
+Rosy is My Relative
+Moon and Sixpence, The
+Political Philosophers,,philosophy,162,
+Short History of the World, A
+Trembling of a Leaf, The
+Doctor on the Brain
+Simpsons & Their Mathematical Secrets
+Pattern Classification
+From Beirut to Jerusalem
+Code Book, The
+Age of the Warrior, The
+Final Crisis,,comic,257,
+Killing Joke, The,,comic,283,
+Flashpoint,,comic,265,
+Batman Earth One,,comic,265,
+Crisis on Infinite Earths,,comic,258,
+Numbers Behind Numb3rs, The
+Superman Earth One - 1,,comic,259,
+Superman Earth One - 2,,comic,258,
+Justice League: Throne of Atlantis,,comic,258,
+Justice League: The Villain's Journey,,comic,258,
+Death of Superman, The,,comic,258,
+History of the DC Universe,,comic,258,
+Batman: The Long Halloween,,comic,258,
+Life in Letters, A
+Information, The
+Journal of Economics, vol 106 No 3,,economics,235,
+Elements of Information Theory
+Power Electronics - Rashid
+Power Electronics - Mohan
+Neural Networks
+Grapes of Wrath, The
+Vyakti ani Valli
+Statistical Learning Theory
+Empire of the Mughal - The Tainted Throne
+Empire of the Mughal - Brothers at War
+Empire of the Mughal - Ruler of the World
+Empire of the Mughal - The Serpent's Tooth
+Empire of the Mughal - Raiders from the North
+Mossad
+Jim Corbett Omnibus
+20000 Leagues Under the Sea
+Batatyachi Chal,Deshpande P L,fiction,200,
+Hafasavnuk,Deshpande P L,fiction,211,
+Urlasurla,Deshpande P L,fiction,211,
+Pointers in C
+Cathedral and the Bazaar, The
+Design with OpAmps
+Think Complexity
+Devil's Advocate, The
+Ayn Rand Answers
+Philosophy: Who Needs It
+World's Great Thinkers, The,,philosophy,189,
+Data Analysis with Open Source Tools
+Broca's Brain
+Men of Mathematics
+Oxford book of Modern Science Writing
+Justice, Judiciary and Democracy
+Arthashastra, The,Kautiyla,philosophy,214,
+We the People,Palkhivala,philosophy,216,
+We the Nation,Palkhivala,philosophy,216,
+Courtroom Genius, The,Sorabjee,nonfiction,217,
+Dongri to Dubai
+History of England, Foundation
+City of Djinns
+India's Legal System,Nariman,nonfiction,177,
+More Tears to Cry
+Ropemaker, The
+Angels & Demons
+Judge, The,,fiction,170,
+Attorney, The,,fiction,170,
+Prince, The,Machiavelli,philosophy,173,
+Eyeless in Gaza
+Tales of Beedle the Bard
+Girl with the Dragon Tattoo
+Girl who kicked the Hornet's Nest
+Girl who played with Fire
+Batman Handbook,,comic,270,
+Murphy's Law,,nonfiction,178,
+Structure and Randomness
+Image Processing with MATLAB
+Animal Farm
+Idiot, The
+Christmas Carol, A
+BUENAS PALABRAS 4
+BUENAS PALABRAS 5
+BUENAS PALABRAS 6
+BUENAS PALABRAS 7
+Cuentos con historieta 1
+Cuentos con historieta 2
+Cuentos con historieta 3
+Cuentos con historieta 4
+El libro de los gnomos, los gigantes y los duendes
+La niña de oro
+Historia de Malik y Luna Llena
+El cascanueces y el rey de los ratones
+Cuentos + cuentos
+Sección policiales
+Callejón sin salida
+El Gigante Amapolas + El matadero
+Prometeo encadenado + Una libra de carne
+Los libros sagrados - Mitología griega
+Los relatos del tiempo
+El centroforward murió al amanecer
+Siete fantásticos latinoamericanos
+Del terror al horror
+Las aventuras de Gilgamesh
+Las Mil y una noches
+Cuentos policiales para chicos curiosos
+Cuentos populares de pícaros y necios
+Antiguas leyendas de héroes y princesas
+La isla misteriosa
+Príncipe y mendigo
+Cuentos fantásticos que dan miedo
+Cu Chulain el valiente
+La cabeza del dragón
+Cuentos que encantan
+Peligro en alta mar
+El viento en los sauces
+Cuentos con-ciencia
+Cuentos que parecen ciertos
+Cuentos que encierran misterios
+Dicen que los dioses… Mitos griegos 1
+La vida de un bribón
+20.000 leguas de viaje submarino
+Los hijos del capitán Grant
+¿Cuentos que asustan?
+El castillo encantado
+La Lluvia y los cinco
+El mago de Oz
+La flecha Negra
+La vuelta a la manzana
+Peter Pan
+El mundo perdido

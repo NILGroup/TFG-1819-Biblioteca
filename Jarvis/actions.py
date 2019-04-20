@@ -107,6 +107,7 @@ class BuscarLibroForm(FormAction):
         loc = next(tracker.get_latest_entity_values('LOC'), None)
         autor1 = next(tracker.get_latest_entity_values('autores'), None)
         PER = next(tracker.get_latest_entity_values('PER'), None)
+        persona = next(tracker.get_latest_entity_values('persona'), None)
         temp['libro'] = None
         temp['autores'] = None
 
@@ -114,16 +115,18 @@ class BuscarLibroForm(FormAction):
                 intent == 'consulta_libros_titulo_autor' or intent == 'consulta_libro_titulo_autor' or \
                 intent == 'consulta_libros_titulo' or intent == 'consulta_libro_titulo' or \
                 intent == 'consulta_libros_kw_autor' or intent == 'consulta_libro_kw_autor':
-            if MISC is not None:
-                temp['libro'] = next(tracker.get_latest_entity_values('MISC'), None)
-            elif libro is not None:
+            if libro is not None:
                 temp['libro'] = libro.capitalize()
-            elif intent == 'consulta_libros_kw' or intent == 'consulta_libro_kw' and loc is not None:
+            elif MISC is not None:
+                temp['libro'] = next(tracker.get_latest_entity_values('MISC'), None)
+            elif (intent == 'consulta_libros_kw' or intent == 'consulta_libro_kw') and loc is not None:
                 temp['libro'] = loc
             elif autor1 is not None:
                 temp['libro'] = autor1.capitalize()
             elif PER is not None:
                 temp['libro'] = PER
+            elif persona is not None:
+                temp['libro'] = persona.capitalize()
             elif ORG is not None:
                 temp['libro'] = ORG
 
@@ -135,6 +138,8 @@ class BuscarLibroForm(FormAction):
                 temp['autores'] = PER
             elif autor1 is not None:
                 temp['autores'] = autor1.capitalize()
+            elif persona is not None:
+                temp['autores'] = persona.capitalize()
 
         return [SlotSet('libro', temp['libro']), SlotSet('autores', temp['autores'])]
 
