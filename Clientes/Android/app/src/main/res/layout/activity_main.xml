@@ -30,27 +30,35 @@
     <LinearLayout
         android:id="@+id/btnSpeakContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="173dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="10dp">
 
         <ImageButton
             android:id="@+id/btnSpeak"
             android:layout_width="127dp"
             android:layout_height="109dp"
             android:background="@null"
-            android:padding="16dp"
             android:scaleType="fitCenter"
             android:src="@drawable/microphone_button_2" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="229dp"
+            android:layout_height="34dp"
             android:layout_below="@id/btnSpeak"
             android:layout_margin="10dp"
-            android:text="@string/hint" />
+            android:gravity="center_vertical|center"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1.5"
+            android:shadowDy="1.3"
+            android:shadowRadius="1.6"
+            android:text="@string/hint"
+
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 </RelativeLayout>
