@@ -5,21 +5,24 @@
 - qué te ocurre
 - estás bien
 - cómo te sientes
-- hola, que tal
-- hola, que tal estas hoy
-- hola, como estas hoy
+- hola, qué tal
+- hola, qué tal estás hoy
+- hola, cómo estas hoy
+- hola qué tal
+- hola qué tal estás hoy
+- hola cómo estás hoy
 
 ## intent:consulta_horario_close
 - está cerrada la [Biblioteca de medicina](localizacion)
 - está cerrada ahora mismo la [Zambrano](localizacion)
-- cierra hoy la [Biblioteca de Matem￿áticas](localizacion)
-- me puedes decir si cierra hoy la [Biblioteca de Matem￿áticas](localizacion)
-- me puedes decir si est￿á cerrada la [Biblioteca de Matem￿áticas](localizacion)
-- me puedes decir si est￿á cerrada hoy la [Biblioteca de Matem￿áticas](localizacion)
-- me puedes decir si est￿á cerrada ahora la [Biblioteca de Matem￿áticas](localizacion)
-- me podrias decir si est￿á cerrada la [Biblioteca de Matem￿áticas](localizacion)
-- me podrias decir si est￿á cerrada hoy la [Biblioteca de Matem￿áticas](localizacion)
-- me podrias decir si est￿á cerrada ahora la [Biblioteca de Matem￿áticas](localizacion)
+- cierra hoy la [Biblioteca de Matemáticas](localizacion)
+- me puedes decir si cierra hoy la [Biblioteca de Matemáticas](localizacion)
+- me puedes decir si está cerrada la [Biblioteca de Matemáticas](localizacion)
+- me puedes decir si está cerrada hoy la [Biblioteca de Matemáticas](localizacion)
+- me puedes decir si está cerrada ahora la [Biblioteca de Mateáticas](localizacion)
+- me podrias decir si está cerrada la [Biblioteca de Mateáticas](localizacion)
+- me podrias decir si está cerrada hoy la [Biblioteca de Matemáticas](localizacion)
+- me podrias decir si está cerrada ahora la [Biblioteca de Matemáticas](localizacion)
 
 ## intent:consulta_horario_general
 - cuándo abre la [Facultad de geología](localizacion)
@@ -27,7 +30,7 @@
 - cuándo está abierta la [Biblioteca de Educaci￿ón](localizacion)
 - cuándo está cerrada la [Biblioteca de Arquitectura](localizacion)
 - a qué hora abre la [Biblioteca de informática](localizacion)
-- a qué hora cierra la [Biblioteca de Filosof￿ía](localizacion)
+- a qué hora cierra la [Biblioteca de Filosofía](localizacion)
 - a que hora la [Biblioteca Zambrano](localizacion:biblioteca zambrano) abre
 - a que hora la [Biblioteca Zambrano](localizacion:biblioteca zambrano) cierra
 - cuál es el horario de [Zambrano](localizacion)
