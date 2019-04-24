@@ -29,15 +29,14 @@ class JanetServMongo:
         collection = self._db.historial
 
         if "books" in consulta:
-            cods = {}
+            cods = {'$set': {}}
             i = 1
 
+            cods['$set']['intent'] = intent
             for item in consulta['books']:
-                cods['oclc'+repr(i)] = item['oclc']
+                cods['$set']['oclc'+repr(i)] = item['oclc']
                 i = i + 1
-
-            collection.update({"_id": int(user_id)}, {'$set': {'oclc1': cods['oclc1'], 'oclc2': cods['oclc2'],
-                                                          'oclc3': cods['oclc3'], 'intent': intent}}, upsert=True)
+            collection.update({"_id": int(user_id)}, cods, upsert=True)
         else:
             collection.update({"_id": int(user_id)}, {'$set': {'oclc1': consulta['oclc'], 'intent': intent}, '$unset': {'oclc2': '', 'oclc3': ''}}, upsert=True)
 

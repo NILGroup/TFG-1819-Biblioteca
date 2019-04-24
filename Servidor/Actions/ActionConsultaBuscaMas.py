@@ -42,7 +42,13 @@ class ActionMoreBooks(Action):
             respuesta['content-type'] = 'text'
             respuesta['response'] = 'Vaya, parece que no hay libros relacionados con esta consulta'
         else:
-            if intentant == 'consulta_libros_kw' or intentant == 'consulta_libros_titulo' or \
+            if len(respuesta['books']) == 1:
+                    respuesta.update(self.wms.cargarInformacionLibro(respuesta['books'][0]['oclc']))
+                    del respuesta['books']
+                    respuesta['content-type'] = 'single-book'
+                    self.mongo.guardar_consulta(uid, respuesta, intentant.replace('libros', 'libro'))
+                    return respuesta
+            elif intentant == 'consulta_libros_kw' or intentant == 'consulta_libros_titulo' or \
                     intentant == 'consulta_libros_autor' or intentant == 'consulta_libros_titulo_autor' \
                     or intentant == 'consulta_libros_kw_autor':
                 respuesta['content-type'] = 'list-books'
