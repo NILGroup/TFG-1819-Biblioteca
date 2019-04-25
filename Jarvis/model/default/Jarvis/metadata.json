@@ -4,15 +4,21 @@
         {
             "model": "es_core_news_sm",
             "case_sensitive": false,
-            "name": "nlp_spacy",
+            "name": "SpacyNLP",
             "class": "rasa_nlu.utils.spacy_utils.SpacyNLP"
         },
         {
-            "name": "tokenizer_spacy",
+            "name": "SpacyTokenizer",
             "class": "rasa_nlu.tokenizers.spacy_tokenizer.SpacyTokenizer"
         },
         {
-            "name": "ner_spacy",
+            "name": "RegexFeaturizer",
+            "file": "component_2_RegexFeaturizer.pkl",
+            "class": "rasa_nlu.featurizers.regex_featurizer.RegexFeaturizer"
+        },
+        {
+            "dimensions": null,
+            "name": "SpacyEntityExtractor",
             "class": "rasa_nlu.extractors.spacy_entity_extractor.SpacyEntityExtractor"
         },
         {
@@ -45,17 +51,17 @@
             "max_iterations": 50,
             "L1_c": 0.1,
             "L2_c": 0.1,
-            "name": "ner_crf",
-            "classifier_file": "crf_model.pkl",
+            "name": "CRFEntityExtractor",
+            "file": "component_4_CRFEntityExtractor.pkl",
             "class": "rasa_nlu.extractors.crf_entity_extractor.CRFEntityExtractor"
         },
         {
-            "name": "ner_synonyms",
-            "synonyms_file": "entity_synonyms.json",
+            "name": "EntitySynonymMapper",
+            "file": "component_5_EntitySynonymMapper.json",
             "class": "rasa_nlu.extractors.entity_synonyms.EntitySynonymMapper"
         },
         {
-            "name": "intent_featurizer_spacy",
+            "name": "SpacyFeaturizer",
             "class": "rasa_nlu.featurizers.spacy_featurizer.SpacyFeaturizer"
         },
         {
@@ -75,12 +81,12 @@
             ],
             "max_cross_validation_folds": 5,
             "scoring_function": "f1_weighted",
-            "name": "intent_classifier_sklearn",
-            "classifier_file": "intent_classifier_sklearn.pkl",
+            "name": "SklearnIntentClassifier",
+            "file": "component_7_SklearnIntentClassifier.pkl",
             "class": "rasa_nlu.classifiers.sklearn_intent_classifier.SklearnIntentClassifier"
         }
     ],
     "training_data": "training_data.json",
-    "trained_at": "20190411-200443",
-    "rasa_nlu_version": "0.14.4"
+    "trained_at": "20190425-143110",
+    "rasa_nlu_version": "0.15.0"
 }

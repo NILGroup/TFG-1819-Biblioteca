@@ -5,58 +5,61 @@
         "localizacion"
       ]
     },
-    "utter_despedida": {
-      "slots": []
-    },
     "form_libros": {
       "slots": [
-        "numberofmorebooksearch",
         "requested_slot",
-        "searchindex",
+        "autores",
         "libro",
-        "autores"
+        "numberofmorebooksearch",
+        "searchindex"
       ]
     },
-    "action_muestra_segundo": {
-      "slots": []
+    "form_saludos": {
+      "slots": [
+        "persona",
+        "requested_slot"
+      ]
     },
     "action_busca_mas": {
       "slots": [
         "searchindex"
       ]
     },
-    "action_muestra_tercero": {
+    "utter_quien_soy": {
       "slots": []
     },
-    "action_muestra_primero": {
-      "slots": []
-    },
-    "form_saludos": {
-      "slots": [
-        "requested_slot",
-        "persona"
-      ]
-    },
-    "action_check_biblio_abierta": {
+    "utter_despedida": {
       "slots": []
     },
     "action_localizacion_sin_entidad": {
       "slots": []
     },
+    "action_check_biblio_abierta": {
+      "slots": []
+    },
+    "action_muestra_tercero": {
+      "slots": []
+    },
     "action_saludos": {
       "slots": []
     },
-    "utter_consulta_telefono": {
+    "action_muestra_segundo": {
+      "slots": []
+    },
+    "action_muestra_primero": {
+      "slots": []
+    },
+    "utter_consulta_localizacion": {
       "slots": []
     },
     "utter_gracias": {
       "slots": []
     },
-    "utter_consulta_localizacion": {
+    "utter_respuesta_insultos": {
       "slots": []
     }
   },
-  "python": "3.6.5",
+  "python": "3.6.8",
   "max_histories": [
     5,
     null,
@@ -70,8 +73,8 @@
     "rasa_core.policies.memoization.MemoizationPolicy",
     "rasa_core.policies.form_policy.FormPolicy"
   ],
-  "trained_at": "20190411-211249",
-  "rasa_core": "0.13.7",
-  "tensorflow": "1.12.0",
+  "trained_at": "20190425-143139",
+  "rasa_core": "0.14.0",
+  "tensorflow": "1.13.1",
   "sklearn": "0.20.2"
 }

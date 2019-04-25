@@ -1,108 +1,108 @@
-Servicio de Tesis Doctorales y Publicaciones académicas
-Biblioteca Histórica
-Biblioteca de Ciencias de la Documentación
-Biblioteca de Filosofía
-Biblioteca de Educación
+Servicio de Tesis Doctorales y Publicaciones acadÃ©micas
+Biblioteca HistÃ³rica
+Biblioteca de Ciencias de la DocumentaciÃ³n
+Biblioteca de FilosofÃ­a
+Biblioteca de EducaciÃ³n
 Biblioteca de Bellas Artes
-Biblioteca de Geografía e Historia
-Biblioteca de Geografía e Historia-Instituto Complutense de Ciencias Musicales
-Biblioteca de Filología-Sala General
-Biblioteca de Filología-María Zambrano
-Biblioteca de María Zambrano
-Biblioteca de Filología
-Biblioteca de Filología-Clásicas 
-Biblioteca de Filología-Hispánicas y Románicas
-Biblioteca de Filología-Dpto. Arabe
-Biblioteca de Psicología
-Biblioteca de Psicología-Docimoteca
+Biblioteca de GeografÃ­a e Historia
+Biblioteca de GeografÃ­a e Historia-Instituto Complutense de Ciencias Musicales
+Biblioteca de FilologÃ­a-Sala General
+Biblioteca de FilologÃ­a-MarÃ­a Zambrano
+Biblioteca de MarÃ­a Zambrano
+Biblioteca de FilologÃ­a
+Biblioteca de FilologÃ­a-ClÃ¡sicas 
+Biblioteca de FilologÃ­a-HispÃ¡nicas y RomÃ¡nicas
+Biblioteca de FilologÃ­a-Dpto. Arabe
+Biblioteca de PsicologÃ­a
+Biblioteca de PsicologÃ­a-Docimoteca
 Biblioteca de Derecho
-Biblioteca de Derecho-Sala de Criminología
-Biblioteca de Derecho-María Zambrano (Sala Rafael Ureña)
-Biblioteca de Ciencias Económicas y Empresariales
+Biblioteca de Derecho-Sala de CriminologÃ­a
+Biblioteca de Derecho-MarÃ­a Zambrano (Sala Rafael UreÃ±a)
+Biblioteca de Ciencias EconÃ³micas y Empresariales
 Biblioteca de Comercio
 Biblioteca de Turismo
 Biblioteca de Comercio y Turismo
-Biblioteca de Estadística
-Biblioteca de Estudios Estadísticos
-Biblioteca de Políticas y Sociología
-Biblioteca de Sociología
-Biblioteca de Ciencias Políticas y Sociología
+Biblioteca de EstadÃ­stica
+Biblioteca de Estudios EstadÃ­sticos
+Biblioteca de PolÃ­ticas y SociologÃ­a
+Biblioteca de SociologÃ­a
+Biblioteca de Ciencias PolÃ­ticas y SociologÃ­a
 Biblioteca de Trabajo Social
 Biblioteca de Relaciones Laborales
-Biblioteca de Ciencias de la Información
+Biblioteca de Ciencias de la InformaciÃ³n
 Biblioteca de Medicina
 Biblioteca de Medicina-Historia de la Medicina
 Biblioteca de Farmacia
 Biblioteca de Veterinaria
-Biblioteca de Odontología
-Biblioteca de Enfermería
-Biblioteca de Enfermería, Fisioterapia y Podología
-Biblioteca de Óptica y Optometría
-Biblioteca del Instituto de Investigaciones Oftalmológicas Ramón Castroviejo
-Biblioteca de Informática
-Biblioteca de Matemáticas
-Biblioteca de Ciencias Matemáticas
-Biblioteca de Físicas
-Biblioteca de Ciencias Físicas
-Biblioteca de Geología
-Biblioteca de Geológicas
-Biblioteca de Ciencias Geológicas
-Biblioteca de Biología
-Biblioteca de Biológicas
-Biblioteca de Ciencias Biológicas
-Biblioteca de Química
-Biblioteca de Químicas
-Biblioteca de Ciencias Químicas
-Facultad de Ciencias de la Documentación
-Facultad de Filosofía
-Facultad de Educación
+Biblioteca de OdontologÃ­a
+Biblioteca de EnfermerÃ­a
+Biblioteca de EnfermerÃ­a, Fisioterapia y PodologÃ­a
+Biblioteca de Ã“ptica y OptometrÃ­a
+Biblioteca del Instituto de Investigaciones OftalmolÃ³gicas RamÃ³n Castroviejo
+Biblioteca de InformÃ¡tica
+Biblioteca de MatemÃ¡ticas
+Biblioteca de Ciencias MatemÃ¡ticas
+Biblioteca de FÃ­sicas
+Biblioteca de Ciencias FÃ­sicas
+Biblioteca de GeologÃ­a
+Biblioteca de GeolÃ³gicas
+Biblioteca de Ciencias GeolÃ³gicas
+Biblioteca de BiologÃ­a
+Biblioteca de BiolÃ³gicas
+Biblioteca de Ciencias BiolÃ³gicas
+Biblioteca de QuÃ­mica
+Biblioteca de QuÃ­micas
+Biblioteca de Ciencias QuÃ­micas
+Facultad de Ciencias de la DocumentaciÃ³n
+Facultad de FilosofÃ­a
+Facultad de EducaciÃ³n
 Facultad de Bellas Artes
-Facultad de Geografía e Historia
-Facultad de Geografía e Historia-Instituto Complutense de Ciencias Musicales
-Facultad de Filología-Sala General
-Facultad de Filología-María Zambrano
-Facultad de María Zambrano
-Facultad de Filología
-Facultad de Filología-Clásicas 
-Facultad de Filología-Hispánicas y Románicas
-Facultad de Filología-Dpto. Árabe
-Facultad de Psicología
-Facultad de Psicología-Docimoteca
+Facultad de GeografÃ­a e Historia
+Facultad de GeografÃ­a e Historia-Instituto Complutense de Ciencias Musicales
+Facultad de FilologÃ­a-Sala General
+Facultad de FilologÃ­a-MarÃ­a Zambrano
+Facultad de MarÃ­a Zambrano
+Facultad de FilologÃ­a
+Facultad de FilologÃ­a-ClÃ¡sicas 
+Facultad de FilologÃ­a-HispÃ¡nicas y RomÃ¡nicas
+Facultad de FilologÃ­a-Dpto. Ãrabe
+Facultad de PsicologÃ­a
+Facultad de PsicologÃ­a-Docimoteca
 Facultad de Derecho
-Facultad de Derecho-Sala de Criminología
-Facultad de Derecho-María Zambrano (Sala Rafael Ureña)
-Facultad de Ciencias Económicas y Empresariales
+Facultad de Derecho-Sala de CriminologÃ­a
+Facultad de Derecho-MarÃ­a Zambrano (Sala Rafael UreÃ±a)
+Facultad de Ciencias EconÃ³micas y Empresariales
 Facultad de Comercio
 Facultad de Turismo
 Facultad de Comercio y Turismo
-Facultad de Estadística
-Facultad de Estudios Estadísticos
-Facultad de Políticas y Sociología
-Facultad de Sociología
-Facultad de Ciencias Políticas y Sociología
+Facultad de EstadÃ­stica
+Facultad de Estudios EstadÃ­sticos
+Facultad de PolÃ­ticas y SociologÃ­a
+Facultad de SociologÃ­a
+Facultad de Ciencias PolÃ­ticas y SociologÃ­a
 Facultad de Trabajo Social
 Facultad de Relaciones Laborales
-Facultad de Ciencias de la Información
+Facultad de Ciencias de la InformaciÃ³n
 Facultad de Medicina
 Facultad de Medicina-Historia de la Medicina
 Facultad de Farmacia
 Facultad de Veterinaria
-Facultad de Odontología
-Facultad de Enfermería
-Facultad de Enfermería, Fisioterapia y Podología
-Facultad de Óptica y Optometría
-Facultad del Instituto de Investigaciones Oftalmológicas Ramón Castroviejo
-Facultad de Informática
-Facultad de Matemáticas
-Facultad de Ciencias Matemáticas
-Facultad de Físicas
-Facultad de Ciencias Físicas
-Facultad de Geología
-Facultad de Geológicas
-Facultad de Ciencias Geológicas
-Facultad de Biología
-Facultad de Biológicas
-Facultad de Ciencias Biológicas
-Facultad de Química
-Facultad de Químicas
-Facultad de Ciencias Químicas
+Facultad de OdontologÃ­a
+Facultad de EnfermerÃ­a
+Facultad de EnfermerÃ­a, Fisioterapia y PodologÃ­a
+Facultad de Ã“ptica y OptometrÃ­a
+Facultad del Instituto de Investigaciones OftalmolÃ³gicas RamÃ³n Castroviejo
+Facultad de InformÃ¡tica
+Facultad de MatemÃ¡ticas
+Facultad de Ciencias MatemÃ¡ticas
+Facultad de FÃ­sicas
+Facultad de Ciencias FÃ­sicas
+Facultad de GeologÃ­a
+Facultad de GeolÃ³gicas
+Facultad de Ciencias GeolÃ³gicas
+Facultad de BiologÃ­a
+Facultad de BiolÃ³gicas
+Facultad de Ciencias BiolÃ³gicas
+Facultad de QuÃ­mica
+Facultad de QuÃ­micas
+Facultad de Ciencias QuÃ­micas

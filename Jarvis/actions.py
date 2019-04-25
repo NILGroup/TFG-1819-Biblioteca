@@ -61,9 +61,9 @@ class SaludosForm(FormAction):
             loc = next(tracker.get_latest_entity_values('LOC'), None)
             misc = next(tracker.get_latest_entity_values('MISC'), None)
             if aux is None and aux2 is not None:
-                return [SlotSet('persona', aux2.capitalize())]
+                return [SlotSet('persona', aux2.title())]
             elif aux is not None and aux is not "Hola":
-                return [SlotSet('persona', aux)]
+                return [SlotSet('persona', aux.title())]
             elif loc is not None:
                 return [SlotSet('persona', loc)]
             elif misc is not None:
@@ -121,11 +121,11 @@ class BuscarLibroForm(FormAction):
                 intent == 'consulta_libros_titulo_autor' or intent == 'consulta_libro_titulo_autor' or \
                 intent == 'consulta_libros_titulo' or intent == 'consulta_libro_titulo' or \
                 intent == 'consulta_libros_kw_autor' or intent == 'consulta_libro_kw_autor':
-            if libro is not None:
-                temp['libro'] = libro.capitalize()
-            elif MISC is not None:
+            if MISC is not None and (len(libro) < len(MISC)):
                 temp['libro'] = next(tracker.get_latest_entity_values('MISC'), None)
-            elif (intent == 'consulta_libros_kw' or intent == 'consulta_libro_kw') and loc is not None:
+            elif libro is not None:
+                temp['libro'] = libro.capitalize()
+            elif loc is not None:
                 temp['libro'] = loc
             elif autor1 is not None:
                 temp['libro'] = autor1.capitalize()

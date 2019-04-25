@@ -2,9 +2,9 @@ el señor de los anillos
 Harry Potter y la piedra filosofal
 Harry Potter y la camara secreta
 Harry Potter y el prisionero de Azkaban
-Harry Potter y el caliz de fuego
-Harry Potter y la orden del fenix
-Harry Potter y el misterio del principe
+Harry Potter y el cáliz de fuego
+Harry Potter y la orden del fénix
+Harry Potter y el misterio del príncipe
 Harry Potter y las reliquias de la muerte
 Crepúsculo
 Luna Nueva
@@ -35,6 +35,8 @@ La Metamorfosis
 La casa de los espiritus
 El Psicoanalista
 Las mil y una noches
+cálculo en una variable
+estadística aplicada
 La sombra del viento
 El secreto
 El nombre de la rosa
@@ -62,6 +64,9 @@ Fahrenheit 451
 El Aleph
 El silmarillion
 El guardián entre el centeno
+física cuántica
+álgebra lineal
+constitución española
 Por quién doblan las campanas
 El amor las mujeres y la vida
 A Sangre Fría
@@ -85,6 +90,10 @@ Crónicas del ángel gris
 Mujeres que corren con los lobos
 Los detectives Salvajes
 Andamios
+segunda guerra mundial
+primera guerra mundial
+guerra civil
+guerra de secesión
 La historia del arte
 Vigilar y Castigar
 Cuentos Chinos
@@ -2167,6 +2176,19 @@ En busca de Klingsor
 El museo de la rendición incondicional
 Estupor y temblores
 La casa de las hojas 
+literatura de habla inglesa
+literatura inglesa
+literatura de habla hispana
+literatura hispana
+literatura española
+ejercicios de matemáticas
+ejercicios de física
+ejercicios de biología
+ejercicios de geología
+ejercicios de química
+ejercicios de informática
+ejercicios de algoritmia
+ejercicios de derecho
 Blonde
 Bartleby y compañía
 Small Remedies
