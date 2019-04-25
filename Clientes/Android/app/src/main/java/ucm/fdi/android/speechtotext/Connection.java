@@ -28,17 +28,15 @@ public class Connection {
 
         JSONObject result = new JSONObject();
 
-        String user_id = "user_id=23235";
-
         if(url.contains("https"))
-            result = connectWithHTTPS(result, type, peticion, user_id);
+            result = connectWithHTTPS(result, type, peticion);
         else
-            result = connect(result, type, peticion, user_id);
+            result = connect(result, type, peticion);
         return result;
 
     }
 
-    private JSONObject connect(JSONObject result, String type, String peticion, String user_id)
+    private JSONObject connect(JSONObject result, String type, String peticion)
     {
         HttpURLConnection client = null;
         try {
@@ -53,7 +51,7 @@ public class Connection {
             StringBuilder response = new StringBuilder();
 
 
-            String query = user_id+"&"+type+"&"+peticion;
+            String query = type+"&"+peticion;
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(client.getOutputStream(), "UTF-8"));
             bw.write(query);
             bw.flush();
@@ -86,7 +84,7 @@ public class Connection {
         }
     }
 
-    private JSONObject connectWithHTTPS(JSONObject result, String type, String peticion, String user_id)
+    private JSONObject connectWithHTTPS(JSONObject result, String type, String peticion)
     {
         HttpsURLConnection client = null;
         try {
@@ -103,7 +101,7 @@ public class Connection {
             StringBuilder response = new StringBuilder();
 
             DataOutputStream wr = new DataOutputStream(client.getOutputStream());
-            wr.writeBytes(user_id+"&"+type+"&"+peticion);
+            wr.writeBytes(type+"&"+peticion);
             wr.flush();
             wr.close();
 

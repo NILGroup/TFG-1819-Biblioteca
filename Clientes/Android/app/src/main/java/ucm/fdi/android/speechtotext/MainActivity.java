@@ -3,12 +3,12 @@ package ucm.fdi.android.speechtotext;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.speech.RecognizerIntent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -19,14 +19,11 @@ import android.view.View;
 import java.io.InputStream;
 import java.util.Locale;
 
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.speech.tts.TextToSpeech;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton mSpeakBtn;
     private Locale locSpanish = new Locale("es", "ES");
     private SendAndReceiveTask mTask = null;
+    private String user_id;
 
     private String coverPattern = "http://covers.openlibrary.org/b/isbn/%s-M.jpg?default=false";
 
@@ -71,12 +69,14 @@ public class MainActivity extends AppCompatActivity {
         });
         mSpeakBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick (View v){
-                //startVoiceInput();
+                startVoiceInput();
 
                 //NOTE: Only for debugging
-                start();
+                //start();
             }
         });
+        SharedPreferences sp = this.getSharedPreferences("user_id", MODE_PRIVATE);
+        user_id = sp.getString("user_id",null);
     }
 
     private void start(){
@@ -153,11 +153,13 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case "location":
                     Location loc = processLocation(resultado);
-                    linearLayout.addView(newLocationEntry(loc, resultado.get("response").toString()));
+                    newSimpleEntryText(resultado.get("response").toString(),false);
+                    linearLayout.addView(newLocationEntry(loc));
                     break;
                 case "phone":
                     Phone phone = processPhone(resultado);
-                    linearLayout.addView(newPhoneEntry(phone,resultado.get("response").toString()));
+                    newSimpleEntryText(resultado.get("response").toString(),false);
+                    linearLayout.addView(newPhoneEntry(phone));
                     break;
                 default:
                     newSimpleEntryText(resultado.get("response").toString(),false);
@@ -296,18 +298,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private LinearLayout newLocationEntry(final Location location, String message) throws ExecutionException, InterruptedException {
+    private LinearLayout newLocationEntry(final Location location) throws ExecutionException, InterruptedException {
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
 
-        TextView responseTextView = new TextView(this);
         TextView libraryTextView = new TextView(this);
         ImageView mapImageView = new ImageView(this);
         TextView locationTextView = new TextView(this);
-
-        responseTextView.setText(message+"\n");
-        layout.addView(responseTextView);
 
         libraryTextView.setText(Html.fromHtml("<b>"+location.getLibrary()+"<b>"));
         layout.addView(libraryTextView);
@@ -348,14 +346,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private LinearLayout newPhoneEntry(Phone phone, String message){
+    private LinearLayout newPhoneEntry(Phone phone){
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-
-        TextView responseTextView = new TextView(this);
-        responseTextView.setText(message);
-        layout.addView(responseTextView);
 
         TextView libraryTextView = new TextView(this);
         String libraryText = phone.getLibrary();
@@ -386,9 +380,16 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(Void... voids) {
             //En esta funcion se envian los datos al servidor y se deshabilita el boton
+
             Connection conn = new Connection();
             String type = "query";
-            resultado = conn.ejecutar("type="+type,"content=" + message);
+
+            String query = null;
+            if(null == user_id || user_id.length() <= 0)
+                query ="content=" + message;
+            else
+                query = "user_id="+user_id+"&content=" + message;
+            resultado = conn.ejecutar( "type="+type,query);
             //TODO: mostrar errores en toast
             try {
                 String aux = resultado.get("errorno").toString();
@@ -413,6 +414,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }else{
                 try {
+                    if(null == user_id || user_id.length() <= 0) {
+                        SharedPreferences sp = getSharedPreferences("user_id", 0);
+                        SharedPreferences.Editor Ed = sp.edit();
+                        Ed.putString("user_id",resultado.get("user_id").toString());
+                        Ed.apply();
+                        Ed.commit();
+                    }
                     formatResponse(resultado);
                     ScrollView scrollView = (ScrollView) findViewById(R.id.scroll);
                     scrollView.fullScroll(View.FOCUS_DOWN);

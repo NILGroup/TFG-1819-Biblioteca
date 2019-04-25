@@ -131,10 +131,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="162" column="81" selection-start-line="162" selection-start-column="81" selection-end-line="162" selection-end-column="81" />
+            <state relative-caret-position="262">
+              <caret line="421" column="36" selection-start-line="421" selection-start-column="36" selection-end-line="421" selection-end-column="36" />
               <folding>
-                <element signature="method#startVoiceInput#0;class#MainActivity#0" />
+                <element signature="imports" expanded="true" />
                 <element signature="method#onActivityResult#0;class#MainActivity#0" />
                 <element signature="method#formatResponse#0;class#MainActivity#0" />
                 <element signature="method#processBooks#0;class#MainActivity#0" />
@@ -142,13 +142,18 @@
                 <element signature="method#setInfoBookView#0;class#MainActivity#0" />
                 <element signature="method#processLocation#0;class#MainActivity#0" />
                 <element signature="method#newSimpleEntryText#0;class#MainActivity#0" />
-                <element signature="method#newLocationEntry#0;class#MainActivity#0" />
-                <element signature="e#12298#12456#0" expanded="true" />
-                <element signature="e#12455#12456#0" expanded="true" />
                 <element signature="method#onClickMapImage#0;class#MainActivity#0" />
-                <element signature="method#newPhoneEntry#0;class#MainActivity#0" />
                 <element signature="class#DownloadImageTaskToImageView#0;class#MainActivity#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/Connection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -204,10 +209,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/location.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/Connection.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/Items/Book.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/Utilities.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/ResponseView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/Connection.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/MainActivity.java" />
       </list>
     </option>
@@ -223,8 +228,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -243,18 +247,12 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="speechtotext" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="speechtotext" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Items" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -490,7 +488,7 @@
       <window_info id="Build Variants" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="4" visible="true" weight="0.20695971" />
+      <window_info content_ui="combo" id="Project" order="4" visible="true" weight="0.20695971" />
       <window_info id="Structure" order="5" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="6" />
       <window_info id="Captures" order="7" side_tool="true" weight="0.25" />
@@ -504,7 +502,7 @@
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3298611" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.3280899" />
-      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.4993895" visible="true" weight="0.31573033" />
+      <window_info active="true" anchor="bottom" id="Debug" order="9" sideWeight="0.4993895" visible="true" weight="0.31573033" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
@@ -568,21 +566,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/MainActivity.java</url>
-          <line>321</line>
+          <line>319</line>
           <properties />
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/MainActivity.java</url>
-          <line>89</line>
+          <line>267</line>
           <properties />
-          <option name="timeStamp" value="97" />
+          <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/MainActivity.java</url>
-          <line>265</line>
+          <line>387</line>
           <properties />
-          <option name="timeStamp" value="104" />
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/MainActivity.java</url>
+          <line>416</line>
+          <properties />
+          <option name="timeStamp" value="109" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -631,12 +635,12 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/myadapter.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/AdapterLinearLayout.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bocadillo_user_patch.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor" />
       <provider editor-type-id="images" />
+      <provider selected="true" editor-type-id="ninepatcheditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bocadillo_janet_patch.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor" />
       <provider editor-type-id="images" />
+      <provider selected="true" editor-type-id="ninepatcheditor" />
     </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-28/android/os/AsyncTask.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -646,12 +650,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/customadapter.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/empty_book.png">
       <provider selected="true" editor-type-id="images" />
@@ -683,12 +687,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
@@ -732,37 +736,12 @@
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/Utilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/ResponseView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/Utilities.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/ResponseView.java" />
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
         </state>
       </provider>
     </entry>
@@ -790,12 +769,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ucm/fdi/android/speechtotext/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="162" column="81" selection-start-line="162" selection-start-column="81" selection-end-line="162" selection-end-column="81" />
+        <state relative-caret-position="262">
+          <caret line="421" column="36" selection-start-line="421" selection-start-column="36" selection-end-line="421" selection-end-column="36" />
           <folding>
-            <element signature="method#startVoiceInput#0;class#MainActivity#0" />
+            <element signature="imports" expanded="true" />
             <element signature="method#onActivityResult#0;class#MainActivity#0" />
             <element signature="method#formatResponse#0;class#MainActivity#0" />
             <element signature="method#processBooks#0;class#MainActivity#0" />
@@ -803,11 +789,7 @@
             <element signature="method#setInfoBookView#0;class#MainActivity#0" />
             <element signature="method#processLocation#0;class#MainActivity#0" />
             <element signature="method#newSimpleEntryText#0;class#MainActivity#0" />
-            <element signature="method#newLocationEntry#0;class#MainActivity#0" />
-            <element signature="e#12298#12456#0" expanded="true" />
-            <element signature="e#12455#12456#0" expanded="true" />
             <element signature="method#onClickMapImage#0;class#MainActivity#0" />
-            <element signature="method#newPhoneEntry#0;class#MainActivity#0" />
             <element signature="class#DownloadImageTaskToImageView#0;class#MainActivity#0" />
           </folding>
         </state>
