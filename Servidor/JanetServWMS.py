@@ -37,9 +37,9 @@ class JanetServWMS:
         elif type == "author":
             consulta['q'] = 'srw.au all "' + author + '"'
         elif type == "kw_author":
-            consulta['q'] = 'srw.kw all "' + title + '"' + ' srw.au all "' + author + '"'
+            consulta['q'] = 'srw.kw all "' + title + '"' + ' and srw.au all "' + author + '"'
         elif type == "title_author":
-            consulta['q'] = 'srw.ti all "' + title + '"' + ' srw.au all "' + author + '"'
+            consulta['q'] = 'srw.ti all "' + title + '"' + ' and srw.au all "' + author + '"'
         consulta['q'] = consulta['q'] + 'and srw.li all "' + self.__wskeydata["oclc_symbol"]
         consulta['q'] = consulta['q'] + '" and srw.la all "spa"'
         URL = self.__URLopensearch + urllib.parse.urlencode(consulta)
