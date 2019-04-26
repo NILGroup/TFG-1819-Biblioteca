@@ -103,6 +103,9 @@ class JarvisProcessor():
 
         self.logger.info('Usuario ' + senderid + ':\n' + str(respuesta))
 
+        if respuesta["nlu"]["intent"]["confidence"] < 0.15:
+            respuesta["nlu"]["intent"]["name"] = "no_entiendo"
+
         return respuesta
 
     def formatearResultado(self, peticion):
@@ -133,43 +136,11 @@ class JarvisProcessor():
                 tmp['autores'] = self._slots['autores']
             tmp['searchindex'] = self._slots['searchindex']
 
-        elif resultado['intent'] == 'consulta_articulos_kw' or resultado['intent'] == \
-                'consulta_articulo_kw':
-            tmp['articulos'] = self._slots['libro']
-            tmp['searchindex'] = self._slots['searchindex']
-
-        elif resultado['intent'] == 'consulta_juegos_kw' or resultado['intent'] == \
-                'consulta_juego_kw':
-            tmp['juego'] = self._slots['juego']
-            tmp['searchindex'] = self._slots['searchindex']
-
-        elif resultado['intent'] == 'consulta_musicas_kw' or resultado['intent'] == \
-                'consulta_musica_kw':
-            if self._slots['musica'] is not None:
-                tmp['musica'] = self._slots['musica']
-            if self._slots['autores'] is not None:
-                tmp['autores'] = self._slots['autores']
-            tmp['searchindex'] = self._slots['searchindex']
-
-        elif resultado['intent'] == 'consulta_peliculas_kw' or resultado['intent'] == \
-                'consulta_pelicula_kw':
-            if self._slots['pelicula'] is not None:
-                tmp['pelicula'] = self._slots['pelicula']
-            if self._slots['autores'] is not None:
-                tmp['autores'] = self._slots['autores']
-            tmp['searchindex'] = self._slots['searchindex']
-
         elif resultado['intent'] == 'busca_mas' or resultado['intent'] == \
                 'mas_info_primero' or resultado['intent'] == 'mas_info_segundo' or \
                 resultado['intent'] == 'mas_info_tercero':
-            if self._slots['pelicula'] is not None:
-                tmp['pelicula'] = self._slots['pelicula']
-            elif self._slots['libro'] is not None:
+            if self._slots['libro'] is not None:
                 tmp['libro'] = self._slots['libro']
-            elif self._slots['articulos'] is not None:
-                tmp['articulos'] = self._slots['articulos']
-            elif self._slots['musica'] is not None:
-                tmp['musica'] = self._slots['musica']
             if self._slots['autores'] is not None:
                 tmp['autores'] = self._slots['autores']
 

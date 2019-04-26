@@ -121,7 +121,7 @@ class BuscarLibroForm(FormAction):
                 intent == 'consulta_libros_titulo_autor' or intent == 'consulta_libro_titulo_autor' or \
                 intent == 'consulta_libros_titulo' or intent == 'consulta_libro_titulo' or \
                 intent == 'consulta_libros_kw_autor' or intent == 'consulta_libro_kw_autor':
-            if MISC is not None and (len(libro) < len(MISC)):
+            if (MISC is not None and libro is None) or (MISC is not None and libro is not None and len(libro) < len(MISC)):
                 temp['libro'] = next(tracker.get_latest_entity_values('MISC'), None)
             elif libro is not None:
                 temp['libro'] = libro.capitalize()
