@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,8 +25,11 @@
 		547FFD2620E7BAE400C4331E /* Micro Stopped.wav in Resources */ = {isa = PBXBuildFile; fileRef = 547FFD2520E7BAE400C4331E /* Micro Stopped.wav */; };
 		54868E14215F943800C6E63C /* conexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54868E13215F943800C6E63C /* conexion.swift */; };
 		54868E16215F958000C6E63C /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54868E15215F958000C6E63C /* DAO.swift */; };
+		54A2BC5022580068003F5004 /* MapViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2BC4F22580068003F5004 /* MapViewCell.swift */; };
+		54C65B9F2260D2A700C91FBD /* PhoneViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C65B9E2260D2A700C91FBD /* PhoneViewCell.swift */; };
 		54C9D94420DD71350026E68D /* Micro Start.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D94220DD71340026E68D /* Micro Start.wav */; };
 		54C9D94520DD71350026E68D /* Recognized voice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D94320DD71350026E68D /* Recognized voice.wav */; };
+		54FB3067225D191000C0FBE0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54FB3066225D191000C0FBE0 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +74,11 @@
 		547FFD2520E7BAE400C4331E /* Micro Stopped.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Micro Stopped.wav"; sourceTree = "<group>"; };
 		54868E13215F943800C6E63C /* conexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conexion.swift; sourceTree = "<group>"; };
 		54868E15215F958000C6E63C /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		54A2BC4F22580068003F5004 /* MapViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCell.swift; sourceTree = "<group>"; };
+		54C65B9E2260D2A700C91FBD /* PhoneViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewCell.swift; sourceTree = "<group>"; };
 		54C9D94220DD71340026E68D /* Micro Start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Micro Start.wav"; sourceTree = "<group>"; };
 		54C9D94320DD71350026E68D /* Recognized voice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Recognized voice.wav"; sourceTree = "<group>"; };
+		54FB3066225D191000C0FBE0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54FB3067225D191000C0FBE0 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +116,8 @@
 				541631A721983C0D00453F3A /* TableViewExtension.swift */,
 				5443C49421BFCA8E00F7BAD6 /* ListBooksViewCell.swift */,
 				5443C49521BFCA8E00F7BAD6 /* SingleBookViewCell.swift */,
+				54A2BC4F22580068003F5004 /* MapViewCell.swift */,
+				54C65B9E2260D2A700C91FBD /* PhoneViewCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -120,6 +129,7 @@
 				5454623B207F5B7A00640980 /* JanetTests */,
 				54546246207F5B7A00640980 /* JanetUITests */,
 				54546225207F5B3800640980 /* Products */,
+				54FB3063225D190A00C0FBE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +196,14 @@
 				54C9D94320DD71350026E68D /* Recognized voice.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		54FB3063225D190A00C0FBE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54FB3066225D191000C0FBE0 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +275,11 @@
 					54546223207F5B3800640980 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					54546237207F5B7A00640980 = {
 						CreatedOnToolsVersion = 9.3;
@@ -271,12 +294,13 @@
 				};
 			};
 			buildConfigurationList = 5454621F207F5B3600640980 /* Build configuration list for PBXProject "Janet" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 5454621B207F5B3600640980;
 			productRefGroup = 54546225207F5B3800640980 /* Products */;
@@ -328,6 +352,7 @@
 			files = (
 				5443C49321BFC63800F7BAD6 /* MessageViewCell.swift in Sources */,
 				542D81812198CD7D0041763F /* SettingsBundleHelper.swift in Sources */,
+				54C65B9F2260D2A700C91FBD /* PhoneViewCell.swift in Sources */,
 				5452564D2163B05A002C4990 /* TableViewCell.swift in Sources */,
 				5443C49621BFCA8E00F7BAD6 /* ListBooksViewCell.swift in Sources */,
 				54868E16215F958000C6E63C /* DAO.swift in Sources */,
@@ -335,6 +360,7 @@
 				5454622A207F5B3900640980 /* ViewController.swift in Sources */,
 				54868E14215F943800C6E63C /* conexion.swift in Sources */,
 				54546228207F5B3900640980 /* AppDelegate.swift in Sources */,
+				54A2BC5022580068003F5004 /* MapViewCell.swift in Sources */,
 				5473A65B219094C700069A72 /* Globos.swift in Sources */,
 				541631A821983C0D00453F3A /* TableViewExtension.swift in Sources */,
 			);
@@ -395,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -442,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -455,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -496,7 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

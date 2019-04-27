@@ -10,8 +10,9 @@ import Foundation
 
 internal class conexion {
     
-    private let url = "https://holstein.fdi.ucm.es/tfg-biblio/mobilenative" //Insertar dirección del servidor
-    //private let url = "http://192.168.1.21/mobilenative"
+    //private let url = "https://holstein.fdi.ucm.es/tfg-biblio/api" //Insertar dirección del servidor
+    //private let url = "http://192.168.1.21/api"
+    private let url = "http://www.janetbiblio.tk/api"
     
     //Ejecuta la petición al servidor, retornando la respuesta de este
     internal func ejecutar(peticion:Dictionary<String, Any>, finished: @escaping ((_ respuesta: NSDictionary)->Void)) {
@@ -22,12 +23,11 @@ internal class conexion {
         request.httpBody = transformarDatos(datos: peticion).data(using: String.Encoding.utf8);
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        request.timeoutInterval = 10
+        request.timeoutInterval = 20
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
             
             if data != nil {
-                
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
                         finished(json)
@@ -50,7 +50,7 @@ internal class conexion {
     
     internal func transformarDatos(datos:Dictionary<String, Any>) -> String {
         var respuesta: String;
-        respuesta = "session_id=" + String(datos["session_id"] as! Int)
+        respuesta = "user_id=" + String(datos["user_id"] as! Int)
         respuesta += "&client_ver=" + String(datos["client_ver"] as! String)
         respuesta += "&type=" + String(datos["type"] as! String)
         respuesta += "&content=" + (datos["content"] as! String)
