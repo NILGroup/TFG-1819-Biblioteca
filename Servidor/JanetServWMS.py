@@ -20,8 +20,8 @@ class JanetServWMS:
         with open(r'wskey.conf') as f:
             self.__wskeydata = json.load(f)
 
-        with open(r'librarycodes.json') as f:
-            self.__equivalencias = json.load(f, encoding="ANSI")
+        with open(r'librarycodes.json', encoding="utf-8") as f:
+            self.__equivalencias = json.load(f)
 
         self.__URLopensearch = "http://www.worldcat.org/webservices/catalog/search/opensearch?"
         self.__URLlibraries = "http://www.worldcat.org/webservices/catalog/content/libraries/"
