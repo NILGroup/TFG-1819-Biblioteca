@@ -26,7 +26,7 @@ public class Book {
         title = _title;
         author = _author;
         isbnList = _isbnList;
-        available = "";
+        available = _available;
     }
 
     public String getTitle() {

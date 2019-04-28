@@ -17,6 +17,9 @@ import android.view.Gravity;
 import android.view.View;
 
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.Dictionary;
+import java.util.List;
 import java.util.Locale;
 
 import android.widget.ImageButton;
@@ -35,6 +38,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import ucm.fdi.android.speechtotext.Items.Book;
@@ -69,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
         });
         mSpeakBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick (View v){
-                startVoiceInput();
+                //startVoiceInput();
 
                 //NOTE: Only for debugging
-                //start();
+                start();
             }
         });
         SharedPreferences sp = this.getSharedPreferences("user_id", MODE_PRIVATE);
@@ -80,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void start(){
-        String result = "busca el teléfono de la Zambrano";
+        String result = "busca un libro llamado Harry Potter";
         newSimpleEntryText(result, true);
         mTask = new SendAndReceiveTask(result, this);
         mTask.execute();
@@ -199,12 +203,30 @@ public class MainActivity extends AppCompatActivity {
     private Book processBook(JSONObject resultado) throws JSONException {
         String title = resultado.get("title").toString();
         String author = resultado.get("author").toString();
-        String available = resultado.get("available").toString();
+
+        String available = "";
+
+        //LA INGENIERIA (en mi cabeza era espectacular)
+        JSONArray availableJSONArray = resultado.getJSONArray("available");
+        String availableRaw = availableJSONArray.get(0).toString();
+        availableRaw = availableRaw.substring(1,availableRaw.length()-1);
+        if(availableRaw.length() > 0) {
+            List<String> availableListRaw = Arrays.asList(availableRaw.split(","));
+            for (String availableUnitRaw : availableListRaw) {
+                String[] aux = availableUnitRaw.split(":");
+                available += aux[0].substring(1, aux[0].length() - 1) + "\t:\t" + aux[1] + "<br>";
+            }
+        }
+        else
+            available = "No disponible";
 
         ArrayList<String> isbnList = new ArrayList<>();
         JSONArray isbnsJSON = resultado.getJSONArray("isbn");
         for(int j = 0; j < isbnsJSON.length();++j)
             isbnList.add(isbnsJSON.get(j).toString());
+
+        String oclc = resultado.get("oclc").toString();
+
 
         return new Book(title,author,isbnList,available);
     }
@@ -244,17 +266,11 @@ public class MainActivity extends AppCompatActivity {
         image.setLayoutParams(paramsCover);
         layout.addView(image);
 
-        String info = "<b> " + book.getTitle() + "</b><br><br>"  + book.getAuthor();
+        String info = "<b> " + book.getTitle() + "</b><br><br>"  + book.getAuthor() + "<br><br>" +book.getAvailable();
         text.setText(Html.fromHtml(info));
 
         text.setLayoutParams(params);
         layout.addView(text);
-
-        if(book.getAvailable().length() > 0){
-            TextView availableTextView = new TextView(this);
-            availableTextView.setText(book.getAvailable());
-            layout.addView(availableTextView);
-        }
 
         layout.setLayoutParams(params);
         layout.setBackgroundResource(R.drawable.bocadillo_janet_patch);

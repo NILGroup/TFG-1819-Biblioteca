@@ -11,7 +11,7 @@
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="329dp"
+        android:layout_height="350dp"
         android:layout_above="@+id/btnSpeakContainer"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="-5dp"
@@ -30,7 +30,7 @@
     <LinearLayout
         android:id="@+id/btnSpeakContainer"
         android:layout_width="match_parent"
-        android:layout_height="173dp"
+        android:layout_height="150dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
         android:gravity="center_horizontal"
@@ -48,9 +48,8 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="229dp"
-            android:layout_height="34dp"
+            android:layout_height="30dp"
             android:layout_below="@id/btnSpeak"
-            android:layout_margin="10dp"
             android:gravity="center_vertical|center"
             android:shadowColor="@android:color/black"
             android:shadowDx="1.5"
