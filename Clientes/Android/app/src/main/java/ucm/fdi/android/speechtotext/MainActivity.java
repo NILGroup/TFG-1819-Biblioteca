@@ -18,7 +18,6 @@ import android.view.View;
 
 import java.io.InputStream;
 import java.util.Arrays;
-import java.util.Dictionary;
 import java.util.List;
 import java.util.Locale;
 
@@ -38,7 +37,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import ucm.fdi.android.speechtotext.Items.Book;
@@ -73,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
         });
         mSpeakBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick (View v){
-                //startVoiceInput();
+                startVoiceInput();
 
                 //NOTE: Only for debugging
-                start();
+                //start();
             }
         });
         SharedPreferences sp = this.getSharedPreferences("user_id", MODE_PRIVATE);
