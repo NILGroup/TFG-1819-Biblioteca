@@ -17,7 +17,7 @@ class JanetServJarvis():
         contenido = contenido[0].lower() + contenido[1:]
         data = {'user_id': id, 'content': contenido}
 
-        req = request.Request("http://localhost:5000", data=parse.urlencode(data).encode())
+        req = request.Request("http://www.janetbiblio.tk:5000", data=parse.urlencode(data).encode())
 
         resp = request.urlopen(req)
 
@@ -26,5 +26,5 @@ class JanetServJarvis():
     def restart(self, id):
         data = {'user_id': id, 'content': '/restart'}
 
-        req = request.Request("http://localhost:5000", data=parse.urlencode(data).encode())
+        req = request.Request("http://www.janetbiblio.tk:5000", data=parse.urlencode(data).encode())
         request.urlopen(req)
