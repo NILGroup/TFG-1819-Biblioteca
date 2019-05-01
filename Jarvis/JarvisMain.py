@@ -116,4 +116,4 @@ def initialize():
 if __name__ == '__main__':
     jarvisService()
     if initialize():
-        run(host='localhost', port=5000)
+        run(host='0.0.0.0', port=5000)
