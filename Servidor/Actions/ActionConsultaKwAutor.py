@@ -33,7 +33,13 @@ class ActionKwAuthor(Action):
                 respuesta['content-type'] = 'text'
                 respuesta['response'] = 'Vaya, parece que no hay libros relacionados con esta consulta'
             else:
-                if intent == 'consulta_libros_kw_autor':
+                if len(respuesta['books']) == 1:
+                    respuesta.update(self.wms.cargarInformacionLibro(respuesta['books'][0]['oclc']))
+                    del respuesta['books']
+                    respuesta['content-type'] = 'single-book'
+                    self.mongo.guardar_consulta(uid, respuesta, 'consulta_libro_kw_autor')
+                    return respuesta
+                elif intent == 'consulta_libros_kw_autor':
                     respuesta['content-type'] = 'list-books'
                 else:
                     respuesta.update(self.wms.cargarInformacionLibro(respuesta['books'][0]['oclc']))

@@ -49,5 +49,4 @@ sklearn-crfsuite==0.3.6
 bottle==0.12.16
 lxml==4.3.2
 rasa-core==0.13.7
-watson-developer-cloud==2.8.0
 git+git://github.com/OCLC-Developer-Network/oclc-auth-python@master

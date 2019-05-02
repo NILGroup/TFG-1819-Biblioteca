@@ -2,7 +2,7 @@
 """
 Servidor de TFG - Proyecto Janet
 Destructor Imperial
-Versión 0.9.0
+Versión 0.9.1
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
 © 2018-2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
@@ -20,9 +20,8 @@ cursor = collection.find()
 
 for doc in cursor:
     destruir = True
-    if doc["slots"]["articulos"] is None and doc["slots"]["autores"] is None and doc["slots"]["juego"] is None and \
-            doc["slots"]["libro"] is None and doc["slots"]["localizacion"] is None and doc["slots"]["musica"] is \
-            None and doc["slots"]["numberofmorebooksearch"] is None and doc["slots"]["pelicula"] is None and \
+    if doc["slots"]["autores"] is None and doc["slots"]["libro"] is None and doc["slots"]["localizacion"] is None \
+            and doc["slots"]["numberofmorebooksearch"] is None and \
             doc["slots"]["requested_slot"] is None and doc["slots"]["searchindex"] is None:
         destruir = False
     rasaDate = datetime.fromtimestamp(doc["latest_event_time"])

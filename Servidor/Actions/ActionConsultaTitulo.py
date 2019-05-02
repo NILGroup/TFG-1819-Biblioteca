@@ -29,6 +29,13 @@ class ActionTitle(Action):
                 respuesta['content-type'] = 'text'
                 respuesta['response'] = 'Vaya, parece que no hay libros relacionados con esta consulta'
             else:
+                if len(respuesta['books']) == 1:
+                    respuesta.update(self.wms.cargarInformacionLibro(respuesta['books'][0]['oclc']))
+                    del respuesta['books']
+                    respuesta['content-type'] = 'single-book'
+                    self.mongo.guardar_consulta(uid, respuesta, 'consulta_libros_titulo')
+                    return respuesta
+
                 if intent == 'consulta_libros_titulo':
                     respuesta['content-type'] = 'list-books'
                 else:

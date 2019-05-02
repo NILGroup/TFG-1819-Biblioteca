@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Servidor de TFG - Proyecto Janet
-Versión 0.9.0
+Versión 0.9.1
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
 © 2018-2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
@@ -20,8 +20,8 @@ class JanetServWMS:
         with open(r'wskey.conf') as f:
             self.__wskeydata = json.load(f)
 
-        with open(r'librarycodes.json') as f:
-            self.__equivalencias = json.load(f, encoding="ANSI")
+        with open(r'librarycodes.json', encoding="utf-8") as f:
+            self.__equivalencias = json.load(f)
 
         self.__URLopensearch = "http://www.worldcat.org/webservices/catalog/search/opensearch?"
         self.__URLlibraries = "http://www.worldcat.org/webservices/catalog/content/libraries/"
@@ -30,12 +30,16 @@ class JanetServWMS:
 
     def buscarLibro(self, title, author, index, type):
         consulta = {"wskey": self.__wskeydata["key"], "count": index + 1, "start": index - 1}
-        if type == "kw" or type == "title":
+        if type == "kw":
             consulta['q'] = 'srw.kw all "' + title + '"'
+        elif type == "title":
+            consulta['q'] = 'srw.ti all "' + title + '"'
         elif type == "author":
             consulta['q'] = 'srw.au all "' + author + '"'
-        elif type == "kw_author" or type == "title_author":
-            consulta['q'] = 'srw.kw all "' + title + '"' + ' srw.ti all "' + author + '"'
+        elif type == "kw_author":
+            consulta['q'] = 'srw.kw all "' + title + '"' + ' and srw.au all "' + author + '"'
+        elif type == "title_author":
+            consulta['q'] = 'srw.ti all "' + title + '"' + ' and srw.au all "' + author + '"'
         consulta['q'] = consulta['q'] + 'and srw.li all "' + self.__wskeydata["oclc_symbol"]
         consulta['q'] = consulta['q'] + '" and srw.la all "spa"'
         URL = self.__URLopensearch + urllib.parse.urlencode(consulta)
