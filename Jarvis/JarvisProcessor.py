@@ -57,7 +57,7 @@ class JarvisProcessor():
                        stories_file='data/stories.md',
                        model_path='model/dialogue',
                        policy_config='config/config.yml'):
-        return train(domain_file=domain_file,
+        return train.train_dialogue_model(domain_file=domain_file,
                      stories_file=stories_file,
                      output_path=model_path,
                      policy_config=policy_config)
