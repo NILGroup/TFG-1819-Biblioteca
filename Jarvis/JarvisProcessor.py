@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Módulo PLN Codename Jarvis - Proyecto Janet
-Versión 0.5.1
+Versión 0.9.0
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
 © 2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
@@ -21,9 +21,11 @@ from rasa_core.agent import Agent
 from rasa_core.utils import EndpointConfig
 from rasa_core.tracker_store import MongoTrackerStore
 
+
 class JarvisProcessor():
 
-    def __init__(self):
+    def __init__(self, log):
+        self.logger = log
         directorioModelos = 'model/default/Jarvis'
         if (os.path.isdir(directorioModelos)):
             self.interpreter = RasaNLUInterpreter(model_directory=directorioModelos)
@@ -56,9 +58,9 @@ class JarvisProcessor():
                        model_path='model/dialogue',
                        policy_config='config/config.yml'):
         return train.train_dialogue_model(domain_file=domain_file,
-                                          stories_file=stories_file,
-                                          output_path=model_path,
-                                          policy_config=policy_config)
+                     stories_file=stories_file,
+                     output_path=model_path,
+                     policy_config=policy_config)
 
 
     def train_all(self):
@@ -84,6 +86,7 @@ class JarvisProcessor():
         tracker.update(SlotSet('searchindex', None))
 
         self.agent.tracker_store.save(tracker)
+        self.logger.info('Usuario ' + senderid + ' reiniciado')
 
     def procesarPeticion(self, peticion, senderid='default'):
 
@@ -98,6 +101,11 @@ class JarvisProcessor():
         for response in mensaje:
             respuesta["text"] = response["text"]
 
+        self.logger.info('Usuario ' + senderid + ':\n' + str(respuesta))
+
+        if respuesta["nlu"]["intent"]["confidence"] < 0.15:
+            respuesta["nlu"]["intent"]["name"] = "no_entiendo"
+
         return respuesta
 
     def formatearResultado(self, peticion):
@@ -105,7 +113,6 @@ class JarvisProcessor():
 
         resultado['intent'] = peticion['nlu']['intent']['name']
         resultado['entities'] = {}
-        print(peticion)
         tmp = {}
 
         if resultado['intent'] == 'consulta_telefono' or resultado['intent'] == \
@@ -129,43 +136,11 @@ class JarvisProcessor():
                 tmp['autores'] = self._slots['autores']
             tmp['searchindex'] = self._slots['searchindex']
 
-        elif resultado['intent'] == 'consulta_articulos_kw' or resultado['intent'] == \
-                'consulta_articulo_kw':
-            tmp['articulos'] = self._slots['libro']
-            tmp['searchindex'] = self._slots['searchindex']
-
-        elif resultado['intent'] == 'consulta_juegos_kw' or resultado['intent'] == \
-                'consulta_juego_kw':
-            tmp['juego'] = self._slots['juego']
-            tmp['searchindex'] = self._slots['searchindex']
-
-        elif resultado['intent'] == 'consulta_musicas_kw' or resultado['intent'] == \
-                'consulta_musica_kw':
-            if self._slots['musica'] is not None:
-                tmp['musica'] = self._slots['musica']
-            if self._slots['autores'] is not None:
-                tmp['autores'] = self._slots['autores']
-            tmp['searchindex'] = self._slots['searchindex']
-
-        elif resultado['intent'] == 'consulta_peliculas_kw' or resultado['intent'] == \
-                'consulta_pelicula_kw':
-            if self._slots['pelicula'] is not None:
-                tmp['pelicula'] = self._slots['pelicula']
-            if self._slots['autores'] is not None:
-                tmp['autores'] = self._slots['autores']
-            tmp['searchindex'] = self._slots['searchindex']
-
         elif resultado['intent'] == 'busca_mas' or resultado['intent'] == \
                 'mas_info_primero' or resultado['intent'] == 'mas_info_segundo' or \
                 resultado['intent'] == 'mas_info_tercero':
-            if self._slots['pelicula'] is not None:
-                tmp['pelicula'] = self._slots['pelicula']
-            elif self._slots['libro'] is not None:
+            if self._slots['libro'] is not None:
                 tmp['libro'] = self._slots['libro']
-            elif self._slots['articulos'] is not None:
-                tmp['articulos'] = self._slots['articulos']
-            elif self._slots['musica'] is not None:
-                tmp['musica'] = self._slots['musica']
             if self._slots['autores'] is not None:
                 tmp['autores'] = self._slots['autores']
 
@@ -198,5 +173,6 @@ if __name__ == '__main__':
             break
         responses = jarvis.agent.handle_message(a)
         for response in responses:
-            print(response)
-            print(response["text"])
+            jarvis.logger.info('MODO DEBUG')
+            jarvis.logger.info(response)
+            jarvis.logger.info(response["text"])
