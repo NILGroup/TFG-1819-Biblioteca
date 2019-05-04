@@ -1,100 +1,104 @@
 # -*- coding: utf-8 -*-
 """
 Servidor de TFG - Proyecto Janet
-Versión 0.1.0
+Versión 0.9.1
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
-© 2018 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
+© 2018-2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
 """
 
 import urllib
 import requests
 import json
 import lxml.etree as ET
-from lxml import html
 import io
 from authliboclc import wskey
 
-class JanetServWMS():
-    
-    def buscarLibros(self, datos_consulta):
-        
-        with open('wskey.conf') as f:
-            wskeydata = json.load(f)
-            
-        URL = "http://www.worldcat.org/webservices/catalog/search/opensearch?"
-        
-        consulta = {"wskey": wskeydata["key"], "count": 3}
-        if 'title' in datos_consulta:
-            consulta['q'] = 'srw.ti all "' + datos_consulta['title'] + '"'
-        elif 'author' in datos_consulta:
-            consulta['q'] = 'srw.au all "' + datos_consulta['author'] + '"'
-        else:
-            consulta['q'] = 'srw.kw all "' + datos_consulta['generic'] + '"'
-        consulta['q'] = consulta['q'] + 'and srw.li all "' + wskeydata["oclc_symbol"]
-        consulta['q'] = consulta['q'] + '" and srw.la all "spa"' 
-        URL = URL + urllib.parse.urlencode(consulta)
+class JanetServWMS:
+
+    def __init__(self):
+        with open(r'wskey.conf') as f:
+            self.__wskeydata = json.load(f)
+
+        with open(r'librarycodes.json', encoding="utf-8") as f:
+            self.__equivalencias = json.load(f)
+
+        self.__URLopensearch = "http://www.worldcat.org/webservices/catalog/search/opensearch?"
+        self.__URLlibraries = "http://www.worldcat.org/webservices/catalog/content/libraries/"
+        self.__URLavailability = "https://www.worldcat.org/circ/availability/sru/service?"
+        self.__URLCovers = "https://covers.openlibrary.org/b/isbn/"
+
+    def buscarLibro(self, title, author, index, type):
+        consulta = {"wskey": self.__wskeydata["key"], "count": index + 1, "start": index - 1}
+        if type == "kw":
+            consulta['q'] = 'srw.kw all "' + title + '"'
+        elif type == "title":
+            consulta['q'] = 'srw.ti all "' + title + '"'
+        elif type == "author":
+            consulta['q'] = 'srw.au all "' + author + '"'
+        elif type == "kw_author":
+            consulta['q'] = 'srw.kw all "' + title + '"' + ' and srw.au all "' + author + '"'
+        elif type == "title_author":
+            consulta['q'] = 'srw.ti all "' + title + '"' + ' and srw.au all "' + author + '"'
+        consulta['q'] = consulta['q'] + 'and srw.li all "' + self.__wskeydata["oclc_symbol"]
+        consulta['q'] = consulta['q'] + '" and srw.la all "spa"'
+        URL = self.__URLopensearch + urllib.parse.urlencode(consulta)
         uh = urllib.request.urlopen(URL)
         content = uh.read()
-        
+
         xmlnamespaces = {'Atom': 'http://www.w3.org/2005/Atom',
-                         'oclcterms': 'http://purl.org/oclc/terms/'}
+                         'oclcterms': 'http://purl.org/oclc/terms/',
+                         'dc': 'http://purl.org/dc/elements/1.1/'}
         tree = ET.parse(io.BytesIO(content))
-        
+
         root = tree.getroot()
-        
+
         respuesta = []
         for item in root.findall('Atom:entry', xmlnamespaces):
-            temp = {"title": item.find("Atom:title", xmlnamespaces).text, 
-                    "author": item.find("Atom:author/Atom:name", xmlnamespaces).text, 
-                    "oclc": item.find("oclcterms:recordIdentifier", xmlnamespaces).text}
-            temp["cover-art"] = self.buscarCoverArts("https://ucm.on.worldcat.org/oclc/"+ temp["oclc"])
+            isbn = []
+            for tmp in item.findall("dc:identifier", xmlnamespaces):
+                aux = tmp.text
+                isbn.append(aux.replace('urn:ISBN:', ''))
+            temp = {"title": item.find("Atom:title", xmlnamespaces).text,
+                    "author": item.find("Atom:author/Atom:name", xmlnamespaces).text,
+                    "oclc": item.find("oclcterms:recordIdentifier", xmlnamespaces).text,
+                    "isbn": isbn}
             respuesta.append(temp)
-        
+
         return respuesta
-    
-    def buscarCoverArts(self, url):
-        r = requests.get(url, timeout=5)
-        web = html.fromstring(r.content)
-        
-        return "https:" + web.xpath('//div[@class="coverart"]/img/@ng-src')[0]
         
     def cargarInformacionLibro(self, codigoOCLC):
+
+        URL = self.__URLlibraries + codigoOCLC + '?'
         
-        with open('wskey.conf') as f:
-            wskeydata = json.load(f)
-            
-        URL = "http://www.worldcat.org/webservices/catalog/content/libraries/"
-        URL = URL + codigoOCLC + '?'
-        
-        consulta = {"wskey": wskeydata["key"], "format": "json", 
-                    "oclcsymbol": wskeydata["oclc_symbol"], "location": "Spain"}
+        consulta = {"wskey": self.__wskeydata["key"], "format": "json",
+                    "oclcsymbol": self.__wskeydata["oclc_symbol"], "location": "Spain"}
         URL = URL + urllib.parse.urlencode(consulta)
         
-        r = requests.get(url = URL)
+        r = requests.get(url=URL)
         content = r.json()
         
         respuesta = {}
-        
+
         respuesta['response'] = "Aquí tienes el libro que me pediste"
         respuesta['title'] = content['title']
         respuesta['author'] = content['author']
         respuesta['available'] = self.comprobarDisponibilidad(codigoOCLC)
-        respuesta['library'] = content['library'][0]['institutionName']
+        respuesta['oclc'] = content['OCLCnumber']
         respuesta['url'] = content['library'][0]['opacUrl']
-        respuesta['cover-art'] = self.buscarCoverArts("https://ucm.on.worldcat.org/oclc/" + codigoOCLC)
+
+        if 'ISBN' in content:
+            respuesta['isbn'] = content['ISBN']
         
         return respuesta
     
     def comprobarDisponibilidad(self, codigosOCLC):
-        with open('wskey.conf') as f:
-            wskeydata = json.load(f)
-            
-        URL = "https://www.worldcat.org/circ/availability/sru/service?"
-        URL = URL + "query=no%3Aocm" + codigosOCLC + "&x-registryId=" + wskeydata['registry_id']
+
+        URL = self.__URLavailability + "query=no%3Aocm" + codigosOCLC + "&x-registryId=" +\
+              self.__wskeydata['registry_id']
         
-        APIkey = wskeydata['key']
-        secret = wskeydata['secret']
+        APIkey = self.__wskeydata['key']
+        secret = self.__wskeydata['secret']
         
         my_wskey = wskey.Wskey(key=APIkey, secret=secret, options=None)
         
@@ -103,7 +107,7 @@ class JanetServWMS():
                 request_url=URL,
                 options=None)
         
-        r = urllib.request.Request(url = URL, headers={
+        r = urllib.request.Request(url=URL, headers={
                 'Authorization': authorization_header})
         response = urllib.request.urlopen(r)
         
@@ -112,13 +116,22 @@ class JanetServWMS():
         xmlns = {'sRR': 'http://www.loc.gov/zing/srw/'}
         
         tree = ET.parse(io.BytesIO(content))
-        
         root = tree.getroot()
+
+        resultado = []
+        biblioteca = {}
         
         for holdings in root.findall('.//sRR:records/sRR:record/sRR:recordData/opacRecord/holdings', xmlns):
             for items in holdings.iterdescendants('holding'):
                 for item in items.findall('.//circulation'):
-                    if (int(item.find('availableNow').get('value')) > 0): return True
-                    
-            #codsOCLC.append(item.find("oclcterms:recordIdentifier", xmlnamespaces).text)
-        return False
+                    if int(item.find('availableNow').get('value')) > 0:
+                        if self.__equivalencias[items.find('localLocation').text] not in biblioteca:
+                            biblioteca[self.__equivalencias[items.find('localLocation').text]] = \
+                                int(item.find('availableNow').get('value'))
+                        else:
+                            biblioteca[self.__equivalencias[items.find('localLocation').text]] += \
+                                int(item.find('availableNow').get('value'))
+
+        resultado.append(biblioteca)
+        return resultado
+

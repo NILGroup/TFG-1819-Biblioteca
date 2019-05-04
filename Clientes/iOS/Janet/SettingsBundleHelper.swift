@@ -18,14 +18,7 @@ class SettingsBundleHelper {
     }
     
     class func checkAndExecuteSettings() {
-        /*if UserDefaults.standard.bool(forKey: SettingsBundleKeys.Reset) {
-            UserDefaults.standard.set(false, forKey: SettingsBundleKeys.Reset)
-            let appDomain: String? = Bundle.main.bundleIdentifier
-            UserDefaults.standard.removePersistentDomain(forName: appDomain!)
-            // reset userDefaults..
-            // CoreDataDataModel().deleteAllData()
-            // delete all other user data here..
-        }*/
+        
     }
     
     class func setVersionAndBuildNumber() {

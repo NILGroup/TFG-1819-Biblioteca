@@ -1,0 +1,13 @@
+[Unit]
+Description=Bottled Janet Service
+After=network.target
+
+[Service]
+Type=simple
+User=tfg-biblio
+Group=tfg-biblio
+WorkingDirectory=/home/tfg-biblio/janet/
+ExecStart=/usr/bin/python3 JanetServMain.py
+
+[Install]
+WantedBy=multi-user.target

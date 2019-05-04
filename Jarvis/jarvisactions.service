@@ -1,0 +1,13 @@
+[Unit]
+Description=Jarvis Actions Service
+After=network.target
+
+[Service]
+Type=simple
+User=tfg-biblio
+Group=tfg-biblio
+WorkingDirectory=/home/tfg-biblio/Jarvis/
+ExecStart=/usr/bin/python3 -m rasa_core_sdk.endpoint --actions actions
+
+[Install]
+WantedBy=multi-user.target

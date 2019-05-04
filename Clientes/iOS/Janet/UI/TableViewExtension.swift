@@ -20,8 +20,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //self.automaticallyAdjustsScrollViewInsets = false
-        
          if (mensajes[indexPath.row].getTipo() == .text) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageViewCell
             cell.setDatos(info: mensajes[indexPath.row])
@@ -54,7 +52,39 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
             
-        } else {
+         } else if (mensajes[indexPath.row].getTipo() == .location){
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "mapViewCell", for: indexPath) as! MapViewCell
+            cell.setDatos(info: mensajes[indexPath.row])
+            
+            if (mensajes[indexPath.item].getEmisor() == .User) {
+                cell.contentView.transform = CGAffineTransform(scaleX: -1,y: 1)
+            } else {
+                cell.contentView.transform = CGAffineTransform.identity
+            }
+            
+            if (self.getAltoContrasteActivo()) {
+                cell.setAltoContraste(contraste: true)
+            }
+            
+            return cell
+            
+         } else if (mensajes[indexPath.row].getTipo() == .phone){
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "phoneViewCell", for: indexPath) as! PhoneViewCell
+            cell.setDatos(info: mensajes[indexPath.row])
+            
+            if (mensajes[indexPath.item].getEmisor() == .User) {
+                cell.contentView.transform = CGAffineTransform(scaleX: -1,y: 1)
+            } else {
+                cell.contentView.transform = CGAffineTransform.identity
+            }
+            
+            if (self.getAltoContrasteActivo()) {
+                cell.setAltoContraste(contraste: true)
+            }
+            
+            return cell
+            
+         } else {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "listBooksViewCell", for: indexPath) as! ListBooksViewCell
             cell.setDatos(info: mensajes[indexPath.row])
             

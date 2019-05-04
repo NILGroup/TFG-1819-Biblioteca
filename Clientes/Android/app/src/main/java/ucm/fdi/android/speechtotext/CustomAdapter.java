@@ -12,22 +12,24 @@ import android.widget.LinearLayout.LayoutParams;
 
 import java.util.ArrayList;
 
-public class CustomAdapter extends ArrayAdapter<MainActivity.InfoObject>{
+import ucm.fdi.android.speechtotext.Items.Book;
 
-    private Context ctx;
-    private ArrayList<MainActivity.InfoObject> info;
-    private ArrayList<Bitmap> image;
-    public CustomAdapter(Context _ctx, ArrayList<MainActivity.InfoObject> _info, ArrayList<Bitmap> _image) {
+public class CustomAdapter extends ArrayAdapter<Book>{
+
+    private Context _ctx;
+    private ArrayList<Book> _book;
+    private ArrayList<Bitmap> _image;
+    public CustomAdapter(Context _ctx, ArrayList<Book> _info, ArrayList<Bitmap> _image) {
         super(_ctx, R.layout.customadapter, _info);
 
-        ctx = _ctx;
-        info = _info;
-        image = _image;
+        _ctx = _ctx;
+        _info = _info;
+        _image = _image;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInflater = (LayoutInflater) _ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = layoutInflater.inflate(R.layout.customadapter, null);
 
         LayoutParams layoutParams= new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -35,16 +37,16 @@ public class CustomAdapter extends ArrayAdapter<MainActivity.InfoObject>{
         TextView mTextViewInfo = (TextView) convertView.findViewById(R.id.textViewInfo);
         ImageView mCover = (ImageView)convertView.findViewById(R.id.imageViewCover);
 
-        mCover.setImageBitmap(image.get(position));
-        mCover.getLayoutParams().height = image.get(position).getHeight();
-        mCover.getLayoutParams().width = image.get(position).getWidth();
-        String infoString = getFormatedInfo(info.get(position));
+        mCover.setImageBitmap(_image.get(position));
+        mCover.getLayoutParams().height = _image.get(position).getHeight();
+        mCover.getLayoutParams().width = _image.get(position).getWidth();
+        String infoString = getFormatedInfo(_book.get(position));
         mTextViewInfo.setText(infoString);
         mTextViewInfo.setLayoutParams(layoutParams);
         return convertView;
     }
 
-    private String getFormatedInfo(MainActivity.InfoObject infoObject){
-        return infoObject.getTitle() + "\n" + infoObject.getAuthor();
+    private String getFormatedInfo(Book book){
+        return book.getTitle() + "\n" + book.getAuthor();
     }
 }

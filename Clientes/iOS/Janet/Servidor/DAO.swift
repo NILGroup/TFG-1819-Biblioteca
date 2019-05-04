@@ -11,9 +11,9 @@ import UIKit
 
 class DAO: conexion {
     
-    func tratarDatos(tipo: String, peticion:String, finished: @escaping ((_ respuesta: NSDictionary)->Void)) {
+    func tratarDatos(id: Int, tipo: String, peticion:String, finished: @escaping ((_ respuesta: NSDictionary)->Void)) {
         
-        let datos = ["session_id": Int.random(in: 0 ..< 10), //Esto lo dará el servidor más adelante
+        let datos = ["user_id": id,
             "type": tipo,
             "content": peticion,
             "client_ver": Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String,
