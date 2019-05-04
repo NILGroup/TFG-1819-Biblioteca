@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 Servidor de TFG - Proyecto Janet
-Versión 0.9.0
+Versión 1.0
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
 © 2018-2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
 """
 
 from pymongo import MongoClient
+from datetime import datetime
 
 
 class JanetServMongo:
@@ -39,6 +40,11 @@ class JanetServMongo:
             collection.update({"_id": int(user_id)}, cods, upsert=True)
         else:
             collection.update({"_id": int(user_id)}, {'$set': {'oclc1': consulta['oclc'], 'intent': intent}, '$unset': {'oclc2': '', 'oclc3': ''}}, upsert=True)
+
+    def guardar_timestamp(self, user_id):
+        collection = self._db.historial
+        collection.update({"_id": int(user_id)}, {'$set': {'timestamp': datetime.now().timestamp()}}, upsert=True)
+
 
     def reiniciar_consulta(self, user_id,):
         collection = self._db.historial

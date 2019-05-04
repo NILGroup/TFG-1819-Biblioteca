@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 Servidor de TFG - Proyecto Janet
-Versión 0.9.0
+Versión 1.0
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
 © 2018-2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
 """
 
-from bottle import request, route, run, response, static_file, error
+from bottle import request, route, run, response, static_file, error, abort
+import urllib
 import JanetServController
 import json
 import logging
@@ -38,8 +39,15 @@ class JanetService:
             post_data["content"] = request.POST.content
             post_data["user_id"] = request.POST.user_id
             logger.info("Usuario conectado por POST: " + post_data["user_id"])
-            respuesta = self.controlador.procesarDatos_POST(post_data)
-            return respuesta
+            try:
+                respuesta = self.controlador.procesarDatos_POST(post_data)
+                return respuesta
+            except urllib.error.HTTPError as e:
+                if e.code == 400:
+                    abort(400, e.reason)
+                else:
+                    raise
+
 
         @route('/', method='GET')
         def do_test():

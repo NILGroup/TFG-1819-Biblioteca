@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Servidor de TFG - Proyecto Janet
-Versión 0.9.1
+Versión 1.0
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
 © 2018-2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
@@ -26,9 +26,9 @@ class JanetServWMS:
         self.__URLopensearch = "http://www.worldcat.org/webservices/catalog/search/opensearch?"
         self.__URLlibraries = "http://www.worldcat.org/webservices/catalog/content/libraries/"
         self.__URLavailability = "https://www.worldcat.org/circ/availability/sru/service?"
-        self.__URLCovers = "https://covers.openlibrary.org/b/isbn/"
 
     def buscarLibro(self, title, author, index, type):
+
         consulta = {"wskey": self.__wskeydata["key"], "count": index + 1, "start": index - 1}
         if type == "kw":
             consulta['q'] = 'srw.kw all "' + title + '"'
@@ -43,8 +43,23 @@ class JanetServWMS:
         consulta['q'] = consulta['q'] + 'and srw.li all "' + self.__wskeydata["oclc_symbol"]
         consulta['q'] = consulta['q'] + '" and srw.la all "spa"'
         URL = self.__URLopensearch + urllib.parse.urlencode(consulta)
-        uh = urllib.request.urlopen(URL)
-        content = uh.read()
+
+        reintenta = True
+        intentos = 2
+        while reintenta:
+            try:
+                uh = urllib.request.urlopen(URL)
+                content = uh.read()
+                reintenta = False
+
+            except urllib.error.HTTPError as e:
+                if intentos > 0 and e.code == 400:
+                    intentos = intentos - 1
+                    pass
+                else:
+                    msg = "Lo lamento, el catálogo de la biblioteca no está disponible en estos momentos. " \
+                          "Inténtelo de nuevo más tarde"
+                    raise urllib.error.HTTPError(URL, e.code, msg, e.hdrs, e.fp)
 
         xmlnamespaces = {'Atom': 'http://www.w3.org/2005/Atom',
                          'oclcterms': 'http://purl.org/oclc/terms/',
