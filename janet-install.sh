@@ -77,7 +77,7 @@ mkdir /home/tfg-biblio/tmp
 
 declare repo=https://$gituser:$gitpass@$serverurl
 echo $repo
-git clone -b dev-server-0.9.1 $repo /home/tfg-biblio/tmp
+git clone -b master $repo /home/tfg-biblio/tmp
 
 echo "Instalando Janet..."
 mkdir /home/tfg-biblio/janet
@@ -95,7 +95,7 @@ mkdir /home/tfg-biblio/tmp
 
 declare repo=https://$gituser:$gitpass@$serverurl
 echo $repo
-git clone -b dev-jarvis-0.9 $repo /home/tfg-biblio/tmp
+git clone -b master $repo /home/tfg-biblio/tmp
 
 echo "Instalando Jarvis..."
 mkdir /home/tfg-biblio/Jarvis
