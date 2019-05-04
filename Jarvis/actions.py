@@ -111,7 +111,6 @@ class BuscarLibroForm(FormAction):
         libro = next(tracker.get_latest_entity_values('libro'), None)
         ORG = next(tracker.get_latest_entity_values('ORG'), None)
         loc = next(tracker.get_latest_entity_values('LOC'), None)
-        autor1 = next(tracker.get_latest_entity_values('autores'), None)
         PER = next(tracker.get_latest_entity_values('PER'), None)
         persona = next(tracker.get_latest_entity_values('persona'), None)
         temp['libro'] = None
@@ -127,8 +126,6 @@ class BuscarLibroForm(FormAction):
                 temp['libro'] = libro.capitalize()
             elif loc is not None:
                 temp['libro'] = loc
-            elif autor1 is not None:
-                temp['libro'] = autor1.capitalize()
             elif PER is not None:
                 temp['libro'] = PER
             elif persona is not None:
@@ -140,10 +137,16 @@ class BuscarLibroForm(FormAction):
                intent == 'consulta_libros_autor' or intent == 'consulta_libro_autor' or \
                 intent == 'consulta_libros_titulo_autor' or intent == 'consulta_libro_titulo_autor' or \
                 intent == 'consulta_libros_kw_autor' or intent == 'consulta_libro_kw_autor':
-            if autor1 is None and PER is not None:
-                temp['autores'] = PER
-            elif autor1 is not None:
-                temp['autores'] = autor1.capitalize()
+            if PER is not None:
+                if temp['libro'] is not None and PER.lower() == temp['libro'].lower():
+                    autores = tracker.get_latest_entity_values('PER')
+                    aux = None
+                    for i in autores:
+                        if i.lower() != temp['libro'].lower():
+                            aux = i
+                    temp['autores'] = aux
+                else:
+                    temp['autores'] = PER
             elif persona is not None:
                 temp['autores'] = persona.capitalize()
 
