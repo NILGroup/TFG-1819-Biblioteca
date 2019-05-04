@@ -53,7 +53,7 @@ class SingleBookViewCell: TableViewCell {
         }
         var biblios = ""
         for item in info.getLibraryAvailable() {
-            biblios += item.key + "\t" + String(item.value) + "\n"
+            biblios += item.key + "\t:\t" + String(item.value) + "\n"
         }
         locationLabel.text = biblios
         locationLabel.sizeToFit()
