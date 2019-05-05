@@ -102,6 +102,11 @@ class SingleBookViewCell: TableViewCell {
                         }
                         return
                     }
+                    if (Int(isbn[i]) == nil) {
+                        DispatchQueue.main.async {
+                            self.coverart.image = UIImage(named: "Empty_Book");
+                        }
+                    }
                     if (!existe) {
                         DispatchQueue.main.async {
                             if let data = data {

@@ -165,59 +165,71 @@ class ListBooksViewCell: TableViewCell {
                     default: break
                 }
                 
-                if let url = URL(string: enlace) {
-                    URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-                        
-                        if error != nil {
-                            DispatchQueue.main.async {
-                                switch(num) {
-                                case 0: self.coverart1.image = UIImage(named: "Empty_Book"); break;
-                                case 1: self.coverart2.image = UIImage(named: "Empty_Book"); break;
-                                case 2: self.coverart3.image = UIImage(named: "Empty_Book"); break;
-                                default: break;
-                                }
-                            }
-                            return
+                if (Int(isbn[i]) == nil) {
+                    DispatchQueue.main.async {
+                        switch(num) {
+                        case 0: self.coverart1.image = UIImage(named: "Empty_Book"); break;
+                        case 1: self.coverart2.image = UIImage(named: "Empty_Book"); break;
+                        case 2: self.coverart3.image = UIImage(named: "Empty_Book"); break;
+                        default: break;
                         }
-                        if (!existe) {
-                            DispatchQueue.main.async {
-                                if let data = data {
-                                    if let downloadedImage = UIImage(data: data) {
-                                        if (downloadedImage.size.width == 1 && !existe) {
-                                            switch(num) {
-                                            case 0: self.coverart1.image = UIImage(named: "Empty_Book"); break;
-                                            case 1: self.coverart2.image = UIImage(named: "Empty_Book"); break;
-                                            case 2: self.coverart3.image = UIImage(named: "Empty_Book"); break;
-                                            default: break;
-                                            }
-                                            existe = false
-                                        } else {
-                                            switch(num) {
-                                            case 0:
-                                                existe = true
-                                                self.imageCache1.setObject(downloadedImage, forKey: NSString(string: enlace))
-                                                self.coverart1.image = downloadedImage
-                                                break
-                                            case 1:
-                                                existe = true
-                                                self.imageCache2.setObject(downloadedImage, forKey: NSString(string: enlace))
-                                                self.coverart2.image = downloadedImage
-                                                break
-                                            case 2:
-                                                existe = true
-                                                self.imageCache3.setObject(downloadedImage, forKey: NSString(string: enlace))
-                                                self.coverart3.image = downloadedImage
-                                                break
-                                            default: break;
+                    }
+                }
+                else {
+                    if let url = URL(string: enlace) {
+                        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                            
+                            if error != nil {
+                                DispatchQueue.main.async {
+                                    switch(num) {
+                                    case 0: self.coverart1.image = UIImage(named: "Empty_Book"); break;
+                                    case 1: self.coverart2.image = UIImage(named: "Empty_Book"); break;
+                                    case 2: self.coverart3.image = UIImage(named: "Empty_Book"); break;
+                                    default: break;
+                                    }
+                                }
+                                return
+                            }
+                            if (!existe) {
+                                DispatchQueue.main.async {
+                                    if let data = data {
+                                        if let downloadedImage = UIImage(data: data) {
+                                            if (downloadedImage.size.width == 1 && !existe) {
+                                                switch(num) {
+                                                case 0: self.coverart1.image = UIImage(named: "Empty_Book"); break;
+                                                case 1: self.coverart2.image = UIImage(named: "Empty_Book"); break;
+                                                case 2: self.coverart3.image = UIImage(named: "Empty_Book"); break;
+                                                default: break;
+                                                }
+                                                existe = false
+                                            } else {
+                                                switch(num) {
+                                                case 0:
+                                                    existe = true
+                                                    self.imageCache1.setObject(downloadedImage, forKey: NSString(string: enlace))
+                                                    self.coverart1.image = downloadedImage
+                                                    break
+                                                case 1:
+                                                    existe = true
+                                                    self.imageCache2.setObject(downloadedImage, forKey: NSString(string: enlace))
+                                                    self.coverart2.image = downloadedImage
+                                                    break
+                                                case 2:
+                                                    existe = true
+                                                    self.imageCache3.setObject(downloadedImage, forKey: NSString(string: enlace))
+                                                    self.coverart3.image = downloadedImage
+                                                    break
+                                                default: break;
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
-                        }
-                    }).resume()
-                    i += 1
+                        }).resume()
+                    }
                 }
+                i += 1
             }
         }
     }
