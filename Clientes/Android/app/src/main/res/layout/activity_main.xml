@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ activity_main.xml
+  ~ Created by Jose Luis Moreno on 5/5/19 1:16 PM
+  ~ Copyright (c) 2019 . All rights reserved.
+  ~ Last modified 5/5/19 12:52 PM
+  -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"

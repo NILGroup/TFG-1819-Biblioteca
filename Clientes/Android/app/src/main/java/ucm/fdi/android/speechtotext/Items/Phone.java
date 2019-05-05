@@ -1,3 +1,10 @@
+/*
+ * Phone.java
+ * Created by Jose Luis Moreno on 5/5/19 1:15 PM
+ * Copyright (c) 2019 . All rights reserved.
+ * Last modified 5/5/19 12:55 PM
+ */
+
 package ucm.fdi.android.speechtotext.Items;
 
 public class Phone {

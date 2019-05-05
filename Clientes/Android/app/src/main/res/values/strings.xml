@@ -1,3 +1,11 @@
+
+<!--
+  ~ strings.xml
+  ~ Created by Jose Luis Moreno on 5/5/19 1:17 PM
+  ~ Copyright (c) 2019 . All rights reserved.
+  ~ Last modified 4/19/19 8:30 PM
+  -->
+
 <resources>
     <string name="app_name">Janet</string>
     <string name="hint">Presiona el micrófono para hablar</string>

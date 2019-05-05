@@ -1,3 +1,11 @@
+
+/*
+ * MainActivity.java
+ * Created by Jose Luis Moreno on 5/5/19 1:16 PM
+ * Copyright (c) 2019 . All rights reserved.
+ * Last modified 5/5/19 12:54 PM
+ */
+
 package ucm.fdi.android.speechtotext;
 
 import android.content.ActivityNotFoundException;

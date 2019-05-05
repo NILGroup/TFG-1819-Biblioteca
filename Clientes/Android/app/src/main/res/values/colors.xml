@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ colors.xml
+  ~ Created by Jose Luis Moreno on 5/5/19 1:17 PM
+  ~ Copyright (c) 2019 . All rights reserved.
+  ~ Last modified 3/16/19 12:30 PM
+  -->
+
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
