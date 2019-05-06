@@ -380,6 +380,8 @@
 
 ## intent:consulta_localizacion
 - busca la ubicación de la [Biblioteca de odontología](localizacion)
+- busca la ubicación de la  [biblioteca maría zambrano](localizacion)
+- busca la ubicación de la  [biblioteca zambrano](localizacion)
 - necesito ir a la [Biblioteca de derecho](localizacion)
 - necesito desplazarme a la [Biblioteca de ciencias políticas](localizacion)
 - necesito dirigirme a la [Biblioteca de enfermería](localizacion)
@@ -394,7 +396,12 @@
 - donde está la [biblioteca de ciencias políticas](localizacion)
 - donde está la [biblioteca de ciencias económicas y empresariales](localizacion)
 - quiero ir a la [facultad de geografía e historia](localizacion)
+- quiero ir a la [biblioteca maría zambrano](localizacion)
+- quiero ir a la [biblioteca zambrano](localizacion)
 - donde esta la [biblioteca de educacion](localizacion)
+- donde esta la [biblioteca maría zambrano](localizacion)
+- donde esta la [biblioteca zambrano](localizacion)
+- localización de la [biblioteca maría zambrano](localizacion)
 
 ## intent:consulta_localizacion_empty
 - busca su ubicación
@@ -405,6 +412,7 @@
 - donde esta
 - llévame ahí
 - llévame hasta ahí
+- localización
 
 ## intent:consulta_telefono
 - llama a la [Facultad de matemáticas](localizacion)
@@ -424,6 +432,7 @@
 - quiero el teléfono de la [biblioteca de veterinaria](localizacion)
 - [Llama](PER) a la [facultad de informatica](localizacion)
 - busca el numero de telefono de la [facultad de medicina](localizacion)
+- teléfono de la [facultad de educación](localizacion)
 
 ## intent:consulta_telefono_empty
 - llámala
@@ -437,6 +446,7 @@
 - necesito el teléfono
 - busca su teléfono
 - busca el teléfono
+- teléfono
 - busca el número de teléfono
 - cuál es su número
 - cuál es su teléfono
@@ -564,6 +574,7 @@
 - hola, me llamo [Pepe](PER)[Pepe](PER:pepe)
 - hola me llamo [Jose](PER)
 - hola me llamo [José](PER)
+- hola soy [Verónica](PER)
 
 ## intent:quien_soy
 - cómo te llamas

@@ -1,10 +1,26 @@
 # -*- coding: utf-8 -*-
 """
-Módulo PLN Codename Jarvis - Proyecto Janet
-Versión 0.9.0
+Módulo PLN Jarvis - Proyecto Janet
+Versión 1.0
 
-@author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
-© 2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
+MIT License
+
+Copyright (c) 2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+associated documentation files (the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 import os
@@ -26,20 +42,22 @@ class JarvisProcessor():
 
     def __init__(self, log):
         self.logger = log
-        directorioModelos = 'model/default/Jarvis'
-        if (os.path.isdir(directorioModelos)):
-            self.interpreter = RasaNLUInterpreter(model_directory=directorioModelos)
-            action_endopoint = EndpointConfig(url="http://localhost:5055/webhook")
-            tracker_store = MongoTrackerStore(domain= Domain.load('model/dialogue/domain.yml'),
-                                              host='mongodb://localhost:27017',
-                                              db='rasa',
-                                              username='rasa',
-                                              password='Pitonisa46')
-            self.agent = Agent.load('model/dialogue',
-                                    interpreter=self.interpreter,
-                                    action_endpoint=action_endopoint,
-                                    tracker_store=tracker_store)
-            self._slots = {}
+        directorioNLU = 'model/default/Jarvis'
+        directorioDialogo = 'model/dialogue'
+        if (os.path.isdir(directorioNLU)):
+            self.interpreter = RasaNLUInterpreter(model_directory=directorioNLU)
+            if (os.path.isdir(directorioDialogo)):
+                action_endopoint = EndpointConfig(url="http://localhost:5055/webhook")
+                tracker_store = MongoTrackerStore(domain=Domain.load('model/dialogue/domain.yml'),
+                                                  host='mongodb://localhost:27017',
+                                                  db='rasa',
+                                                  username='rasa',
+                                                  password='Pitonisa46')
+                self.agent = Agent.load(directorioDialogo,
+                                        interpreter=self.interpreter,
+                                        action_endpoint=action_endopoint,
+                                        tracker_store=tracker_store)
+                self._slots = {}
 
     def train_nlu(self):
         

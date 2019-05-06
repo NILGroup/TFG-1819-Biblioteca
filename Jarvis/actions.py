@@ -1,10 +1,26 @@
 # -*- coding: utf-8 -*-
 """
-Módulo PLN Codename Jarvis - Proyecto Janet
-Versión 0.9.0
+Módulo PLN Jarvis - Proyecto Janet
+Versión 1.0
 
-@author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
-© 2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
+MIT License
+
+Copyright (c) 2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+associated documentation files (the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 from typing import Dict, Text, Any, List, Union
 
@@ -112,7 +128,6 @@ class BuscarLibroForm(FormAction):
         ORG = next(tracker.get_latest_entity_values('ORG'), None)
         loc = next(tracker.get_latest_entity_values('LOC'), None)
         PER = next(tracker.get_latest_entity_values('PER'), None)
-        persona = next(tracker.get_latest_entity_values('persona'), None)
         temp['libro'] = None
         temp['autores'] = None
 
@@ -128,8 +143,6 @@ class BuscarLibroForm(FormAction):
                 temp['libro'] = loc
             elif PER is not None:
                 temp['libro'] = PER
-            elif persona is not None:
-                temp['libro'] = persona.capitalize()
             elif ORG is not None:
                 temp['libro'] = ORG
 
@@ -147,8 +160,6 @@ class BuscarLibroForm(FormAction):
                     temp['autores'] = aux
                 else:
                     temp['autores'] = PER
-            elif persona is not None:
-                temp['autores'] = persona.capitalize()
 
         return [SlotSet('libro', temp['libro']), SlotSet('autores', temp['autores'])]
 
@@ -338,6 +349,14 @@ class ActionComprobarApertura(Action):
         entrada = entrada.replace('Facultad De ', '')
         entrada = entrada.replace('BIBLIOTECA DE ', '')
         entrada = entrada.replace('FACULTAD DE ', '')
+        entrada = entrada.replace('biblioteca ', '')
+        entrada = entrada.replace('facultad ', '')
+        entrada = entrada.replace('Biblioteca ', '')
+        entrada = entrada.replace('Facultad ', '')
+        entrada = entrada.replace('Biblioteca ', '')
+        entrada = entrada.replace('Facultad ', '')
+        entrada = entrada.replace('BIBLIOTECA ', '')
+        entrada = entrada.replace('FACULTAD ', '')
 
         return entrada
 
