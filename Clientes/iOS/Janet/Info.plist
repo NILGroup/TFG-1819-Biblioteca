@@ -15,15 +15,15 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.9.0</string>
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>34</string>
+	<string>36</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Para que Janet pueda usar tu microfono</string>
