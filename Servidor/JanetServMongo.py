@@ -25,13 +25,17 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from pymongo import MongoClient
 from datetime import datetime
+import json
 
 
 class JanetServMongo:
 
+    """"Carga la URL de la localización de Mongo del fichero 'parameters.conf'"""
     def __init__(self):
-        self._client = MongoClient('mongodb://localhost:27017')
-        self._db = self._client.janet
+        with open(r'parameters.conf', encoding="utf-8") as f:
+            datos = json.load(f)
+            self._client = MongoClient(datos['urlMongo'])
+            self._db = self._client.janet
 
     def obtener_biblioteca(self, nombre):
         collection = self._db.localizaciones

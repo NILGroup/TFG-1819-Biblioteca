@@ -33,7 +33,7 @@ from authliboclc import wskey
 class JanetServWMS:
 
     def __init__(self):
-        with open(r'wskey.conf') as f:
+        with open(r'wskey.conf', encoding="utf-8") as f:
             self.__wskeydata = json.load(f)
 
         with open(r'librarycodes.json', encoding="utf-8") as f:

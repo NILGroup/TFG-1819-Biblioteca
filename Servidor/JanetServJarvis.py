@@ -24,9 +24,16 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 from urllib import request, parse, error
+from socket import timeout
 import json
 
 class JanetServJarvis():
+
+    """"Carga la URL de la localización de Jarvis del fichero 'parameters.conf'"""
+    def __init__(self):
+        with open(r'parameters.conf', encoding="utf-8") as f:
+            datos = json.load(f)
+            self._url = datos['urlJarvis']
 
     def consultar(self, pregunta, id):
         contenido = pregunta
@@ -34,17 +41,24 @@ class JanetServJarvis():
         data = {'user_id': id, 'content': contenido}
 
         try:
-            req = request.Request("http://localhost:5000", data=parse.urlencode(data).encode())
-            resp = request.urlopen(req)
+            req = request.Request(self._url, data=parse.urlencode(data).encode())
+            resp = request.urlopen(req, timeout=10)
         except error.URLError as e:
-            msg = "Janet se encuentra en mantenimiento en estos momentos. " \
-                      "Inténtelo de nuevo más tarde"
-            raise error.HTTPError("http://localhost:5000", 400, msg, None, None)
+            if isinstance(e.reason, timeout):
+                msg = "Janet se encuentra en mantenimiento en estos momentos. " \
+                          "Inténtelo de nuevo más tarde"
+                raise error.HTTPError(self._url, 400, msg, None, None)
+            if hasattr(e, 'code') and e.code == 400:
+                msg = "Janet se encuentra en mantenimiento en estos momentos. " \
+                          "Inténtelo de nuevo más tarde"
+                raise error.HTTPError(self._url, 400, msg, None, None)
+            else:
+                raise error.HTTPError(self._url, 500, e.reason, None, None)
 
         return json.load(resp)
 
     def restart(self, id):
         data = {'user_id': id, 'content': '/restart'}
 
-        req = request.Request("http://localhost:5000", data=parse.urlencode(data).encode())
-        request.urlopen(req)
+        req = request.Request(self._url, data=parse.urlencode(data).encode())
+        request.urlopen(req, timeout=10)
