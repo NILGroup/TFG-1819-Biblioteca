@@ -24,6 +24,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 import os
+import yaml
 from rasa_nlu.training_data import load_data
 from rasa_nlu.components import ComponentBuilder
 from rasa_nlu.model import Trainer
@@ -47,12 +48,17 @@ class JarvisProcessor():
         if (os.path.isdir(directorioNLU)):
             self.interpreter = RasaNLUInterpreter(model_directory=directorioNLU)
             if (os.path.isdir(directorioDialogo)):
-                action_endopoint = EndpointConfig(url="http://localhost:5055/webhook")
+                with open("config/endpoint.yml", 'r') as stream:
+                    try:
+                        config = yaml.safe_load(stream)
+                    except yaml.YAMLError as exc:
+                        print(exc)
+                action_endopoint = EndpointConfig(url=config["action_endpoint"]["url"])
                 tracker_store = MongoTrackerStore(domain=Domain.load('model/dialogue/domain.yml'),
-                                                  host='mongodb://localhost:27017',
-                                                  db='rasa',
-                                                  username='rasa',
-                                                  password='Pitonisa46')
+                                                  host=config["tracker_store"]["url"],
+                                                  db=config["tracker_store"]["db"],
+                                                  username=config["tracker_store"]["username"],
+                                                  password=config["tracker_store"]["password"])
                 self.agent = Agent.load(directorioDialogo,
                                         interpreter=self.interpreter,
                                         action_endpoint=action_endopoint,
