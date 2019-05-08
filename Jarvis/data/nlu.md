@@ -39,6 +39,8 @@
 - me puedes decir el horario de la [Biblioteca de Geografía](localizacion)
 - me podrias decir el horario de la [Biblioteca de Geografía](localizacion)
 - horario de la [Zambrano](localizacion)
+- horario de la [Biblioteca de criminología](localizacion)
+- horario de la [facultad de veterinaria](localizacion)
 - a que hora abre la [biblioteca de informatica](localizacion)
 - a que hora abre la [biblioteca](localizacion) [zambrano](localizacion)
 - a que hora abre la [biblioteca de Psicologia](localizacion)
