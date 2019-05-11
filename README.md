@@ -7,6 +7,7 @@ Autores: Mauricio Abbati Loureiro y Jose Luis Moreno Varillas.
 Directores: Alberto Díaz Esteban y Antonio Fernando García Sevilla.
 
 **Instalación**
+
 Los instaladores proporcionados en este repositorios han sido diseñados para:
 
  - Debian 'Jessie' y 'Stretch'
