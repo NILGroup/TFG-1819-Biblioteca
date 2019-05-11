@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Servidor de TFG - Proyecto Janet
-Versión 0.9.0
+Versión 1.0
 
 @author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
 © 2018-2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
@@ -45,10 +45,12 @@ class JanetServController:
             pln = self.__pln.consultar(client_request["content"], uid)
 
             respuesta = self._tratar_pln(pln['intent'], pln['entities'], pln['message'], uid)
+            self._mongo.guardar_timestamp(uid)
             
         elif client_request["type"] == "oclc":
             respuesta.update(self.__wms.cargarInformacionLibro(client_request['content']))
             respuesta['content-type'] = 'single-book'
+            self._mongo.guardar_timestamp(client_request["user_id"])
 
         elif client_request["type"] == "restart":
             uid = client_request["user_id"]
