@@ -36,7 +36,7 @@ class jarvisService():
         # Creacion de logger
         logger = logging.getLogger('jarvis')
         logger.setLevel(logging.INFO)
-        file_handler = logging.FileHandler('jarvis.log')
+        file_handler = logging.FileHandler('jarvis.log', 'w', 'utf-8')
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         file_handler.setLevel(logging.DEBUG)
         file_handler.setFormatter(formatter)
