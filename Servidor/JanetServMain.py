@@ -35,7 +35,7 @@ class JanetService:
         # Creacion de logger
         logger = logging.getLogger('janet')
         logger.setLevel(logging.INFO)
-        file_handler = logging.FileHandler('janet.log')
+        file_handler = logging.FileHandler('janet.log', 'w', 'utf-8')
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         file_handler.setLevel(logging.DEBUG)
         file_handler.setFormatter(formatter)
