@@ -101,7 +101,7 @@ fi
 echo "-----------------------------------"
 
 echo "Instalando dependencias..."
-pip3 install -r /home/tfg-biblio/Jarvis/requirements.txt >/dev/null
+pip3 install -r $DIRECTORY/Jarvis/requirements.txt >/dev/null
 
 echo "Ok"
 echo "-----------------------------------"
@@ -161,9 +161,11 @@ echo "Ok"
 echo "-----------------------------------"
 
 echo "Borrando archivos temporales"
-rm -rf $DIRECTORY/Jarvis/
-rm $DIRECTORY/.gitignore
-rm $DIRECTORY/README.md
+if [ -d "$DIRECTORY/Jarvis" ]; then rm -Rf $DIRECTORY/Jarvis; fi
+if [ -d "$DIRECTORY/Clientes" ]; then rm -Rf $DIRECTORY/Clientes; fi
+if [ -f "$DIRECTORY/.gitignore" ]; then rm $DIRECTORY/.gitignore; fi
+if [ -f "$DIRECTORY/README.md" ]; then rm $DIRECTORY/README.md; fi
+if [ -f "$DIRECTORY/LICENSE.md" ]; then rm $DIRECTORY/LICENSE.md; fi
 
 echo "Ok"
 echo "-----------------------------------"

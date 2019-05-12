@@ -148,10 +148,12 @@ echo "Ok"
 echo "-----------------------------------"
 
 echo "Borrando archivos temporales"
-rm -rf $DIRECTORY/Servidor/
-rm $DIRECTORY/.gitignore
-rm $DIRECTORY/README.md
-rm $DIRECTORY/bibliotecas.json
+if [ -d "$DIRECTORY/Servidor" ]; then rm -Rf $DIRECTORY/Servidor; fi
+if [ -d "$DIRECTORY/Clientes" ]; then rm -Rf $DIRECTORY/Clientes; fi
+if [ -f "$DIRECTORY/bibliotecas.json" ]; then rm $DIRECTORY/bibliotecas.json; fi
+if [ -f "$DIRECTORY/.gitignore" ]; then rm $DIRECTORY/.gitignore; fi
+if [ -f "$DIRECTORY/README.md" ]; then rm $DIRECTORY/README.md; fi
+if [ -f "$DIRECTORY/LICENSE.md" ]; then rm $DIRECTORY/LICENSE.md; fi
 
 echo "Ok"
 echo "-----------------------------------"
