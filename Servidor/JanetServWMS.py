@@ -1,10 +1,26 @@
 # -*- coding: utf-8 -*-
 """
 Servidor de TFG - Proyecto Janet
-Versión 0.9.1
+Versión 1.0
 
-@author: Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
-© 2018-2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
+MIT License
+
+Copyright (c) 2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+associated documentation files (the "Software"), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 import urllib
@@ -17,7 +33,7 @@ from authliboclc import wskey
 class JanetServWMS:
 
     def __init__(self):
-        with open(r'wskey.conf') as f:
+        with open(r'wskey.conf', encoding="utf-8") as f:
             self.__wskeydata = json.load(f)
 
         with open(r'librarycodes.json', encoding="utf-8") as f:
@@ -26,9 +42,9 @@ class JanetServWMS:
         self.__URLopensearch = "http://www.worldcat.org/webservices/catalog/search/opensearch?"
         self.__URLlibraries = "http://www.worldcat.org/webservices/catalog/content/libraries/"
         self.__URLavailability = "https://www.worldcat.org/circ/availability/sru/service?"
-        self.__URLCovers = "https://covers.openlibrary.org/b/isbn/"
 
     def buscarLibro(self, title, author, index, type):
+
         consulta = {"wskey": self.__wskeydata["key"], "count": index + 1, "start": index - 1}
         if type == "kw":
             consulta['q'] = 'srw.kw all "' + title + '"'
@@ -43,8 +59,23 @@ class JanetServWMS:
         consulta['q'] = consulta['q'] + 'and srw.li all "' + self.__wskeydata["oclc_symbol"]
         consulta['q'] = consulta['q'] + '" and srw.la all "spa"'
         URL = self.__URLopensearch + urllib.parse.urlencode(consulta)
-        uh = urllib.request.urlopen(URL)
-        content = uh.read()
+
+        reintenta = True
+        intentos = 2
+        while reintenta:
+            try:
+                uh = urllib.request.urlopen(URL)
+                content = uh.read()
+                reintenta = False
+
+            except urllib.error.HTTPError as e:
+                if intentos > 0 and e.code == 400:
+                    intentos = intentos - 1
+                    pass
+                else:
+                    msg = "Lo lamento, el catálogo de la biblioteca no está disponible en estos momentos. " \
+                          "Inténtelo de nuevo más tarde"
+                    raise urllib.error.HTTPError(URL, e.code, msg, e.hdrs, e.fp)
 
         xmlnamespaces = {'Atom': 'http://www.w3.org/2005/Atom',
                          'oclcterms': 'http://purl.org/oclc/terms/',
@@ -58,7 +89,8 @@ class JanetServWMS:
             isbn = []
             for tmp in item.findall("dc:identifier", xmlnamespaces):
                 aux = tmp.text
-                isbn.append(aux.replace('urn:ISBN:', ''))
+                if aux.replace('urn:ISBN:', '').isdigit():
+                    isbn.append(aux.replace('urn:ISBN:', ''))
             temp = {"title": item.find("Atom:title", xmlnamespaces).text,
                     "author": item.find("Atom:author/Atom:name", xmlnamespaces).text,
                     "oclc": item.find("oclcterms:recordIdentifier", xmlnamespaces).text,

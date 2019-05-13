@@ -1,15 +1,24 @@
 //
 //  ViewController.swift
-//  [TFG] Asistente virtual para servicios de la biblioteca de la UCM - Codename "Janet"
+//  [TFG] Asistente virtual para servicios de la biblioteca de la UCM - Janet
 //
 //  Created by Mauri on 01/09/18.
-//  Copyright © 2018 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
+//  MIT License
+//
+//  Copyright (c) 2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
 import UIKit
 import Speech
 import AVFoundation
 
+//Clase vista principal del sistema.
 class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechRecognitionTaskDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -35,16 +44,19 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
     private var trascribir: Bool = true
     private var contraste: Bool = false
 
+    //Función de inicialización de la vista.
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Inicializa los delegados de la tabla de globos de mensaje.
         tableView.delegate = self
         tableView.dataSource = self
         
+        //Dimensiones para permitir una carga de mensajes de tamaño dinámico en función del contenido.
         tableView.estimatedRowHeight = 170.0
         tableView.rowHeight = UITableView.automaticDimension
         
-        //registerSettingsBundle()
-        //Para sincronizar los ajustes de la app "Ajustes"
+        //Sincroniza la aplicación con los ajustes seleccionados por el usuario a través de los ajustes establecidos en la app "Ajustes" de iOS.
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
         defaultsChanged()
         
@@ -57,19 +69,23 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             self.altoContraste()
         }
         
+        //Carga el identificador único del usuario.
         let defaults = UserDefaults.standard
         self.user_id = Int(defaults.string(forKey: "user_id") ?? "-1")
         
+        //Prepara el spinner para cuando el usuario envía una consulta al servidor.
         self.prepararSpinner()
         
+        //Establece el primer mensaje al ejecutar la aplicación.
         mensajes.append(Globos(texto: "Hola! Soy Janet. ¿En qué te puedo ayudar?", emisor: .Bot))
-        //mensajes.append(Globos(texto: " ¡Que levante la mano aquel que no se ponga nervioso ante un examen! Lo que nos jugamos ante un test puede determinar parte de nuestro futuro, por eso la ansiedad se apodera de nosotros. Algunas personas se plantean hasta abandonar su sueño porque no encuentran fuerzas para continuar hasta el final. La motivación es muy importante para no echar al traste en el último momento todo el esfuerzo de semanas, meses o años, por eso leer una poderosa frase antes de un examen nos puede animar a continuar", emisor: .Bot))
+        
+        //Si el usuario no ha deshabilitado el habla, inicializa el transcriptor de texto a voz del sistema.
         if (trascribir) {
             inicializarVoz()
         }
         self.leerFrase(texto: mensajes[0].getRespuesta())
-        // Do any additional setup after loading the view, typically from a nib.
         
+        //Inserta el primer mensaje en el sistema.
         self.tableView.beginUpdates()
         self.tableView.insertRows(at: [IndexPath(row: self.mensajes.count-1, section: 0)], with: .automatic)
         self.tableView.endUpdates()
@@ -78,27 +94,29 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         comprobarPermisosReconocimientoVoz()
     }
     
+    //Envía una consulta a la clase conexión para enviársela al servidor.
     @objc private func prepararConsulta(_ notification: NSNotification) {
         if let dict = notification.userInfo as! [String : Any]? {
             enviarSolicitud(tipo: dict["tipo"] as! String, peticion: String(dict["peticion"] as! Int))
         }
     }
     
+    //Inicializa el Spinner oculto en el botón del micrófono.
     private func prepararSpinner() {
         
         spinnerView.layer.cornerRadius = 10;
         spinnerView.layer.masksToBounds = true;
-        
-        //activitySpinner.style = UIActivityIndicatorView.Style.whiteLarge
         
         activitySpinner.accessibilityLabel = "Cargando, espere."
         activitySpinner.center = CGPoint(x: 67.0, y: 55.0)
         activitySpinner.color = UIColor.white
     }
     
+    //Gestiona la transacción con el servidor.
     internal func enviarSolicitud(tipo: String, peticion: String) {
         let dao = DAO();
         
+        //Muestra el spinner de carga.
         UIView.transition(with: self.view, duration: 0.6, options: .transitionCrossDissolve, animations: {
                 self.startButton.isHidden = true
                 self.spinnerView.isHidden = false
@@ -107,6 +125,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             self.activitySpinner.startAnimating()
         })
         
+        //Deshabilita el botón del micrófono.
         self.startButton.isEnabled = false
         
         DispatchQueue.global(qos: .userInitiated).async {
@@ -117,27 +136,32 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                 if (respuesta.value(forKey: "errorno") as! NSNumber == 404) {
                     self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
                 }
-                    //Si la conexión se ha realizado correctamente
+                    
+                //Si la conexión se ha realizado correctamente
                 else {
                     //Si los datos no son correctos
                     if (respuesta.value(forKey: "errorno") as! NSNumber != 0) {
                         self.ponerTextoEnBot(texto: respuesta.value(forKey: "errorMessage") as! String)
                     } else if (respuesta.value(forKey: "errorno") as! NSNumber == 0) {
+                        //Si hay un nuevo id del usuario, lo almacena en la aplicación.
                         if let user = respuesta.value(forKey: "user_id") {
                             let preferences = UserDefaults.standard
                             preferences.set(user, forKey: "user_id")
                             self.user_id = user as? Int
                         }
+                        //Inserta la respuesta en la aplicación.
                         self.ponerDatosEnBot(datos: respuesta)
                     }
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    //Oculta nuevamente el spinner.
                     self.activitySpinner.stopAnimating()
                     UIView.transition(with: self.view, duration: 0.6, options: .transitionCrossDissolve, animations: {
                         self.startButton.isHidden = false
                         self.spinnerView.isHidden = true
                     })
+                    //Habilita el botón del micrófono.
                     self.startButton.isEnabled = true
                     self.procesarFrase()
                 }
@@ -145,9 +169,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         }
     }
     
+    //Comprueba si el usuario ha autorizado el uso del reconocimiento de voz en la aplicación.
     private func comprobarPermisosReconocimientoVoz() {
         if (SFSpeechRecognizer.authorizationStatus() != .authorized) {
             
+            //Si la aplicación no está autorizada, se añadirá un mensaje en función del error.
             SFSpeechRecognizer.requestAuthorization { authStatus in
                 OperationQueue.main.addOperation {
                     var error: Bool = true
@@ -166,6 +192,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                             self.mensajes.append(Globos(texto: "Hay un problema. Aún no ha autorizado el reconocimiento de voz.", emisor: .Bot))
                     }
                     if (error) {
+                        //Añade el mensaje a la tabla de globos y deshailita el uso del botón del micrófono.
                         self.tableView.beginUpdates()
                         self.tableView.insertRows(at: [IndexPath(row: self.mensajes.count-1, section: 0)], with: .automatic)
                         self.tableView.endUpdates()
@@ -183,10 +210,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         // Dispose of any resources that can be recreated.
     }
 
+    //Prepara el sitema para leer textos a través del punto de salida actual del sistema (altavoz o auriculares) en el idioma castellano.
     private func inicializarVoz() {
         for availableVoice in AVSpeechSynthesisVoice.speechVoices(){
-        //if ((availableVoice.language == AVSpeechSynthesisVoice.currentLanguageCode()) &&
-            //print(AVSpeechSynthesisVoice.currentLanguageCode())
             if ((availableVoice.language == "es-ES") &&
                 (availableVoice.quality == AVSpeechSynthesisVoiceQuality.enhanced)){ //Seleccion de voz de alta calidad.
                 self.voice = availableVoice
@@ -201,6 +227,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         }
     }
     
+    //Si el usuario no ha deshabilitado la lectura de texto, reproduce el texto por el altavoz.
     private func leerFrase(texto: String) {
         if (self.trascribir) {
             let utterance = AVSpeechUtterance(string: texto)
@@ -211,6 +238,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         }
     }
     
+    //Escucha al usuario a través del micrófono predeterminado del sistema.
     private func procesarFrase() {
         let audioSession = AVAudioSession.sharedInstance()
         
@@ -246,12 +274,13 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         
     }
     
-    
+    //Inserta un mensaje de texto como usuario Bot
     private func ponerTextoEnBot(texto: String) {
         self.botText = texto;
         self.mensajes.append(Globos(texto: self.botText, emisor: .Bot))
     }
     
+    //Carga la respuesta del servidor en un globo.
     private func ponerDatosEnBot(datos: NSDictionary) {
         if (datos.value(forKey: "content-type") as! String == "list-books") {
             self.botText = datos.value(forKey: "response") as! String;
@@ -322,6 +351,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         }
     }
 
+    //Inicia la captura de voz y la convierte en texto.
     @IBAction func startButtonTapped(_ sender: UIButton) {
         
         UIView.animate(withDuration: 0.6, delay: 0,
@@ -330,9 +360,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                         self.startButton.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
         }, completion: nil)
         
-        // Initialize the speech recogniter with your preffered language
         guard let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "es_ES")) else {
-            print("Speech recognizer is not available for this locale!");
+            print("Reconocedor de voz no disponible en su idioma");
             return
         }
         
@@ -343,7 +372,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             do {
                 if (convertFromAVAudioSessionCategory(audioSession.category) != "AVAudioSessionCategoryPlayAndRecord") {
                     try! audioSession.setCategory(.playAndRecord, mode: .spokenAudio)
-                    //try audioSession.setMode(AVAudioSession.Mode.spokenAudio)
                     try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
                     
                     let currentRoute = AVAudioSession.sharedInstance().currentRoute
@@ -399,17 +427,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                     
                     var isFinal = false
                     if let result = result {
-                        
-                        /*let numberFormatter = NumberFormatter()
-                        numberFormatter.locale = Locale(identifier: "es")
-                        numberFormatter.numberStyle = .decimal
-                        
-                        var palabra = result.bestTranscription.formattedString
-                        
-                        if let textAsInt = Int(text), let output = numberFormatter.string(from: NSNumber(value: textAsInt)) {
-                            print(output) // "۱۲۳٬۴۵۶"
-                        }*/
-                        
                         self.mensajes[self.mensajes.count - 1].setRespuesta(text: result.bestTranscription.formattedString)
                         let indexPath = IndexPath(row: self.mensajes.count - 1, section: 0)
                         self.tableView.reloadRows(at: [indexPath], with: .none)
@@ -426,6 +443,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             }
         }
         
+        //Reinicia el contador de tiempo en el que el usuario no ha dicho nada para parar el reconocimiento de voz.
         func restartSpeechTimer() {
             timer?.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
@@ -436,6 +454,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             })
         }
         
+        //Para el reconocimiento de voz.
         func stopRecognition() {
             DispatchQueue.main.async {
                 self.startButton.layer.removeAllAnimations()
@@ -507,11 +526,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         self.capaDegradado.alpha = 1
         self.startButton.setImage(icon, for: .normal)
     }
-    
-    /*func registerSettingsBundle(){
-        let appDefaults = [String:AnyObject]()
-        UserDefaults.standard.register(defaults: appDefaults)
-    }*/
     
     @objc func defaultsChanged() {
         let ud = UserDefaults.standard

@@ -1,13 +1,21 @@
 //
 //  SingleBookViewCell.swift
-//  [TFG] Asistente virtual para servicios de la biblioteca de la UCM - Codename "Janet"
+//  [TFG] Asistente virtual para servicios de la biblioteca de la UCM - Janet
 //
-//  Created by Mauri on 11/12/2018.
-//  Copyright © 2018 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas. All rights reserved.
+//  Created by Mauri on 11/12/2018.//  MIT License
+//
+//  Copyright (c) 2019 Mauricio Abbati Loureiro - Jose Luis Moreno Varillas
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
 import UIKit
 
+//Clase para un globo de conversación con 1 libro.
 class SingleBookViewCell: TableViewCell {
     
     let imageCache = NSCache<NSString, UIImage>()
@@ -22,8 +30,10 @@ class SingleBookViewCell: TableViewCell {
     private var urlString : String? = nil
     private var isbn: String? = nil
 
+    //Inicializa los atributos de la clase.
     override func setDatos(info: Globos) {
         
+        //Establece un enlace en la vista para abrir el navegador del sistema y abrir la web del ejemplar.
         let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         View.addGestureRecognizer(tap)
         
@@ -43,7 +53,7 @@ class SingleBookViewCell: TableViewCell {
         }
         var biblios = ""
         for item in info.getLibraryAvailable() {
-            biblios += item.key + "\t" + String(item.value) + "\n"
+            biblios += item.key + "\t:\t" + String(item.value) + "\n"
         }
         locationLabel.text = biblios
         locationLabel.sizeToFit()
@@ -54,6 +64,7 @@ class SingleBookViewCell: TableViewCell {
         }
     }
     
+    //Establece un enlace via notificación con el ViewController para abrir el navegador del sistema y abrir la web del ejemplar.
     @objc private func viewTapped(sender: UITapGestureRecognizer) {
         let temp = self.urlString!
         guard let url = URL(string: temp) else { return }
@@ -61,6 +72,7 @@ class SingleBookViewCell: TableViewCell {
         UIApplication.shared.open(url)
     }
     
+    //Carga la portada del libro de forma asíncrona.
     func imageFromServerURL(_ isbn: [String]) {
         
         var existe = false
@@ -84,14 +96,16 @@ class SingleBookViewCell: TableViewCell {
             
             if let url = URL(string: enlace) {
                 URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-                    
-                    //print("RESPONSE FROM API: \(response)")
                     if error != nil {
-                        //print("ERROR LOADING IMAGES FROM URL: \(error)")
                         DispatchQueue.main.async {
                             self.coverart.image = UIImage(named: "Empty_Book")
                         }
                         return
+                    }
+                    if (Int(isbn[i]) == nil) {
+                        DispatchQueue.main.async {
+                            self.coverart.image = UIImage(named: "Empty_Book");
+                        }
                     }
                     if (!existe) {
                         DispatchQueue.main.async {

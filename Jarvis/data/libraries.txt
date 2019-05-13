@@ -9,6 +9,7 @@ Biblioteca de Geografía e Historia-Instituto Complutense de Ciencias Musicales
 Biblioteca de Filología-Sala General
 Biblioteca de Filología-María Zambrano
 Biblioteca de María Zambrano
+Biblioteca Zambrano
 Biblioteca de Filología
 Biblioteca de Filología-Clásicas 
 Biblioteca de Filología-Hispánicas y Románicas
@@ -53,6 +54,61 @@ Biblioteca de Ciencias Biológicas
 Biblioteca de Química
 Biblioteca de Químicas
 Biblioteca de Ciencias Químicas
+Biblioteca Histórica
+Biblioteca Ciencias de la Documentación
+Biblioteca Filosofía
+Biblioteca Educación
+Biblioteca Bellas Artes
+Biblioteca Geografía e Historia
+Biblioteca Geografía e Historia-Instituto Complutense de Ciencias Musicales
+Biblioteca Filología-Sala General
+Biblioteca Filología-María Zambrano
+Biblioteca María Zambrano
+Biblioteca Zambrano
+Biblioteca Filología
+Biblioteca Filología-Clásicas 
+Biblioteca Filología-Hispánicas y Románicas
+Biblioteca Filología-Dpto. Arabe
+Biblioteca Psicología
+Biblioteca Psicología-Docimoteca
+Biblioteca Derecho
+Biblioteca Derecho-Sala de Criminología
+Biblioteca Derecho-María Zambrano (Sala Rafael Ureña)
+Biblioteca Ciencias Económicas y Empresariales
+Biblioteca Comercio
+Biblioteca Turismo
+Biblioteca Comercio y Turismo
+Biblioteca Estadística
+Biblioteca Estudios Estadísticos
+Biblioteca Políticas y Sociología
+Biblioteca Sociología
+Biblioteca Ciencias Políticas y Sociología
+Biblioteca Trabajo Social
+Biblioteca Relaciones Laborales
+Biblioteca Ciencias de la Información
+Biblioteca Medicina
+Biblioteca Medicina-Historia de la Medicina
+Biblioteca Farmacia
+Biblioteca Veterinaria
+Biblioteca Odontología
+Biblioteca Enfermería
+Biblioteca Enfermería, Fisioterapia y Podología
+Biblioteca Óptica y Optometría
+Biblioteca Instituto de Investigaciones Oftalmológicas Ramón Castroviejo
+Biblioteca Informática
+Biblioteca Matemáticas
+Biblioteca Ciencias Matemáticas
+Biblioteca Físicas
+Biblioteca Ciencias Físicas
+Biblioteca Geología
+Biblioteca Geológicas
+Biblioteca Ciencias Geológicas
+Biblioteca Biología
+Biblioteca Biológicas
+Biblioteca Ciencias Biológicas
+Biblioteca Química
+Biblioteca Químicas
+Biblioteca Ciencias Químicas
 Facultad de Ciencias de la Documentación
 Facultad de Filosofía
 Facultad de Educación
@@ -106,3 +162,56 @@ Facultad de Ciencias Biológicas
 Facultad de Química
 Facultad de Químicas
 Facultad de Ciencias Químicas
+Facultad Ciencias de la Documentación
+Facultad Filosofía
+Facultad Educación
+Facultad Bellas Artes
+Facultad Geografía e Historia
+Facultad Geografía e Historia-Instituto Complutense de Ciencias Musicales
+Facultad Filología-Sala General
+Facultad Filología-María Zambrano
+Facultad María Zambrano
+Facultad Filología
+Facultad Filología-Clásicas 
+Facultad Filología-Hispánicas y Románicas
+Facultad Filología-Dpto. Árabe
+Facultad Psicología
+Facultad Psicología-Docimoteca
+Facultad Derecho
+Facultad Derecho-Sala de Criminología
+Facultad Derecho-María Zambrano (Sala Rafael Ureña)
+Facultad Ciencias Económicas y Empresariales
+Facultad Comercio
+Facultad Turismo
+Facultad Comercio y Turismo
+Facultad Estadística
+Facultad Estudios Estadísticos
+Facultad Políticas y Sociología
+Facultad Sociología
+Facultad Ciencias Políticas y Sociología
+Facultad Trabajo Social
+Facultad Relaciones Laborales
+Facultad Ciencias de la Información
+Facultad Medicina
+Facultad Medicina-Historia de la Medicina
+Facultad Farmacia
+Facultad Veterinaria
+Facultad Odontología
+Facultad Enfermería
+Facultad Enfermería, Fisioterapia y Podología
+Facultad Óptica y Optometría
+Facultad Instituto de Investigaciones Oftalmológicas Ramón Castroviejo
+Facultad Informática
+Facultad Matemáticas
+Facultad Ciencias Matemáticas
+Facultad Físicas
+Facultad Ciencias Físicas
+Facultad Geología
+Facultad Geológicas
+Facultad Ciencias Geológicas
+Facultad Biología
+Facultad Biológicas
+Facultad Ciencias Biológicas
+Facultad Química
+Facultad Químicas
+Facultad Ciencias Químicas
