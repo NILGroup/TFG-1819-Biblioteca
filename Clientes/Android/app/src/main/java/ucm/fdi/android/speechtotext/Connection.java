@@ -31,7 +31,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 public class Connection {
-    private final String url = "http://www.janetbiblio.tk:80/api";
+    private final String url = "https://holstein.fdi.ucm.es/tfg-biblio/api";
 
     public JSONObject ejecutar(String type, String peticion) {
 
@@ -105,14 +105,13 @@ public class Connection {
             client.setRequestMethod("POST");
             client.setDoOutput(true);
             client.setDoInput(true);
-            //client.setHostnameVerifier(DO_NOT_VERIFY);
-            //client.connect();
             StringBuilder response = new StringBuilder();
 
-            DataOutputStream wr = new DataOutputStream(client.getOutputStream());
-            wr.writeBytes(type+"&"+peticion);
-            wr.flush();
-            wr.close();
+            String query = type+"&"+peticion;
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(client.getOutputStream(), "UTF-8"));
+            bw.write(query);
+            bw.flush();
+            bw.close();
 
             InputStream in = new BufferedInputStream(client.getInputStream());
 
