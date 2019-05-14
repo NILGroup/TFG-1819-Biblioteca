@@ -28,7 +28,7 @@ echo "-----------------------------------"
 echo "Comprobando integridad de ficheros"
 
 
-if [ ! -d "Servidor" ] || [ ! -d "Jarvis" ] || [ ! -f "bibliotecas.json" ] || [ ! -f "wskey.conf" ]; then
+if [ ! -d "Servidor" ] || [ ! -d "Jarvis" ] || [ ! -f "wskey.conf" ]; then
     echo "ERROR! No se localizan los ficheros de instalación." >&2
     exit 1
 else
@@ -148,7 +148,7 @@ db.createUser(user);
 exit
 EOF
 
-mongoimport --db janet --collection localizaciones --file $DIRECTORY/bibliotecas.json
+mongoimport --db janet --collection localizaciones --file /home/tfg-biblio/janet/bibliotecas.json
 
 mongo <<EOF
 use janet
