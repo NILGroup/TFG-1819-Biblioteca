@@ -24,4 +24,4 @@ Existen tres instaladores:
 
 IMPORTANTE! Una vez instalado uno de los módulos parciales, no debe ejecutarse el instalador completo, en su lugar, utiliza el otro instalador parcial.
 
-Para instalar el sistema es necesario disponer de las carpetas Servidor y/o Jarvis (en función del tipo de instalación) y los ficheros 'wskey.conf' y 'bibliotecas.json'. Todos estos ficheros deben estar en el mismo directorio que el script de instalación. En caso de no encontrarse alguno de estos ficheros la instalación no continuará.
+Para instalar el sistema es necesario disponer de las carpetas Servidor y/o Jarvis (en función del tipo de instalación) y el fichero 'wskey.conf'. Todos estos ficheros deben estar en el mismo directorio que el script de instalación. En caso de no encontrarse alguno de estos ficheros la instalación no continuará.
