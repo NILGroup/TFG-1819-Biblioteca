@@ -59,10 +59,15 @@
 
 ## intent:consulta_libro
 - busca un libro
+- estoy buscando una novela
+- estoy buscando un libro
 - quiero un libro
+- se buscando
+- buscando
 - me podrías decir un libro
 - dime un libro
 - dame un libro
+- estoy buscando una
 - necesito un libro
 - busca una obra literaria
 - me buscarías una obra literaria
@@ -113,12 +118,14 @@
 
 ## intent:consulta_libro_kw
 - busca un libro de [Fuego y Sangre](libro)
+- busca un libro de [los Pilares de la tierra](libro)
 - busco un único libro de [Matemática Discreta](libro)
 - quiero un libro de [Harry Potter](libro)
 - quiero un único libro de [derecho](libro)
 - busca un libro de [Historia del arte](libro)
 - busca un libro sobre [Historia del arte](libro)
 - dame un libro de [recetas](libro)
+- quiero una novela de [caballeria](libro)
 - me podrías decir un libro de [economía](libro)
 - me podrías dar un libro de [justicia](libro)
 - necesito un libro de [política](libro)
@@ -128,6 +135,7 @@
 - busco libro de [matemáticas](libro)
 - quiero libro de [Narnia](libro)
 - busca libro de [Septimus](libro)
+- estoy buscando un libro de [crepúsculo](libro)
 - dame libro de [el mago de oz](libro)
 - me podrías libro de [cuentos](libro)
 - me podrías dar libro de [fantasía](libro)
@@ -169,7 +177,9 @@
 - busco un único libro llamado [Cuentos infantiles](libro)
 - quiero un libro titulado [Divina Comedia](libro)
 - quiero un libro llamado [Orgullo y prejuicio](libro)
+- estoy buscando una novela llamada [Roma](libro)
 - me podrías decir un libro llamado [Papá Goriot](libro)
+- quiero una novela titulada [los Pilares de la tierra](libro)
 - dime libro titulado [Decamerón](libro)
 - dime un libro titulado [Mortadelo y Filemón](libro)
 - dime un libro llamado [Ficciones](libro)
@@ -318,6 +328,7 @@
 - dame libros sobre [videojuegos](libro)
 - me podrías decir libros de [estadística](libro)
 - me podrías dar libros de [electrónica](libro)
+- estoy buscando libros de [biología](libro)
 - necesito libros de [mecánica](libro)
 - busca libros de [japonés](libro)
 - busca libros sobre [Japón](libro) 
@@ -346,6 +357,8 @@
 - busca obras literarias llamadas [el nombre del viento](libro)
 - necesito libros titulados [Preludio a la fundación](libro)
 - libros llamados [Cuentos](libro)
+- estoy buscando libros llamados [28 días de oscuridad](libro)
+- estoy buscando una novela titulada [voyage](libro)
 - libros titulados [Las crónicas del mago negro](libro)
 - quiero libros llamados [Danza de dragones](libro)
 - busco libros llamados [Festín de cuervos](libro)
@@ -418,7 +431,9 @@
 
 ## intent:consulta_telefono
 - llama a la [Facultad de matemáticas](localizacion)
+- llama a la [Biblioteca de matemáticas](localizacion)
 - llama a [Biblioteca de geografía](localizacion)
+- llama a [Facultad de geografía](localizacion)
 - llamar a [facultad de geología](localizacion)
 - llamar a [biblioteca de medicina](localizacion)
 - busca el teléfono de la [Zambrano](localizacion)
@@ -590,9 +605,17 @@
 
 ## intent:saludos
 - hola
+- hola Janeth
+- hola Janet
 - buenas
+- buenas Janeth
+- buenas Janet
 - buenos días
+- buenos días Janeth
+- buenos días Janet
 - buenas tardes
+- buenas tardes Janeth
+- buenas tardes Janet
 - buenas noches
 - saludos
 - hello
@@ -614,6 +637,28 @@
 - siguiente
 - busca 3 más
 - muestrame 3 más
+
+
+##intent:no_relacionado
+- qué tiempo va a hacer hoy
+- hace frío
+- hace calor
+- tengo frío
+- tengo calor
+- cuál es el clima de hoy
+- qué hora es
+- a qué horas son
+- flight
+- cuál va a ser la temperatura máxima
+- cuál va a ser la temperatura mínima
+- inicia un temporizador
+- cuenta atrás
+- cómo está la bolsa de Madrid
+- cómo está el IBEX35
+- suma 2 + 2
+- resta 1 - 1
+- divide 2/2
+- multiplica 14*6
 
 
 ## synonym:1984

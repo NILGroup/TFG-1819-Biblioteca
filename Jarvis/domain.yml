@@ -35,6 +35,7 @@ actions:
 - utter_saludo
 - utter_libro_autor
 - utter_consulta_horario_cerrado
+- utter_no_relacionado
 entities:
 - MISC
 - localizacion
@@ -223,3 +224,7 @@ templates:
   - text: Aquí tienes el tercero ejemplar.
   - text: Aquí tienes.
   - text: Mira, aquí tienes el tercero de la lista.
+  utter_no_relacionado:
+  - text: Lo lamento, no estoy diseñada para responder este tipo de preguntas.
+  - text: Lo lamento, no estoy diseñada para responder este tipo de preguntas. ¿Qué tal si me preguntas por un libro?
+  - text: Mi ámbito es el de los libros.

@@ -31,6 +31,7 @@ from rasa_nlu.model import Trainer
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_nlu import config
 from rasa_core import train
+from rasa_core.channels.channel import OutputChannel
 from rasa_core.events import SlotSet
 from rasa_core.domain import Domain
 from rasa_core.training import interactive
@@ -73,7 +74,7 @@ class JarvisProcessor():
         self.__trainer = Trainer(config.load("config/config.yml"), builder)
         self.__trainer.train(self.__trainer_data)
         self.__model_directory = self.__trainer.persist('model/',
-                                                        fixed_model_name = 'Jarvis')
+                                                        fixed_model_name='Jarvis')
         
         return self.__model_directory
 
@@ -110,25 +111,40 @@ class JarvisProcessor():
         tracker.update(SlotSet('searchindex', None))
 
         self.agent.tracker_store.save(tracker)
+
+        policy_config = 'config/config.yml'
+        self.agent.execute_action(senderid, "action_restart", OutputChannel(), policy_config, 0.1)
         self.logger.info('Usuario ' + senderid + ' reiniciado')
 
     def procesarPeticion(self, peticion, senderid='default'):
 
         respuesta = {}
+        reintenta = True
+        cuenta = 1
 
-        respuesta["nlu"] = self.interpreter.parse(peticion)
-        mensaje = self.agent.handle_text(text_message=peticion, sender_id=senderid)
-        tracker = self.agent.tracker_store.get_or_create_tracker(sender_id=senderid)
+        while reintenta:
+            try:
+                respuesta["nlu"] = self.interpreter.parse(peticion)
+                mensaje = self.agent.handle_text(text_message=peticion, sender_id=senderid)
+                tracker = self.agent.tracker_store.get_or_create_tracker(sender_id=senderid)
 
-        self._slots = self.__rellenaSlots(tracker)
+                self._slots = self.__rellenaSlots(tracker)
+                if not mensaje:
+                    raise Exception('Sin respuesta')
+                for response in mensaje:
+                    respuesta["text"] = response["text"]
 
-        for response in mensaje:
-            respuesta["text"] = response["text"]
+                self.logger.info('Usuario ' + senderid + ':\n' + str(respuesta))
 
-        self.logger.info('Usuario ' + senderid + ':\n' + str(respuesta))
-
-        if respuesta["nlu"]["intent"]["confidence"] < 0.15:
-            respuesta["nlu"]["intent"]["name"] = "no_entiendo"
+                if respuesta["nlu"]["intent"]["confidence"] < 0.15:
+                    respuesta["nlu"]["intent"]["name"] = "no_entiendo"
+                reintenta = False
+            except Exception:
+                policy_config = 'config/config.yml'
+                self.agent.execute_action(senderid, "action_restart", OutputChannel(), policy_config, 0.1)
+                if cuenta <= 0:
+                    raise Exception
+                cuenta = cuenta - 1
 
         return respuesta
 
