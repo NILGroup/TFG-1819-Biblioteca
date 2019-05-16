@@ -103,17 +103,17 @@ class JarvisProcessor():
     def reiniciarSlots(self, senderid):
         tracker = self.agent.tracker_store.get_or_create_tracker(sender_id=senderid)
 
-        tracker.update(SlotSet('autores', None))
-        tracker.update(SlotSet('libro', None))
-        tracker.update(SlotSet('localizacion', None))
-        tracker.update(SlotSet('numberofmorebooksearch', None))
-        tracker.update(SlotSet('requested_slot', None))
-        tracker.update(SlotSet('searchindex', None))
-
-        self.agent.tracker_store.save(tracker)
+        temp = tracker.get_slot('persona')
 
         policy_config = 'config/config.yml'
         self.agent.execute_action(senderid, "action_restart", OutputChannel(), policy_config, 0.1)
+
+        tracker = self.agent.tracker_store.get_or_create_tracker(sender_id=senderid)
+
+        tracker.update(SlotSet('persona', temp))
+
+        self.agent.tracker_store.save(tracker)
+
         self.logger.info('Usuario ' + senderid + ' reiniciado')
 
     def procesarPeticion(self, peticion, senderid='default'):
@@ -133,6 +133,9 @@ class JarvisProcessor():
                     raise Exception('Sin respuesta')
                 for response in mensaje:
                     respuesta["text"] = response["text"]
+                    
+                if not self._slots['autores'] and self._slots['libro']:
+                    respuesta["nlu"]["intent"]["name"].replace("_autor", "")
 
                 self.logger.info('Usuario ' + senderid + ':\n' + str(respuesta))
 

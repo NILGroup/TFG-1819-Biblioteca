@@ -3,7 +3,7 @@
     - action_saludos
     
 ## Generated Story -7334132296741120530
-* me_llamo{"persona": "Jose Luis"}
+* me_llamo{"PER": "Jose Luis"}
     - form_saludos
     - form{"name": "form_saludos"}
     - slot{"persona": "Jose luis"}
@@ -14,7 +14,7 @@
 ## Generated Story 8376104521155456626
 * saludos
     - action_saludos
-* me_llamo{"persona": "Jose Luis"}
+* me_llamo{"PER": "Jose Luis"}
     - form_saludos
     - form{"name": "form_saludos"}
     - slot{"persona": "Jose luis"}
@@ -39,7 +39,7 @@
     - utter_respuesta_insultos
 
 ## Generated Story -227894685352773728
-* consulta_libro_kw{"autores": "Quevedo"}
+* consulta_libro_kw{"PER": "Quevedo"}
     - form_libros
     - form{"name": "form_libros"}
     - slot{"libro": null}
@@ -48,7 +48,7 @@
     - slot{"requested_slot": null}
 
 ## Generated Story -4216624516246168370
-* consulta_libros_kw{"autores": "Pedro S\u00e1nchez"}
+* consulta_libros_kw{"PER": "Pedro S\u00e1nchez"}
     - form_libros
     - form{"name": "form_libros"}
     - slot{"libro": null}
@@ -57,15 +57,6 @@
     - slot{"requested_slot": null}
 
 ## Generated Story -8781965866656530134
-* consulta_libros_autor{"autores": "Patrick Rothfuss"}
-    - form_libros
-    - form{"name": "form_libros"}
-    - slot{"libro": null}
-    - slot{"autores": "Patrick rothfuss"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-    
-## Generated Story -8781960066656530134
 * consulta_libros_autor{"PER": "Patrick Rothfuss"}
     - form_libros
     - form{"name": "form_libros"}
@@ -75,7 +66,7 @@
     - slot{"requested_slot": null}
 
 ## Generated Story 1249307569349871371
-* consulta_libro_titulo_autor{"libro": "Don Quijote de la Mancha", "autores": "Miguel de Cervantes"}
+* consulta_libro_titulo_autor{"libro": "Don Quijote de la Mancha", "PER": "Miguel de Cervantes"}
     - form_libros
     - form{"name": "form_libros"}
     - slot{"libro": "Don quijote de la mancha"}
@@ -111,7 +102,7 @@
     - slot{"requested_slot": null}
 
 ## Generated Story 3429538877510057829
-* consulta_libro_autor{"autores": "G\u00f3ngora"}
+* consulta_libro_autor{"PER": "G\u00f3ngora"}
     - form_libros
     - form{"name": "form_libros"}
     - slot{"libro": null}
@@ -120,7 +111,7 @@
     - slot{"requested_slot": null}
 
 ## Generated Story -4183285553744639257
-* consulta_libros_titulo_autor{"libro": "Alatriste", "autores": "Arturo P\u00e9rez-Reverte"}
+* consulta_libros_titulo_autor{"libro": "Alatriste", "PER": "Arturo P\u00e9rez-Reverte"}
     - form_libros
     - form{"name": "form_libros"}
     - slot{"libro": "Alatriste"}
@@ -129,7 +120,7 @@
     - slot{"requested_slot": null}
 
 ## Generated Story -9201692200926372279
-* consulta_libros_kw_autor{"libro": "Como aprender a programar en 5 minutos", "autores": "Rodolfo Rodr\u00edguez"}
+* consulta_libros_kw_autor{"libro": "Como aprender a programar en 5 minutos", "PER": "Rodolfo Rodr\u00edguez"}
     - form_libros
     - form{"name": "form_libros"}
     - slot{"libro": "Como aprender a programar en 5 minutos"}
@@ -259,7 +250,7 @@
     - utter_consulta_localizacion
 
 ## Generated Story -4950611639272936335
-* consulta_telefono{"PER": "Llama", "localizacion": "facultad de informatica"}
+* consulta_telefono{"localizacion": "facultad de informatica"}
     - slot{"localizacion": "facultad de informatica"}
     - utter_consulta_telefono
 
@@ -311,3 +302,11 @@
 ## Generated Story 7417286478629298248
 * no_relacionado
     - utter_no_relacionado
+
+## Generated Story 7417286478629298269
+* consulta_libro
+    - utter_especifica_libro
+
+## Generated Story 8417286478629298269
+* consulta_libros
+    - utter_especifica_libro

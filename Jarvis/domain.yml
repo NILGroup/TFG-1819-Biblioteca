@@ -43,7 +43,6 @@ entities:
 - libro
 - LOC
 - localizaciones
-- persona
 - ORG
 - autores
 forms:
@@ -67,6 +66,10 @@ intents:
     use_entities: false
 - consulta_horario_open
 - consulta_horario_close
+- consulta_libro:
+    use_entities: false
+- consulta_libros:
+    use_entities: false
 - consulta_libros_autor
 - me_llamo
 - consulta_libro_kw_autor

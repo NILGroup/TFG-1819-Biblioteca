@@ -74,6 +74,23 @@
 - necesito una obra literaria
 - libro
 
+## intent:consulta_libros
+- busca libros
+- estoy buscando unas novelas
+- estoy buscando libros
+- quiero libros
+- se buscando
+- buscando
+- me podrías decir alguns libros
+- dime libros
+- dame libros
+- estoy buscando varias
+- necesito libros
+- busca varias obras literarias
+- me buscarías obras literarias
+- necesito varias obras literarias
+- libros
+
 ## intent:consulta_libro_autor
 - quiero un libro escrito por [Orwell](PER)
 - busca un libro del autor [Pablo Neruda](PER)
@@ -628,12 +645,14 @@
 - muéstrame más
 - enseñame más ejemplares
 - quiero otro
+- quiero otra
 - carga más
 - podrías buscar más ejemplares
 - quiero mas
 - muestra otro
 - muestra mas
 - otro
+- otra
 - siguiente
 - busca 3 más
 - muestrame 3 más
@@ -657,8 +676,9 @@
 - cómo está el IBEX35
 - suma 2 + 2
 - resta 1 - 1
-- divide 2/2
-- multiplica 14*6
+- divide 2 / 2
+- divide 2 entre 2
+- multiplica 14 * 6
 
 
 ## synonym:1984
