@@ -92,12 +92,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         
         startButton.transform = CGAffineTransform(scaleX: 1, y: 1)
         comprobarPermisosReconocimientoVoz()
+        
     }
     
     //Envía una consulta a la clase conexión para enviársela al servidor.
     @objc private func prepararConsulta(_ notification: NSNotification) {
-        if let dict = notification.userInfo as! [String : Any]? {
-            enviarSolicitud(tipo: dict["tipo"] as! String, peticion: String(dict["peticion"] as! Int))
+        if (self.startButton.isEnabled && !isRecording) {
+            if let dict = notification.userInfo as! [String : Any]? {
+                enviarSolicitud(tipo: dict["tipo"] as! String, peticion: String(dict["peticion"] as! Int))
+            }
         }
     }
     
@@ -430,13 +433,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                         self.mensajes[self.mensajes.count - 1].setRespuesta(text: result.bestTranscription.formattedString)
                         let indexPath = IndexPath(row: self.mensajes.count - 1, section: 0)
                         self.tableView.reloadRows(at: [indexPath], with: .none)
+                        self.tableView.scrollToRow(at: indexPath , at: UITableView.ScrollPosition.bottom, animated: true)
                         
                         isFinal = result.isFinal
                     }
                     if isFinal {
                         stopRecognition()
                     }
-                    else if  error == nil {
+                    else if error == nil {
                         restartSpeechTimer()
                     }
                 })
@@ -491,12 +495,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         if self.isRecording == true {
             stopRecognition()
         } else {
-            self.synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
-            playSound(soundName: "Micro Start", ext: "wav")
-            self.isRecording = true
-            
             mensajes.append(Globos(texto: "", emisor: .User));
-            self.request = SFSpeechAudioBufferRecognitionRequest()
             
             DispatchQueue.main.async {
                 self.tableView.beginUpdates()
@@ -504,6 +503,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                 self.tableView.endUpdates()
                 self.tableView.scrollToRow(at: IndexPath(row: self.mensajes.count-1, section: 0) , at: UITableView.ScrollPosition.bottom, animated: true)
             }
+            
+            self.synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+            playSound(soundName: "Micro Start", ext: "wav")
+            self.isRecording = true
+            
+            self.request = SFSpeechAudioBufferRecognitionRequest()
             
             recordAndRecognizeSpeech()
         }
