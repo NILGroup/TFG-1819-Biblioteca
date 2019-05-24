@@ -34,4 +34,4 @@ En iOS puedes instalar la aplicación entrando en la App Store y escribiendo en 
 
 En Android puedes instalar la aplicación entrando en la Play Store y escribiendo en el buscador "Janet". También puedes acceder directamente pulsando [aquí](https://play.google.com/store/apps/details?id=ucm.fdi.android.speechtotext&hl=es_419)
 
-Si no quieres instalar la aplicación a través de la Play Store, puedes instalar el apk directamente descargandolo desde este repositorio, en la sección [Releases](https://github.com/NILGroup/TFG-1819-Biblioteca/releases)
+Si no quieres instalar la aplicación a través de la Play Store, puedes instalar el apk directamente descargándolo desde este repositorio, en la sección [Releases](https://github.com/NILGroup/TFG-1819-Biblioteca/releases)
