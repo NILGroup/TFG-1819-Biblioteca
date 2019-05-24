@@ -7,7 +7,7 @@ Autores: Mauricio Abbati Loureiro y Jose Luis Moreno Varillas.
 Directores: Alberto Díaz Esteban y Antonio Fernando García Sevilla.
 
 
-**Instalación**
+**Instalación en servidor**
 
 Los instaladores proporcionados en este repositorios han sido diseñados para:
 
@@ -25,3 +25,11 @@ Existen tres instaladores:
 IMPORTANTE! Una vez instalado uno de los módulos parciales, no debe ejecutarse el instalador completo, en su lugar, utiliza el otro instalador parcial.
 
 Para instalar el sistema es necesario disponer de las carpetas Servidor y/o Jarvis (en función del tipo de instalación) y el fichero 'wskey.conf'. Todos estos ficheros deben estar en el mismo directorio que el script de instalación. En caso de no encontrarse alguno de estos ficheros la instalación no continuará.
+
+El archivo 'wskey.conf' no se proporciona en este repositorio, dado que contiene información confidencial. Para conseguir este fichero, ponte en contacto con los directores del proyecto.
+
+**Instalación en dispositivos móviles**
+
+En iOS puedes instalar la aplicación entrando en la App Store y escribiendo en el buscador "Janet ucm". También puedes acceder directamente pulsando [aquí](https://itunes.apple.com/us/app/janet/id1451052771?l=es&ls=1&mt=8)
+
+En Android puedes instalar la aplicación entrando en la App Store y escribiendo en el buscador "Janet". También puedes acceder directamente pulsando [aquí](https://play.google.com/store/apps/details?id=ucm.fdi.android.speechtotext&hl=es_419)
