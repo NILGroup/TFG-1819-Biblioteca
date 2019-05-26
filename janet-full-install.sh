@@ -198,6 +198,7 @@ if [ -d "$DIRECTORY/Clientes" ]; then rm -Rf $DIRECTORY/Clientes; fi
 if [ -f "$DIRECTORY/.gitignore" ]; then rm $DIRECTORY/.gitignore; fi
 if [ -f "$DIRECTORY/README.md" ]; then rm $DIRECTORY/README.md; fi
 if [ -f "$DIRECTORY/LICENSE.md" ]; then rm $DIRECTORY/LICENSE.md; fi
+if [ -f "/home/tfg-biblio/Jarvis/bibliotecas.json" ]; then rm /home/tfg-biblio/Jarvis/bibliotecas.json; fi
 
 echo "Ok"
 echo "-----------------------------------"
