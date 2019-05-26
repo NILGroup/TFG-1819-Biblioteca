@@ -1,0 +1,450 @@
+{
+  "_id": "ASTD",
+  "name": "Servicio de Tesis Doctorales y Publicaciones académicas",
+  "direccion": "Biblioteca Histórica “Marqués de Valdecilla”, 1ª planta - C/ Noviciado, nº 3 - 28015 Madrid",
+  "telefono": 913946641,
+  "email": "buc_tesi@ucm.es",
+  "lat": 40.4556064,
+  "long": -3.7359996,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "tesis", "doctorales", "tesis doctorales", "publicaciones académicas"
+  ]
+}
+{
+  "_id": "ABHI",
+  "name": "Biblioteca Histórica",
+  "direccion": "Biblioteca Histórica “Marqués de Valdecilla”, 1ª planta - C/ Noviciado, nº 3 - 28015 Madrid",
+  "telefono": 913946612,
+  "email": "buc_foa@buc.ucm.es",
+  "lat": 40.4255237,
+  "long": -3.7081267,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "histórica", "marqués de valdecilla", "valdecilla"
+  ]
+}
+{
+  "_id": "HDOC",
+  "name": "Biblioteca de Ciencias de la Documentación",
+  "direccion": "C/ Santísima Trinidad, 37. 28010 - MADRID",
+  "telefono": 913946672,
+  "email": "buc_byd@buc.ucm.es",
+  "lat": 40.4384446,
+  "long": -3.7021874,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Documentación", "Ciencias de la documentación","CC. de la Documentación"
+  ]
+}
+{
+  "_id": "HFSL",
+  "name": "Biblioteca de Filosofía",
+  "direccion": "Plaza de Menéndez Pelayo S/N. 28040 - MADRID, Edificio A. 2ª planta",
+  "telefono": 913945250,
+  "email": "buc_fsl@buc.ucm.es",
+  "lat": 40.4489654,
+  "long": -3.7310115,
+  "open_hour":"08:30",
+  "close_hour":"20:30",
+  "days_opened": 4,
+  "kw": [
+    "Facultad de filosofía", "Biblioteca de Filosofía","Filosofía"
+  ]
+}
+{
+  "_id": "HEDU",
+  "name": "Biblioteca de Educación",
+  "direccion": "C/ Rector Royo Villanova S/N. 28040 - MADRID, Edificio la Almudena",
+  "telefono": 913946274,
+  "email": "buc_edu@buc.ucm.es",
+  "lat": 40.4505352,
+  "long": -3.7183853,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Facultad de educación", "Biblioteca de Educación","Centro de Formación del Profesorado", "Magisterio"
+  ]
+}
+{
+  "_id": "HBBA",
+  "name": "Biblioteca de Bellas Artes",
+  "direccion": "C/El Greco Nº 2. 28040 - MADRID",
+  "telefono": 913943596,
+  "email": "buc_bba@ucm.es",
+  "lat": 40.4401866,
+  "long": -3.734835,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Facultad de bellas artes", "Biblioteca de Bellas Artes","Bellas Artes"
+  ]
+}
+{
+  "_id": "HGHI",
+  "name": "Biblioteca de Geografía e Historia",
+  "direccion": "C/ Profesor Aranguren S/N. 28040 - MADRID",
+  "telefono": 913946080,
+  "email": "buc_ghi@buc.ucm.es",
+  "lat": 40.4492291,
+  "long": -3.7352712,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Facultad de Geografía e Historia", "Biblioteca de Geografía e Historia","Geografía", "Historia"
+  ]
+}
+{
+  "_id": "HFMZ",
+  "name": "Biblioteca María Zambrano",
+  "direccion": "C/ Profesor Aranguren S/N. 28040 - MADRID",
+  "telefono": 913947862,
+  "email": "bmzcomun@buc.ucm.es",
+  "lat": 40.4493322,
+  "long": -3.7336363,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 6,
+  "kw": [
+    "Biblioteca María Zambrano", "María Zambrano", "La Zambrano"
+  ]
+}
+{
+  "_id": "HFLL",
+  "name": "Biblioteca de Filología",
+  "direccion": "Plaza Menéndez Pelayo, 1. 28040 - MADRID, Edificio A (1ª Planta)",
+  "telefono": 913945355,
+  "email": "buc_fll@buc.ucm.es",
+  "lat": 40.4490153,
+  "long": -3.7312603,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca Filología", "Facultad de Filología", "Filología"
+  ]
+}
+{
+  "_id": "MPSI",
+  "name": "Biblioteca de Psicología",
+  "direccion": "Campus de Somosaguas S/N, Pozuelo de Alarcón, 28223, Madrid - Facultad de Psicología",
+  "telefono": 913942964,
+  "email": "buc_cps@buc.ucm.es",
+  "lat": 40.432212,
+  "long": -3.7936141,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Psicología", "Facultad de Psicología", "Psicología"
+  ]
+}
+{
+  "_id": "SDER",
+  "name": "Biblioteca de Derecho - Criminología",
+  "direccion": "Plaza Menéndez Pelayo, 4 - 28040, MADRID - planta baja 'edificio Biblioteca'",
+  "telefono":913945616,
+  "email": "buc_der@ucm.es",
+  "lat": 40.4507214,
+  "long": -3.7315008,
+  "open_hour":"10:30",
+  "close_hour":"20:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Criminología", "Facultad de Criminología", "Criminología"
+  ]
+}
+{
+  "_id": "SDMZ",
+  "name": "Biblioteca de Derecho - Zambrano",
+  "direccion": "C/ Profesor Aranguren S/N. 28040 - MADRID",
+  "telefono":913947862,
+  "email": "buc_der@ucm.es",
+  "lat": 40.4493322,
+  "long": -3.7336363,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Derecho", "Facultad de Derecho", "Derecho", "Abogados"
+  ]
+}
+{
+  "_id": "SCEE",
+  "name": "Biblioteca de Ciencias Económicas y Empresariales",
+  "direccion": "Campus de Somosaguas S/N, Pozuelo de Alarcón, 28223, Madrid - Facultad de CC. Económicas y Empresariales",
+  "telefono":913942608,
+  "email": "buc_cee@buc.ucm.es",
+  "lat": 40.4334094,
+  "long": -3.7897765,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Empresariales", "Facultad de Ciencias Económicas y Empresariales", "Económicas", "Empresariales", "ADE", "Economía", "Empresa"
+  ]
+}
+{
+  "_id": "SCYT",
+  "name": "Biblioteca de Comercio y Turismo",
+  "direccion": "Avenida de Filipinas, 3. 28003 - MADRID",
+  "telefono":913946788,
+  "email": "buc_emp@ucm.es",
+  "lat": 40.4398519,
+  "long": -3.7119665,
+  "open_hour":"09:00",
+  "close_hour":"20:30",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Comercio y Turismo", "Facultad de Comercio y Turismo", "Turismo", "Comercio"
+  ]
+}
+{
+  "_id": "CEST",
+  "name": "Biblioteca de Estudios Estadísticos",
+  "direccion": "Avda. Puerta de Hierro S/N 28040  - MADRID",
+  "telefono":913944035,
+  "email": "buc_est@buc.ucm.es",
+  "lat": 40.4468776,
+  "long": -3.7371381,
+  "open_hour":"09:30",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Estudios Estadísticos", "Facultad de Estudios Estadísticos", "Estadística", "Estudios Estadísticos"
+  ]
+}
+{
+  "_id": "SCPS",
+  "name": "Biblioteca de Ciencias Políticas y Sociología",
+  "direccion": "Campus de Somosaguas S/N, Pozuelo de Alarcón, 28223, Madrid - Facultad de Ciencias Políticas y Sociología",
+  "telefono":913942964,
+  "email": "buc_cps@buc.ucm.es",
+  "lat": 40.4300417,
+  "long": -3.7899801,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Ciencias Políticas y Sociología", "Facultad de Ciencias Políticas y Sociología", "Ciencias Políticas", "Sociología", "Políticas", "Política"
+  ]
+}
+{
+  "_id": "STRS",
+  "name": "Biblioteca de Trabajo Social",
+  "direccion": "Campus de Somosaguas S/N, Pozuelo de Alarcón, 28223, Madrid - Facultad de Trabajo Social",
+  "telefono":913942731,
+  "email": "buc_trs@buc.ucm.es",
+  "lat": 40.4300417,
+  "long": -3.7899801,
+  "open_hour":"09:00",
+  "close_hour":"20:30",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Trabajo Social", "Facultad de Trabajo Social", "Trabajo Social"
+  ]
+}
+{
+  "_id": "SINF",
+  "name": "Biblioteca de Ciencias de la Información",
+  "direccion": "Av. Complutense S/N 28040, MADRID - Facultad de Ciencias de la Información",
+  "telefono":913942208,
+  "email": "buc_inf@buc.ucm.es",
+  "lat": 40.4457528,
+  "long": -3.7289711,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Ciencias de la Información", "Facultad de Ciencias de la Información", "Ciencias de la Información", "Periodismo"
+  ]
+}
+{
+  "_id": "MMED",
+  "name": "Biblioteca de Medicina",
+  "direccion": "Plaza de Ramón y Cajal, S/N 28040, MADRID",
+  "telefono":913941334,
+  "email": "buc_med@buc.ucm.es",
+  "lat": 40.4440807,
+  "long": -3.7248152,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Medicina", "Facultad de Medicina", "Medicina", "Almacén de cadáveres"
+  ]
+}
+{
+  "_id": "MFAR",
+  "name": "Biblioteca de Farmacia",
+  "direccion": "Plaza de Ramón y Cajal, S/N 28040, MADRID",
+  "telefono":913941781,
+  "email": "buc_far@buc.ucm.es",
+  "lat": 40.4453611,
+  "long": -3.7266932,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Farmacia", "Facultad de Farmacia", "Farmacia", "Almacén de Drogas"
+  ]
+}
+{
+  "_id": "MVET",
+  "name": "Biblioteca de Veterinaria",
+  "direccion": "Avda. Puerta de Hierro, S/N. 28040, MADRID",
+  "telefono":913943828,
+  "email": "buc_vet@buc.ucm.es",
+  "lat": 40.4495756,
+  "long": -3.7393855,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Veterinaria", "Facultad de Veterinaria", "Veterinaria"
+  ]
+}
+{
+  "_id": "MODO",
+  "name": "Biblioteca de Odontología",
+  "direccion": "Plaza Ramón y Cajal, S/N. 28040, MADRID",
+  "telefono":913942008,
+  "email": "buc_odo@buc.ucm.es",
+  "lat": 40.4425074,
+  "long": -3.7266187,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Odontología", "Facultad de Odontología", "Odontología"
+  ]
+}
+{
+  "_id": "MENF",
+  "name": "Biblioteca de Enfermería, Fisioterapia y Podología",
+  "direccion": "Plaza Ramón y Cajal, S/N. 28040, MADRID - F. de Medicina Pabellón 2º, 3ª Planta",
+  "telefono":913941569,
+  "email": "buc_enf@buc.ucm.es",
+  "lat": 40.4440807,
+  "long": -3.7248152,
+  "open_hour":"09:00",
+  "close_hour":"20:30",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Enfermería", "Facultad de Enfermería", "Enfermería", "Biblioteca de Fisioterapia", "Facultad de Fisioterapia", "Fisioterapia", "Biblioteca de Podología", "Facultad de Podología", "Podología"
+  ]
+}
+{
+  "_id": "MOPT",
+  "name": "Biblioteca de Óptica y Optometría",
+  "direccion": "C/ Arcos de Jalón, 118, 28037, MADRID",
+  "telefono":913946870,
+  "email": "buc_opt@ucm.es",
+  "lat": 40.4258996,
+  "long": -3.6143291,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Óptica", "Facultad de Óptica", "Óptica", "Biblioteca de Optometría", "Facultad de Optometría", "Optometría"
+  ]
+}
+{
+  "_id": "CFDI",
+  "name": "Biblioteca de Informática",
+  "direccion": "C/ Profesor José García Santesmases, 9,  28040, MADRID",
+  "telefono":913947523,
+  "email": "buc_eis@buc.ucm.es",
+  "lat": 40.4527614,
+  "long": -3.733998,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Informática", "Facultad de Informática", "Informática", "FDI"
+  ]
+}
+{
+  "_id": "CMAT",
+  "name": "Biblioteca de Ciencias Matemáticas",
+  "direccion": "Plaza de CC., 3,  28040, MADRID",
+  "telefono":913944572,
+  "email": "buc_mat@buc.ucm.es",
+  "lat": 40.4494975,
+  "long": -3.7263171,
+  "open_hour":"08:30",
+  "close_hour":"20:30",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Matemáticas", "Facultad de Matemáticas", "Matemáticas", "MAT"
+  ]
+}
+{
+  "_id": "CFIS",
+  "name": "Biblioteca de Ciencias Físicas",
+  "direccion": "Plaza de CC., 1,  28040, MADRID",
+  "telefono":913944651,
+  "email": "buc_fis@buc.ucm.es",
+  "lat": 40.4510066,
+  "long": -3.7266206,
+  "open_hour":"09:00",
+  "close_hour":"21:00",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Físicas", "Facultad de Físicas", "Físicas", "Física", "FIS"
+  ]
+}
+{
+  "_id": "CGEO",
+  "name": "Biblioteca de Ciencias Geológicas",
+  "direccion": "C/José Antonio Novais, 12,  28040, MADRID",
+  "telefono":913944900,
+  "email": "buc_geo@ucm.es",
+  "lat": 40.4487825,
+  "long": -3.7258622,
+  "open_hour":"08:30",
+  "close_hour":"20:30",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Geológicas", "Facultad de Geológicas", "Geológicas", "Geología", "GEO"
+  ]
+}
+{
+  "_id": "CBIO",
+  "name": "Biblioteca de Ciencias Biológicas",
+  "direccion": "C/José Antonio Novais, 12,  28040, MADRID",
+  "telefono":913945041,
+  "email": "buc_bio@buc.ucm.es",
+  "lat": 40.4489901,
+  "long": -3.7272159,
+  "open_hour":"08:30",
+  "close_hour":"20:30",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Biológicas", "Facultad de Biológicas", "Biológicas", "Biología", "BIO"
+  ]
+}
+{
+  "_id": "CQUI",
+  "name": "Biblioteca de Ciencias Químicas",
+  "direccion": "C/ Leonardo Prieto Castro, 28040, MADRID",
+  "telefono":913944254,
+  "email": "buc_qui@buc.ucm.es",
+  "lat": 40.4505095,
+  "long": -3.725447,
+  "open_hour":"08:30",
+  "close_hour":"20:30",
+  "days_opened": 4,
+  "kw": [
+    "Biblioteca de Químicas", "Facultad de Químicas", "Químicas", "Química", "QUI"
+  ]
+}
