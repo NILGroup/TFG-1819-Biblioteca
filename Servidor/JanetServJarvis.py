@@ -42,7 +42,7 @@ class JanetServJarvis():
 
         try:
             req = request.Request(self._url, data=parse.urlencode(data).encode())
-            resp = request.urlopen(req, timeout=10)
+            resp = request.urlopen(req, timeout=10).read()
         except error.URLError as e:
             if isinstance(e.reason, timeout):
                 msg = "Janet se encuentra en mantenimiento en estos momentos. " \
@@ -55,7 +55,7 @@ class JanetServJarvis():
             else:
                 raise error.HTTPError(self._url, 500, e.reason, None, None)
 
-        return json.load(resp)
+        return json.loads(resp.decode('utf-8'))
 
     def restart(self, id):
         data = {'user_id': id, 'content': '/restart'}

@@ -92,12 +92,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         
         startButton.transform = CGAffineTransform(scaleX: 1, y: 1)
         comprobarPermisosReconocimientoVoz()
+        
     }
     
     //Envía una consulta a la clase conexión para enviársela al servidor.
     @objc private func prepararConsulta(_ notification: NSNotification) {
-        if let dict = notification.userInfo as! [String : Any]? {
-            enviarSolicitud(tipo: dict["tipo"] as! String, peticion: String(dict["peticion"] as! Int))
+        if (self.startButton.isEnabled && !isRecording) {
+            if let dict = notification.userInfo as! [String : Any]? {
+                enviarSolicitud(tipo: dict["tipo"] as! String, peticion: String(dict["peticion"] as! Int))
+            }
         }
     }
     
@@ -250,8 +253,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                 
                 let currentRoute = AVAudioSession.sharedInstance().currentRoute
                 for description in currentRoute.outputs {
-                    if convertFromAVAudioSessionPort(description.portType) == convertFromAVAudioSessionPort(AVAudioSession.Port.headphones) {
-                        try audioSession.overrideOutputAudioPort(AVAudioSession.PortOverride.none)
+                    if description.portType == AVAudioSession.Port.headphones {
                         print("auriculares conectados")
                     } else {
                         print("auriculares desconectados")
@@ -376,8 +378,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                     
                     let currentRoute = AVAudioSession.sharedInstance().currentRoute
                     for description in currentRoute.outputs {
-                        if convertFromAVAudioSessionPort(description.portType) == convertFromAVAudioSessionPort(AVAudioSession.Port.headphones) {
-                            try audioSession.overrideOutputAudioPort(AVAudioSession.PortOverride.none)
+                        if description.portType == AVAudioSession.Port.headphones {
                             print("Auriculares conectados")
                         } else {
                             print("Auriculares desconectados")
@@ -412,12 +413,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                 sendAlert(message: "Hay un error en el engine de audio.")
                 return print(error)
             }
-            guard let myRecognizer = SFSpeechRecognizer() else {
-                sendAlert(message: "Reconocimiento de voz no disponible en el idioma seleccionado.")
-                return
-            }
-            if !myRecognizer.isAvailable {
-                sendAlert(message: "El reconocimiento de voz no está disponible actualmente. Inténtelo más tarde.")
+            if !speechRecognizer.isAvailable {
+                stopRecognition()
+                self.ponerTextoEnBot(texto: "El reconocimiento de voz no está disponible actualmente. Compruebe que Siri esté activado en los ajustes de iOS y que tenga conexión a internet. En caso de persistir el problema, es posible que haya superado su cuota de uso diaria del reconocimiento de voz.")
+                self.procesarFrase()
                 // Recognizer no disponible.
                 return
             }
@@ -430,13 +429,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
                         self.mensajes[self.mensajes.count - 1].setRespuesta(text: result.bestTranscription.formattedString)
                         let indexPath = IndexPath(row: self.mensajes.count - 1, section: 0)
                         self.tableView.reloadRows(at: [indexPath], with: .none)
+                        self.tableView.scrollToRow(at: indexPath , at: UITableView.ScrollPosition.bottom, animated: true)
                         
                         isFinal = result.isFinal
                     }
                     if isFinal {
                         stopRecognition()
                     }
-                    else if  error == nil {
+                    else if error == nil {
                         restartSpeechTimer()
                     }
                 })
@@ -471,19 +471,21 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
             self.isRecording = false
             self.audioEngine.inputNode.removeTap(onBus: 0)
             
-            if (mensajes[mensajes.count - 1].getRespuesta() != "") {
+            if (mensajes[mensajes.count - 1].getEmisor() == .User && mensajes[mensajes.count - 1].getRespuesta() != "") {
                 playSound(soundName: "Recognized voice", ext: "wav")
                 self.enviarSolicitud(tipo: "query", peticion: mensajes[mensajes.count - 1].getRespuesta())
                 
             } else {
                 playSound(soundName: "Micro Stopped", ext: "wav")
-                self.mensajes.remove(at: self.mensajes.count - 1)
-                
-                DispatchQueue.main.async {
-                    self.tableView.beginUpdates()
-                    self.tableView.deleteRows(at: [IndexPath(row: self.mensajes.count, section: 0)], with: .right)
-                    self.tableView.endUpdates()
-                    self.tableView.scrollToRow(at: IndexPath(row: self.mensajes.count-1, section: 0) , at: UITableView.ScrollPosition.bottom, animated: true)
+                if (mensajes[mensajes.count - 1].getEmisor() == .User) {
+                    self.mensajes.remove(at: self.mensajes.count - 1)
+                    
+                    if(self.tableView.numberOfRows(inSection: 0) != mensajes.count) {
+                        self.tableView.beginUpdates()
+                        self.tableView.deleteRows(at: [IndexPath(row: self.mensajes.count, section: 0)], with: .right)
+                        self.tableView.endUpdates()
+                        self.tableView.scrollToRow(at: IndexPath(row: self.mensajes.count-1, section: 0) , at: UITableView.ScrollPosition.bottom, animated: true)
+                    }
                 }
             }
         }
@@ -491,19 +493,19 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, SFSpeechReco
         if self.isRecording == true {
             stopRecognition()
         } else {
-            self.synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
-            playSound(soundName: "Micro Start", ext: "wav")
-            self.isRecording = true
-            
-            mensajes.append(Globos(texto: "", emisor: .User));
-            self.request = SFSpeechAudioBufferRecognitionRequest()
-            
-            DispatchQueue.main.async {
+            if (mensajes[mensajes.count-1].getRespuesta() != "") {
+                mensajes.append(Globos(texto: "", emisor: .User));
                 self.tableView.beginUpdates()
                 self.tableView.insertRows(at: [IndexPath(row: self.mensajes.count-1, section: 0)], with: .right)
                 self.tableView.endUpdates()
                 self.tableView.scrollToRow(at: IndexPath(row: self.mensajes.count-1, section: 0) , at: UITableView.ScrollPosition.bottom, animated: true)
             }
+            
+            self.synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+            playSound(soundName: "Micro Start", ext: "wav")
+            self.isRecording = true
+            
+            self.request = SFSpeechAudioBufferRecognitionRequest()
             
             recordAndRecognizeSpeech()
         }
