@@ -213,7 +213,6 @@ public class MainActivity extends AppCompatActivity {
 
         String available = "";
 
-        //LA INGENIERIA (en mi cabeza era espectacular)
         JSONArray availableJSONArray = resultado.getJSONArray("available");
         String availableRaw = availableJSONArray.get(0).toString();
         availableRaw = availableRaw.substring(1,availableRaw.length()-1);
@@ -232,10 +231,10 @@ public class MainActivity extends AppCompatActivity {
         for(int j = 0; j < isbnsJSON.length();++j)
             isbnList.add(isbnsJSON.get(j).toString());
 
-        String oclc = resultado.get("oclc").toString();
+        String url = resultado.get("url").toString();
 
 
-        return new Book(title,author,isbnList,available);
+        return new Book(title,author,isbnList,available, url);
     }
 
     private LinearLayout setInfoBookView(Book book){
@@ -271,6 +270,22 @@ public class MainActivity extends AppCompatActivity {
 
         image.setPadding(0,0,15,0);
         image.setLayoutParams(paramsCover);
+
+
+        if(book.getUrl().length() > 0){
+            final String url = book.getUrl();
+            image.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v)
+                {
+
+                    Uri uri = Uri.parse(url);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intent);
+                }
+            });
+        }
+
+
         layout.addView(image);
 
         String info = "<b> " + book.getTitle() + "</b><br><br>"  + book.getAuthor() + "<br><br>" +book.getAvailable();

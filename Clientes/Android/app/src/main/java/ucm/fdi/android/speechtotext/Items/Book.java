@@ -9,6 +9,7 @@
 
 package ucm.fdi.android.speechtotext.Items;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 public class Book {
@@ -16,12 +17,14 @@ public class Book {
     private String author;
     private ArrayList<String> isbnList;
     private String available;
+    private String url;
 
     public Book(String _title, String _author, ArrayList<String> _isbnList){
         title = _title;
         author = _author;
         isbnList = _isbnList;
         available = "";
+        url = "";
     }
 
     public Book(String _title, String _author){
@@ -29,13 +32,15 @@ public class Book {
         author = _author;
         isbnList = new ArrayList<>();
         available = "";
+        url = "";
     }
 
-    public Book(String _title, String _author, ArrayList<String> _isbnList, String _available) {
+    public Book(String _title, String _author, ArrayList<String> _isbnList, String _available, String _url) {
         title = _title;
         author = _author;
         isbnList = _isbnList;
         available = _available;
+        url = _url;
     }
 
     public String getTitle() {
@@ -69,4 +74,8 @@ public class Book {
     public void setAvailable(String available){
         this.available = available;
     }
+
+    public String getUrl(){return this.url;}
+
+    public void setUrl(String url){this.url = url;}
 }
